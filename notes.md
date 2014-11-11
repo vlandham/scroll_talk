@@ -36,6 +36,8 @@
 
 ### Continuous Scroll
 
+* [Eating Water](http://www.angelamorelli.com/water/ "Eating Water")
+
 * [A Game of Shark and Minnow](http://www.nytimes.com/newsgraphics/2013/10/27/south-china-sea/ "A Game of Shark and Minnow")
 
 * [Faces of Fracking](http://www.facesoffracking.org/data-visualization/ "Faces of Fracking")
