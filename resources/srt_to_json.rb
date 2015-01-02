@@ -39,6 +39,7 @@ File.open(input_filename,'r').each_line do |line|
     cur_sec = start_sec
     line_words.each do |word|
       is_um = word[0] == "%" ? 1 : 0
+      word = word.gsub("%","")
       words.push([word, cur_sec, is_um])
       cur_sec += each_word_time
     end
@@ -50,7 +51,7 @@ File.open(input_filename,'r').each_line do |line|
     start_sec = stamp_to_secs(start_time)
     end_sec = stamp_to_secs(end_time)
   else
-    full_line += line
+    full_line += " " + line
   end
 end
 
