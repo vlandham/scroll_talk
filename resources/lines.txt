@@ -1,0 +1,8351 @@
+1
+00:00:14,012 --> 00:00:17,014
+thank you lineup
+
+2
+00:00:17,014 --> 00:00:21,383
+easy Massa %uh let's get down to something
+more difficult yeah
+
+3
+00:00:21,509 --> 00:00:24,593
+%uh my name's Jim blame him %um like she
+said
+
+4
+00:00:25,349 --> 00:00:30,354
+%uh my day job is had a biomedical
+research facility for doing that genomic
+
+5
+00:00:30,849 --> 00:00:31,820
+analysis on
+
+6
+00:00:31,082 --> 00:00:34,601
+worms and flies in other sciences stuff
+but
+
+7
+00:00:35,339 --> 00:00:38,620
+%uh for fun over I like to look at
+
+8
+00:00:38,062 --> 00:00:42,062
+%uh data visualizations and an interactive
+once and today I'd like to
+
+9
+00:00:42,062 --> 00:00:46,119
+%uh talk about that the force layout
+Coloma more detail
+
+10
+00:00:47,019 --> 00:00:50,053
+and and how to %uh I use it and
+
+11
+00:00:50,053 --> 00:00:54,102
+in a non traditional manner some so
+we're gonna be abusing the force they
+
+12
+00:00:54,579 --> 00:00:54,657
+are typically
+
+13
+00:00:55,359 --> 00:00:59,010
+here's %ah here's a you know we just saw %ah
+
+14
+00:00:59,001 --> 00:01:03,012
+example have your traditional course
+layout andy is this is
+
+15
+00:01:03,012 --> 00:01:06,019
+typically utilize for your social
+network or your
+
+16
+00:01:06,019 --> 00:01:09,094
+congress' voting on the same stuff you
+know network based stuff
+
+17
+00:01:09,094 --> 00:01:13,163
+%um but we're going to abuse this force a
+little bit
+
+18
+00:01:14,009 --> 00:01:17,410
+and come up with some novel ways to
+apply it
+
+19
+00:01:17,041 --> 00:01:21,103
+%ah to other data visualization techniques
+to make your %ah life a little bit easier
+
+20
+00:01:22,003 --> 00:01:27,102
+so for size 12 get everybody on a
+baseline of what
+
+21
+00:01:28,002 --> 00:01:31,711
+what exactly what we're talking about I
+mean force layout %um
+
+22
+00:01:31,729 --> 00:01:35,780
+I think you know for most people work I
+would agree that I with the right amount
+
+23
+00:01:35,078 --> 00:01:36,093
+of notes
+
+24
+00:01:36,093 --> 00:01:39,172
+in Europe with the right amount above
+was in your layout
+
+25
+00:01:40,009 --> 00:01:43,700
+%um it's a pleasing way it's a pretty
+way to draw a graph
+
+26
+00:01:43,007 --> 00:01:47,030
+%um it but it works underneath the
+covers is working as a physical
+
+27
+00:01:47,093 --> 00:01:49,121
+simulation so you to these notes
+
+28
+00:01:50,021 --> 00:01:54,430
+is kinda but a charged force are charged
+particle excuse me
+
+29
+00:01:54,619 --> 00:01:58,310
+and they have these charges work to
+
+30
+00:01:58,031 --> 00:02:01,060
+to move to reports or to attract them in
+different ways
+
+31
+00:02:01,006 --> 00:02:05,021
+and the links between these notes
+constrain that movement and the
+
+32
+00:02:05,075 --> 00:02:06,874
+simulation works as a giant
+
+33
+00:02:07,549 --> 00:02:12,120
+loop so %uh each iteration each cycle
+this loop %ah
+
+34
+00:02:12,012 --> 00:02:15,351
+the charges are %ah are im
+
+35
+00:02:15,459 --> 00:02:20,850
+impact the notes they move and visual
+display is updated and that looping just
+
+36
+00:02:20,085 --> 00:02:21,118
+occurs over and over again
+
+37
+00:02:22,018 --> 00:02:25,041
+until it settles into a stable
+configuration
+
+38
+00:02:25,041 --> 00:02:29,042
+%um so that's that's the force layout
+
+39
+00:02:29,042 --> 00:02:32,133
+in a not so that's that's how it usually
+works I'm a big fan of
+
+40
+00:02:33,033 --> 00:02:37,332
+this concept that everything is a remix
+%uh which I first kinda last onto from
+
+41
+00:02:37,629 --> 00:02:38,680
+curry ferguson's
+
+42
+00:02:38,068 --> 00:02:41,657
+a wonderful videos which you haven't
+seen %ah
+
+43
+00:02:42,269 --> 00:02:45,720
+put in your headphones now I'm and so it
+wasn't on ignore me
+
+44
+00:02:45,072 --> 00:02:48,075
+%ah but his his main thesis is that
+
+45
+00:02:48,075 --> 00:02:51,156
+%um in the art in the creative world %ah
+
+46
+00:02:52,056 --> 00:02:55,205
+new works are created by simple
+
+47
+00:02:55,709 --> 00:03:00,120
+modifications of existing work see you
+take you take some existing stuff you
+
+48
+00:03:00,012 --> 00:03:04,044
+copy you transform into you combine %ah at
+a great new pieces
+
+49
+00:03:04,044 --> 00:03:07,078
+and it his his videos are about
+
+50
+00:03:07,078 --> 00:03:11,147
+that occurring in the arts in music and
+and %um
+
+51
+00:03:11,849 --> 00:03:15,000
+literature and the movies by the good
+
+52
+00:03:15,000 --> 00:03:18,061
+is also true and I think we've seen this
+in a number of presentations
+
+53
+00:03:18,061 --> 00:03:21,160
+%ah also true and the data visualization
+world so
+
+54
+00:03:21,709 --> 00:03:25,790
+for this stock would like to provide
+some remix will components
+
+55
+00:03:25,079 --> 00:03:28,136
+%uh little nuggets love love useful
+
+56
+00:03:29,036 --> 00:03:32,195
+you know trickery that that we could
+start thinking about
+
+57
+00:03:32,519 --> 00:03:35,524
+applying to I your own visualizations
+
+58
+00:03:36,019 --> 00:03:40,720
+so that means we're a look at some code
+and of West not a terrible mistake
+
+59
+00:03:40,072 --> 00:03:44,061
+%um so let's start with the force level
+they start out with just
+
+60
+00:03:44,709 --> 00:03:49,060
+looking at just a note so its build-up
+this first probability up a simple no
+
+61
+00:03:49,006 --> 00:03:50,295
+layout indeed three
+
+62
+00:03:50,349 --> 00:03:53,385
+id3 is a powerful tool for this because
+%ah
+
+63
+00:03:53,709 --> 00:03:57,723
+I think we'll see the %ah succinct miss
+that you can write
+
+64
+00:03:57,849 --> 00:04:00,902
+and start using that the force laid out
+Emilie and
+
+65
+00:04:01,379 --> 00:04:04,640
+look the chances are you're five using
+the three in your other stuff so it's a
+
+66
+00:04:04,064 --> 00:04:04,443
+good
+
+67
+00:04:05,019 --> 00:04:08,094
+%uh that it has that and in the talk at
+that you could use
+
+68
+00:04:08,769 --> 00:04:12,788
+%um so like everything in d3 %ah the notes
+
+69
+00:04:12,959 --> 00:04:16,004
+are going to be represented by some data
+so here we have
+
+70
+00:04:16,409 --> 00:04:20,070
+are just are are basic data says an
+array have
+
+71
+00:04:20,007 --> 00:04:23,022
+objects and he's object has some
+attributes here we just have
+
+72
+00:04:23,022 --> 00:04:27,025
+the and the amount that review together
+force layout started
+
+73
+00:04:27,025 --> 00:04:30,049
+it's pretty easy to create a new
+instance a force layout
+
+74
+00:04:30,049 --> 00:04:33,648
+you pass and your data your notes %um
+
+75
+00:04:34,089 --> 00:04:38,800
+as the notes parameter and then you
+start and then
+
+76
+00:04:38,008 --> 00:04:42,077
+%um what talk about this year the second
+you but you also want to just listen to
+
+77
+00:04:43,049 --> 00:04:43,126
+the takeover
+
+78
+00:04:44,026 --> 00:04:47,435
+and that as we'll see allows you access
+to
+
+79
+00:04:47,669 --> 00:04:51,520
+the simulation each iteration each loop
+up that simulation
+
+80
+00:04:51,052 --> 00:04:55,121
+%um an important thing to remember about
+
+81
+00:04:56,021 --> 00:04:59,036
+d3 and in general and and the
+
+82
+00:04:59,036 --> 00:05:02,155
+force led and in particular %uh is that
+
+83
+00:05:02,479 --> 00:05:05,572
+you not constrained by particular Rep
+visual representation right that's one
+
+84
+00:05:06,409 --> 00:05:07,520
+of the big powers on the
+
+85
+00:05:07,052 --> 00:05:09,149
+up the whole idea but that doesn't mean
+you have to do a little bit of extra
+
+86
+00:05:10,049 --> 00:05:11,708
+work to get things going
+
+87
+00:05:12,149 --> 00:05:15,193
+so a couple more pieces I've love of
+code
+
+88
+00:05:15,589 --> 00:05:19,664
+%uh first you have to you have to decide
+what how you want to visualize your
+
+89
+00:05:20,339 --> 00:05:23,347
+a force layout so you have to visualize
+your
+
+90
+00:05:23,419 --> 00:05:27,450
+simulation so in these will just use
+some SVG circles
+
+91
+00:05:27,045 --> 00:05:31,014
+%uh but really your keep in mind that
+could be anything that will see a couple
+
+92
+00:05:31,419 --> 00:05:32,487
+examples of other stuff
+
+93
+00:05:33,099 --> 00:05:36,168
+and right now %uh so yet so you your
+binder data
+
+94
+00:05:36,789 --> 00:05:41,580
+%uh in this case the force nodes to to
+that visual representation
+
+95
+00:05:41,058 --> 00:05:44,112
+and right now we won't use any
+attributes so that that it would issue
+
+96
+00:05:45,012 --> 00:05:46,100
+some static const int for
+
+97
+00:05:47,000 --> 00:05:50,036
+the radius now inside
+
+98
+00:05:50,036 --> 00:05:53,595
+when the for sale starts you get %um
+
+99
+00:05:53,919 --> 00:05:57,020
+your data attributes good injected with
+some
+
+100
+00:05:57,002 --> 00:06:01,006
+variables are some more attributes I if
+they weren't very present
+
+101
+00:06:01,006 --> 00:06:04,089
+and specifically will look at the X&Y
+axes view
+
+102
+00:06:04,089 --> 00:06:08,102
+that body it added to each element have
+your data rate
+
+103
+00:06:09,002 --> 00:06:12,451
+and these represent the current position
+have that
+
+104
+00:06:12,469 --> 00:06:15,514
+a the no did being represented by that
+%um
+
+105
+00:06:15,919 --> 00:06:18,930
+visual at every iteration love the
+
+106
+00:06:19,029 --> 00:06:23,080
+layout so you can use that to position
+
+107
+00:06:23,008 --> 00:06:26,887
+your %um your notes and so this is the
+text function
+
+108
+00:06:26,959 --> 00:06:30,041
+this is a the simplest example the tech
+function this'll get called executed
+
+109
+00:06:30,779 --> 00:06:31,450
+every
+
+110
+00:06:31,045 --> 00:06:34,111
+iteration of the simulation and we can
+use the
+
+111
+00:06:35,011 --> 00:06:38,095
+X&Y from being provided by arse are
+forced layout
+
+112
+00:06:38,095 --> 00:06:41,103
+%um update to move modify the positions of
+the
+
+113
+00:06:42,075 --> 00:06:45,087
+circles the that were using to represent
+
+114
+00:06:45,087 --> 00:06:49,186
+so with all that you get a you cover get
+a couple circles frames
+
+115
+00:06:49,969 --> 00:06:53,740
+%ah would you can you already see that
+this is a nice
+
+116
+00:06:53,074 --> 00:06:57,086
+%ah visual attractive %ah same
+
+117
+00:06:57,086 --> 00:07:00,137
+and it only took a few lines of code to
+do this so
+
+118
+00:07:01,037 --> 00:07:04,626
+what what's going on behind the scenes
+to help make this attractive are
+
+119
+00:07:04,959 --> 00:07:09,130
+are the forces that we've mentioned that
+are working on it to these notes
+
+120
+00:07:09,013 --> 00:07:12,802
+I like to talk about briefly a charged
+and gravity
+
+121
+00:07:12,919 --> 00:07:16,950
+charge %uh I get my guy up charge
+represents
+
+122
+00:07:17,229 --> 00:07:20,246
+%um the the reporter attraction between
+
+123
+00:07:20,399 --> 00:07:23,860
+each node in every other node so %um
+
+124
+00:07:23,086 --> 00:07:27,135
+a more negative values cause the nose to
+repulse from one another
+
+125
+00:07:27,909 --> 00:07:32,380
+and more and less negative and positive
+eyes causing to attract
+
+126
+00:07:32,038 --> 00:07:35,387
+%um so you are gonna make cool stuff like
+that
+
+127
+00:07:35,729 --> 00:07:41,070
+um gravity on like this forever is not
+down to her thats
+
+128
+00:07:41,007 --> 00:07:44,146
+is moreover events described as a
+physical spring
+
+129
+00:07:44,209 --> 00:07:47,740
+spring-like same attached to the center
+%uh the
+
+130
+00:07:47,074 --> 00:07:50,131
+visualizations so a higher gravity I'm
+
+131
+00:07:51,031 --> 00:07:55,430
+constrains it to the center and if you
+let go of gravity you
+
+132
+00:07:55,709 --> 00:07:58,716
+everything flows out the space so I'll
+
+133
+00:07:59,409 --> 00:08:03,830
+just this this beginner introduction
+knowledge to
+
+134
+00:08:03,083 --> 00:08:06,982
+the layout you can start to abuse the
+force and our own
+
+135
+00:08:07,729 --> 00:08:11,773
+in our own way um and the first abuse
+can be
+
+136
+00:08:12,169 --> 00:08:15,830
+%uh the example that irene was talking
+about the
+
+137
+00:08:15,083 --> 00:08:20,107
+the public char and this was first are
+one the first so you know best ways
+
+138
+00:08:21,007 --> 00:08:25,086
+this was shown was a New York Times
+visualization that
+
+139
+00:08:25,149 --> 00:08:28,193
+was looking at the Obama a budget
+proposal
+
+140
+00:08:28,589 --> 00:08:33,250
+and some use in the you know term budget
+a bubble charge us to read mean
+
+141
+00:08:33,025 --> 00:08:38,244
+were using the the node size to
+represent some underlying data about you
+
+142
+00:08:38,469 --> 00:08:41,570
+so how would how we might we
+
+143
+00:08:41,057 --> 00:08:44,061
+be able to implement this type a
+visualization
+
+144
+00:08:44,097 --> 00:08:47,194
+using the knowledge that we have about
+of course layout
+
+145
+00:08:48,094 --> 00:08:51,191
+well the first date is easy weekend and
+city views in some static const int
+
+146
+00:08:52,091 --> 00:08:55,172
+for rads we can scale the size were
+published by
+
+147
+00:08:56,072 --> 00:08:59,130
+the data that is representing you know
+that we wanted to represent on
+
+148
+00:09:00,003 --> 00:09:04,031
+and that gets us halfway there I but
+unfortunately everything's overlapping
+
+149
+00:09:04,058 --> 00:09:05,106
+nothing looks good anymore
+
+150
+00:09:06,006 --> 00:09:09,043
+so what we do the the inside is that we
+can
+
+151
+00:09:09,043 --> 00:09:13,087
+passe function to our charge primary
+doesn't have to be constrained by ice
+
+152
+00:09:13,087 --> 00:09:14,132
+data casa neither
+
+153
+00:09:15,032 --> 00:09:19,048
+and so you can use so this this now
+functional get
+
+154
+00:09:19,048 --> 00:09:22,077
+executed for each node in your layout
+
+155
+00:09:22,077 --> 00:09:26,160
+I at the start up the force a a at that
+start
+
+156
+00:09:27,006 --> 00:09:31,052
+time and so we can use the date itself
+
+157
+00:09:32,006 --> 00:09:36,063
+to scale um are are charged are reported
+value
+
+158
+00:09:36,063 --> 00:09:40,101
+by this the amount that is being
+virtuous and with those two changes
+
+159
+00:09:41,001 --> 00:09:44,048
+we did this nice a
+
+160
+00:09:44,048 --> 00:09:47,055
+affects right each node is is pushing
+away a relative
+
+161
+00:09:48,018 --> 00:09:52,047
+to a its size and the sizes are then
+scaled by the day
+
+162
+00:09:52,047 --> 00:09:56,102
+you're looking for so it was very nice
+
+163
+00:09:57,002 --> 00:10:00,016
+um and this is my this is
+
+164
+00:10:00,016 --> 00:10:04,093
+the the summation of the whole talk
+
+165
+00:10:04,093 --> 00:10:07,118
+so study it %uh
+
+166
+00:10:08,018 --> 00:10:12,059
+I think Mike Bostock a said it very
+eloquently when he said the force lay
+
+167
+00:10:12,059 --> 00:10:13,115
+out there is an implicit way
+
+168
+00:10:14,015 --> 00:10:17,076
+to do position encoding I'm gonna remix
+that
+
+169
+00:10:17,076 --> 00:10:21,077
+quote slightly and say it's a lazy way
+to move notes around
+
+170
+00:10:21,086 --> 00:10:24,137
+but its it's a good kind of lazy so on
+
+171
+00:10:25,037 --> 00:10:28,045
+as we'll see in these these other
+examples where we
+
+172
+00:10:29,017 --> 00:10:33,023
+don't have to care about %uh each
+individual location of that
+
+173
+00:10:33,023 --> 00:10:36,106
+up the no 2 instead impose simple rules
+
+174
+00:10:37,006 --> 00:10:41,013
+in our simulation right and allow the
+notes to find
+
+175
+00:10:41,013 --> 00:10:44,059
+correct positions based on our simple
+rule set that were given a
+
+176
+00:10:44,059 --> 00:10:48,070
+yeah here we're just using that the
+charge the simple rule that charges
+
+177
+00:10:48,007 --> 00:10:49,061
+relative to size
+
+178
+00:10:50,024 --> 00:10:53,055
+and that's all it takes so
+
+179
+00:10:53,055 --> 00:10:57,126
+how ask away abuse this concept to apply
+I'm several forces
+
+180
+00:10:58,026 --> 00:11:01,100
+a yeah ask your nice yeah
+
+181
+00:11:02,000 --> 00:11:06,046
+I like the Darth Vader is the evil lists
+character and yet in the book your the
+
+182
+00:11:06,046 --> 00:11:06,145
+movie
+
+183
+00:11:07,045 --> 00:11:10,066
+a well the the original one here
+
+184
+00:11:10,066 --> 00:11:15,115
+up had this cool feature where but you
+could split apart notes based on some
+
+185
+00:11:16,015 --> 00:11:21,080
+categorical values so here the it's
+mandatory versus discretionary spending
+
+186
+00:11:21,008 --> 00:11:24,057
+which brings us to the idea I love up
+
+187
+00:11:25,029 --> 00:11:28,065
+imposing our our own are applying it
+yeah
+
+188
+00:11:28,065 --> 00:11:31,132
+a imposing our own custom forces onto
+the
+
+189
+00:11:32,032 --> 00:11:35,040
+the notes so I recreated on
+
+190
+00:11:36,012 --> 00:11:39,031
+part serve the the New York Times one
+
+191
+00:11:39,031 --> 00:11:43,033
+a visualization in this up demo for the
+for the
+
+192
+00:11:43,033 --> 00:11:46,078
+blog post about this is gates
+
+193
+00:11:46,078 --> 00:11:50,096
+spending so the Gates Foundation on so
+that time was cut off but
+
+194
+00:11:50,096 --> 00:11:54,162
+and their then the grant sizes that
+they've provided over the years
+
+195
+00:11:55,062 --> 00:11:58,139
+so and in this the CAG or the character
+Oracle
+
+196
+00:11:59,039 --> 00:12:02,048
+slaying we can do is over years and so
+you can see
+
+197
+00:12:03,029 --> 00:12:06,035
+you get this really nice organic a
+feeling
+
+198
+00:12:06,089 --> 00:12:09,115
+and they came back emerge back together
+so it's pretty
+
+199
+00:12:10,015 --> 00:12:14,040
+a and it's useful so how do we do that
+
+200
+00:12:14,004 --> 00:12:17,045
+well here's our our basic take function
+
+201
+00:12:17,081 --> 00:12:20,163
+the whole the whole general idea of
+customs forces
+
+202
+00:12:21,063 --> 00:12:25,069
+in this in this example is we can modify
+this slightly
+
+203
+00:12:25,069 --> 00:12:29,084
+to add enough first day you know a
+function at jacks with your notes
+
+204
+00:12:29,084 --> 00:12:29,175
+somehow
+
+205
+00:12:30,075 --> 00:12:34,087
+and modifies the in position slightly
+
+206
+00:12:34,087 --> 00:12:39,098
+and then use that %uh to then that
+modify position to them
+
+207
+00:12:39,098 --> 00:12:43,134
+position are nuts um so here's an
+example
+
+208
+00:12:44,034 --> 00:12:47,133
+I and we all go through all the code but
+a
+
+209
+00:12:48,033 --> 00:12:51,088
+in this we would have some some way to
+represent
+
+210
+00:12:51,088 --> 00:12:54,144
+the two centers that we want to have a
+rest let up I know it's
+
+211
+00:12:55,044 --> 00:12:59,045
+from left to right and out we
+
+212
+00:12:59,054 --> 00:13:02,107
+grab where you have a function called
+move toward center
+
+213
+00:13:03,007 --> 00:13:07,055
+you know Tagore centre a and this this
+is a function that returns a function
+
+214
+00:13:07,055 --> 00:13:08,056
+will see why
+
+215
+00:13:08,065 --> 00:13:12,194
+in a minute on but so we grabbed are the
+correct
+
+216
+00:13:12,779 --> 00:13:16,300
+the crank sensor for our particular
+nodes by member this is going to get
+
+217
+00:13:16,003 --> 00:13:17,055
+executed each
+
+218
+00:13:17,082 --> 00:13:20,085
+if reach node I'm and then
+
+219
+00:13:21,012 --> 00:13:24,035
+move move that node based on the centers
+
+220
+00:13:24,035 --> 00:13:27,098
+location so that almost works
+
+221
+00:13:27,098 --> 00:13:30,131
+here's our are nodes when we when we buy
+that
+
+222
+00:13:31,031 --> 00:13:34,047
+custom force up we're back to everything
+
+223
+00:13:34,047 --> 00:13:38,062
+its slamming on top of one another so
+what's going on with you
+
+224
+00:13:38,062 --> 00:13:41,141
+we've lost that a nice thing that I just
+that was the whole point in this talk
+
+225
+00:13:42,041 --> 00:13:45,079
+was that we did not care about stuff now
+it seems like we don't care about
+
+226
+00:13:45,079 --> 00:13:49,092
+everyone work position on Alyssa um
+
+227
+00:13:49,092 --> 00:13:53,093
+fortunately we have this this access to
+this
+
+228
+00:13:53,093 --> 00:13:56,116
+predator which is which is indicated as
+alpha
+
+229
+00:13:57,016 --> 00:14:01,038
+arm now we can think of it as a blending
+parameter I that can be used to combine
+
+230
+00:14:01,038 --> 00:14:04,085
+multiple forces are charges on these
+notes
+
+231
+00:14:04,085 --> 00:14:08,086
+and if we it's accessible from the on
+force
+
+232
+00:14:08,095 --> 00:14:12,124
+instance but you can also get to it from
+from the tech function at each iteration
+
+233
+00:14:13,024 --> 00:14:14,106
+inside of an event
+
+234
+00:14:15,006 --> 00:14:18,033
+that's faster and if we were to print
+those out
+
+235
+00:14:18,033 --> 00:14:21,034
+we can see that it starts around .1
+
+236
+00:14:21,043 --> 00:14:24,092
+and gives decker minute slightly every
+iteration
+
+237
+00:14:24,092 --> 00:14:27,158
+above the every loophole that that
+simulation and then what it means
+
+238
+00:14:28,058 --> 00:14:32,757
+um yet what when it gets too up-close
+2.05 it'll end
+
+239
+00:14:33,279 --> 00:14:36,710
+so the numbers are arbitrary but the
+idea is that this is
+
+240
+00:14:36,071 --> 00:14:40,104
+the actual a mechanism by by which the
+force layout is
+
+241
+00:14:41,004 --> 00:14:44,303
+is settling down and two I mean it's
+it's the
+
+242
+00:14:44,339 --> 00:14:47,790
+can be considered a form of simulated
+annealing if if you're into that kinda
+
+243
+00:14:47,079 --> 00:14:47,086
+thing
+
+244
+00:14:48,049 --> 00:14:51,068
+around but but this is what's causing
+the
+
+245
+00:14:51,068 --> 00:14:54,135
+the stabilization of the force layout
+and general
+
+246
+00:14:55,035 --> 00:14:59,082
+so we can use this parameter and here's
+the same code but
+
+247
+00:14:59,082 --> 00:15:02,166
+instead of a so here now we get to pass
+and a
+
+248
+00:15:03,066 --> 00:15:06,080
+the Alpha into our into our move toward
+
+249
+00:15:06,008 --> 00:15:10,055
+category centers and with that small
+tweaks this is why this is why it's a
+
+250
+00:15:11,027 --> 00:15:14,076
+function return to function is because
+so it allows us to pass and
+
+251
+00:15:14,076 --> 00:15:17,143
+variables I without creating a global
+variable we can pass and locally and
+
+252
+00:15:18,043 --> 00:15:18,102
+here
+
+253
+00:15:19,002 --> 00:15:22,071
+and had have access to on in our in our
+closer to here
+
+254
+00:15:22,071 --> 00:15:25,105
+um but with that small tweak veins
+
+255
+00:15:26,005 --> 00:15:29,016
+now work as you expect now wouldn't work
+and not
+
+256
+00:15:29,016 --> 00:15:32,016
+a here when we separate them out
+
+257
+00:15:32,016 --> 00:15:35,089
+love the it the alpha blending allows
+our
+
+258
+00:15:35,089 --> 00:15:38,160
+charges that are now relative to the the
+size of the notes
+
+259
+00:15:39,006 --> 00:15:42,034
+to be blended with our custom force and
+
+260
+00:15:42,088 --> 00:15:45,146
+a works with a lot of nose and works if
+you
+
+261
+00:15:46,046 --> 00:15:50,082
+dragging around though the stick to
+their centers but again we're not
+
+262
+00:15:50,082 --> 00:15:53,089
+were not worried really about where
+
+263
+00:15:53,089 --> 00:15:57,168
+you to these notes goes we just on time
+you guys club here you guys come up here
+
+264
+00:15:58,068 --> 00:16:02,093
+and they figure things out Scott nice
+Tom
+
+265
+00:16:02,093 --> 00:16:05,185
+so let's look at another iteration of
+this
+
+266
+00:16:06,085 --> 00:16:10,151
+i right now the to the reports in the
+charge
+
+267
+00:16:11,051 --> 00:16:14,074
+that's that's a associate with each
+other's noses nice
+
+268
+00:16:14,074 --> 00:16:17,233
+it keeps them the nodes away from one
+another but it
+
+269
+00:16:17,899 --> 00:16:21,540
+it's kind of an eventual process right
+so what if you wanted
+
+270
+00:16:21,054 --> 00:16:24,150
+that to be a more constrained more
+formal
+
+271
+00:16:25,005 --> 00:16:28,032
+looking a distinction on
+
+272
+00:16:28,077 --> 00:16:31,151
+where you we're gonna ever mandeville
+simple collision detection
+
+273
+00:16:32,051 --> 00:16:35,052
+in the same manner so this was dunno I
+like
+
+274
+00:16:35,052 --> 00:16:38,060
+remix in New York Times graphics a
+
+275
+00:16:38,006 --> 00:16:41,068
+and by remix you know where but I
+
+276
+00:16:42,022 --> 00:16:45,026
+a by this is done by another great piece
+
+277
+00:16:45,026 --> 00:16:49,079
+where that were visualizing a the words
+different words said
+
+278
+00:16:49,079 --> 00:16:52,176
+at the different national conventions
+during the elections
+
+279
+00:16:53,076 --> 00:16:56,123
+and I R I implemented again support to
+this
+
+280
+00:16:57,023 --> 00:17:01,061
+and another visualization that just
+looks at a word frequencies and
+
+281
+00:17:01,061 --> 00:17:04,380
+and some books but the the point if it
+is that now
+
+282
+00:17:04,929 --> 00:17:08,270
+from when we move these guys around at
+the there's
+
+283
+00:17:08,027 --> 00:17:12,926
+nice hard-line around each in their
+their clout in there and they're
+
+284
+00:17:13,169 --> 00:17:17,243
+um maintaining that a parameter around
+them
+
+285
+00:17:17,909 --> 00:17:21,260
+today implement this a is the same
+
+286
+00:17:21,026 --> 00:17:24,080
+same idea ennui we use another
+
+287
+00:17:24,008 --> 00:17:27,106
+I'll modification function we can call
+it collide
+
+288
+00:17:28,078 --> 00:17:31,123
+and I just look at well as look at
+pseudocode here on
+
+289
+00:17:32,023 --> 00:17:35,025
+because the it's not difficult was a
+long
+
+290
+00:17:35,025 --> 00:17:38,030
+so again this has been executed for each
+
+291
+00:17:38,003 --> 00:17:41,037
+node on at every cycle
+
+292
+00:17:41,064 --> 00:17:44,140
+%uh that's the that physical simulation
+the nose layout
+
+293
+00:17:45,004 --> 00:17:49,089
+so we just inside this we can loop
+through all the other notes
+
+294
+00:17:50,025 --> 00:17:55,050
+and then do a simple distance check if
+if they're too close based on
+
+295
+00:17:55,005 --> 00:17:58,077
+the the values %uh the data attributes
+that we already know
+
+296
+00:17:59,022 --> 00:18:03,051
+in in those in those nodes that we just
+move them back by half
+
+297
+00:18:03,051 --> 00:18:06,052
+I'll I so we get that I was that
+
+298
+00:18:06,052 --> 00:18:10,089
+slight modification we can get this nice
+look it works with other custom
+
+299
+00:18:10,089 --> 00:18:14,258
+a forces like them always like that and
+it works with
+
+300
+00:18:15,059 --> 00:18:18,070
+any number of nodes that you put into it
+
+301
+00:18:18,007 --> 00:18:22,616
+and this this is a a brute-force
+mechanism the that you can optimize but
+
+302
+00:18:22,679 --> 00:18:27,080
+just a starting point for this kind of a
+visualization
+
+303
+00:18:27,008 --> 00:18:31,008
+you can do core stuff like the the demo
+of putting an invisible node
+
+304
+00:18:31,008 --> 00:18:34,100
+underneath your me your mouse cursor and
+then every time all your other
+
+305
+00:18:35,000 --> 00:18:40,082
+little notes are afraid of it just fun
+to
+
+306
+00:18:40,082 --> 00:18:43,094
+okay oh yeah I want more and
+
+307
+00:18:43,094 --> 00:18:46,116
+there's nothing that mandates that you
+have to move them
+
+308
+00:18:47,016 --> 00:18:50,045
+back by half so if you start increasing
+that
+
+309
+00:18:50,045 --> 00:18:54,058
+that movement you can end up with this
+nice but useless popcorn
+
+310
+00:18:54,058 --> 00:18:57,061
+explosion star colliding with one
+another and
+
+311
+00:18:57,061 --> 00:19:00,149
+getting scared him right away just one
+
+312
+00:19:01,049 --> 00:19:05,065
+I'll okay so let's say I think this is
+Dragon Ball Z not really
+
+313
+00:19:05,065 --> 00:19:08,224
+a Star Wars buzzer as a force
+
+314
+00:19:08,809 --> 00:19:12,080
+a let's add some some links you know
+
+315
+00:19:12,008 --> 00:19:17,032
+finally um with links constrain the
+locations
+
+316
+00:19:17,032 --> 00:19:20,037
+that our notes can move around a
+
+317
+00:19:20,037 --> 00:19:24,062
+II here's Jersey example with the links
+now
+
+318
+00:19:24,062 --> 00:19:27,123
+and as you might expect the three links
+are also represented
+
+319
+00:19:28,023 --> 00:19:32,352
+and data so the minimum two things you
+need in your link data
+
+320
+00:19:32,559 --> 00:19:36,130
+our source and a target which represent
+the two
+
+321
+00:19:36,013 --> 00:19:39,022
+I know is that they're connecting with
+you can do this either via an index into
+
+322
+00:19:40,003 --> 00:19:41,007
+the nodes are a
+
+323
+00:19:41,007 --> 00:19:45,060
+or with the actual notes themselves and
+if you do in an index
+
+324
+00:19:45,006 --> 00:19:48,063
+when they're forced layoff starts
+they'll be translated into
+
+325
+00:19:49,017 --> 00:19:52,036
+the notes themselves which means you
+have access to
+
+326
+00:19:52,036 --> 00:19:55,051
+up both the source and target no data
+
+327
+00:19:55,051 --> 00:19:58,086
+on you need a visualize on some way view
+
+328
+00:19:58,086 --> 00:20:02,095
+if you so choose and so we can draw
+simple line in this example
+
+329
+00:20:02,095 --> 00:20:06,111
+and then like I said you have access to
+the source and destination
+
+330
+00:20:07,011 --> 00:20:11,089
+our source and target a data and you can
+use their X&Y coordinates
+
+331
+00:20:11,089 --> 00:20:14,151
+to position your lines start/stop
+
+332
+00:20:15,051 --> 00:20:18,095
+and so and %uh some the simplest the
+
+333
+00:20:18,095 --> 00:20:21,113
+example I could covers that
+
+334
+00:20:22,013 --> 00:20:26,085
+a forces also have their own are links
+also have their own parameters
+
+335
+00:20:26,085 --> 00:20:29,089
+I'd like to talk about just link
+distance and a
+
+336
+00:20:30,025 --> 00:20:34,029
+as you might guess like distance just
+specifies
+
+337
+00:20:34,029 --> 00:20:37,121
+the early distance the link the the link
+to the links
+
+338
+00:20:38,021 --> 00:20:41,021
+um a based on
+
+339
+00:20:41,021 --> 00:20:44,046
+some value so another insight
+
+340
+00:20:44,046 --> 00:20:47,079
+is you can make that link distance
+
+341
+00:20:47,079 --> 00:20:50,088
+driven by data sorry instead have been a
+constant
+
+342
+00:20:50,799 --> 00:20:53,840
+it can it can be a
+
+343
+00:20:53,084 --> 00:20:56,086
+it can represent some data value and
+this
+
+344
+00:20:56,086 --> 00:20:59,175
+in this case the link a data has some
+value
+
+345
+00:21:00,075 --> 00:21:04,087
+distance that you could use to to expand
+occurred tracked each like
+
+346
+00:21:04,087 --> 00:21:07,165
+at upper legs level and that's
+essentially all I've done in this
+
+347
+00:21:08,065 --> 00:21:09,073
+particular
+
+348
+00:21:09,073 --> 00:21:12,073
+visualization where I was looking that
+um
+
+349
+00:21:12,073 --> 00:21:16,642
+a communities in neighborhoods that have
+a sharp racial divide
+
+350
+00:21:17,299 --> 00:21:20,450
+so here this is Kansas City and each
+
+351
+00:21:20,045 --> 00:21:23,774
+each node is now represented by census
+tract
+
+352
+00:21:24,179 --> 00:21:27,380
+and like I said today you don't you're
+not constrained by
+
+353
+00:21:27,038 --> 00:21:32,065
+bubbles on sand underneath it and so
+each census tract is connected to its
+
+354
+00:21:32,065 --> 00:21:32,148
+neighbors
+
+355
+00:21:33,048 --> 00:21:37,067
+by links an invisible links and that
+this isn't hasn't started yet
+
+356
+00:21:37,067 --> 00:21:41,090
+but the link for those links is relative
+to the proportion
+
+357
+00:21:41,009 --> 00:21:44,048
+up a white and black populations between
+
+358
+00:21:45,029 --> 00:21:48,040
+that mean that neighbor and its neighbor
+you know that that
+
+359
+00:21:48,004 --> 00:21:51,413
+census tract as neighbor so iron
+
+360
+00:21:51,809 --> 00:21:55,140
+if there's a sharp a jump and
+
+361
+00:21:55,014 --> 00:21:58,049
+in white or black population so if you
+go from one
+
+362
+00:21:58,049 --> 00:22:02,110
+census tract is 20 percent white to its
+neighbor be in 20 percent
+
+363
+00:22:03,001 --> 00:22:06,087
+black then then that link will be longer
+
+364
+00:22:06,096 --> 00:22:09,185
+so we start this it it starts to break
+apart
+
+365
+00:22:10,085 --> 00:22:13,119
+at areas where there's this real high
+division
+
+366
+00:22:14,019 --> 00:22:17,067
+and I just I read I is sorry that
+
+367
+00:22:17,067 --> 00:22:20,098
+you understand kinda a
+
+368
+00:22:20,098 --> 00:22:23,146
+the medium emotionally intense a value
+
+369
+00:22:24,046 --> 00:22:28,079
+I want to just kinda look at a way to
+represent how these
+
+370
+00:22:28,079 --> 00:22:31,218
+um a racial boundaries affected the
+
+371
+00:22:31,929 --> 00:22:35,820
+the first that the spatial a very small
+areas in which they occur
+
+372
+00:22:35,082 --> 00:22:38,115
+so are there's that's a bit that's all
+but up
+
+373
+00:22:39,015 --> 00:22:44,021
+underline that we're just a link
+distances you know i trick on their
+
+374
+00:22:44,075 --> 00:22:48,141
+so we can start expanding these concepts
+
+375
+00:22:49,041 --> 00:22:52,095
+a and the first the first and I thought
+have when
+
+376
+00:22:52,095 --> 00:22:55,152
+um I'll kinda discovered the multiple
+centers
+
+377
+00:22:56,052 --> 00:23:00,127
+idea as what have you put it into a
+circle you know her like circles
+
+378
+00:23:01,027 --> 00:23:04,036
+so here's my interactive hair ball that
+I did
+
+379
+00:23:04,036 --> 00:23:07,057
+for a I my the
+
+380
+00:23:07,057 --> 00:23:10,096
+the people that I work with artwork for
+as towers they
+
+381
+00:23:10,096 --> 00:23:14,139
+wanna just got over IRT representation
+of collaboration you know what are the
+
+382
+00:23:15,039 --> 00:23:15,043
+main
+
+383
+00:23:15,079 --> 00:23:18,161
+science stances everybody climbers with
+one another sorry to these
+
+384
+00:23:19,061 --> 00:23:23,095
+these are these groups is a lab each
+node you circle it is a
+
+385
+00:23:23,095 --> 00:23:26,095
+individual in that lab and there's links
+between them
+
+386
+00:23:26,095 --> 00:23:29,099
+based on how many papers are on together
+on
+
+387
+00:23:30,035 --> 00:23:33,049
+so it's fun and it allows for
+exploration again
+
+388
+00:23:33,049 --> 00:23:36,054
+all I'm defining they are the a route
+the cert
+
+389
+00:23:36,054 --> 00:23:40,098
+the center's along a circle right on for
+each slab
+
+390
+00:23:40,098 --> 00:23:43,667
+%uh not to individuals which means we
+can do stuff like
+
+391
+00:23:44,549 --> 00:23:49,790
+reordering the um the circle center
+locations for makes everything move
+
+392
+00:23:49,079 --> 00:23:49,838
+around you know
+
+393
+00:23:50,549 --> 00:23:53,640
+kinda fun you can you can change and if
+you change the
+
+394
+00:23:53,064 --> 00:23:57,091
+a the to a radius that your
+
+395
+00:23:57,091 --> 00:24:01,095
+applying the circle to you can make
+pretty but useless you know obviously
+
+396
+00:24:01,095 --> 00:24:04,191
+artistic a spiral love spiro love
+collaboration
+
+397
+00:24:05,091 --> 00:24:09,230
+s but you get to find out who's who's
+the coolest kid in there
+
+398
+00:24:10,049 --> 00:24:14,950
+India the group there on
+
+399
+00:24:14,095 --> 00:24:18,149
+if if you want you know %uh a little bit
+a mass in turn affect how I feel
+
+400
+00:24:19,049 --> 00:24:22,056
+embarrassed for need in this country
+Myers after their previous stock but
+
+401
+00:24:23,019 --> 00:24:27,045
+da Mac right has a great introduction to
+this a math for pictures which i think
+
+402
+00:24:27,045 --> 00:24:27,090
+is a
+
+403
+00:24:27,009 --> 00:24:30,017
+is a wonderful Explorer introduction to
+using
+
+404
+00:24:30,098 --> 00:24:34,787
+up using this kind of math to generate
+circles and stuff
+
+405
+00:24:35,669 --> 00:24:40,130
+another example up from a website called
+Let's free congress
+
+406
+00:24:40,013 --> 00:24:43,058
+that was used is kinda vague extension a
+
+407
+00:24:43,058 --> 00:24:46,397
+above the idea that are they're looking
+at
+
+408
+00:24:46,919 --> 00:24:50,600
+the small number of people that
+contributed large amounts of money
+
+409
+00:24:50,006 --> 00:24:53,012
+to a to election funding
+
+410
+00:24:54,002 --> 00:24:57,981
+um but these the visual was kind of
+interesting I thought I have recreated
+
+411
+00:24:58,179 --> 00:24:59,200
+so
+
+412
+00:24:59,002 --> 00:25:02,071
+you start out with a bunch of nodes I
+kinda wanted
+
+413
+00:25:02,089 --> 00:25:06,127
+Kill Bill new music to be playing at
+this that's why the color scheme is such
+
+414
+00:25:07,027 --> 00:25:10,075
+um and as the sender node expands
+
+415
+00:25:10,075 --> 00:25:13,136
+the to the the nodes around it are kinda
+repulsed
+
+416
+00:25:14,036 --> 00:25:17,036
+a kinda in a very organic matter right
+
+417
+00:25:17,036 --> 00:25:21,040
+I i like it and then when you come back
+down and they are
+
+418
+00:25:21,004 --> 00:25:24,033
+jump on I'm but this is
+
+419
+00:25:24,069 --> 00:25:27,100
+is trivial now that we know um
+
+420
+00:25:28,000 --> 00:25:32,047
+the previous examples there's all
+building on so we can tell
+
+421
+00:25:32,047 --> 00:25:35,119
+this is a the collision detection is
+isn't in effect here
+
+422
+00:25:36,019 --> 00:25:39,044
+um but it's also just a modification
+
+423
+00:25:39,044 --> 00:25:42,059
+love the um the charge
+
+424
+00:25:42,059 --> 00:25:46,132
+right up for that center know it so you
+get get a value from your slider
+
+425
+00:25:47,032 --> 00:25:50,059
+and then modify your charge function to
+utilize that
+
+426
+00:25:50,059 --> 00:25:54,088
+value and on that's all you need to do
+to create this kind have
+
+427
+00:25:54,088 --> 00:25:59,094
+interesting visual where it was again
+not much work
+
+428
+00:25:59,094 --> 00:26:02,129
+the last I like to look into and death
+is a
+
+429
+00:26:03,029 --> 00:26:07,070
+is a ok I have a deviation for Moretz
+sterner stuff on earth
+
+430
+00:26:07,007 --> 00:26:12,010
+um it's called he's got a again have a
+buzzer cut bread experiments
+
+431
+00:26:13,000 --> 00:26:17,098
+and the idea is um you start out with a
+grade he represented by these
+
+432
+00:26:17,098 --> 00:26:20,667
+these dots are kinda hard to see um by
+the only
+
+433
+00:26:21,549 --> 00:26:26,530
+apply force layout diagram and this case
+is this random data but
+
+434
+00:26:26,053 --> 00:26:30,091
+the they have to offer they have to
+follow two rules one
+
+435
+00:26:30,091 --> 00:26:33,098
+they need to stay on on a grid spot
+
+436
+00:26:34,061 --> 00:26:38,126
+and two um no two nodes can stay on the
+same grid spot
+
+437
+00:26:39,026 --> 00:26:42,026
+so when you started up I
+
+438
+00:26:42,026 --> 00:26:46,095
+grades is kinda very interesting looking
+on patterns them
+
+439
+00:26:46,095 --> 00:26:49,324
+and a you can modify the
+
+440
+00:26:50,179 --> 00:26:54,480
+the are the shape up your grid
+underlined fears
+
+441
+00:26:54,048 --> 00:26:57,089
+here's more just rectangle bird and you
+can see the
+
+442
+00:26:57,089 --> 00:27:00,116
+they kinda move those you ask you know
+
+443
+00:27:01,016 --> 00:27:04,063
+there's little tweaking that goes on as
+it as it sits there
+
+444
+00:27:04,063 --> 00:27:07,104
+and the reason behind that is %uh
+there's actually two nodes
+
+445
+00:27:08,004 --> 00:27:12,070
+associated with each other up with these
+are these points the the
+
+446
+00:27:12,007 --> 00:27:15,089
+from the visual 1 and then this
+underline one that still getting
+
+447
+00:27:16,052 --> 00:27:19,114
+manipulated by the other forces in
+effect so you have these two
+
+448
+00:27:20,014 --> 00:27:23,016
+parameters a are these two roles and
+then
+
+449
+00:27:23,016 --> 00:27:26,111
+and then there's still the charge and
+constraints are being applied
+
+450
+00:27:27,011 --> 00:27:30,014
+to up to these notes
+
+451
+00:27:30,014 --> 00:27:34,021
+so %uh I was the first a nice thought
+when I saw this was
+
+452
+00:27:34,021 --> 00:27:37,107
+so it's you know subway maps and trans
+amass a I kind of wanted a
+
+453
+00:27:38,007 --> 00:27:41,023
+create that for density so here's
+
+454
+00:27:41,023 --> 00:27:44,032
+attend city subways works pretty good
+right
+
+455
+00:27:44,032 --> 00:27:48,101
+I a we don't have we don't have
+
+456
+00:27:49,001 --> 00:27:53,014
+I was further inspired tour and by that
+I mean
+
+457
+00:27:53,014 --> 00:27:56,020
+easy access to data I'll when fathom did
+this
+
+458
+00:27:56,074 --> 00:27:59,077
+this is very similar experiment with the
+the Boston
+
+459
+00:27:59,077 --> 00:28:03,098
+a subway systems here so fat and has a
+great post about
+
+460
+00:28:03,098 --> 00:28:06,104
+how much geography can we get rid of and
+in transit maps in self
+
+461
+00:28:07,058 --> 00:28:10,907
+you know it's a there's a just a thought
+process but I really liked
+
+462
+00:28:11,429 --> 00:28:14,580
+the visual display here so I thought I'd
+retry it
+
+463
+00:28:14,058 --> 00:28:17,267
+with the with this simple
+
+464
+00:28:17,789 --> 00:28:21,130
+more you know a simpler than it really
+define the algorithm that they they use
+
+465
+00:28:21,013 --> 00:28:21,922
+to it
+
+466
+00:28:22,039 --> 00:28:25,390
+to create that visual but now we know
+the
+
+467
+00:28:25,039 --> 00:28:29,698
+the algorithm here so we'll start start
+each node which is this
+
+468
+00:28:30,049 --> 00:28:33,100
+a subway station will start them at
+their geographic
+
+469
+00:28:33,559 --> 00:28:37,480
+you know physical location and then
+we'll let the simulation run
+
+470
+00:28:37,048 --> 00:28:40,113
+and see what happens and its interesting
+
+471
+00:28:41,013 --> 00:28:45,027
+%uh I think it's kind of artistic and
+and fun I don't know about the
+
+472
+00:28:45,027 --> 00:28:45,110
+practically
+
+473
+00:28:46,001 --> 00:28:49,014
+you know being able to read this item
+I'm not from Boston soda
+
+474
+00:28:49,023 --> 00:28:53,592
+doesn't matter to me but yeah
+
+475
+00:28:53,799 --> 00:28:56,880
+but it is a event is Elise the starting
+point is something to
+
+476
+00:28:56,088 --> 00:28:59,164
+to conjure up more ideas and I look
+forward to seeing some others
+
+477
+00:29:00,064 --> 00:29:03,102
+um I've got three more
+
+478
+00:29:04,002 --> 00:29:08,771
+quick examples above up these same
+prince was being applied and and
+
+479
+00:29:08,789 --> 00:29:12,864
+in the real world %uh the first one is a
+notre site but is Barack Obama the
+
+480
+00:29:13,539 --> 00:29:15,730
+president dot com from the
+
+481
+00:29:15,073 --> 00:29:18,108
+the Guardian right at these bow the the
+
+482
+00:29:19,008 --> 00:29:23,103
+balloons themselves are a are being
+controlled by force last so they have a
+
+483
+00:29:24,003 --> 00:29:27,008
+up you know buoyancy kinda concept that
+are making the flow
+
+484
+00:29:27,053 --> 00:29:30,059
+and then if you were to hover over one
+up on you get the same
+
+485
+00:29:30,059 --> 00:29:33,136
+radius expanding concept to to a lesser
+degree that kinda pushes
+
+486
+00:29:34,036 --> 00:29:39,105
+and focuses in on one %uh once the one
+balloon
+
+487
+00:29:39,429 --> 00:29:43,690
+I also have I like this one this the
+save my library by
+
+488
+00:29:43,069 --> 00:29:46,086
+us Sarah Groff plum borough UX the
+
+489
+00:29:46,086 --> 00:29:49,110
+designer I privates for her name and San
+Francisco
+
+490
+00:29:50,001 --> 00:29:53,710
+I I those edges and as a says she's
+gonna find
+
+491
+00:29:53,809 --> 00:29:57,950
+or are making no dove her library her
+books actually contains
+
+492
+00:29:57,095 --> 00:30:00,173
+as is the simple concert again we're
+just using
+
+493
+00:30:01,073 --> 00:30:05,402
+the same idea as multiple Center points
+but now with a lot more from
+
+494
+00:30:06,059 --> 00:30:10,690
+but allows for starting to quantify
+these different categories and
+
+495
+00:30:10,069 --> 00:30:13,121
+in an intuitive way you know the larger
+bubble group is
+
+496
+00:30:14,021 --> 00:30:18,059
+means a larger number books there and
+this again is part of a larger
+
+497
+00:30:18,059 --> 00:30:21,132
+interaction that can be moved around him
+and modified
+
+498
+00:30:22,032 --> 00:30:25,251
+come and explore and finally a
+
+499
+00:30:25,539 --> 00:30:30,840
+discusses a recent a kinda dash for they
+called gravity
+
+500
+00:30:30,084 --> 00:30:33,160
+where and you to these you to these a.m.
+
+501
+00:30:34,006 --> 00:30:37,715
+quite nodes represents a a topic
+
+502
+00:30:38,309 --> 00:30:41,408
+and a the and the bubbles that start
+forming around it
+
+503
+00:30:42,299 --> 00:30:46,010
+are a %uh comments and conversations
+around those topics
+
+504
+00:30:46,001 --> 00:30:49,013
+and the the more the same part is that
+this is real time in it and it gets
+
+505
+00:30:49,013 --> 00:30:50,097
+updated while you watch it but
+
+506
+00:30:50,097 --> 00:30:54,114
+but it's the same affect really the
+notes themselves are part of a force
+
+507
+00:30:55,014 --> 00:30:55,088
+layout
+
+508
+00:30:55,088 --> 00:30:58,089
+and each had the and nodes in a
+particular
+
+509
+00:30:58,089 --> 00:31:01,126
+a category are being drawn organically
+
+510
+00:31:02,026 --> 00:31:05,041
+to to the center which happens to be
+there
+
+511
+00:31:05,041 --> 00:31:08,076
+the right topic no and so
+
+512
+00:31:08,076 --> 00:31:12,355
+you know whether a little bit of a work
+they're allowed they're allowed to have
+
+513
+00:31:13,039 --> 00:31:14,076
+all this flexibility
+
+514
+00:31:14,409 --> 00:31:18,580
+from buyer just to find these the civil
+rule sets
+
+515
+00:31:18,058 --> 00:31:21,062
+so hopefully we've seen a little bit
+behind the magic
+
+516
+00:31:21,062 --> 00:31:25,119
+above the force right this is Frank us
+you know controlling your right and I'm
+
+517
+00:31:26,019 --> 00:31:30,051
+school and a um
+
+518
+00:31:30,051 --> 00:31:33,590
+that was you know I mean point is to
+take away some of the magic behind this
+
+519
+00:31:34,049 --> 00:31:39,060
+I think it's important that on we get to
+see the the how of
+
+520
+00:31:39,159 --> 00:31:43,020
+of summer these you know visualizations
+that were inspired by
+
+521
+00:31:43,002 --> 00:31:47,050
+and and try to the breaking down to
+little components that we can then
+
+522
+00:31:47,005 --> 00:31:50,062
+abuse ourselves so look for your abuses
+
+523
+00:31:51,007 --> 00:31:58,007
+and I'm thanks
+
+524
+00:32:03,669 --> 00:32:10,669
+into question oh yes questions
+
+525
+00:32:33,003 --> 00:32:36,010
+been
+
+526
+00:32:36,001 --> 00:32:40,700
+yeah
+
+527
+00:32:40,799 --> 00:32:44,380
+right yeah now I think I think
+somebody's arced
+
+528
+00:32:44,038 --> 00:32:48,057
+again starting points a I love where
+
+529
+00:32:48,399 --> 00:32:51,700
+the yeah that you concerning coding
+
+530
+00:32:51,007 --> 00:32:56,009
+iron more you can start applying more
+simple rules
+
+531
+00:32:56,072 --> 00:32:59,171
+to these it to to make them more finesse
+um
+
+532
+00:33:00,071 --> 00:33:05,088
+but I i've seen examples I've way I use
+on my ex-wife beam
+
+533
+00:33:05,088 --> 00:33:12,088
+being part of the it yeah
+
+534
+00:33:13,014 --> 00:33:17,051
+and and so is i mean there's yeah so
+were seen examples where
+
+535
+00:33:17,051 --> 00:33:21,052
+well in the Obama the the first one here
+are
+
+536
+00:33:21,052 --> 00:33:24,321
+one-third and talk about something that
+also makes it
+
+537
+00:33:24,789 --> 00:33:29,210
+to a to think get to it something that
+makes it cool as
+
+538
+00:33:29,021 --> 00:33:33,062
+a that there are you there actually
+doubling code in there
+
+539
+00:33:33,062 --> 00:33:37,069
+on the color %uh the
+
+540
+00:33:38,032 --> 00:33:41,036
+when we get to it there
+
+541
+00:33:41,036 --> 00:33:44,062
+I am color shows the amount
+
+542
+00:33:44,062 --> 00:33:48,151
+I love cut increase right says but that
+is kinda also double encoded by
+
+543
+00:33:49,051 --> 00:33:53,460
+it that the layer that it's in so I i
+really like
+
+544
+00:33:53,919 --> 00:33:57,610
+that their they're adding that nuance I
+don't talk about but so
+
+545
+00:33:57,061 --> 00:34:00,083
+in this I guess though the Y is you know
+
+546
+00:34:00,083 --> 00:34:03,922
+at least a hoping that that
+
+547
+00:34:04,669 --> 00:34:08,230
+that separation by keeping vans layered
+
+548
+00:34:08,023 --> 00:34:11,412
+and the implementation others you just
+add another
+
+549
+00:34:11,619 --> 00:34:14,716
+I'll custom force and and I could allow
+for time but
+
+550
+00:34:15,589 --> 00:34:19,060
+the nuances that they have they have the
+
+551
+00:34:19,006 --> 00:34:23,028
+they've multiplied by alpha twice for
+that particular for so
+
+552
+00:34:23,028 --> 00:34:26,097
+the affect the impact love
+
+553
+00:34:26,349 --> 00:34:30,040
+above the tearing is lest then the
+impact of the
+
+554
+00:34:30,004 --> 00:34:34,563
+separation so you you end up you can
+blame them to your own discretion how
+
+555
+00:34:34,599 --> 00:34:36,210
+much you want the
+
+556
+00:34:36,021 --> 00:34:39,210
+wonder affect you know the other if you
+are both sick or whatever
+
+557
+00:34:39,399 --> 00:34:42,494
+I thought that was a nice may have made
+may be an example where this is
+
+558
+00:34:43,349 --> 00:34:50,349
+the starting to occur
+
+559
+00:34:55,053 --> 00:34:56,652
+or
+
+560
+00:34:57,129 --> 00:35:03,030
+were hmm where
+
+561
+00:35:03,003 --> 00:35:08,062
+or court yes
+
+562
+00:35:08,062 --> 00:35:11,076
+yeah I V cool from and im in my
+
+563
+00:35:11,076 --> 00:35:14,094
+my hair ball are those links art
+
+564
+00:35:14,094 --> 00:35:17,143
+impacting the the locations of the nodes
+
+565
+00:35:18,043 --> 00:35:21,104
+but but yeah i certainly a and an easy
+
+566
+00:35:22,004 --> 00:35:25,070
+optimization to that would sit to be
+able to make him the order of those
+
+567
+00:35:25,007 --> 00:35:26,014
+knows more meaningful and thats
+
+568
+00:35:27,004 --> 00:35:31,007
+the reordering was was an attempt at
+that but utilizing
+
+569
+00:35:31,007 --> 00:35:34,012
+the data the the date inherent in that
+
+570
+00:35:34,075 --> 00:35:37,079
+and that is that would be much more
+powerful where to to
+
+571
+00:35:38,015 --> 00:35:44,057
+a start looking at the process
+
+572
+00:35:44,057 --> 00:35:48,155
+or a
+
+573
+00:35:49,055 --> 00:35:53,110
+well i think thats depend on the
+technology like we've seen
+
+574
+00:35:54,001 --> 00:35:57,023
+um this same can bog down after
+
+575
+00:35:57,032 --> 00:36:02,068
+in SVG after a couple hundred nodes and
+it did send certainly seems I'm not an
+
+576
+00:36:02,068 --> 00:36:05,095
+expert but seems to be depended on the
+browser you're looking at 2i mean
+
+577
+00:36:05,095 --> 00:36:08,141
+I I'm doing this in Chrome for a reason
+
+578
+00:36:09,041 --> 00:36:12,054
+now most it is one flies well and at
+least
+
+579
+00:36:12,054 --> 00:36:15,093
+earlier iterations a Firefox and so the
+other browsers
+
+580
+00:36:15,093 --> 00:36:20,160
+um I know there've been experiments and
+using cameras and I think that the
+
+581
+00:36:21,006 --> 00:36:22,035
+performance can be in
+
+582
+00:36:22,089 --> 00:36:25,095
+improved after you get a certain head to
+a certain threshold um
+
+583
+00:36:26,049 --> 00:36:29,116
+but I might be incorrect about that %uh
+the stock has a
+
+584
+00:36:30,016 --> 00:36:33,047
+air example if comparing SPG and
+
+585
+00:36:33,047 --> 00:36:36,060
+and canvas imitations not the force
+layout but a bunch of
+
+586
+00:36:36,006 --> 00:36:39,040
+notes moving around in there a here's
+
+587
+00:36:39,094 --> 00:36:42,189
+I they they do work in a similar spot
+efficiency at
+
+588
+00:36:43,089 --> 00:36:46,096
+at certain numbers but that certain
+numbers for
+
+589
+00:36:47,059 --> 00:36:50,141
+after
+
+590
+00:36:51,041 --> 00:36:54,053
+you her
+
+"thank"	14.012
+"you"	15.012666666666666
+"lineup"	16.013333333333332
+"easy"	17.014
+"Massa"	17.560125
+"%uh"	18.10625
+"let's"	18.652375
+"get"	19.1985
+"down"	19.744625
+"to"	20.29075
+"something"	20.836875
+"more"	17.014
+"difficult"	18.470333333333333
+"yeah"	19.926666666666666
+"%uh"	21.509
+"my"	21.851666666666667
+"name's"	22.194333333333333
+"Jim"	22.537
+"blame"	22.879666666666665
+"him"	23.22233333333333
+"%um"	23.564999999999998
+"like"	23.907666666666664
+"she"	24.25033333333333
+"said"	21.509
+"%uh"	25.349
+"my"	25.974625
+"day"	26.60025
+"job"	27.225875
+"is"	27.851499999999998
+"had"	28.477124999999997
+"a"	29.102749999999997
+"biomedical"	29.728374999999996
+"research"	25.349
+"facility"	26.183166666666665
+"for"	27.017333333333333
+"doing"	27.8515
+"that"	28.68566666666667
+"genomic"	29.519833333333338
+"analysis"	30.849
+"on"	31.3345
+"worms"	31.082
+"and"	31.584714285714288
+"flies"	32.087428571428575
+"in"	32.59014285714286
+"other"	33.09285714285714
+"sciences"	33.595571428571425
+"stuff"	34.09828571428571
+"but"	31.082
+"%uh"	35.339
+"for"	35.70355555555555
+"fun"	36.06811111111111
+"over"	36.43266666666666
+"I"	36.79722222222222
+"like"	37.16177777777777
+"to"	37.526333333333326
+"look"	37.89088888888888
+"at"	38.255444444444436
+"%uh"	38.062
+"data"	38.72866666666666
+"visualizations"	39.395333333333326
+"and"	40.06199999999999
+"an"	40.728666666666655
+"interactive"	41.39533333333332
+"once"	38.062
+"and"	38.72866666666666
+"today"	39.395333333333326
+"I'd"	40.06199999999999
+"like"	40.728666666666655
+"to"	41.39533333333332
+"%uh"	42.062
+"talk"	42.641571428571424
+"about"	43.22114285714285
+"that"	43.80071428571428
+"the"	44.380285714285705
+"force"	44.95985714285713
+"layout"	45.53942857142856
+"Coloma"	42.062
+"more"	43.41433333333333
+"detail"	44.766666666666666
+"and"	47.019
+"and"	47.35611111111111
+"how"	47.693222222222225
+"to"	48.03033333333334
+"%uh"	48.36744444444445
+"I"	48.704555555555565
+"use"	49.04166666666668
+"it"	49.37877777777779
+"and"	49.715888888888905
+"in"	50.053
+"a"	50.63142857142857
+"non"	51.209857142857146
+"traditional"	51.78828571428572
+"manner"	52.366714285714295
+"some"	52.94514285714287
+"so"	53.523571428571444
+"we're"	50.053
+"gonna"	50.63142857142857
+"be"	51.209857142857146
+"abusing"	51.78828571428572
+"the"	52.366714285714295
+"force"	52.94514285714287
+"they"	53.523571428571444
+"are"	54.579
+"typically"	54.617999999999995
+"here's"	55.359
+"%ah"	55.7241
+"here's"	56.0892
+"a"	56.454299999999996
+"you"	56.819399999999995
+"know"	57.18449999999999
+"we"	57.54959999999999
+"just"	57.91469999999999
+"saw"	58.27979999999999
+"%ah"	58.644899999999986
+"example"	59.001
+"have"	59.8032
+"your"	60.605399999999996
+"traditional"	61.407599999999995
+"course"	62.209799999999994
+"layout"	59.001
+"andy"	59.8032
+"is"	60.605399999999996
+"this"	61.407599999999995
+"is"	62.209799999999994
+"typically"	63.012
+"utilize"	63.6134
+"for"	64.2148
+"your"	64.8162
+"social"	65.4176
+"network"	63.012
+"or"	64.01433333333334
+"your"	65.01666666666668
+"congress'"	66.019
+"voting"	66.45828571428572
+"on"	66.89757142857144
+"the"	67.33685714285716
+"same"	67.77614285714287
+"stuff"	68.21542857142859
+"you"	68.6547142857143
+"know"	66.019
+"network"	66.78775
+"based"	67.5565
+"stuff"	68.32525
+"%um"	69.094
+"but"	69.5461111111111
+"we're"	69.99822222222221
+"going"	70.45033333333332
+"to"	70.90244444444443
+"abuse"	71.35455555555554
+"this"	71.80666666666664
+"force"	72.25877777777775
+"a"	72.71088888888886
+"little"	69.094
+"bit"	71.1285
+"and"	74.009
+"come"	74.434125
+"up"	74.85924999999999
+"with"	75.28437499999998
+"some"	75.70949999999998
+"novel"	76.13462499999997
+"ways"	76.55974999999997
+"to"	76.98487499999996
+"apply"	74.009
+"it"	75.70949999999999
+"%ah"	77.041
+"to"	77.71799999999999
+"other"	78.39499999999998
+"data"	79.07199999999997
+"visualization"	79.74899999999997
+"techniques"	80.42599999999996
+"to"	77.041
+"make"	77.49233333333333
+"your"	77.94366666666667
+"%ah"	78.39500000000001
+"life"	78.84633333333335
+"a"	79.29766666666669
+"little"	79.74900000000002
+"bit"	80.20033333333336
+"easier"	80.6516666666667
+"so"	82.003
+"for"	82.640375
+"size"	83.27775000000001
+"12"	83.91512500000002
+"get"	84.55250000000002
+"everybody"	85.18987500000003
+"on"	85.82725000000003
+"a"	86.46462500000004
+"baseline"	82.003
+"of"	83.70266666666667
+"what"	85.40233333333335
+"what"	88.002
+"exactly"	88.53185714285713
+"what"	89.06171428571427
+"we're"	89.59157142857141
+"talking"	90.12142857142855
+"about"	90.65128571428569
+"I"	91.18114285714283
+"mean"	88.002
+"force"	88.92925
+"layout"	89.8565
+"%um"	90.78375
+"I"	91.729
+"think"	92.17911111111111
+"you"	92.62922222222223
+"know"	93.07933333333334
+"for"	93.52944444444445
+"most"	93.97955555555556
+"people"	94.42966666666668
+"work"	94.87977777777779
+"I"	95.3298888888889
+"would"	91.729
+"agree"	92.235375
+"that"	92.74175000000001
+"I"	93.24812500000002
+"with"	93.75450000000002
+"the"	94.26087500000003
+"right"	94.76725000000003
+"amount"	95.27362500000004
+"of"	95.078
+"notes"	95.5855
+"in"	96.093
+"Europe"	96.53285714285714
+"with"	96.97271428571428
+"the"	97.41257142857141
+"right"	97.85242857142855
+"amount"	98.29228571428568
+"above"	98.73214285714282
+"was"	96.093
+"in"	96.86275
+"your"	97.63250000000001
+"layout"	98.40225000000001
+"%um"	100.009
+"it's"	100.470375
+"a"	100.93175000000001
+"pleasing"	101.39312500000001
+"way"	101.85450000000002
+"it's"	102.31587500000002
+"a"	102.77725000000002
+"pretty"	103.23862500000003
+"way"	100.009
+"to"	100.7472
+"draw"	101.48540000000001
+"a"	102.22360000000002
+"graph"	102.96180000000003
+"%um"	103.007
+"it"	103.58171428571428
+"but"	104.15642857142856
+"it"	104.73114285714284
+"works"	105.30585714285712
+"underneath"	105.8805714285714
+"the"	106.45528571428568
+"covers"	103.007
+"is"	103.67750000000001
+"working"	104.34800000000001
+"as"	105.01850000000002
+"a"	105.68900000000002
+"physical"	106.35950000000003
+"simulation"	107.093
+"so"	107.431
+"you"	107.76899999999999
+"to"	108.10699999999999
+"these"	108.44499999999998
+"notes"	108.78299999999997
+"is"	110.021
+"kinda"	110.572125
+"but"	111.12325
+"a"	111.674375
+"charged"	112.2255
+"force"	112.776625
+"are"	113.32775
+"charged"	113.878875
+"particle"	110.021
+"excuse"	111.49066666666667
+"me"	112.96033333333334
+"and"	114.619
+"they"	115.14628571428571
+"have"	115.67357142857142
+"these"	116.20085714285713
+"charges"	116.72814285714284
+"work"	117.25542857142855
+"to"	117.78271428571426
+"to"	118.031
+"move"	118.36755555555555
+"to"	118.7041111111111
+"reports"	119.04066666666665
+"or"	119.3772222222222
+"to"	119.71377777777775
+"attract"	120.0503333333333
+"them"	120.38688888888885
+"in"	120.7234444444444
+"different"	118.031
+"ways"	119.5455
+"and"	121.006
+"the"	121.67516666666667
+"links"	122.34433333333334
+"between"	123.01350000000001
+"these"	123.68266666666668
+"notes"	124.35183333333335
+"constrain"	121.006
+"that"	121.809
+"movement"	122.612
+"and"	123.41499999999999
+"the"	124.21799999999999
+"simulation"	125.075
+"works"	125.4348
+"as"	125.79459999999999
+"a"	126.15439999999998
+"giant"	126.51419999999997
+"loop"	127.549
+"so"	128.202
+"%uh"	128.855
+"each"	129.50799999999998
+"iteration"	130.16099999999997
+"each"	130.81399999999996
+"cycle"	131.46699999999996
+"this"	127.549
+"loop"	129.07266666666666
+"%ah"	130.59633333333332
+"the"	132.012
+"charges"	132.5685
+"are"	133.125
+"%ah"	133.6815
+"are"	134.238
+"im"	134.7945
+"impact"	135.459
+"the"	136.22914285714285
+"notes"	136.9992857142857
+"they"	137.76942857142853
+"move"	138.53957142857138
+"and"	139.30971428571422
+"visual"	140.07985714285707
+"display"	135.459
+"is"	136.22914285714285
+"updated"	136.9992857142857
+"and"	137.76942857142853
+"that"	138.53957142857138
+"looping"	139.30971428571422
+"just"	140.07985714285707
+"occurs"	140.085
+"over"	140.29160000000002
+"and"	140.49820000000003
+"over"	140.70480000000003
+"again"	140.91140000000004
+"until"	142.018
+"it"	142.52183333333335
+"settles"	143.02566666666667
+"into"	143.52949999999998
+"a"	144.0333333333333
+"stable"	144.53716666666662
+"configuration"	142.018
+"%um"	145.041
+"so"	145.6125714285714
+"that's"	146.18414285714283
+"that's"	146.75571428571425
+"the"	147.32728571428567
+"force"	147.89885714285708
+"layout"	148.4704285714285
+"in"	149.042
+"a"	149.38544444444446
+"not"	149.72888888888892
+"so"	150.07233333333338
+"that's"	150.41577777777783
+"that's"	150.7592222222223
+"how"	151.10266666666675
+"it"	151.4461111111112
+"usually"	151.78955555555567
+"works"	149.042
+"I'm"	149.55716666666666
+"a"	150.07233333333332
+"big"	150.58749999999998
+"fan"	151.10266666666664
+"of"	151.6178333333333
+"this"	153.033
+"concept"	153.64714285714285
+"that"	154.26128571428572
+"everything"	154.87542857142859
+"is"	155.48957142857145
+"a"	156.10371428571432
+"remix"	156.71785714285718
+"%uh"	153.033
+"which"	153.57037499999998
+"I"	154.10774999999998
+"first"	154.64512499999998
+"kinda"	155.18249999999998
+"last"	155.71987499999997
+"onto"	156.25724999999997
+"from"	156.79462499999997
+"curry"	157.629
+"ferguson's"	158.15449999999998
+"a"	158.068
+"wonderful"	158.66616666666667
+"videos"	159.26433333333333
+"which"	159.86249999999998
+"you"	160.46066666666664
+"haven't"	161.0588333333333
+"seen"	158.068
+"%ah"	159.8625
+"put"	162.269
+"in"	162.65244444444446
+"your"	163.0358888888889
+"headphones"	163.41933333333336
+"now"	163.8027777777778
+"I'm"	164.18622222222226
+"and"	164.5696666666667
+"so"	164.95311111111116
+"it"	165.3365555555556
+"wasn't"	162.269
+"on"	163.13175
+"ignore"	163.99450000000002
+"me"	164.85725000000002
+"%ah"	165.072
+"but"	165.447375
+"his"	165.82274999999998
+"his"	166.19812499999998
+"main"	166.57349999999997
+"thesis"	166.94887499999996
+"is"	167.32424999999995
+"that"	167.69962499999994
+"%um"	168.075
+"in"	168.41733333333332
+"the"	168.75966666666665
+"art"	169.10199999999998
+"in"	169.4443333333333
+"the"	169.78666666666663
+"creative"	170.12899999999996
+"world"	170.4713333333333
+"%ah"	170.81366666666662
+"new"	172.056
+"works"	172.58083333333335
+"are"	173.10566666666668
+"created"	173.6305
+"by"	174.15533333333335
+"simple"	174.68016666666668
+"modifications"	175.709
+"of"	176.44416666666666
+"existing"	177.17933333333332
+"work"	177.91449999999998
+"see"	178.64966666666663
+"you"	179.3848333333333
+"take"	175.709
+"you"	176.33914285714286
+"take"	176.96928571428572
+"some"	177.59942857142858
+"existing"	178.22957142857143
+"stuff"	178.8597142857143
+"you"	179.48985714285715
+"copy"	180.012
+"you"	180.516
+"transform"	181.01999999999998
+"into"	181.52399999999997
+"you"	182.02799999999996
+"combine"	182.53199999999995
+"%ah"	183.03599999999994
+"at"	183.53999999999994
+"a"	180.012
+"great"	181.02
+"new"	182.02800000000002
+"pieces"	183.03600000000003
+"and"	184.044
+"it"	184.4774285714286
+"his"	184.91085714285717
+"his"	185.34428571428575
+"videos"	185.77771428571432
+"are"	186.2111428571429
+"about"	186.64457142857148
+"that"	187.078
+"occurring"	187.586625
+"in"	188.09525
+"the"	188.603875
+"arts"	189.11249999999998
+"in"	189.62112499999998
+"music"	190.12974999999997
+"and"	190.63837499999997
+"and"	187.078
+"%um"	189.1125
+"literature"	191.849
+"and"	192.29914285714284
+"the"	192.7492857142857
+"movies"	193.19942857142854
+"by"	193.6495714285714
+"the"	194.09971428571424
+"good"	194.5498571428571
+"is"	195.0
+"also"	195.3401111111111
+"true"	195.6802222222222
+"and"	196.0203333333333
+"I"	196.3604444444444
+"think"	196.7005555555555
+"we've"	197.0406666666666
+"seen"	197.3807777777777
+"this"	197.7208888888888
+"in"	195.0
+"a"	195.6122
+"number"	196.2244
+"of"	196.8366
+"presentations"	197.4488
+"%ah"	198.061
+"also"	198.5037142857143
+"true"	198.94642857142858
+"and"	199.38914285714287
+"the"	199.83185714285716
+"data"	200.27457142857145
+"visualization"	200.71728571428574
+"world"	198.061
+"so"	199.6105
+"for"	201.709
+"this"	202.292
+"stock"	202.875
+"would"	203.458
+"like"	204.041
+"to"	204.624
+"provide"	205.207
+"some"	201.709
+"remix"	202.72925
+"will"	203.7495
+"components"	204.76975000000002
+"%uh"	205.079
+"little"	205.5885
+"nuggets"	206.098
+"love"	206.60750000000002
+"love"	207.11700000000002
+"useful"	207.62650000000002
+"you"	209.036
+"know"	209.48728571428572
+"trickery"	209.93857142857144
+"that"	210.38985714285715
+"that"	210.84114285714287
+"we"	211.2924285714286
+"could"	211.7437142857143
+"start"	209.036
+"thinking"	210.089
+"about"	211.142
+"applying"	212.519
+"to"	213.01983333333334
+"I"	213.52066666666667
+"your"	214.0215
+"own"	214.52233333333334
+"visualizations"	215.02316666666667
+"so"	216.019
+"that"	216.54133333333334
+"means"	217.06366666666668
+"we're"	217.586
+"a"	218.10833333333335
+"look"	218.63066666666668
+"at"	219.15300000000002
+"some"	219.67533333333336
+"code"	220.1976666666667
+"and"	216.019
+"of"	216.69057142857145
+"West"	217.36214285714289
+"not"	218.03371428571432
+"a"	218.70528571428576
+"terrible"	219.3768571428572
+"mistake"	220.04842857142864
+"%um"	220.072
+"so"	220.570625
+"let's"	221.06925
+"start"	221.56787500000002
+"with"	222.06650000000002
+"the"	222.56512500000002
+"force"	223.06375000000003
+"level"	223.56237500000003
+"they"	220.072
+"start"	220.8698
+"out"	221.6676
+"with"	222.4654
+"just"	223.26319999999998
+"looking"	224.709
+"at"	225.25287500000002
+"just"	225.79675000000003
+"a"	226.34062500000005
+"note"	226.88450000000006
+"so"	227.42837500000007
+"its"	227.9722500000001
+"build-up"	228.5161250000001
+"this"	224.709
+"first"	225.33057142857143
+"probability"	225.95214285714286
+"up"	226.5737142857143
+"a"	227.19528571428572
+"simple"	227.81685714285715
+"no"	228.43842857142857
+"layout"	229.006
+"indeed"	229.43566666666666
+"three"	229.86533333333333
+"id3"	230.349
+"is"	230.7285
+"a"	231.108
+"powerful"	231.4875
+"tool"	231.86700000000002
+"for"	232.24650000000003
+"this"	232.62600000000003
+"because"	233.00550000000004
+"%ah"	230.349
+"I"	233.709
+"think"	234.21075000000002
+"we'll"	234.71250000000003
+"see"	235.21425000000005
+"the"	235.71600000000007
+"%ah"	236.21775000000008
+"succinct"	236.7195000000001
+"miss"	237.2212500000001
+"that"	233.709
+"you"	234.7125
+"can"	235.716
+"write"	236.7195
+"and"	237.849
+"start"	238.23062499999997
+"using"	238.61224999999996
+"that"	238.99387499999995
+"the"	239.37549999999993
+"force"	239.75712499999992
+"laid"	240.1387499999999
+"out"	240.5203749999999
+"Emilie"	237.849
+"and"	239.3755
+"look"	241.379
+"the"	241.84485714285714
+"chances"	242.31071428571428
+"are"	242.77657142857143
+"you're"	243.24242857142858
+"five"	243.70828571428572
+"using"	244.17414285714287
+"the"	241.379
+"three"	241.74133333333333
+"in"	242.10366666666667
+"your"	242.466
+"other"	242.82833333333335
+"stuff"	243.1906666666667
+"so"	243.55300000000003
+"it's"	243.91533333333336
+"a"	244.2776666666667
+"good"	244.064
+"%uh"	245.019
+"that"	245.3265
+"it"	245.63400000000001
+"has"	245.94150000000002
+"that"	246.24900000000002
+"and"	246.55650000000003
+"in"	246.86400000000003
+"the"	247.17150000000004
+"talk"	247.47900000000004
+"at"	247.78650000000005
+"that"	245.019
+"you"	245.78775000000002
+"could"	246.55650000000003
+"use"	247.32525000000004
+"%um"	248.769
+"so"	249.21555555555557
+"like"	249.66211111111113
+"everything"	250.1086666666667
+"in"	250.55522222222226
+"d3"	251.00177777777782
+"%ah"	251.44833333333338
+"the"	251.89488888888894
+"notes"	252.3414444444445
+"are"	252.959
+"going"	253.339625
+"to"	253.72025000000002
+"be"	254.10087500000003
+"represented"	254.48150000000004
+"by"	254.86212500000005
+"some"	255.24275000000006
+"data"	255.62337500000007
+"so"	252.959
+"here"	253.72025000000002
+"we"	254.48150000000004
+"have"	255.24275000000006
+"are"	256.409
+"just"	256.866625
+"are"	257.32425
+"are"	257.781875
+"basic"	258.2395
+"data"	258.697125
+"says"	259.15475000000004
+"an"	259.61237500000004
+"array"	256.409
+"have"	258.2395
+"objects"	260.007
+"and"	260.5095
+"he's"	261.012
+"object"	261.5145
+"has"	262.017
+"some"	262.5195
+"attributes"	260.007
+"here"	260.61
+"we"	261.213
+"just"	261.81600000000003
+"have"	262.41900000000004
+"the"	263.022
+"and"	263.59385714285713
+"the"	264.1657142857143
+"amount"	264.7375714285714
+"that"	265.30942857142855
+"review"	265.8812857142857
+"together"	266.45314285714284
+"force"	263.022
+"layout"	264.35633333333334
+"started"	265.6906666666667
+"it's"	267.025
+"pretty"	267.457
+"easy"	267.889
+"to"	268.321
+"create"	268.75300000000004
+"a"	269.18500000000006
+"new"	269.6170000000001
+"instance"	267.025
+"a"	267.78099999999995
+"force"	268.5369999999999
+"layout"	269.2929999999999
+"you"	270.049
+"pass"	270.498875
+"and"	270.94875
+"your"	271.39862500000004
+"data"	271.84850000000006
+"your"	272.2983750000001
+"notes"	272.7482500000001
+"%um"	273.1981250000001
+"as"	274.089
+"the"	274.762
+"notes"	275.435
+"parameter"	276.108
+"and"	276.781
+"then"	277.454
+"you"	278.127
+"start"	274.089
+"and"	275.65933333333334
+"then"	277.2296666666667
+"%um"	278.008
+"what"	278.516625
+"talk"	279.02524999999997
+"about"	279.53387499999997
+"this"	280.04249999999996
+"year"	280.55112499999996
+"the"	281.05974999999995
+"second"	281.56837499999995
+"you"	278.008
+"but"	278.4601111111111
+"you"	278.91222222222217
+"also"	279.36433333333326
+"want"	279.81644444444436
+"to"	280.26855555555545
+"just"	280.72066666666655
+"listen"	281.17277777777764
+"to"	281.62488888888873
+"the"	283.049
+"takeover"	283.0875
+"and"	284.026
+"that"	284.452125
+"as"	284.87825000000004
+"we'll"	285.30437500000005
+"see"	285.73050000000006
+"allows"	286.1566250000001
+"you"	286.5827500000001
+"access"	287.0088750000001
+"to"	284.026
+"the"	287.669
+"simulation"	288.31083333333333
+"each"	288.9526666666667
+"iteration"	289.59450000000004
+"each"	290.2363333333334
+"loop"	290.87816666666674
+"up"	287.669
+"that"	288.95266666666663
+"simulation"	290.2363333333333
+"%um"	291.052
+"an"	291.6332857142857
+"important"	292.2145714285714
+"thing"	292.7958571428571
+"to"	293.37714285714276
+"remember"	293.95842857142844
+"about"	294.5397142857141
+"d3"	296.021
+"and"	296.4517142857143
+"in"	296.88242857142853
+"general"	297.3131428571428
+"and"	297.74385714285705
+"and"	298.1745714285713
+"the"	298.60528571428557
+"force"	299.036
+"led"	299.425875
+"and"	299.81575000000004
+"in"	300.20562500000005
+"particular"	300.5955000000001
+"%uh"	300.9853750000001
+"is"	301.3752500000001
+"that"	301.7651250000001
+"you"	302.479
+"not"	302.9945
+"constrained"	303.51
+"by"	304.02549999999997
+"particular"	304.54099999999994
+"Rep"	305.0564999999999
+"visual"	302.479
+"representation"	303.0976
+"right"	303.7162
+"that's"	304.33480000000003
+"one"	304.95340000000004
+"of"	306.409
+"the"	306.59416666666664
+"big"	306.7793333333333
+"powers"	306.96449999999993
+"on"	307.1496666666666
+"the"	307.3348333333332
+"up"	307.052
+"the"	307.314125
+"whole"	307.57624999999996
+"idea"	307.8383749999999
+"but"	308.1004999999999
+"that"	308.36262499999987
+"doesn't"	308.62474999999984
+"mean"	308.8868749999998
+"you"	307.052
+"have"	307.285
+"to"	307.51800000000003
+"do"	307.75100000000003
+"a"	307.98400000000004
+"little"	308.21700000000004
+"bit"	308.45000000000005
+"of"	308.68300000000005
+"extra"	308.91600000000005
+"work"	310.049
+"to"	310.38079999999997
+"get"	310.71259999999995
+"things"	311.04439999999994
+"going"	311.3761999999999
+"so"	312.149
+"a"	312.5295
+"couple"	312.90999999999997
+"more"	313.29049999999995
+"pieces"	313.67099999999994
+"I've"	314.0514999999999
+"love"	314.4319999999999
+"of"	314.8124999999999
+"code"	312.149
+"%uh"	315.589
+"first"	316.0417777777778
+"you"	316.49455555555556
+"have"	316.94733333333335
+"to"	317.40011111111113
+"you"	317.8528888888889
+"have"	318.3056666666667
+"to"	318.7584444444445
+"decide"	319.21122222222226
+"what"	315.589
+"how"	316.17114285714285
+"you"	316.7532857142857
+"want"	317.33542857142857
+"to"	317.9175714285714
+"visualize"	318.4997142857143
+"your"	319.08185714285713
+"a"	320.339
+"force"	320.715
+"layout"	321.09099999999995
+"so"	321.4669999999999
+"you"	321.8429999999999
+"have"	322.2189999999999
+"to"	322.59499999999986
+"visualize"	322.97099999999983
+"your"	320.339
+"simulation"	323.419
+"so"	323.99485714285714
+"in"	324.5707142857143
+"these"	325.14657142857146
+"will"	325.7224285714286
+"just"	326.2982857142858
+"use"	326.87414285714294
+"some"	323.419
+"SVG"	324.76266666666663
+"circles"	326.1063333333333
+"%uh"	327.045
+"but"	327.541125
+"really"	328.03725000000003
+"your"	328.53337500000004
+"keep"	329.02950000000004
+"in"	329.52562500000005
+"mind"	330.02175000000005
+"that"	330.51787500000006
+"could"	327.045
+"be"	327.541125
+"anything"	328.03725000000003
+"that"	328.53337500000004
+"will"	329.02950000000004
+"see"	329.52562500000005
+"a"	330.02175000000005
+"couple"	330.51787500000006
+"examples"	331.419
+"of"	331.686
+"other"	331.953
+"stuff"	332.21999999999997
+"and"	333.099
+"right"	333.44
+"now"	333.781
+"%uh"	334.122
+"so"	334.463
+"yet"	334.80400000000003
+"so"	335.14500000000004
+"you"	335.48600000000005
+"your"	335.82700000000006
+"binder"	333.099
+"data"	334.6335
+"%uh"	336.789
+"in"	337.3213333333333
+"this"	337.85366666666664
+"case"	338.38599999999997
+"the"	338.9183333333333
+"force"	339.4506666666666
+"nodes"	339.98299999999995
+"to"	340.5153333333333
+"to"	341.0476666666666
+"that"	336.789
+"visual"	338.38599999999997
+"representation"	339.98299999999995
+"and"	341.058
+"right"	341.4942857142857
+"now"	341.9305714285714
+"we"	342.3668571428571
+"won't"	342.8031428571428
+"use"	343.2394285714285
+"any"	343.6757142857142
+"attributes"	341.058
+"so"	341.4942857142857
+"that"	341.9305714285714
+"that"	342.3668571428571
+"it"	342.8031428571428
+"would"	343.2394285714285
+"issue"	343.6757142857142
+"some"	345.012
+"static"	345.2296
+"const"	345.4472
+"int"	345.6648
+"for"	345.8824
+"the"	347.0
+"radius"	347.759
+"now"	348.51800000000003
+"inside"	349.27700000000004
+"when"	350.036
+"the"	350.480875
+"for"	350.92575000000005
+"sale"	351.3706250000001
+"starts"	351.8155000000001
+"you"	352.2603750000001
+"get"	352.70525000000015
+"%um"	353.1501250000002
+"your"	353.919
+"data"	354.43583333333333
+"attributes"	354.9526666666667
+"good"	355.46950000000004
+"injected"	355.9863333333334
+"with"	356.50316666666674
+"some"	353.919
+"variables"	357.002
+"are"	357.574
+"some"	358.146
+"more"	358.718
+"attributes"	359.29
+"I"	359.862
+"if"	360.434
+"they"	357.002
+"weren't"	358.003
+"very"	359.00399999999996
+"present"	360.00499999999994
+"and"	361.006
+"specifically"	361.44642857142856
+"will"	361.88685714285714
+"look"	362.3272857142857
+"at"	362.7677142857143
+"the"	363.2081428571429
+"X&Y"	363.6485714285715
+"axes"	361.006
+"view"	362.5475
+"that"	364.089
+"body"	364.590625
+"it"	365.09225
+"added"	365.59387499999997
+"to"	366.09549999999996
+"each"	366.59712499999995
+"element"	367.09874999999994
+"have"	367.60037499999993
+"your"	364.089
+"data"	365.4266666666667
+"rate"	366.76433333333335
+"and"	369.002
+"these"	369.57683333333335
+"represent"	370.1516666666667
+"the"	370.72650000000004
+"current"	371.3013333333334
+"position"	371.87616666666673
+"have"	369.002
+"that"	370.7265
+"a"	372.469
+"the"	372.849625
+"no"	373.23025
+"did"	373.610875
+"being"	373.99150000000003
+"represented"	374.37212500000004
+"by"	374.75275000000005
+"that"	375.13337500000006
+"%um"	372.469
+"visual"	375.919
+"at"	376.42083333333335
+"every"	376.9226666666667
+"iteration"	377.4245000000001
+"love"	377.92633333333345
+"the"	378.4281666666668
+"layout"	379.029
+"so"	379.535375
+"you"	380.04175
+"can"	380.54812499999997
+"use"	381.05449999999996
+"that"	381.56087499999995
+"to"	382.06724999999994
+"position"	382.57362499999994
+"your"	383.008
+"%um"	383.43899999999996
+"your"	383.86999999999995
+"notes"	384.30099999999993
+"and"	384.7319999999999
+"so"	385.1629999999999
+"this"	385.5939999999999
+"is"	386.02499999999986
+"the"	386.45599999999985
+"text"	383.008
+"function"	384.9475
+"this"	386.959
+"is"	387.34425
+"a"	387.7295
+"the"	388.11474999999996
+"simplest"	388.49999999999994
+"example"	388.8852499999999
+"the"	389.2704999999999
+"tech"	389.6557499999999
+"function"	386.959
+"this'll"	387.5754
+"get"	388.1918
+"called"	388.8082
+"executed"	389.4246
+"every"	390.779
+"iteration"	391.045
+"of"	391.483
+"the"	391.921
+"simulation"	392.359
+"and"	392.79699999999997
+"we"	393.23499999999996
+"can"	393.67299999999994
+"use"	391.045
+"the"	392.578
+"X&Y"	395.011
+"from"	395.45157142857147
+"being"	395.8921428571429
+"provided"	396.33271428571436
+"by"	396.7732857142858
+"arse"	397.21385714285725
+"are"	397.6544285714287
+"forced"	395.011
+"layout"	396.553
+"%um"	398.095
+"update"	398.471
+"to"	398.847
+"move"	399.22299999999996
+"modify"	399.59899999999993
+"the"	399.9749999999999
+"positions"	400.3509999999999
+"of"	400.72699999999986
+"the"	398.095
+"circles"	402.075
+"the"	402.5052857142857
+"that"	402.93557142857145
+"were"	403.3658571428572
+"using"	403.7961428571429
+"to"	404.22642857142864
+"represent"	404.6567142857144
+"so"	405.087
+"with"	405.4969
+"all"	405.9068
+"that"	406.31669999999997
+"you"	406.72659999999996
+"get"	407.13649999999996
+"a"	407.54639999999995
+"you"	407.95629999999994
+"cover"	408.36619999999994
+"get"	408.77609999999993
+"a"	405.087
+"couple"	406.11175
+"circles"	407.13649999999996
+"frames"	408.16124999999994
+"%ah"	409.969
+"would"	410.440375
+"you"	410.91175000000004
+"can"	411.38312500000006
+"you"	411.8545000000001
+"already"	412.3258750000001
+"see"	412.79725000000013
+"that"	413.26862500000016
+"this"	409.969
+"is"	410.91175
+"a"	411.8545
+"nice"	412.79724999999996
+"%ah"	413.074
+"visual"	413.8764
+"attractive"	414.67879999999997
+"%ah"	415.48119999999994
+"same"	416.2835999999999
+"and"	417.086
+"it"	417.3911
+"only"	417.6962
+"took"	418.00129999999996
+"a"	418.30639999999994
+"few"	418.6114999999999
+"lines"	418.9165999999999
+"of"	419.2216999999999
+"code"	419.52679999999987
+"to"	419.83189999999985
+"do"	417.086
+"this"	418.103
+"so"	419.12
+"what"	421.037
+"what's"	421.5497142857143
+"going"	422.0624285714286
+"on"	422.5751428571429
+"behind"	423.0878571428572
+"the"	423.6005714285715
+"scenes"	424.11328571428584
+"to"	421.037
+"help"	421.63516666666663
+"make"	422.2333333333333
+"this"	422.83149999999995
+"attractive"	423.4296666666666
+"are"	424.02783333333326
+"are"	424.959
+"the"	425.55485714285714
+"forces"	426.1507142857143
+"that"	426.74657142857143
+"we've"	427.34242857142857
+"mentioned"	427.9382857142857
+"that"	428.53414285714285
+"are"	424.959
+"working"	425.55485714285714
+"on"	426.1507142857143
+"it"	426.74657142857143
+"to"	427.34242857142857
+"these"	427.9382857142857
+"notes"	428.53414285714285
+"I"	429.013
+"like"	429.486625
+"to"	429.96025000000003
+"talk"	430.43387500000006
+"about"	430.9075000000001
+"briefly"	431.3811250000001
+"a"	431.85475000000014
+"charged"	432.32837500000016
+"and"	429.013
+"gravity"	430.9075
+"charge"	432.919
+"%uh"	433.422875
+"I"	433.92674999999997
+"get"	434.43062499999996
+"my"	434.93449999999996
+"guy"	435.43837499999995
+"up"	435.94224999999994
+"charge"	436.44612499999994
+"represents"	432.919
+"%um"	437.229
+"the"	437.7318333333333
+"the"	438.23466666666667
+"reporter"	438.7375
+"attraction"	439.24033333333335
+"between"	439.7431666666667
+"each"	440.399
+"node"	440.83162500000003
+"in"	441.26425000000006
+"every"	441.6968750000001
+"other"	442.1295000000001
+"node"	442.56212500000015
+"so"	442.9947500000002
+"%um"	443.4273750000002
+"a"	443.086
+"more"	443.592125
+"negative"	444.09825
+"values"	444.604375
+"cause"	445.1105
+"the"	445.616625
+"nose"	446.12275
+"to"	446.628875
+"repulse"	443.086
+"from"	444.09825
+"one"	445.1105
+"another"	446.12275
+"and"	447.909
+"more"	448.5477142857143
+"and"	449.18642857142856
+"less"	449.82514285714285
+"negative"	450.46385714285714
+"and"	451.1025714285714
+"positive"	451.7412857142857
+"eyes"	447.909
+"causing"	449.02675
+"to"	450.1445
+"attract"	451.26225
+"%um"	452.038
+"so"	452.4101111111111
+"you"	452.78222222222223
+"are"	453.15433333333334
+"gonna"	453.52644444444445
+"make"	453.89855555555556
+"cool"	454.27066666666667
+"stuff"	454.6427777777778
+"like"	455.0148888888889
+"that"	452.038
+"um"	455.729
+"gravity"	456.396625
+"on"	457.06424999999996
+"like"	457.73187499999995
+"this"	458.39949999999993
+"forever"	459.0671249999999
+"is"	459.7347499999999
+"not"	460.4023749999999
+"down"	455.729
+"to"	457.06425
+"her"	458.3995
+"thats"	459.73474999999996
+"is"	461.007
+"moreover"	461.5301666666667
+"events"	462.05333333333334
+"described"	462.5765
+"as"	463.0996666666667
+"a"	463.62283333333335
+"physical"	461.007
+"spring"	462.5765
+"spring-like"	464.209
+"same"	464.7975
+"attached"	465.386
+"to"	465.97450000000003
+"the"	466.56300000000005
+"center"	467.15150000000006
+"%uh"	464.209
+"the"	465.97450000000003
+"visualizations"	467.074
+"so"	467.5835
+"a"	468.093
+"higher"	468.6025
+"gravity"	469.112
+"I'm"	469.6215
+"constrains"	471.031
+"it"	471.580875
+"to"	472.13075
+"the"	472.68062499999996
+"center"	473.23049999999995
+"and"	473.78037499999994
+"if"	474.3302499999999
+"you"	474.8801249999999
+"let"	471.031
+"go"	471.9108
+"of"	472.7906
+"gravity"	473.6704
+"you"	474.55019999999996
+"everything"	475.709
+"flows"	476.1385714285714
+"out"	476.56814285714285
+"the"	476.99771428571427
+"space"	477.4272857142857
+"so"	477.8568571428571
+"I'll"	478.28642857142853
+"just"	479.409
+"this"	480.2932
+"this"	481.17740000000003
+"beginner"	482.06160000000006
+"introduction"	482.9458000000001
+"knowledge"	479.409
+"to"	481.6195
+"the"	483.083
+"layout"	483.570375
+"you"	484.05775
+"can"	484.545125
+"start"	485.03249999999997
+"to"	485.51987499999996
+"abuse"	486.00724999999994
+"the"	486.4946249999999
+"force"	483.083
+"and"	484.05775000000006
+"our"	485.0325
+"own"	486.00725
+"in"	487.729
+"our"	488.17833333333334
+"own"	488.6276666666667
+"way"	489.07700000000006
+"um"	489.5263333333334
+"and"	489.97566666666677
+"the"	490.4250000000001
+"first"	490.8743333333335
+"abuse"	491.32366666666684
+"can"	487.729
+"be"	489.751
+"%uh"	492.169
+"the"	492.692
+"example"	493.21500000000003
+"that"	493.73800000000006
+"irene"	494.2610000000001
+"was"	494.7840000000001
+"talking"	495.30700000000013
+"about"	492.169
+"the"	493.9995
+"the"	495.083
+"public"	495.711
+"char"	496.339
+"and"	496.967
+"this"	497.59499999999997
+"was"	498.22299999999996
+"first"	498.85099999999994
+"are"	499.4789999999999
+"one"	495.083
+"the"	495.711
+"first"	496.339
+"so"	496.967
+"you"	497.59499999999997
+"know"	498.22299999999996
+"best"	498.85099999999994
+"ways"	499.4789999999999
+"this"	501.007
+"was"	501.516875
+"shown"	502.02675000000005
+"was"	502.5366250000001
+"a"	503.0465000000001
+"New"	503.5563750000001
+"York"	504.06625000000014
+"Times"	504.57612500000016
+"visualization"	501.007
+"that"	503.04650000000004
+"was"	505.149
+"looking"	505.58385714285714
+"at"	506.0187142857143
+"the"	506.4535714285714
+"Obama"	506.88842857142856
+"a"	507.3232857142857
+"budget"	507.75814285714284
+"proposal"	505.149
+"and"	508.589
+"some"	509.1068888888889
+"use"	509.62477777777775
+"in"	510.1426666666666
+"the"	510.6605555555555
+"you"	511.1784444444444
+"know"	511.69633333333326
+"term"	512.2142222222221
+"budget"	512.7321111111111
+"a"	508.589
+"bubble"	509.25485714285713
+"charge"	509.92071428571427
+"us"	510.5865714285714
+"to"	511.25242857142854
+"read"	511.9182857142857
+"mean"	512.5841428571429
+"were"	513.025
+"using"	513.7705714285714
+"the"	514.5161428571429
+"the"	515.2617142857143
+"node"	516.0072857142858
+"size"	516.7528571428572
+"to"	517.4984285714287
+"represent"	513.025
+"some"	513.8948333333333
+"underlying"	514.7646666666666
+"data"	515.6344999999999
+"about"	516.5043333333332
+"you"	517.3741666666665
+"so"	518.469
+"how"	518.912
+"would"	519.355
+"how"	519.798
+"we"	520.241
+"might"	520.684
+"we"	521.127
+"be"	521.057
+"able"	521.4861428571429
+"to"	521.9152857142858
+"implement"	522.3444285714287
+"this"	522.7735714285716
+"type"	523.2027142857145
+"a"	523.6318571428574
+"visualization"	521.057
+"using"	524.097
+"the"	524.5394285714285
+"knowledge"	524.981857142857
+"that"	525.4242857142856
+"we"	525.8667142857141
+"have"	526.3091428571427
+"about"	526.7515714285712
+"of"	524.097
+"course"	525.1293333333333
+"layout"	526.1616666666666
+"well"	528.094
+"the"	528.481125
+"first"	528.86825
+"date"	529.255375
+"is"	529.6424999999999
+"easy"	530.0296249999999
+"weekend"	530.4167499999999
+"and"	530.8038749999998
+"city"	528.094
+"views"	528.5364285714286
+"in"	528.9788571428571
+"some"	529.4212857142857
+"static"	529.8637142857142
+"const"	530.3061428571427
+"int"	530.7485714285713
+"for"	532.091
+"rads"	532.476125
+"we"	532.86125
+"can"	533.2463750000001
+"scale"	533.6315000000001
+"the"	534.0166250000001
+"size"	534.4017500000001
+"were"	534.7868750000001
+"published"	532.091
+"by"	533.6315
+"the"	536.072
+"data"	536.5088571428571
+"that"	536.9457142857142
+"is"	537.3825714285713
+"representing"	537.8194285714284
+"you"	538.2562857142855
+"know"	538.6931428571426
+"that"	536.072
+"we"	536.5816666666667
+"wanted"	537.0913333333334
+"to"	537.6010000000001
+"represent"	538.1106666666668
+"on"	538.6203333333335
+"and"	540.003
+"that"	540.5065000000001
+"gets"	541.0100000000001
+"us"	541.5135000000001
+"halfway"	542.0170000000002
+"there"	542.5205000000002
+"I"	543.0240000000002
+"but"	543.5275000000003
+"unfortunately"	540.003
+"everything's"	541.3456666666667
+"overlapping"	542.6883333333334
+"nothing"	544.058
+"looks"	544.3199999999999
+"good"	544.5819999999999
+"anymore"	544.8439999999998
+"so"	546.006
+"what"	546.3097
+"we"	546.6134000000001
+"do"	546.9171000000001
+"the"	547.2208000000002
+"the"	547.5245000000002
+"inside"	547.8282000000003
+"is"	548.1319000000003
+"that"	548.4356000000004
+"we"	548.7393000000004
+"can"	546.006
+"passe"	549.043
+"function"	549.717
+"to"	550.391
+"our"	551.0649999999999
+"charge"	551.7389999999999
+"primary"	552.4129999999999
+"doesn't"	549.043
+"have"	549.6207142857143
+"to"	550.1984285714285
+"be"	550.7761428571428
+"constrained"	551.353857142857
+"by"	551.9315714285713
+"ice"	552.5092857142855
+"data"	553.087
+"casa"	553.4353333333333
+"neither"	553.7836666666667
+"and"	555.032
+"so"	555.4782222222223
+"you"	555.9244444444445
+"can"	556.3706666666667
+"use"	556.8168888888889
+"so"	557.2631111111111
+"this"	557.7093333333333
+"this"	558.1555555555556
+"now"	558.6017777777778
+"functional"	555.032
+"get"	557.04
+"executed"	559.048
+"for"	559.4807142857143
+"each"	559.9134285714285
+"node"	560.3461428571428
+"in"	560.7788571428571
+"your"	561.2115714285713
+"layout"	561.6442857142856
+"I"	562.077
+"at"	562.4481818181819
+"the"	562.8193636363637
+"start"	563.1905454545456
+"up"	563.5617272727275
+"the"	563.9329090909093
+"force"	564.3040909090912
+"a"	564.6752727272731
+"a"	565.0464545454549
+"at"	565.4176363636368
+"that"	565.7888181818187
+"start"	562.077
+"time"	567.006
+"and"	567.4555555555555
+"so"	567.9051111111111
+"we"	568.3546666666666
+"can"	568.8042222222222
+"use"	569.2537777777777
+"the"	569.7033333333333
+"date"	570.1528888888888
+"itself"	570.6024444444444
+"to"	572.006
+"scale"	572.513125
+"um"	573.0202499999999
+"are"	573.5273749999999
+"are"	574.0344999999999
+"charged"	574.5416249999998
+"are"	575.0487499999998
+"reported"	575.5558749999998
+"value"	572.006
+"by"	576.063
+"this"	576.6398571428572
+"the"	577.2167142857144
+"amount"	577.7935714285716
+"that"	578.3704285714288
+"is"	578.947285714286
+"being"	579.5241428571431
+"virtuous"	576.063
+"and"	576.736
+"with"	577.409
+"those"	578.082
+"two"	578.755
+"changes"	579.428
+"we"	581.001
+"did"	581.6104
+"this"	582.2198000000001
+"nice"	582.8292000000001
+"a"	583.4386000000002
+"affects"	584.048
+"right"	584.4775714285714
+"each"	584.9071428571428
+"node"	585.3367142857143
+"is"	585.7662857142857
+"is"	586.1958571428571
+"pushing"	586.6254285714285
+"away"	584.048
+"a"	585.0503333333334
+"relative"	586.0526666666667
+"to"	588.018
+"a"	588.4656666666667
+"its"	588.9133333333334
+"size"	589.3610000000001
+"and"	589.8086666666668
+"the"	590.2563333333335
+"sizes"	590.7040000000002
+"are"	591.1516666666669
+"then"	591.5993333333336
+"scaled"	588.018
+"by"	589.02525
+"the"	590.0325
+"day"	591.03975
+"you're"	592.047
+"looking"	592.5538750000001
+"for"	593.0607500000001
+"so"	593.5676250000001
+"it"	594.0745000000002
+"was"	594.5813750000002
+"very"	595.0882500000002
+"nice"	595.5951250000003
+"um"	597.002
+"and"	597.4325714285714
+"this"	597.8631428571427
+"is"	598.2937142857141
+"my"	598.7242857142855
+"this"	599.1548571428569
+"is"	599.5854285714283
+"the"	600.016
+"the"	600.5984285714285
+"summation"	601.180857142857
+"of"	601.7632857142855
+"the"	602.345714285714
+"whole"	602.9281428571426
+"talk"	603.5105714285711
+"so"	604.093
+"study"	604.84925
+"it"	605.6055
+"%uh"	606.36175
+"I"	608.018
+"think"	608.523125
+"Mike"	609.0282500000001
+"Bostock"	609.5333750000001
+"a"	610.0385000000001
+"said"	610.5436250000001
+"it"	611.0487500000002
+"very"	611.5538750000002
+"eloquently"	608.018
+"when"	608.5952857142858
+"he"	609.1725714285715
+"said"	609.7498571428572
+"the"	610.3271428571429
+"force"	610.9044285714286
+"lay"	611.4817142857144
+"out"	612.059
+"there"	612.235
+"is"	612.4110000000001
+"an"	612.5870000000001
+"implicit"	612.7630000000001
+"way"	612.9390000000002
+"to"	614.015
+"do"	614.4522857142857
+"position"	614.8895714285715
+"encoding"	615.3268571428572
+"I'm"	615.7641428571429
+"gonna"	616.2014285714287
+"remix"	616.6387142857144
+"that"	614.015
+"quote"	617.076
+"slightly"	617.576125
+"and"	618.0762500000001
+"say"	618.5763750000001
+"it's"	619.0765000000001
+"a"	619.5766250000001
+"lazy"	620.0767500000002
+"way"	620.5768750000002
+"to"	617.076
+"move"	618.0762500000001
+"notes"	619.0765000000001
+"around"	620.0767500000002
+"but"	621.086
+"its"	621.3911
+"it's"	621.6962000000001
+"a"	622.0013000000001
+"good"	622.3064000000002
+"kind"	622.6115000000002
+"of"	622.9166000000002
+"lazy"	623.2217000000003
+"so"	623.5268000000003
+"on"	623.8319000000004
+"as"	625.037
+"we'll"	625.4667142857143
+"see"	625.8964285714285
+"in"	626.3261428571427
+"these"	626.7558571428569
+"these"	627.1855714285712
+"other"	627.6152857142854
+"examples"	625.037
+"where"	626.0396666666667
+"we"	627.0423333333333
+"don't"	629.017
+"have"	629.5892857142858
+"to"	630.1615714285715
+"care"	630.7338571428572
+"about"	631.306142857143
+"%uh"	631.8784285714287
+"each"	632.4507142857144
+"individual"	629.017
+"location"	630.0185
+"of"	631.02
+"that"	632.0215
+"up"	633.023
+"the"	633.408375
+"no"	633.7937499999999
+"2"	634.1791249999999
+"instead"	634.5644999999998
+"impose"	634.9498749999998
+"simple"	635.3352499999997
+"rules"	635.7206249999997
+"in"	637.006
+"our"	637.5784285714285
+"simulation"	638.150857142857
+"right"	638.7232857142856
+"and"	639.2957142857141
+"allow"	639.8681428571426
+"the"	640.4405714285712
+"notes"	637.006
+"to"	638.3416666666667
+"find"	639.6773333333334
+"correct"	641.013
+"positions"	641.5206666666667
+"based"	642.0283333333333
+"on"	642.536
+"our"	643.0436666666666
+"simple"	643.5513333333332
+"rule"	641.013
+"set"	641.5206666666667
+"that"	642.0283333333333
+"were"	642.536
+"given"	643.0436666666666
+"a"	643.5513333333332
+"yeah"	644.059
+"here"	644.632
+"we're"	645.2049999999999
+"just"	645.7779999999999
+"using"	646.3509999999999
+"that"	646.9239999999999
+"the"	647.4969999999998
+"charge"	644.059
+"the"	644.7275
+"simple"	645.396
+"rule"	646.0645
+"that"	646.733
+"charges"	647.4014999999999
+"relative"	648.007
+"to"	648.3583333333333
+"size"	648.7096666666667
+"and"	650.024
+"that's"	650.5291666666667
+"all"	651.0343333333334
+"it"	651.5395000000001
+"takes"	652.0446666666668
+"so"	652.5498333333335
+"how"	653.055
+"ask"	653.5638749999999
+"away"	654.0727499999999
+"abuse"	654.5816249999999
+"this"	655.0904999999999
+"concept"	655.5993749999999
+"to"	656.1082499999999
+"apply"	656.6171249999999
+"I'm"	653.055
+"several"	654.4119999999999
+"forces"	655.7689999999999
+"a"	658.026
+"yeah"	658.5383333333333
+"ask"	659.0506666666666
+"your"	659.563
+"nice"	660.0753333333333
+"yeah"	660.5876666666667
+"I"	662.0
+"like"	662.4495555555555
+"the"	662.8991111111111
+"Darth"	663.3486666666666
+"Vader"	663.7982222222222
+"is"	664.2477777777777
+"the"	664.6973333333333
+"evil"	665.1468888888888
+"lists"	665.5964444444444
+"character"	662.0
+"and"	662.50575
+"yet"	663.0115000000001
+"in"	663.5172500000001
+"the"	664.0230000000001
+"book"	664.5287500000002
+"your"	665.0345000000002
+"the"	665.5402500000002
+"movie"	666.046
+"a"	667.045
+"well"	667.4765714285714
+"the"	667.9081428571429
+"the"	668.3397142857144
+"original"	668.7712857142859
+"one"	669.2028571428574
+"here"	669.6344285714289
+"up"	670.066
+"had"	670.697125
+"this"	671.32825
+"cool"	671.959375
+"feature"	672.5905
+"where"	673.221625
+"but"	673.85275
+"you"	674.483875
+"could"	670.066
+"split"	670.7872857142858
+"apart"	671.5085714285715
+"notes"	672.2298571428572
+"based"	672.9511428571429
+"on"	673.6724285714287
+"some"	674.3937142857144
+"categorical"	676.015
+"values"	676.8591666666666
+"so"	677.7033333333333
+"here"	678.5474999999999
+"the"	679.3916666666665
+"it's"	680.2358333333332
+"mandatory"	676.015
+"versus"	677.28125
+"discretionary"	678.5475
+"spending"	679.81375
+"which"	681.008
+"brings"	681.3467777777778
+"us"	681.6855555555555
+"to"	682.0243333333333
+"the"	682.363111111111
+"idea"	682.7018888888888
+"I"	683.0406666666665
+"love"	683.3794444444443
+"up"	683.718222222222
+"imposing"	685.029
+"our"	685.4627142857142
+"our"	685.8964285714285
+"own"	686.3301428571427
+"are"	686.763857142857
+"applying"	687.1975714285712
+"it"	687.6312857142855
+"yeah"	685.029
+"a"	688.065
+"imposing"	688.5031428571428
+"our"	688.9412857142856
+"own"	689.3794285714284
+"custom"	689.8175714285712
+"forces"	690.255714285714
+"onto"	690.6938571428568
+"the"	688.065
+"the"	692.032
+"notes"	692.5333333333333
+"so"	693.0346666666667
+"I"	693.5360000000001
+"recreated"	694.0373333333334
+"on"	694.5386666666668
+"part"	696.012
+"serve"	696.389375
+"the"	696.76675
+"the"	697.144125
+"New"	697.5215000000001
+"York"	697.8988750000001
+"Times"	698.2762500000001
+"one"	698.6536250000001
+"a"	699.031
+"visualization"	699.53125
+"in"	700.0315
+"this"	700.5317500000001
+"up"	701.0320000000002
+"demo"	701.5322500000002
+"for"	702.0325000000003
+"the"	702.5327500000003
+"for"	699.031
+"the"	701.0319999999999
+"blog"	703.033
+"post"	703.5405000000001
+"about"	704.048
+"this"	704.5554999999999
+"is"	705.0629999999999
+"gates"	705.5704999999998
+"spending"	706.078
+"so"	706.6519999999999
+"the"	707.2259999999999
+"Gates"	707.7999999999998
+"Foundation"	708.3739999999998
+"on"	708.9479999999998
+"so"	709.5219999999997
+"that"	706.078
+"time"	706.7476666666666
+"was"	707.4173333333333
+"cut"	708.087
+"off"	708.7566666666667
+"but"	709.4263333333333
+"and"	710.096
+"their"	710.6768571428571
+"then"	711.2577142857142
+"the"	711.8385714285713
+"grant"	712.4194285714284
+"sizes"	713.0002857142855
+"that"	713.5811428571426
+"they've"	710.096
+"provided"	710.9092
+"over"	711.7224000000001
+"the"	712.5356000000002
+"years"	713.3488000000002
+"so"	715.062
+"and"	715.4038888888889
+"in"	715.7457777777778
+"this"	716.0876666666667
+"the"	716.4295555555556
+"CAG"	716.7714444444445
+"or"	717.1133333333333
+"the"	717.4552222222222
+"character"	717.7971111111111
+"Oracle"	715.062
+"slaying"	719.039
+"we"	719.3733333333333
+"can"	719.7076666666667
+"do"	720.042
+"is"	720.3763333333334
+"over"	720.7106666666667
+"years"	721.0450000000001
+"and"	721.3793333333334
+"so"	721.7136666666668
+"you"	719.039
+"can"	720.042
+"see"	721.0450000000001
+"you"	723.029
+"get"	723.4584285714286
+"this"	723.8878571428572
+"really"	724.3172857142858
+"nice"	724.7467142857145
+"organic"	725.1761428571431
+"a"	725.6055714285717
+"feeling"	723.029
+"and"	726.089
+"they"	726.5212857142858
+"came"	726.9535714285715
+"back"	727.3858571428573
+"emerge"	727.818142857143
+"back"	728.2504285714288
+"together"	728.6827142857145
+"so"	726.089
+"it's"	727.0976666666667
+"pretty"	728.1063333333333
+"a"	730.015
+"and"	730.4175
+"it's"	730.82
+"useful"	731.2225000000001
+"so"	731.6250000000001
+"how"	732.0275000000001
+"do"	732.4300000000002
+"we"	732.8325000000002
+"do"	733.2350000000002
+"that"	733.6375000000003
+"well"	734.004
+"here's"	734.4384285714286
+"our"	734.8728571428572
+"our"	735.3072857142859
+"basic"	735.7417142857145
+"take"	736.1761428571431
+"function"	736.6105714285717
+"the"	737.081
+"whole"	737.5212857142857
+"the"	737.9615714285713
+"whole"	738.401857142857
+"general"	738.8421428571427
+"idea"	739.2824285714283
+"of"	739.722714285714
+"customs"	737.081
+"forces"	738.6220000000001
+"in"	741.063
+"this"	741.5081111111111
+"in"	741.9532222222223
+"this"	742.3983333333334
+"example"	742.8434444444446
+"is"	743.2885555555557
+"we"	743.7336666666669
+"can"	744.178777777778
+"modify"	744.6238888888892
+"this"	741.063
+"slightly"	743.066
+"to"	745.069
+"add"	745.570875
+"enough"	746.07275
+"first"	746.5746250000001
+"day"	747.0765000000001
+"you"	747.5783750000002
+"know"	748.0802500000002
+"a"	748.5821250000002
+"function"	745.069
+"at"	745.7381666666666
+"jacks"	746.4073333333333
+"with"	747.0765
+"your"	747.7456666666667
+"notes"	748.4148333333334
+"somehow"	749.084
+"and"	750.075
+"modifies"	750.7436666666667
+"the"	751.4123333333334
+"in"	752.0810000000001
+"position"	752.7496666666668
+"slightly"	753.4183333333335
+"and"	754.087
+"then"	754.713375
+"use"	755.3397500000001
+"that"	755.9661250000001
+"%uh"	756.5925000000002
+"to"	757.2188750000003
+"then"	757.8452500000003
+"that"	758.4716250000004
+"modify"	754.087
+"position"	755.33975
+"to"	756.5925
+"them"	757.84525
+"position"	759.098
+"are"	759.6745714285714
+"nuts"	760.2511428571429
+"um"	760.8277142857144
+"so"	761.4042857142858
+"here's"	761.9808571428573
+"an"	762.5574285714288
+"example"	759.098
+"I"	764.034
+"and"	764.3439
+"we"	764.6537999999999
+"all"	764.9636999999999
+"go"	765.2735999999999
+"through"	765.5834999999998
+"all"	765.8933999999998
+"the"	766.2032999999998
+"code"	766.5131999999998
+"but"	766.8230999999997
+"a"	764.034
+"in"	768.033
+"this"	768.3724444444445
+"we"	768.7118888888889
+"would"	769.0513333333333
+"have"	769.3907777777778
+"some"	769.7302222222222
+"some"	770.0696666666666
+"way"	770.4091111111111
+"to"	770.7485555555555
+"represent"	768.033
+"the"	771.088
+"two"	771.4275555555555
+"centers"	771.767111111111
+"that"	772.1066666666666
+"we"	772.4462222222221
+"want"	772.7857777777776
+"to"	773.1253333333332
+"have"	773.4648888888887
+"a"	773.8044444444442
+"rest"	771.088
+"let"	771.5973333333333
+"up"	772.1066666666666
+"I"	772.6159999999999
+"know"	773.1253333333332
+"it's"	773.6346666666665
+"from"	775.044
+"left"	775.6155714285715
+"to"	776.1871428571429
+"right"	776.7587142857144
+"and"	777.3302857142859
+"out"	777.9018571428574
+"we"	778.4734285714288
+"grab"	779.054
+"where"	779.4901428571428
+"you"	779.9262857142857
+"have"	780.3624285714285
+"a"	780.7985714285713
+"function"	781.2347142857142
+"called"	781.670857142857
+"move"	779.054
+"toward"	780.0716666666666
+"center"	781.0893333333332
+"you"	783.007
+"know"	783.5129999999999
+"Tagore"	784.0189999999999
+"centre"	784.5249999999999
+"a"	785.0309999999998
+"and"	785.5369999999998
+"this"	786.0429999999998
+"this"	786.5489999999998
+"is"	783.007
+"a"	783.5852857142856
+"function"	784.1635714285713
+"that"	784.741857142857
+"returns"	785.3201428571427
+"a"	785.8984285714284
+"function"	786.4767142857141
+"will"	787.055
+"see"	787.3886666666666
+"why"	787.7223333333333
+"in"	788.065
+"a"	788.4779000000001
+"minute"	788.8908000000001
+"on"	789.3037000000002
+"but"	789.7166000000002
+"so"	790.1295000000002
+"we"	790.5424000000003
+"grabbed"	790.9553000000003
+"are"	791.3682000000003
+"the"	791.7811000000004
+"correct"	788.065
+"the"	792.779
+"crank"	793.3658333333333
+"sensor"	793.9526666666666
+"for"	794.5394999999999
+"our"	795.1263333333332
+"particular"	795.7131666666664
+"nodes"	792.779
+"by"	793.219125
+"member"	793.6592499999999
+"this"	794.0993749999999
+"is"	794.5394999999999
+"going"	794.9796249999998
+"to"	795.4197499999998
+"get"	795.8598749999998
+"executed"	796.003
+"each"	796.529
+"if"	797.082
+"reach"	797.5825
+"node"	798.083
+"I'm"	798.5835
+"and"	799.084
+"then"	799.5844999999999
+"move"	801.012
+"move"	801.389875
+"that"	801.76775
+"node"	802.145625
+"based"	802.5235
+"on"	802.901375
+"the"	803.27925
+"centers"	803.6571250000001
+"location"	804.035
+"so"	804.6476
+"that"	805.2602
+"almost"	805.8728000000001
+"works"	806.4854000000001
+"here's"	807.098
+"our"	807.435
+"are"	807.7719999999999
+"nodes"	808.1089999999999
+"when"	808.4459999999999
+"we"	808.7829999999999
+"when"	809.1199999999999
+"we"	809.4569999999999
+"buy"	809.7939999999999
+"that"	807.098
+"custom"	811.031
+"force"	811.4618571428571
+"up"	811.8927142857142
+"we're"	812.3235714285713
+"back"	812.7544285714284
+"to"	813.1852857142856
+"everything"	813.6161428571427
+"its"	814.047
+"slamming"	814.5488750000001
+"on"	815.0507500000001
+"top"	815.5526250000001
+"of"	816.0545000000002
+"one"	816.5563750000002
+"another"	817.0582500000003
+"so"	817.5601250000003
+"what's"	814.047
+"going"	814.85
+"on"	815.653
+"with"	816.456
+"you"	817.259
+"we've"	818.062
+"lost"	818.4041111111111
+"that"	818.7462222222222
+"a"	819.0883333333333
+"nice"	819.4304444444443
+"thing"	819.7725555555554
+"that"	820.1146666666665
+"I"	820.4567777777776
+"just"	820.7988888888887
+"that"	818.062
+"was"	818.446875
+"the"	818.8317499999999
+"whole"	819.2166249999999
+"point"	819.6014999999999
+"in"	819.9863749999998
+"this"	820.3712499999998
+"talk"	820.7561249999998
+"was"	822.041
+"that"	822.3785555555556
+"we"	822.7161111111112
+"did"	823.0536666666668
+"not"	823.3912222222224
+"care"	823.728777777778
+"about"	824.0663333333335
+"stuff"	824.4038888888891
+"now"	824.7414444444447
+"it"	822.041
+"seems"	822.475
+"like"	822.909
+"we"	823.343
+"don't"	823.7769999999999
+"care"	824.2109999999999
+"about"	824.6449999999999
+"everyone"	825.079
+"work"	825.7478333333333
+"position"	826.4166666666667
+"on"	827.0855000000001
+"Alyssa"	827.7543333333335
+"um"	828.4231666666669
+"fortunately"	829.092
+"we"	829.6635714285715
+"have"	830.2351428571429
+"this"	830.8067142857144
+"this"	831.3782857142859
+"access"	831.9498571428574
+"to"	832.5214285714288
+"this"	829.092
+"predator"	833.093
+"which"	833.5248571428571
+"is"	833.9567142857142
+"which"	834.3885714285713
+"is"	834.8204285714284
+"indicated"	835.2522857142854
+"as"	835.6841428571425
+"alpha"	833.093
+"arm"	837.016
+"now"	837.4182
+"we"	837.8204
+"can"	838.2225999999999
+"think"	838.6247999999999
+"of"	839.0269999999999
+"it"	839.4291999999999
+"as"	839.8313999999999
+"a"	840.2335999999999
+"blending"	840.6357999999999
+"parameter"	837.016
+"I"	837.51875
+"that"	838.0215
+"can"	838.5242499999999
+"be"	839.0269999999999
+"used"	839.5297499999999
+"to"	840.0324999999999
+"combine"	840.5352499999999
+"multiple"	841.038
+"forces"	841.5458333333333
+"are"	842.0536666666667
+"charges"	842.5615
+"on"	843.0693333333334
+"these"	843.5771666666667
+"notes"	841.038
+"and"	844.085
+"if"	844.5851250000001
+"we"	845.0852500000001
+"it's"	845.5853750000001
+"accessible"	846.0855000000001
+"from"	846.5856250000002
+"the"	847.0857500000002
+"on"	847.5858750000002
+"force"	844.085
+"instance"	848.095
+"but"	848.5426666666667
+"you"	848.9903333333334
+"can"	849.4380000000001
+"also"	849.8856666666668
+"get"	850.3333333333335
+"to"	850.7810000000002
+"it"	851.2286666666669
+"from"	851.6763333333336
+"from"	848.095
+"the"	848.6705714285714
+"tech"	849.2461428571428
+"function"	849.8217142857142
+"at"	850.3972857142855
+"each"	850.9728571428569
+"iteration"	851.5484285714283
+"inside"	853.024
+"of"	853.2945
+"an"	853.5649999999999
+"event"	853.8354999999999
+"that's"	855.006
+"faster"	855.384375
+"and"	855.76275
+"if"	856.141125
+"we"	856.5195
+"were"	856.897875
+"to"	857.27625
+"print"	857.654625
+"those"	855.006
+"out"	856.5195
+"we"	858.033
+"can"	858.408125
+"see"	858.7832500000001
+"that"	859.1583750000001
+"it"	859.5335000000001
+"starts"	859.9086250000001
+"around"	860.2837500000002
+".1"	860.6588750000002
+"and"	861.043
+"gives"	861.5511666666666
+"decker"	862.0593333333333
+"minute"	862.5674999999999
+"slightly"	863.0756666666665
+"every"	863.5838333333331
+"iteration"	861.043
+"above"	864.092
+"the"	864.603
+"every"	865.1139999999999
+"loophole"	865.6249999999999
+"that"	866.1359999999999
+"that"	866.6469999999998
+"simulation"	864.092
+"and"	864.603
+"then"	865.1139999999999
+"what"	865.6249999999999
+"it"	866.1359999999999
+"means"	866.6469999999998
+"um"	868.058
+"yet"	868.645375
+"what"	869.2327499999999
+"when"	869.8201249999998
+"it"	870.4074999999998
+"gets"	870.9948749999998
+"too"	871.5822499999997
+"up-close"	872.1696249999997
+"2.05"	868.058
+"it'll"	869.6243333333333
+"end"	871.1906666666666
+"so"	873.279
+"the"	873.7691428571428
+"numbers"	874.2592857142856
+"are"	874.7494285714284
+"arbitrary"	875.2395714285713
+"but"	875.7297142857141
+"the"	876.2198571428569
+"idea"	873.279
+"is"	873.9652
+"that"	874.6514
+"this"	875.3376
+"is"	876.0237999999999
+"the"	876.071
+"actual"	876.5751250000001
+"a"	877.0792500000001
+"mechanism"	877.5833750000002
+"by"	878.0875000000002
+"by"	878.5916250000002
+"which"	879.0957500000003
+"the"	879.5998750000003
+"force"	876.071
+"layout"	877.4153333333334
+"is"	878.7596666666667
+"is"	881.004
+"settling"	881.416375
+"down"	881.82875
+"and"	882.241125
+"two"	882.6535
+"I"	883.065875
+"mean"	883.47825
+"it's"	883.890625
+"it's"	881.004
+"the"	882.6535
+"can"	884.339
+"be"	884.832
+"considered"	885.3249999999999
+"a"	885.8179999999999
+"form"	886.3109999999998
+"of"	886.8039999999997
+"simulated"	887.2969999999997
+"annealing"	884.339
+"if"	884.832
+"if"	885.3249999999999
+"you're"	885.8179999999999
+"into"	886.3109999999998
+"that"	886.8039999999997
+"kinda"	887.2969999999997
+"thing"	887.079
+"around"	888.049
+"but"	888.4802857142857
+"but"	888.9115714285715
+"this"	889.3428571428573
+"is"	889.774142857143
+"what's"	890.2054285714288
+"causing"	890.6367142857146
+"the"	888.049
+"the"	891.068
+"stabilization"	891.5791666666667
+"of"	892.0903333333333
+"the"	892.6015
+"force"	893.1126666666667
+"layout"	893.6238333333333
+"and"	891.068
+"general"	892.6015
+"so"	895.035
+"we"	895.5408749999999
+"can"	896.04675
+"use"	896.552625
+"this"	897.0585000000001
+"parameter"	897.5643750000002
+"and"	898.0702500000002
+"here's"	898.5761250000003
+"the"	895.035
+"same"	896.04675
+"code"	897.0585
+"but"	898.07025
+"instead"	899.082
+"of"	899.3904
+"a"	899.6988
+"so"	900.0072
+"here"	900.3156
+"now"	900.624
+"we"	900.9324
+"get"	901.2408
+"to"	901.5492
+"pass"	901.8576
+"and"	899.082
+"a"	900.624
+"the"	903.066
+"Alpha"	903.44275
+"into"	903.8195000000001
+"our"	904.1962500000001
+"into"	904.5730000000001
+"our"	904.9497500000001
+"move"	905.3265000000001
+"toward"	905.7032500000001
+"category"	906.008
+"centers"	906.6825
+"and"	907.357
+"with"	908.0314999999999
+"that"	908.7059999999999
+"small"	909.3804999999999
+"tweaks"	906.008
+"this"	906.4576666666667
+"is"	906.9073333333333
+"why"	907.357
+"this"	907.8066666666666
+"is"	908.2563333333333
+"why"	908.7059999999999
+"it's"	909.1556666666665
+"a"	909.6053333333332
+"function"	911.027
+"return"	911.5351666666667
+"to"	912.0433333333333
+"function"	912.5514999999999
+"is"	913.0596666666665
+"because"	913.5678333333332
+"so"	911.027
+"it"	911.4625714285714
+"allows"	911.8981428571428
+"us"	912.3337142857142
+"to"	912.7692857142856
+"pass"	913.204857142857
+"and"	913.6404285714284
+"variables"	914.076
+"I"	914.5871666666667
+"without"	915.0983333333334
+"creating"	915.6095
+"a"	916.1206666666667
+"global"	916.6318333333334
+"variable"	914.076
+"we"	914.5141428571429
+"can"	914.9522857142858
+"pass"	915.3904285714287
+"and"	915.8285714285716
+"locally"	916.2667142857146
+"and"	916.7048571428575
+"here"	918.043
+"and"	919.002
+"had"	919.3089
+"have"	919.6158
+"access"	919.9227000000001
+"to"	920.2296000000001
+"on"	920.5365000000002
+"in"	920.8434000000002
+"our"	921.1503000000002
+"in"	921.4572000000003
+"our"	921.7641000000003
+"closer"	919.002
+"to"	920.025
+"here"	921.048
+"um"	922.071
+"but"	922.5044285714285
+"with"	922.9378571428571
+"that"	923.3712857142856
+"small"	923.8047142857141
+"tweak"	924.2381428571426
+"veins"	924.6715714285712
+"now"	926.005
+"work"	926.3813749999999
+"as"	926.75775
+"you"	927.134125
+"expect"	927.5105000000001
+"now"	927.8868750000001
+"wouldn't"	928.2632500000002
+"work"	928.6396250000003
+"and"	926.005
+"not"	927.5105
+"a"	929.016
+"here"	929.4445714285714
+"when"	929.8731428571429
+"we"	930.3017142857143
+"separate"	930.7302857142857
+"them"	931.1588571428572
+"out"	931.5874285714286
+"love"	932.016
+"the"	932.4549999999999
+"it"	932.8939999999999
+"the"	933.3329999999999
+"alpha"	933.7719999999998
+"blending"	934.2109999999998
+"allows"	934.6499999999997
+"our"	932.016
+"charges"	935.089
+"that"	935.472875
+"are"	935.85675
+"now"	936.240625
+"relative"	936.6245
+"to"	937.008375
+"the"	937.39225
+"the"	937.776125
+"size"	935.089
+"of"	935.85675
+"the"	936.6245
+"notes"	937.39225
+"to"	939.006
+"be"	939.3845
+"blended"	939.763
+"with"	940.1415000000001
+"our"	940.5200000000001
+"custom"	940.8985000000001
+"force"	941.2770000000002
+"and"	941.6555000000002
+"a"	942.088
+"works"	942.3937999999999
+"with"	942.6995999999999
+"a"	943.0053999999999
+"lot"	943.3111999999999
+"of"	943.6169999999998
+"nose"	943.9227999999998
+"and"	944.2285999999998
+"works"	944.5343999999998
+"if"	944.8401999999998
+"you"	942.088
+"dragging"	946.046
+"around"	946.7186666666666
+"though"	947.3913333333333
+"the"	948.0639999999999
+"stick"	948.7366666666665
+"to"	949.409333333333
+"their"	946.046
+"centers"	946.7186666666666
+"but"	947.3913333333333
+"again"	948.0639999999999
+"we're"	948.7366666666665
+"not"	949.409333333333
+"were"	950.082
+"not"	950.5831666666667
+"worried"	951.0843333333333
+"really"	951.5855
+"about"	952.0866666666667
+"where"	952.5878333333334
+"you"	953.089
+"to"	953.5422222222222
+"these"	953.9954444444444
+"notes"	954.4486666666666
+"goes"	954.9018888888887
+"we"	955.3551111111109
+"just"	955.808333333333
+"on"	956.2615555555552
+"time"	956.7147777777774
+"you"	953.089
+"guys"	953.5422222222222
+"club"	953.9954444444444
+"here"	954.4486666666666
+"you"	954.9018888888887
+"guys"	955.3551111111109
+"come"	955.808333333333
+"up"	956.2615555555552
+"here"	956.7147777777774
+"and"	958.068
+"they"	958.643
+"figure"	959.2180000000001
+"things"	959.7930000000001
+"out"	960.3680000000002
+"Scott"	960.9430000000002
+"nice"	961.5180000000003
+"Tom"	958.068
+"so"	962.093
+"let's"	962.5347142857142
+"look"	962.9764285714285
+"at"	963.4181428571428
+"another"	963.8598571428571
+"iteration"	964.3015714285714
+"of"	964.7432857142857
+"this"	962.093
+"i"	966.085
+"right"	966.5367777777778
+"now"	966.9885555555556
+"the"	967.4403333333335
+"to"	967.8921111111113
+"the"	968.3438888888891
+"reports"	968.7956666666669
+"in"	969.2474444444447
+"the"	969.6992222222225
+"charge"	966.085
+"that's"	971.051
+"that's"	971.5548333333334
+"a"	972.0586666666667
+"associate"	972.5625
+"with"	973.0663333333333
+"each"	973.5701666666666
+"other's"	971.051
+"noses"	972.0586666666667
+"nice"	973.0663333333333
+"it"	974.074
+"keeps"	974.4688749999999
+"them"	974.8637499999999
+"the"	975.2586249999998
+"nodes"	975.6534999999998
+"away"	976.0483749999997
+"from"	976.4432499999997
+"one"	976.8381249999996
+"another"	974.074
+"but"	975.127
+"it"	976.18
+"it's"	977.899
+"kind"	978.4191428571429
+"of"	978.9392857142858
+"an"	979.4594285714287
+"eventual"	979.9795714285716
+"process"	980.4997142857145
+"right"	981.0198571428574
+"so"	977.899
+"what"	978.6272
+"if"	979.3554
+"you"	980.0836
+"wanted"	980.8118000000001
+"that"	981.054
+"to"	981.4962857142857
+"be"	981.9385714285714
+"a"	982.3808571428572
+"more"	982.8231428571429
+"constrained"	983.2654285714286
+"more"	983.7077142857144
+"formal"	981.054
+"looking"	985.005
+"a"	985.76175
+"distinction"	986.5185
+"on"	987.27525
+"where"	988.077
+"you"	988.5893333333333
+"we're"	989.1016666666667
+"gonna"	989.614
+"ever"	990.1263333333334
+"mandeville"	990.6386666666667
+"simple"	988.077
+"collision"	989.1016666666667
+"detection"	990.1263333333334
+"in"	992.051
+"the"	992.3844444444445
+"same"	992.717888888889
+"manner"	993.0513333333334
+"so"	993.3847777777779
+"this"	993.7182222222224
+"was"	994.0516666666668
+"dunno"	994.3851111111113
+"I"	994.7185555555558
+"like"	992.051
+"remix"	995.052
+"in"	995.4817142857142
+"New"	995.9114285714285
+"York"	996.3411428571427
+"Times"	996.7708571428569
+"graphics"	997.2005714285712
+"a"	997.6302857142854
+"and"	998.006
+"by"	998.38875
+"remix"	998.7715
+"you"	999.1542499999999
+"know"	999.5369999999999
+"where"	999.9197499999999
+"but"	1000.3024999999999
+"I"	1000.6852499999999
+"a"	1002.022
+"by"	1002.3557777777778
+"this"	1002.6895555555556
+"is"	1003.0233333333333
+"done"	1003.3571111111111
+"by"	1003.6908888888888
+"another"	1004.0246666666666
+"great"	1004.3584444444443
+"piece"	1004.6922222222221
+"where"	1005.026
+"that"	1005.6049999999999
+"were"	1006.1839999999999
+"visualizing"	1006.7629999999998
+"a"	1007.3419999999998
+"the"	1007.9209999999997
+"words"	1008.4999999999997
+"different"	1005.026
+"words"	1006.377
+"said"	1007.728
+"at"	1009.079
+"the"	1009.6984
+"different"	1010.3178
+"national"	1010.9372000000001
+"conventions"	1011.5566000000001
+"during"	1009.079
+"the"	1010.1113333333333
+"elections"	1011.1436666666666
+"and"	1013.076
+"I"	1013.4568750000001
+"R"	1013.8377500000001
+"I"	1014.2186250000002
+"implemented"	1014.5995000000003
+"again"	1014.9803750000003
+"support"	1015.3612500000004
+"to"	1015.7421250000004
+"this"	1013.076
+"and"	1017.023
+"another"	1017.8306
+"visualization"	1018.6382
+"that"	1019.4458
+"just"	1020.2533999999999
+"looks"	1017.023
+"at"	1017.696
+"a"	1018.369
+"word"	1019.042
+"frequencies"	1019.715
+"and"	1020.388
+"and"	1021.061
+"some"	1021.4297777777779
+"books"	1021.7985555555557
+"but"	1022.1673333333335
+"the"	1022.5361111111114
+"the"	1022.9048888888892
+"point"	1023.273666666667
+"if"	1023.6424444444449
+"it"	1024.0112222222226
+"is"	1021.061
+"that"	1022.1673333333334
+"now"	1023.2736666666668
+"from"	1024.929
+"when"	1025.3466250000001
+"we"	1025.7642500000002
+"move"	1026.1818750000002
+"these"	1026.5995000000003
+"guys"	1027.0171250000003
+"around"	1027.4347500000003
+"at"	1027.8523750000004
+"the"	1024.929
+"there's"	1026.5995
+"nice"	1028.027
+"hard-line"	1028.8435
+"around"	1029.6599999999999
+"each"	1030.4764999999998
+"in"	1031.2929999999997
+"their"	1032.1094999999996
+"their"	1028.027
+"clout"	1028.8435
+"in"	1029.6599999999999
+"there"	1030.4764999999998
+"and"	1031.2929999999997
+"they're"	1032.1094999999996
+"um"	1033.169
+"maintaining"	1033.848
+"that"	1034.527
+"a"	1035.2060000000001
+"parameter"	1035.8850000000002
+"around"	1036.5640000000003
+"them"	1033.169
+"today"	1037.909
+"implement"	1038.3877142857143
+"this"	1038.8664285714285
+"a"	1039.3451428571427
+"is"	1039.823857142857
+"the"	1040.3025714285711
+"same"	1040.7812857142853
+"same"	1041.026
+"idea"	1041.535
+"ennui"	1042.044
+"we"	1042.553
+"use"	1043.0620000000001
+"another"	1043.5710000000001
+"I'll"	1044.008
+"modification"	1044.5243333333333
+"function"	1045.0406666666665
+"we"	1045.5569999999998
+"can"	1046.073333333333
+"call"	1046.5896666666663
+"it"	1044.008
+"collide"	1045.557
+"and"	1048.078
+"I"	1048.4163333333333
+"just"	1048.7546666666667
+"look"	1049.093
+"at"	1049.4313333333334
+"well"	1049.7696666666668
+"as"	1050.1080000000002
+"look"	1050.4463333333335
+"at"	1050.784666666667
+"pseudocode"	1048.078
+"here"	1049.093
+"on"	1050.1080000000002
+"because"	1052.023
+"the"	1052.451857142857
+"it's"	1052.8807142857142
+"not"	1053.3095714285714
+"difficult"	1053.7384285714286
+"was"	1054.1672857142858
+"a"	1054.596142857143
+"long"	1052.023
+"so"	1055.025
+"again"	1055.400625
+"this"	1055.77625
+"has"	1056.1518749999998
+"been"	1056.5274999999997
+"executed"	1056.9031249999996
+"for"	1057.2787499999995
+"each"	1057.6543749999994
+"node"	1058.003
+"on"	1058.6098
+"at"	1059.2166
+"every"	1059.8234
+"cycle"	1060.4302
+"%uh"	1061.064
+"that's"	1061.5766666666668
+"the"	1062.0893333333336
+"that"	1062.6020000000003
+"physical"	1063.114666666667
+"simulation"	1063.6273333333338
+"the"	1061.064
+"nose"	1062.0893333333333
+"layout"	1063.1146666666666
+"so"	1065.004
+"we"	1065.5146249999998
+"just"	1066.0252499999997
+"inside"	1066.5358749999996
+"this"	1067.0464999999995
+"we"	1067.5571249999994
+"can"	1068.0677499999993
+"loop"	1068.5783749999991
+"through"	1065.004
+"all"	1065.821
+"the"	1066.638
+"other"	1067.455
+"notes"	1068.272
+"and"	1070.025
+"then"	1070.653125
+"do"	1071.28125
+"a"	1071.909375
+"simple"	1072.5375
+"distance"	1073.1656249999999
+"check"	1073.7937499999998
+"if"	1074.4218749999998
+"if"	1070.025
+"they're"	1070.8625000000002
+"too"	1071.7000000000003
+"close"	1072.5375000000004
+"based"	1073.3750000000005
+"on"	1074.2125000000005
+"the"	1075.005
+"the"	1075.4438571428573
+"values"	1075.8827142857144
+"%uh"	1076.3215714285716
+"the"	1076.7604285714287
+"data"	1077.199285714286
+"attributes"	1077.638142857143
+"that"	1075.005
+"we"	1075.7730000000001
+"already"	1076.5410000000002
+"know"	1077.3090000000002
+"in"	1079.022
+"in"	1079.4696666666666
+"those"	1079.9173333333333
+"in"	1080.365
+"those"	1080.8126666666667
+"nodes"	1081.2603333333334
+"that"	1081.708
+"we"	1082.1556666666668
+"just"	1082.6033333333335
+"move"	1079.022
+"them"	1079.8278
+"back"	1080.6336000000001
+"by"	1081.4394000000002
+"half"	1082.2452000000003
+"I'll"	1083.051
+"I"	1083.3844444444444
+"so"	1083.7178888888889
+"we"	1084.0513333333333
+"get"	1084.3847777777778
+"that"	1084.7182222222223
+"I"	1085.0516666666667
+"was"	1085.3851111111112
+"that"	1085.7185555555557
+"slight"	1086.052
+"modification"	1086.6287142857143
+"we"	1087.2054285714287
+"can"	1087.782142857143
+"get"	1088.3588571428575
+"this"	1088.9355714285718
+"nice"	1089.5122857142862
+"look"	1086.052
+"it"	1086.7248333333332
+"works"	1087.3976666666665
+"with"	1088.0704999999998
+"other"	1088.743333333333
+"custom"	1089.4161666666664
+"a"	1090.089
+"forces"	1090.610125
+"like"	1091.13125
+"them"	1091.652375
+"always"	1092.1734999999999
+"like"	1092.6946249999999
+"that"	1093.2157499999998
+"and"	1093.7368749999998
+"it"	1090.089
+"works"	1091.4786666666666
+"with"	1092.8683333333333
+"any"	1095.059
+"number"	1095.3935555555556
+"of"	1095.7281111111113
+"nodes"	1096.062666666667
+"that"	1096.3972222222226
+"you"	1096.7317777777782
+"put"	1097.066333333334
+"into"	1097.4008888888895
+"it"	1097.7354444444452
+"and"	1098.007
+"this"	1098.6654285714287
+"this"	1099.3238571428574
+"is"	1099.982285714286
+"a"	1100.6407142857147
+"a"	1101.2991428571434
+"brute-force"	1101.957571428572
+"mechanism"	1098.007
+"the"	1098.6654285714287
+"that"	1099.3238571428574
+"you"	1099.982285714286
+"can"	1100.6407142857147
+"optimize"	1101.2991428571434
+"but"	1101.957571428572
+"just"	1102.679
+"a"	1103.1680000000001
+"starting"	1103.6570000000002
+"point"	1104.1460000000002
+"for"	1104.6350000000002
+"this"	1105.1240000000003
+"kind"	1105.6130000000003
+"of"	1106.1020000000003
+"a"	1106.5910000000003
+"visualization"	1102.679
+"you"	1107.008
+"can"	1107.4524444444444
+"do"	1107.8968888888887
+"core"	1108.341333333333
+"stuff"	1108.7857777777774
+"like"	1109.2302222222218
+"the"	1109.674666666666
+"the"	1110.1191111111104
+"demo"	1110.5635555555548
+"of"	1107.008
+"putting"	1107.808
+"an"	1108.608
+"invisible"	1109.408
+"node"	1110.2079999999999
+"underneath"	1111.008
+"your"	1111.4497142857142
+"me"	1111.8914285714284
+"your"	1112.3331428571425
+"mouse"	1112.7748571428567
+"cursor"	1113.216571428571
+"and"	1113.658285714285
+"then"	1111.008
+"every"	1111.5233333333333
+"time"	1112.0386666666666
+"all"	1112.5539999999999
+"your"	1113.0693333333331
+"other"	1113.5846666666664
+"little"	1115.0
+"notes"	1115.63525
+"are"	1116.2705
+"afraid"	1116.9057500000001
+"of"	1117.5410000000002
+"it"	1118.1762500000002
+"just"	1118.8115000000003
+"fun"	1119.4467500000003
+"to"	1115.0
+"okay"	1120.082
+"oh"	1120.5122857142858
+"yeah"	1120.9425714285715
+"I"	1121.3728571428571
+"want"	1121.8031428571428
+"more"	1122.2334285714285
+"and"	1122.6637142857141
+"there's"	1123.094
+"nothing"	1123.5976666666668
+"that"	1124.1013333333335
+"mandates"	1124.6050000000002
+"that"	1125.108666666667
+"you"	1125.6123333333337
+"have"	1123.094
+"to"	1123.8495
+"move"	1124.605
+"them"	1125.3605
+"back"	1127.016
+"by"	1127.3946250000001
+"half"	1127.7732500000002
+"so"	1128.1518750000002
+"if"	1128.5305000000003
+"you"	1128.9091250000004
+"start"	1129.2877500000004
+"increasing"	1129.6663750000005
+"that"	1127.016
+"that"	1130.045
+"movement"	1130.546625
+"you"	1131.0482499999998
+"can"	1131.5498749999997
+"end"	1132.0514999999996
+"up"	1132.5531249999995
+"with"	1133.0547499999993
+"this"	1133.5563749999992
+"nice"	1130.045
+"but"	1131.04825
+"useless"	1132.0515
+"popcorn"	1133.05475
+"explosion"	1134.058
+"star"	1134.6586
+"colliding"	1135.2592
+"with"	1135.8598
+"one"	1136.4604
+"another"	1134.058
+"and"	1135.5594999999998
+"getting"	1137.061
+"scared"	1137.5021428571429
+"him"	1137.9432857142858
+"right"	1138.3844285714288
+"away"	1138.8255714285717
+"just"	1139.2667142857147
+"one"	1139.7078571428576
+"I'll"	1141.049
+"okay"	1141.4952222222223
+"so"	1141.9414444444446
+"let's"	1142.387666666667
+"say"	1142.8338888888893
+"I"	1143.2801111111116
+"think"	1143.726333333334
+"this"	1144.1725555555563
+"is"	1144.6187777777786
+"Dragon"	1141.049
+"Ball"	1141.8522
+"Z"	1142.6554
+"not"	1143.4586000000002
+"really"	1144.2618000000002
+"a"	1145.065
+"Star"	1145.5162857142857
+"Wars"	1145.9675714285713
+"buzzer"	1146.418857142857
+"as"	1146.8701428571426
+"a"	1147.3214285714282
+"force"	1147.7727142857138
+"a"	1148.809
+"let's"	1149.217875
+"add"	1149.6267500000001
+"some"	1150.0356250000002
+"some"	1150.4445000000003
+"links"	1150.8533750000004
+"you"	1151.2622500000004
+"know"	1151.6711250000005
+"finally"	1152.008
+"um"	1152.8453333333334
+"with"	1153.6826666666668
+"links"	1154.5200000000002
+"constrain"	1155.3573333333336
+"the"	1156.194666666667
+"locations"	1152.008
+"that"	1157.032
+"our"	1157.4612857142856
+"notes"	1157.8905714285713
+"can"	1158.319857142857
+"move"	1158.7491428571427
+"around"	1159.1784285714284
+"a"	1159.607714285714
+"II"	1160.037
+"here's"	1160.612
+"Jersey"	1161.1870000000001
+"example"	1161.7620000000002
+"with"	1162.3370000000002
+"the"	1162.9120000000003
+"links"	1163.4870000000003
+"now"	1160.037
+"and"	1164.062
+"as"	1164.4446249999999
+"you"	1164.8272499999998
+"might"	1165.2098749999998
+"expect"	1165.5924999999997
+"the"	1165.9751249999997
+"three"	1166.3577499999997
+"links"	1166.7403749999996
+"are"	1164.062
+"also"	1165.0823333333333
+"represented"	1166.1026666666667
+"and"	1168.023
+"data"	1168.5641249999999
+"so"	1169.1052499999998
+"the"	1169.6463749999998
+"minimum"	1170.1874999999998
+"two"	1170.7286249999997
+"things"	1171.2697499999997
+"you"	1171.8108749999997
+"need"	1168.023
+"in"	1168.8888
+"your"	1169.7546
+"link"	1170.6204
+"data"	1171.4862
+"our"	1172.559
+"source"	1173.0691428571429
+"and"	1173.5792857142858
+"a"	1174.0894285714287
+"target"	1174.5995714285716
+"which"	1175.1097142857145
+"represent"	1175.6198571428574
+"the"	1172.559
+"two"	1174.3445000000002
+"I"	1176.013
+"know"	1176.442857142857
+"is"	1176.8727142857142
+"that"	1177.3025714285714
+"they're"	1177.7324285714285
+"connecting"	1178.1622857142856
+"with"	1178.5921428571428
+"you"	1176.013
+"can"	1176.3473333333332
+"do"	1176.6816666666664
+"this"	1177.0159999999996
+"either"	1177.3503333333329
+"via"	1177.684666666666
+"an"	1178.0189999999993
+"index"	1178.3533333333326
+"into"	1178.6876666666658
+"the"	1180.003
+"nodes"	1180.254
+"are"	1180.5049999999999
+"a"	1180.7559999999999
+"or"	1181.007
+"with"	1181.586
+"the"	1182.165
+"actual"	1182.744
+"notes"	1183.3229999999999
+"themselves"	1183.9019999999998
+"and"	1184.4809999999998
+"if"	1181.007
+"you"	1181.6825000000001
+"do"	1182.3580000000002
+"in"	1183.0335000000002
+"an"	1183.7090000000003
+"index"	1184.3845000000003
+"when"	1185.006
+"they're"	1185.6174
+"forced"	1186.2288
+"layoff"	1186.8402
+"starts"	1187.4516
+"they'll"	1185.006
+"be"	1185.77025
+"translated"	1186.5345
+"into"	1187.29875
+"the"	1189.017
+"notes"	1189.5201666666667
+"themselves"	1190.0233333333333
+"which"	1190.5265
+"means"	1191.0296666666666
+"you"	1191.5328333333332
+"have"	1189.017
+"access"	1190.0233333333333
+"to"	1191.0296666666666
+"up"	1192.036
+"both"	1192.412875
+"the"	1192.78975
+"source"	1193.1666249999998
+"and"	1193.5434999999998
+"target"	1193.9203749999997
+"no"	1194.2972499999996
+"data"	1194.6741249999995
+"on"	1195.051
+"you"	1195.388222222222
+"need"	1195.7254444444443
+"a"	1196.0626666666665
+"visualize"	1196.3998888888887
+"on"	1196.7371111111108
+"some"	1197.074333333333
+"way"	1197.4115555555552
+"view"	1197.7487777777774
+"if"	1198.086
+"you"	1198.5314444444446
+"so"	1198.976888888889
+"choose"	1199.4223333333337
+"and"	1199.8677777777782
+"so"	1200.3132222222227
+"we"	1200.7586666666673
+"can"	1201.2041111111118
+"draw"	1201.6495555555564
+"simple"	1198.086
+"line"	1198.8878
+"in"	1199.6896
+"this"	1200.4913999999999
+"example"	1201.2931999999998
+"and"	1202.095
+"then"	1202.5412222222224
+"like"	1202.9874444444447
+"I"	1203.433666666667
+"said"	1203.8798888888894
+"you"	1204.3261111111117
+"have"	1204.772333333334
+"access"	1205.2185555555563
+"to"	1205.6647777777787
+"the"	1202.095
+"source"	1203.0990000000002
+"and"	1204.103
+"destination"	1205.107
+"our"	1207.011
+"source"	1207.4641111111112
+"and"	1207.9172222222223
+"target"	1208.3703333333335
+"a"	1208.8234444444447
+"data"	1209.276555555556
+"and"	1209.729666666667
+"you"	1210.1827777777783
+"can"	1210.6358888888894
+"use"	1207.011
+"their"	1208.0304999999998
+"X&Y"	1209.0499999999997
+"coordinates"	1210.0694999999996
+"to"	1211.089
+"position"	1211.7014
+"your"	1212.3138
+"lines"	1212.9261999999999
+"start/stop"	1213.5385999999999
+"and"	1215.051
+"so"	1215.4315
+"and"	1215.812
+"%uh"	1216.1924999999999
+"some"	1216.5729999999999
+"the"	1216.9534999999998
+"simplest"	1217.3339999999998
+"the"	1217.7144999999998
+"example"	1218.095
+"I"	1218.6986
+"could"	1219.3021999999999
+"covers"	1219.9057999999998
+"that"	1220.5093999999997
+"a"	1222.013
+"forces"	1222.522
+"also"	1223.031
+"have"	1223.54
+"their"	1224.049
+"own"	1224.558
+"are"	1225.067
+"links"	1225.576
+"also"	1222.013
+"have"	1222.8274
+"their"	1223.6417999999999
+"own"	1224.4561999999999
+"parameters"	1225.2705999999998
+"I'd"	1226.085
+"like"	1226.5141428571428
+"to"	1226.9432857142856
+"talk"	1227.3724285714284
+"about"	1227.8015714285712
+"just"	1228.230714285714
+"link"	1228.6598571428567
+"distance"	1226.085
+"and"	1227.0863333333334
+"a"	1228.0876666666668
+"as"	1230.025
+"you"	1230.597
+"might"	1231.1689999999999
+"guess"	1231.7409999999998
+"like"	1232.3129999999996
+"distance"	1232.8849999999995
+"just"	1233.4569999999994
+"specifies"	1230.025
+"the"	1234.029
+"early"	1234.4155
+"distance"	1234.8020000000001
+"the"	1235.1885000000002
+"link"	1235.5750000000003
+"the"	1235.9615000000003
+"the"	1236.3480000000004
+"link"	1236.7345000000005
+"to"	1234.029
+"the"	1235.0596666666668
+"links"	1236.0903333333335
+"um"	1238.021
+"a"	1238.771
+"based"	1239.521
+"on"	1240.271
+"some"	1241.021
+"value"	1241.626
+"so"	1242.231
+"another"	1242.836
+"insight"	1243.441
+"is"	1244.046
+"you"	1244.4792857142857
+"can"	1244.9125714285713
+"make"	1245.3458571428569
+"that"	1245.7791428571425
+"link"	1246.212428571428
+"distance"	1246.6457142857137
+"driven"	1247.079
+"by"	1247.455125
+"data"	1247.83125
+"sorry"	1248.207375
+"instead"	1248.5835
+"have"	1248.959625
+"been"	1249.33575
+"a"	1249.711875
+"constant"	1247.079
+"it"	1250.799
+"can"	1251.3058333333333
+"it"	1251.8126666666667
+"can"	1252.3195
+"be"	1252.8263333333334
+"a"	1253.3331666666668
+"it"	1253.084
+"can"	1253.5128571428572
+"represent"	1253.9417142857144
+"some"	1254.3705714285716
+"data"	1254.7994285714287
+"value"	1255.228285714286
+"and"	1255.657142857143
+"this"	1253.084
+"in"	1256.086
+"this"	1256.4292222222223
+"case"	1256.7724444444445
+"the"	1257.1156666666668
+"link"	1257.458888888889
+"a"	1257.8021111111113
+"data"	1258.1453333333336
+"has"	1258.4885555555559
+"some"	1258.8317777777781
+"value"	1256.086
+"distance"	1260.075
+"that"	1260.5765000000001
+"you"	1261.0780000000002
+"could"	1261.5795000000003
+"use"	1262.0810000000004
+"to"	1262.5825000000004
+"to"	1263.0840000000005
+"expand"	1263.5855000000006
+"occurred"	1260.075
+"tracked"	1261.078
+"each"	1262.081
+"like"	1263.0839999999998
+"at"	1264.087
+"upper"	1264.6
+"legs"	1265.1129999999998
+"level"	1265.6259999999997
+"and"	1266.1389999999997
+"that's"	1266.6519999999996
+"essentially"	1264.087
+"all"	1264.6
+"I've"	1265.1129999999998
+"done"	1265.6259999999997
+"in"	1266.1389999999997
+"this"	1266.6519999999996
+"particular"	1268.065
+"visualization"	1269.073
+"where"	1269.573
+"I"	1270.073
+"was"	1270.573
+"looking"	1271.073
+"that"	1271.573
+"um"	1269.073
+"a"	1272.073
+"communities"	1272.8345000000002
+"in"	1273.5960000000002
+"neighborhoods"	1274.3575000000003
+"that"	1275.1190000000004
+"have"	1275.8805000000004
+"a"	1272.073
+"sharp"	1273.2152500000002
+"racial"	1274.3575
+"divide"	1275.49975
+"so"	1277.299
+"here"	1277.692875
+"this"	1278.08675
+"is"	1278.480625
+"Kansas"	1278.8745
+"City"	1279.2683749999999
+"and"	1279.6622499999999
+"each"	1280.0561249999998
+"each"	1280.045
+"node"	1280.5777142857144
+"is"	1281.1104285714287
+"now"	1281.643142857143
+"represented"	1282.1758571428572
+"by"	1282.7085714285715
+"census"	1283.2412857142858
+"tract"	1280.045
+"and"	1284.179
+"like"	1284.5791250000002
+"I"	1284.9792500000003
+"said"	1285.3793750000004
+"today"	1285.7795000000006
+"you"	1286.1796250000007
+"don't"	1286.5797500000008
+"you're"	1286.979875000001
+"not"	1284.179
+"constrained"	1285.246
+"by"	1286.313
+"bubbles"	1287.038
+"on"	1287.7561428571428
+"sand"	1288.4742857142855
+"underneath"	1289.1924285714283
+"it"	1289.910571428571
+"and"	1290.6287142857138
+"so"	1291.3468571428566
+"each"	1287.038
+"census"	1287.7561428571428
+"tract"	1288.4742857142855
+"is"	1289.1924285714283
+"connected"	1289.910571428571
+"to"	1290.6287142857138
+"its"	1291.3468571428566
+"neighbors"	1292.065
+"by"	1293.048
+"links"	1293.6221428571428
+"an"	1294.1962857142855
+"invisible"	1294.7704285714283
+"links"	1295.344571428571
+"and"	1295.9187142857138
+"that"	1296.4928571428566
+"this"	1293.048
+"isn't"	1293.8518
+"hasn't"	1294.6555999999998
+"started"	1295.4593999999997
+"yet"	1296.2631999999996
+"but"	1297.067
+"the"	1297.569875
+"link"	1298.0727499999998
+"for"	1298.5756249999997
+"those"	1299.0784999999996
+"links"	1299.5813749999995
+"is"	1300.0842499999994
+"relative"	1300.5871249999993
+"to"	1297.067
+"the"	1298.408
+"proportion"	1299.7489999999998
+"up"	1301.009
+"a"	1301.443142857143
+"white"	1301.8772857142858
+"and"	1302.3114285714287
+"black"	1302.7455714285716
+"populations"	1303.1797142857145
+"between"	1303.6138571428573
+"that"	1305.029
+"mean"	1305.4591428571428
+"that"	1305.8892857142855
+"neighbor"	1306.3194285714283
+"and"	1306.749571428571
+"its"	1307.1797142857138
+"neighbor"	1307.6098571428565
+"you"	1305.029
+"know"	1305.78175
+"that"	1306.5345000000002
+"that"	1307.2872500000003
+"census"	1308.004
+"tract"	1308.5721666666666
+"as"	1309.1403333333333
+"neighbor"	1309.7085
+"so"	1310.2766666666666
+"iron"	1310.8448333333333
+"if"	1311.809
+"there's"	1312.2848571428572
+"a"	1312.7607142857144
+"sharp"	1313.2365714285716
+"a"	1313.7124285714287
+"jump"	1314.188285714286
+"and"	1314.6641428571431
+"in"	1315.014
+"white"	1315.3933749999999
+"or"	1315.7727499999999
+"black"	1316.1521249999998
+"population"	1316.5314999999998
+"so"	1316.9108749999998
+"if"	1317.2902499999998
+"you"	1317.6696249999998
+"go"	1315.014
+"from"	1316.0256666666667
+"one"	1317.0373333333334
+"census"	1318.049
+"tract"	1318.556625
+"is"	1319.06425
+"20"	1319.5718749999999
+"percent"	1320.0794999999998
+"white"	1320.5871249999998
+"to"	1321.0947499999997
+"its"	1321.6023749999997
+"neighbor"	1318.049
+"be"	1318.8612
+"in"	1319.6734000000001
+"20"	1320.4856000000002
+"percent"	1321.2978000000003
+"black"	1323.001
+"then"	1323.38675
+"then"	1323.7724999999998
+"that"	1324.1582499999997
+"link"	1324.5439999999996
+"will"	1324.9297499999996
+"be"	1325.3154999999995
+"longer"	1325.7012499999994
+"so"	1326.096
+"we"	1326.4392222222223
+"start"	1326.7824444444445
+"this"	1327.1256666666668
+"it"	1327.468888888889
+"it"	1327.8121111111113
+"starts"	1328.1553333333336
+"to"	1328.4985555555559
+"break"	1328.8417777777781
+"apart"	1326.096
+"at"	1330.085
+"areas"	1330.5184285714286
+"where"	1330.951857142857
+"there's"	1331.3852857142856
+"this"	1331.8187142857141
+"real"	1332.2521428571426
+"high"	1332.6855714285712
+"division"	1330.085
+"and"	1334.019
+"I"	1334.3576666666668
+"just"	1334.6963333333335
+"I"	1335.0350000000003
+"read"	1335.373666666667
+"I"	1335.7123333333338
+"is"	1336.0510000000006
+"sorry"	1336.3896666666674
+"that"	1336.7283333333341
+"you"	1337.067
+"understand"	1337.82475
+"kinda"	1338.5825
+"a"	1339.34025
+"the"	1340.098
+"medium"	1340.606
+"emotionally"	1341.114
+"intense"	1341.622
+"a"	1342.13
+"value"	1342.6380000000001
+"I"	1344.046
+"want"	1344.4493
+"to"	1344.8526
+"just"	1345.2558999999999
+"kinda"	1345.6591999999998
+"look"	1346.0624999999998
+"at"	1346.4657999999997
+"a"	1346.8690999999997
+"way"	1347.2723999999996
+"to"	1347.6756999999996
+"represent"	1344.046
+"how"	1345.3903333333333
+"these"	1346.7346666666665
+"um"	1348.079
+"a"	1348.6021666666666
+"racial"	1349.1253333333332
+"boundaries"	1349.6484999999998
+"affected"	1350.1716666666664
+"the"	1350.694833333333
+"the"	1351.929
+"first"	1352.415375
+"that"	1352.90175
+"the"	1353.388125
+"spatial"	1353.8745
+"a"	1354.3608749999999
+"very"	1354.8472499999998
+"small"	1355.3336249999998
+"areas"	1351.929
+"in"	1352.7072
+"which"	1353.4854
+"they"	1354.2636
+"occur"	1355.0418
+"so"	1355.082
+"are"	1355.461125
+"there's"	1355.84025
+"that's"	1356.219375
+"a"	1356.5984999999998
+"bit"	1356.9776249999998
+"that's"	1357.3567499999997
+"all"	1357.7358749999996
+"but"	1355.082
+"up"	1356.5985
+"underline"	1359.015
+"that"	1359.8493333333333
+"we're"	1360.6836666666666
+"just"	1361.5179999999998
+"a"	1362.352333333333
+"link"	1363.1866666666663
+"distances"	1359.015
+"you"	1359.730142857143
+"know"	1360.4452857142858
+"i"	1361.1604285714286
+"trick"	1361.8755714285714
+"on"	1362.5907142857143
+"their"	1363.3058571428571
+"so"	1364.075
+"we"	1364.6558571428573
+"can"	1365.2367142857145
+"start"	1365.8175714285717
+"expanding"	1366.398428571429
+"these"	1366.979285714286
+"concepts"	1367.5601428571433
+"a"	1369.041
+"and"	1369.3803333333333
+"the"	1369.7196666666666
+"first"	1370.059
+"the"	1370.3983333333333
+"first"	1370.7376666666667
+"and"	1371.077
+"I"	1371.4163333333333
+"thought"	1371.7556666666667
+"have"	1369.041
+"when"	1370.568
+"um"	1372.095
+"I'll"	1372.6045
+"kinda"	1373.114
+"discovered"	1373.6235000000001
+"the"	1374.1330000000003
+"multiple"	1374.6425000000004
+"centers"	1372.095
+"idea"	1376.052
+"as"	1376.5047777777777
+"what"	1376.9575555555555
+"have"	1377.4103333333333
+"you"	1377.863111111111
+"put"	1378.3158888888888
+"it"	1378.7686666666666
+"into"	1379.2214444444444
+"a"	1379.6742222222222
+"circle"	1376.052
+"you"	1376.7311666666665
+"know"	1377.4103333333333
+"her"	1378.0895
+"like"	1378.7686666666668
+"circles"	1379.4478333333336
+"so"	1381.027
+"here's"	1381.4568571428572
+"my"	1381.8867142857143
+"interactive"	1382.3165714285715
+"hair"	1382.7464285714286
+"ball"	1383.1762857142858
+"that"	1383.606142857143
+"I"	1381.027
+"did"	1382.5315
+"for"	1384.036
+"a"	1384.6402
+"I"	1385.2444
+"my"	1385.8486
+"the"	1386.4528
+"the"	1387.057
+"people"	1387.436875
+"that"	1387.8167500000002
+"I"	1388.1966250000003
+"work"	1388.5765000000004
+"with"	1388.9563750000004
+"artwork"	1389.3362500000005
+"for"	1389.7161250000006
+"as"	1387.057
+"towers"	1388.07
+"they"	1389.0829999999999
+"wanna"	1390.096
+"just"	1390.7698333333333
+"got"	1391.4436666666666
+"over"	1392.1174999999998
+"IRT"	1392.7913333333331
+"representation"	1393.4651666666664
+"of"	1390.096
+"collaboration"	1390.6735714285714
+"you"	1391.251142857143
+"know"	1391.8287142857143
+"what"	1392.4062857142858
+"are"	1392.9838571428572
+"the"	1393.5614285714287
+"main"	1395.039
+"science"	1395.079
+"stances"	1395.6954
+"everybody"	1396.3118000000002
+"climbers"	1396.9282000000003
+"with"	1397.5446000000004
+"one"	1395.079
+"another"	1395.6954
+"sorry"	1396.3118000000002
+"to"	1396.9282000000003
+"these"	1397.5446000000004
+"these"	1399.061
+"are"	1399.5652499999999
+"these"	1400.0694999999998
+"groups"	1400.5737499999998
+"is"	1401.0779999999997
+"a"	1401.5822499999997
+"lab"	1402.0864999999997
+"each"	1402.5907499999996
+"node"	1399.061
+"you"	1399.7333333333333
+"circle"	1400.4056666666668
+"it"	1401.0780000000002
+"is"	1401.7503333333336
+"a"	1402.422666666667
+"individual"	1403.095
+"in"	1403.5235714285714
+"that"	1403.9521428571427
+"lab"	1404.380714285714
+"and"	1404.8092857142854
+"there's"	1405.2378571428567
+"links"	1405.666428571428
+"between"	1403.095
+"them"	1404.595
+"based"	1406.095
+"on"	1406.4705
+"how"	1406.846
+"many"	1407.2215
+"papers"	1407.5970000000002
+"are"	1407.9725000000003
+"on"	1408.3480000000004
+"together"	1408.7235000000005
+"on"	1406.095
+"so"	1410.035
+"it's"	1410.4655714285716
+"fun"	1410.896142857143
+"and"	1411.3267142857146
+"it"	1411.7572857142861
+"allows"	1412.1878571428576
+"for"	1412.6184285714291
+"exploration"	1410.035
+"again"	1411.542
+"all"	1413.049
+"I'm"	1413.424625
+"defining"	1413.8002500000002
+"they"	1414.1758750000004
+"are"	1414.5515000000005
+"the"	1414.9271250000006
+"a"	1415.3027500000007
+"route"	1415.6783750000009
+"the"	1413.049
+"cert"	1414.5515
+"the"	1416.054
+"center's"	1416.5595
+"along"	1417.065
+"a"	1417.5705
+"circle"	1418.076
+"right"	1418.5815
+"on"	1419.087
+"for"	1419.5925
+"each"	1416.054
+"slab"	1418.076
+"%uh"	1420.098
+"not"	1420.607857142857
+"to"	1421.117714285714
+"individuals"	1421.6275714285712
+"which"	1422.1374285714282
+"means"	1422.6472857142853
+"we"	1423.1571428571424
+"can"	1420.098
+"do"	1420.9902499999998
+"stuff"	1421.8824999999997
+"like"	1422.7747499999996
+"reordering"	1424.549
+"the"	1425.4225
+"um"	1426.2959999999998
+"the"	1427.1694999999997
+"circle"	1428.0429999999997
+"center"	1428.9164999999996
+"locations"	1424.549
+"for"	1425.5972
+"makes"	1426.6453999999999
+"everything"	1427.6935999999998
+"move"	1428.7417999999998
+"around"	1429.079
+"you"	1429.3319999999999
+"know"	1429.5849999999998
+"kinda"	1430.549
+"fun"	1430.8924444444444
+"you"	1431.235888888889
+"can"	1431.5793333333334
+"you"	1431.9227777777778
+"can"	1432.2662222222223
+"change"	1432.6096666666667
+"and"	1432.9531111111112
+"if"	1433.2965555555556
+"you"	1430.549
+"change"	1431.5793333333334
+"the"	1432.6096666666667
+"a"	1433.064
+"the"	1433.6392857142857
+"to"	1434.2145714285714
+"a"	1434.789857142857
+"radius"	1435.3651428571427
+"that"	1435.9404285714284
+"your"	1436.515714285714
+"applying"	1437.091
+"the"	1437.663
+"circle"	1438.2350000000001
+"to"	1438.8070000000002
+"you"	1439.3790000000004
+"can"	1439.9510000000005
+"make"	1440.5230000000006
+"pretty"	1437.091
+"but"	1437.7583333333332
+"useless"	1438.4256666666665
+"you"	1439.0929999999998
+"know"	1439.7603333333332
+"obviously"	1440.4276666666665
+"artistic"	1441.095
+"a"	1441.611
+"spiral"	1442.1270000000002
+"love"	1442.6430000000003
+"spiro"	1443.1590000000003
+"love"	1443.6750000000004
+"collaboration"	1441.095
+"s"	1445.091
+"but"	1445.5508888888887
+"you"	1446.0107777777775
+"get"	1446.4706666666664
+"to"	1446.9305555555552
+"find"	1447.390444444444
+"out"	1447.8503333333329
+"who's"	1448.3102222222217
+"who's"	1448.7701111111105
+"the"	1445.091
+"coolest"	1445.9188
+"kid"	1446.7466
+"in"	1447.5744
+"there"	1448.4022
+"India"	1450.049
+"the"	1451.0292
+"group"	1452.0094
+"there"	1452.9895999999999
+"on"	1453.9697999999999
+"if"	1454.095
+"if"	1454.5004
+"you"	1454.9058
+"want"	1455.3112
+"you"	1455.7166000000002
+"know"	1456.1220000000003
+"%uh"	1456.5274000000004
+"a"	1456.9328000000005
+"little"	1457.3382000000006
+"bit"	1457.7436000000007
+"a"	1454.095
+"mass"	1454.60175
+"in"	1455.1085
+"turn"	1455.61525
+"affect"	1456.122
+"how"	1456.62875
+"I"	1457.1355
+"feel"	1457.64225
+"embarrassed"	1459.049
+"for"	1459.5501666666667
+"need"	1460.0513333333333
+"in"	1460.5525
+"this"	1461.0536666666667
+"country"	1461.5548333333334
+"Myers"	1459.049
+"after"	1459.5501666666667
+"their"	1460.0513333333333
+"previous"	1460.5525
+"stock"	1461.0536666666667
+"but"	1461.5548333333334
+"da"	1463.019
+"Mac"	1463.52225
+"right"	1464.0255
+"has"	1464.52875
+"a"	1465.032
+"great"	1465.53525
+"introduction"	1466.0384999999999
+"to"	1466.5417499999999
+"this"	1463.019
+"a"	1463.52225
+"math"	1464.0255
+"for"	1464.52875
+"pictures"	1465.032
+"which"	1465.53525
+"i"	1466.0384999999999
+"think"	1466.5417499999999
+"is"	1467.045
+"a"	1467.0675
+"is"	1467.009
+"a"	1467.5103333333334
+"wonderful"	1468.0116666666668
+"Explorer"	1468.5130000000001
+"introduction"	1469.0143333333335
+"to"	1469.515666666667
+"using"	1467.009
+"up"	1470.098
+"using"	1470.684125
+"this"	1471.27025
+"kind"	1471.856375
+"of"	1472.4425
+"math"	1473.0286250000001
+"to"	1473.6147500000002
+"generate"	1474.2008750000002
+"circles"	1470.098
+"and"	1471.661
+"stuff"	1473.2240000000002
+"another"	1475.669
+"example"	1476.3062857142859
+"up"	1476.9435714285717
+"from"	1477.5808571428574
+"a"	1478.2181428571432
+"website"	1478.855428571429
+"called"	1479.4927142857148
+"Let's"	1475.669
+"free"	1477.1560000000002
+"congress"	1478.6430000000003
+"that"	1480.013
+"was"	1480.393625
+"used"	1480.77425
+"is"	1481.154875
+"kinda"	1481.5355
+"vague"	1481.916125
+"extension"	1482.29675
+"a"	1482.677375
+"above"	1483.058
+"the"	1483.535
+"idea"	1484.0120000000002
+"that"	1484.4890000000003
+"are"	1484.9660000000003
+"they're"	1485.4430000000004
+"looking"	1485.9200000000005
+"at"	1483.058
+"the"	1486.919
+"small"	1487.5325
+"number"	1488.146
+"of"	1488.7595
+"people"	1489.3729999999998
+"that"	1489.9864999999998
+"contributed"	1486.919
+"large"	1487.6552000000001
+"amounts"	1488.3914000000002
+"of"	1489.1276000000003
+"money"	1489.8638000000003
+"to"	1490.006
+"a"	1490.6072000000001
+"to"	1491.2084000000002
+"election"	1491.8096000000003
+"funding"	1492.4108000000003
+"um"	1494.002
+"but"	1494.4993749999999
+"these"	1494.9967499999998
+"the"	1495.4941249999997
+"visual"	1495.9914999999996
+"was"	1496.4888749999996
+"kind"	1496.9862499999995
+"of"	1497.4836249999994
+"interesting"	1494.002
+"I"	1494.6651666666667
+"thought"	1495.3283333333334
+"I"	1495.9915
+"have"	1496.6546666666668
+"recreated"	1497.3178333333335
+"so"	1498.179
+"you"	1499.002
+"start"	1499.3429999999998
+"out"	1499.6839999999997
+"with"	1500.0249999999996
+"a"	1500.3659999999995
+"bunch"	1500.7069999999994
+"of"	1501.0479999999993
+"nodes"	1501.3889999999992
+"I"	1501.729999999999
+"kinda"	1499.002
+"wanted"	1500.5365
+"Kill"	1502.089
+"Bill"	1502.59375
+"new"	1503.0985
+"music"	1503.6032500000001
+"to"	1504.1080000000002
+"be"	1504.6127500000002
+"playing"	1505.1175000000003
+"at"	1505.6222500000003
+"this"	1502.089
+"that's"	1502.59375
+"why"	1503.0985
+"the"	1503.6032500000001
+"color"	1504.1080000000002
+"scheme"	1504.6127500000002
+"is"	1505.1175000000003
+"such"	1505.6222500000003
+"um"	1507.027
+"and"	1507.4624285714285
+"as"	1507.897857142857
+"the"	1508.3332857142855
+"sender"	1508.768714285714
+"node"	1509.2041428571424
+"expands"	1509.639571428571
+"the"	1510.075
+"to"	1510.4151111111112
+"the"	1510.7552222222223
+"the"	1511.0953333333334
+"nodes"	1511.4354444444446
+"around"	1511.7755555555557
+"it"	1512.1156666666668
+"are"	1512.455777777778
+"kinda"	1512.795888888889
+"repulsed"	1510.075
+"a"	1514.036
+"kinda"	1514.411
+"in"	1514.786
+"a"	1515.161
+"very"	1515.536
+"organic"	1515.911
+"matter"	1516.286
+"right"	1516.661
+"I"	1517.036
+"i"	1517.4364
+"like"	1517.8368
+"it"	1518.2372
+"and"	1518.6376
+"then"	1519.038
+"when"	1519.4384
+"you"	1519.8388
+"come"	1520.2392
+"back"	1520.6396
+"down"	1517.036
+"and"	1518.037
+"they"	1519.038
+"are"	1520.039
+"jump"	1521.004
+"on"	1521.5088333333333
+"I'm"	1522.0136666666667
+"but"	1522.5185000000001
+"this"	1523.0233333333335
+"is"	1523.528166666667
+"is"	1524.069
+"trivial"	1524.502
+"now"	1524.935
+"that"	1525.368
+"we"	1525.801
+"know"	1526.234
+"um"	1526.667
+"the"	1528.0
+"previous"	1528.8094
+"examples"	1529.6188000000002
+"there's"	1530.4282000000003
+"all"	1531.2376000000004
+"building"	1528.0
+"on"	1528.6745
+"so"	1529.3490000000002
+"we"	1530.0235000000002
+"can"	1530.6980000000003
+"tell"	1531.3725000000004
+"this"	1532.047
+"is"	1532.4858571428572
+"a"	1532.9247142857143
+"the"	1533.3635714285715
+"collision"	1533.8024285714287
+"detection"	1534.2412857142858
+"is"	1534.680142857143
+"isn't"	1532.047
+"in"	1532.815
+"effect"	1533.583
+"here"	1534.351
+"um"	1536.019
+"but"	1536.451142857143
+"it's"	1536.8832857142859
+"also"	1537.3154285714288
+"just"	1537.7475714285717
+"a"	1538.1797142857147
+"modification"	1538.6118571428576
+"love"	1539.044
+"the"	1539.6470000000002
+"um"	1540.2500000000002
+"the"	1540.8530000000003
+"charge"	1541.4560000000004
+"right"	1542.059
+"up"	1542.5115555555556
+"for"	1542.9641111111112
+"that"	1543.4166666666667
+"center"	1543.8692222222223
+"know"	1544.321777777778
+"it"	1544.7743333333335
+"so"	1545.226888888889
+"you"	1545.6794444444447
+"get"	1542.059
+"get"	1542.6408571428572
+"a"	1543.2227142857143
+"value"	1543.8045714285715
+"from"	1544.3864285714287
+"your"	1544.968285714286
+"slider"	1545.550142857143
+"and"	1547.032
+"then"	1547.4644285714285
+"modify"	1547.896857142857
+"your"	1548.3292857142856
+"charge"	1548.761714285714
+"function"	1549.1941428571427
+"to"	1549.6265714285712
+"utilize"	1547.032
+"that"	1548.5455
+"value"	1550.059
+"and"	1550.5066666666667
+"on"	1550.9543333333334
+"that's"	1551.402
+"all"	1551.8496666666667
+"you"	1552.2973333333334
+"need"	1552.7450000000001
+"to"	1553.1926666666668
+"do"	1553.6403333333335
+"to"	1550.059
+"create"	1550.8648
+"this"	1551.6706000000001
+"kind"	1552.4764000000002
+"have"	1553.2822000000003
+"interesting"	1554.088
+"visual"	1554.9223333333334
+"where"	1555.7566666666667
+"it"	1556.591
+"was"	1557.4253333333331
+"again"	1558.2596666666664
+"not"	1554.088
+"much"	1555.7566666666667
+"work"	1557.4253333333334
+"the"	1559.094
+"last"	1559.4312222222222
+"I"	1559.7684444444444
+"like"	1560.1056666666666
+"to"	1560.4428888888888
+"look"	1560.780111111111
+"into"	1561.1173333333331
+"and"	1561.4545555555553
+"death"	1561.7917777777775
+"is"	1559.094
+"a"	1560.6115
+"is"	1563.029
+"a"	1563.478
+"ok"	1563.9270000000001
+"I"	1564.3760000000002
+"have"	1564.8250000000003
+"a"	1565.2740000000003
+"deviation"	1565.7230000000004
+"for"	1566.1720000000005
+"Moretz"	1566.6210000000005
+"sterner"	1563.029
+"stuff"	1564.03925
+"on"	1565.0495
+"earth"	1566.0597500000001
+"um"	1567.007
+"it's"	1567.562888888889
+"called"	1568.1187777777777
+"he's"	1568.6746666666666
+"got"	1569.2305555555554
+"a"	1569.7864444444442
+"again"	1570.342333333333
+"have"	1570.8982222222219
+"a"	1571.4541111111107
+"buzzer"	1567.007
+"cut"	1568.25775
+"bread"	1569.5085
+"experiments"	1570.7592499999998
+"and"	1573.0
+"the"	1573.4098
+"idea"	1573.8195999999998
+"is"	1574.2293999999997
+"um"	1574.6391999999996
+"you"	1575.0489999999995
+"start"	1575.4587999999994
+"out"	1575.8685999999993
+"with"	1576.2783999999992
+"a"	1576.6881999999991
+"grade"	1573.0
+"he"	1573.8196
+"represented"	1574.6392
+"by"	1575.4588
+"these"	1576.2784000000001
+"these"	1577.098
+"dots"	1577.4945555555555
+"are"	1577.891111111111
+"kinda"	1578.2876666666666
+"hard"	1578.6842222222222
+"to"	1579.0807777777777
+"see"	1579.4773333333333
+"um"	1579.8738888888888
+"by"	1580.2704444444444
+"the"	1577.098
+"only"	1578.8825
+"apply"	1581.549
+"force"	1582.2605714285714
+"layout"	1582.972142857143
+"diagram"	1583.6837142857144
+"and"	1584.3952857142858
+"this"	1585.1068571428573
+"case"	1585.8184285714287
+"is"	1581.549
+"this"	1582.5452
+"random"	1583.5414
+"data"	1584.5376
+"but"	1585.5338000000002
+"the"	1586.053
+"they"	1586.5577500000002
+"have"	1587.0625000000002
+"to"	1587.5672500000003
+"offer"	1588.0720000000003
+"they"	1588.5767500000004
+"have"	1589.0815000000005
+"to"	1589.5862500000005
+"follow"	1586.053
+"two"	1587.0625
+"rules"	1588.072
+"one"	1589.0814999999998
+"they"	1590.091
+"need"	1590.425111111111
+"to"	1590.759222222222
+"stay"	1591.093333333333
+"on"	1591.427444444444
+"on"	1591.761555555555
+"a"	1592.0956666666661
+"grid"	1592.4297777777772
+"spot"	1592.7638888888882
+"and"	1594.061
+"two"	1594.4675
+"um"	1594.874
+"no"	1595.2805
+"two"	1595.6870000000001
+"nodes"	1596.0935000000002
+"can"	1596.5000000000002
+"stay"	1596.9065000000003
+"on"	1597.3130000000003
+"the"	1597.7195000000004
+"same"	1594.061
+"grid"	1595.416
+"spot"	1596.771
+"so"	1599.026
+"when"	1599.526
+"you"	1600.026
+"started"	1600.526
+"up"	1601.026
+"I"	1601.526
+"grades"	1602.026
+"is"	1602.7041666666667
+"kinda"	1603.3823333333332
+"very"	1604.0604999999998
+"interesting"	1604.7386666666664
+"looking"	1605.416833333333
+"on"	1602.026
+"patterns"	1603.3823333333335
+"them"	1604.7386666666669
+"and"	1606.095
+"a"	1606.6331666666667
+"you"	1607.1713333333335
+"can"	1607.7095000000002
+"modify"	1608.2476666666669
+"the"	1608.7858333333336
+"the"	1610.179
+"are"	1610.7934285714286
+"the"	1611.4078571428572
+"shape"	1612.0222857142858
+"up"	1612.6367142857143
+"your"	1613.251142857143
+"grid"	1613.8655714285715
+"underlined"	1610.179
+"fears"	1612.3295
+"here's"	1614.048
+"more"	1614.4824285714285
+"just"	1614.916857142857
+"rectangle"	1615.3512857142855
+"bird"	1615.785714285714
+"and"	1616.2201428571425
+"you"	1616.654571428571
+"can"	1614.048
+"see"	1615.0616666666667
+"the"	1616.0753333333334
+"they"	1617.089
+"kinda"	1617.467375
+"move"	1617.84575
+"those"	1618.224125
+"you"	1618.6025
+"ask"	1618.980875
+"you"	1619.35925
+"know"	1619.737625
+"there's"	1621.016
+"little"	1621.4512857142859
+"tweaking"	1621.8865714285716
+"that"	1622.3218571428574
+"goes"	1622.7571428571432
+"on"	1623.192428571429
+"as"	1623.6277142857148
+"it"	1621.016
+"as"	1621.6254000000001
+"it"	1622.2348000000002
+"sits"	1622.8442000000002
+"there"	1623.4536000000003
+"and"	1624.063
+"the"	1624.4974285714286
+"reason"	1624.931857142857
+"behind"	1625.3662857142856
+"that"	1625.800714285714
+"is"	1626.2351428571426
+"%uh"	1626.669571428571
+"there's"	1624.063
+"actually"	1624.8232500000001
+"two"	1625.5835000000002
+"nodes"	1626.3437500000002
+"associated"	1628.004
+"with"	1628.5848571428571
+"each"	1629.1657142857143
+"other"	1629.7465714285715
+"up"	1630.3274285714288
+"with"	1630.908285714286
+"these"	1631.4891428571432
+"are"	1628.004
+"these"	1628.8172
+"points"	1629.6304
+"the"	1630.4436
+"the"	1631.2568
+"from"	1632.007
+"the"	1632.4472857142857
+"visual"	1632.8875714285714
+"1"	1633.327857142857
+"and"	1633.7681428571427
+"then"	1634.2084285714284
+"this"	1634.648714285714
+"underline"	1632.007
+"one"	1632.6234
+"that"	1633.2397999999998
+"still"	1633.8561999999997
+"getting"	1634.4725999999996
+"manipulated"	1636.052
+"by"	1636.5623333333333
+"the"	1637.0726666666667
+"other"	1637.583
+"forces"	1638.0933333333335
+"in"	1638.6036666666669
+"effect"	1636.052
+"so"	1636.5623333333333
+"you"	1637.0726666666667
+"have"	1637.583
+"these"	1638.0933333333335
+"two"	1638.6036666666669
+"parameters"	1640.014
+"a"	1640.442857142857
+"are"	1640.8717142857142
+"these"	1641.3005714285714
+"two"	1641.7294285714286
+"roles"	1642.1582857142857
+"and"	1642.587142857143
+"then"	1640.014
+"and"	1643.016
+"then"	1643.458142857143
+"there's"	1643.900285714286
+"still"	1644.3424285714289
+"the"	1644.7845714285718
+"charge"	1645.2267142857147
+"and"	1645.6688571428576
+"constraints"	1643.016
+"are"	1643.7897500000001
+"being"	1644.5635000000002
+"applied"	1645.3372500000003
+"to"	1647.011
+"up"	1647.6116
+"to"	1648.2122
+"these"	1648.8128
+"notes"	1649.4134
+"so"	1650.014
+"%uh"	1650.459222222222
+"I"	1650.9044444444442
+"was"	1651.3496666666663
+"the"	1651.7948888888884
+"first"	1652.2401111111105
+"a"	1652.6853333333327
+"nice"	1653.1305555555548
+"thought"	1653.575777777777
+"when"	1650.014
+"I"	1650.8154
+"saw"	1651.6168
+"this"	1652.4182
+"was"	1653.2196000000001
+"so"	1654.021
+"it's"	1654.4067499999999
+"you"	1654.7924999999998
+"know"	1655.1782499999997
+"subway"	1655.5639999999996
+"maps"	1655.9497499999995
+"and"	1656.3354999999995
+"trans"	1656.7212499999994
+"amass"	1654.021
+"a"	1654.461857142857
+"I"	1654.9027142857142
+"kind"	1655.3435714285713
+"of"	1655.7844285714284
+"wanted"	1656.2252857142855
+"a"	1656.6661428571426
+"create"	1658.007
+"that"	1658.5096666666668
+"for"	1659.0123333333336
+"density"	1659.5150000000003
+"so"	1660.017666666667
+"here's"	1660.5203333333338
+"attend"	1661.023
+"city"	1661.5245
+"subways"	1662.026
+"works"	1662.5275000000001
+"pretty"	1663.0290000000002
+"good"	1663.5305000000003
+"right"	1661.023
+"I"	1664.032
+"a"	1664.5406249999999
+"we"	1665.0492499999998
+"don't"	1665.5578749999997
+"have"	1666.0664999999997
+"we"	1666.5751249999996
+"don't"	1667.0837499999996
+"have"	1667.5923749999995
+"I"	1669.001
+"was"	1669.502625
+"further"	1670.00425
+"inspired"	1670.5058749999998
+"tour"	1671.0074999999997
+"and"	1671.5091249999996
+"by"	1672.0107499999995
+"that"	1672.5123749999993
+"I"	1669.001
+"mean"	1671.0075
+"easy"	1673.014
+"access"	1673.3897499999998
+"to"	1673.7654999999997
+"data"	1674.1412499999997
+"I'll"	1674.5169999999996
+"when"	1674.8927499999995
+"fathom"	1675.2684999999994
+"did"	1675.6442499999994
+"this"	1673.014
+"this"	1676.074
+"is"	1676.5030000000002
+"very"	1676.9320000000002
+"similar"	1677.3610000000003
+"experiment"	1677.7900000000004
+"with"	1678.2190000000005
+"the"	1678.6480000000006
+"the"	1676.074
+"Boston"	1677.5755
+"a"	1679.077
+"subway"	1679.5237777777777
+"systems"	1679.9705555555554
+"here"	1680.417333333333
+"so"	1680.8641111111108
+"fat"	1681.3108888888885
+"and"	1681.7576666666662
+"has"	1682.2044444444439
+"a"	1682.6512222222216
+"great"	1679.077
+"post"	1680.4173333333333
+"about"	1681.7576666666666
+"how"	1683.098
+"much"	1683.432
+"geography"	1683.766
+"can"	1684.1000000000001
+"we"	1684.4340000000002
+"get"	1684.7680000000003
+"rid"	1685.1020000000003
+"of"	1685.4360000000004
+"and"	1685.7700000000004
+"in"	1683.098
+"transit"	1683.6992
+"maps"	1684.3004
+"in"	1684.9016000000001
+"self"	1685.5028000000002
+"you"	1687.058
+"know"	1687.4856666666667
+"it's"	1687.9133333333334
+"a"	1688.3410000000001
+"there's"	1688.7686666666668
+"a"	1689.1963333333335
+"just"	1689.6240000000003
+"a"	1690.051666666667
+"thought"	1690.4793333333337
+"process"	1687.058
+"but"	1687.8278
+"I"	1688.5976
+"really"	1689.3674
+"liked"	1690.1372000000001
+"the"	1691.429
+"visual"	1691.822875
+"display"	1692.21675
+"here"	1692.610625
+"so"	1693.0045
+"I"	1693.398375
+"thought"	1693.79225
+"I'd"	1694.186125
+"retry"	1691.429
+"it"	1693.0045
+"with"	1694.058
+"the"	1694.6998
+"with"	1695.3416000000002
+"this"	1695.9834000000003
+"simple"	1696.6252000000004
+"more"	1697.789
+"you"	1698.206625
+"know"	1698.62425
+"a"	1699.0418750000001
+"simpler"	1699.4595000000002
+"than"	1699.8771250000002
+"it"	1700.2947500000002
+"really"	1700.7123750000003
+"define"	1697.789
+"the"	1698.2662857142857
+"algorithm"	1698.7435714285714
+"that"	1699.220857142857
+"they"	1699.6981428571428
+"they"	1700.1754285714285
+"use"	1700.6527142857142
+"to"	1701.013
+"it"	1701.4675
+"to"	1702.039
+"create"	1702.457875
+"that"	1702.8767500000001
+"visual"	1703.2956250000002
+"but"	1703.7145000000003
+"now"	1704.1333750000003
+"we"	1704.5522500000004
+"know"	1704.9711250000005
+"the"	1702.039
+"the"	1705.039
+"algorithm"	1705.7045714285714
+"here"	1706.3701428571428
+"so"	1707.0357142857142
+"we'll"	1707.7012857142856
+"start"	1708.366857142857
+"start"	1709.0324285714285
+"each"	1705.039
+"node"	1705.9708
+"which"	1706.9026000000001
+"is"	1707.8344000000002
+"this"	1708.7662000000003
+"a"	1710.049
+"subway"	1710.4848571428572
+"station"	1710.9207142857144
+"will"	1711.3565714285717
+"start"	1711.792428571429
+"them"	1712.2282857142861
+"at"	1712.6641428571434
+"their"	1710.049
+"geographic"	1711.5745
+"you"	1713.559
+"know"	1714.2125
+"physical"	1714.866
+"location"	1715.5194999999999
+"and"	1716.1729999999998
+"then"	1716.8264999999997
+"we'll"	1713.559
+"let"	1714.3432
+"the"	1715.1274
+"simulation"	1715.9116000000001
+"run"	1716.6958000000002
+"and"	1717.048
+"see"	1717.4858571428572
+"what"	1717.9237142857144
+"happens"	1718.3615714285716
+"and"	1718.7994285714287
+"its"	1719.237285714286
+"interesting"	1719.675142857143
+"%uh"	1721.013
+"I"	1721.5147499999998
+"think"	1722.0164999999997
+"it's"	1722.5182499999996
+"kind"	1723.0199999999995
+"of"	1723.5217499999994
+"artistic"	1724.0234999999993
+"and"	1724.5252499999992
+"and"	1721.013
+"fun"	1721.5864285714285
+"I"	1722.1598571428572
+"don't"	1722.7332857142858
+"know"	1723.3067142857144
+"about"	1723.880142857143
+"the"	1724.4535714285716
+"practically"	1725.027
+"you"	1726.001
+"know"	1726.377625
+"being"	1726.75425
+"able"	1727.1308749999998
+"to"	1727.5074999999997
+"read"	1727.8841249999996
+"this"	1728.2607499999995
+"item"	1728.6373749999993
+"I'm"	1726.001
+"not"	1726.6036
+"from"	1727.2061999999999
+"Boston"	1727.8087999999998
+"soda"	1728.4113999999997
+"doesn't"	1729.023
+"matter"	1729.7845
+"to"	1730.546
+"me"	1731.3075000000001
+"but"	1732.0690000000002
+"yeah"	1732.8305000000003
+"but"	1733.799
+"it"	1734.1413333333333
+"is"	1734.4836666666665
+"a"	1734.8259999999998
+"event"	1735.168333333333
+"is"	1735.5106666666663
+"Elise"	1735.8529999999996
+"the"	1736.1953333333329
+"starting"	1736.5376666666662
+"point"	1733.799
+"is"	1734.56925
+"something"	1735.3395
+"to"	1736.10975
+"to"	1736.088
+"conjure"	1736.4724999999999
+"up"	1736.857
+"more"	1737.2415
+"ideas"	1737.6260000000002
+"and"	1738.0105000000003
+"I"	1738.3950000000004
+"look"	1738.7795000000006
+"forward"	1736.088
+"to"	1736.7032
+"seeing"	1737.3183999999999
+"some"	1737.9335999999998
+"others"	1738.5487999999998
+"um"	1740.064
+"I've"	1740.6716000000001
+"got"	1741.2792000000002
+"three"	1741.8868000000002
+"more"	1742.4944000000003
+"quick"	1744.002
+"examples"	1744.7968333333333
+"above"	1745.5916666666667
+"up"	1746.3865
+"these"	1747.1813333333334
+"same"	1747.9761666666668
+"prince"	1744.002
+"was"	1744.7968333333333
+"being"	1745.5916666666667
+"applied"	1746.3865
+"and"	1747.1813333333334
+"and"	1747.9761666666668
+"in"	1748.789
+"the"	1749.1965
+"real"	1749.604
+"world"	1750.0115
+"%uh"	1750.419
+"the"	1750.8265000000001
+"first"	1751.2340000000002
+"one"	1751.6415000000002
+"is"	1752.0490000000002
+"a"	1752.4565000000002
+"notre"	1748.789
+"site"	1749.3711428571428
+"but"	1749.9532857142856
+"is"	1750.5354285714284
+"Barack"	1751.1175714285712
+"Obama"	1751.699714285714
+"the"	1752.2818571428568
+"president"	1753.539
+"dot"	1753.9772
+"com"	1754.4154
+"from"	1754.8536000000001
+"the"	1755.2918000000002
+"the"	1755.073
+"Guardian"	1755.452375
+"right"	1755.83175
+"at"	1756.211125
+"these"	1756.5905
+"bow"	1756.969875
+"the"	1757.34925
+"the"	1757.728625
+"balloons"	1759.008
+"themselves"	1759.6905000000002
+"are"	1760.373
+"a"	1761.0555
+"are"	1761.7379999999998
+"being"	1762.4204999999997
+"controlled"	1759.008
+"by"	1759.519875
+"force"	1760.0317499999999
+"last"	1760.5436249999998
+"so"	1761.0554999999997
+"they"	1761.5673749999996
+"have"	1762.0792499999995
+"a"	1762.5911249999995
+"up"	1764.003
+"you"	1764.4322857142856
+"know"	1764.8615714285713
+"buoyancy"	1765.290857142857
+"kinda"	1765.7201428571427
+"concept"	1766.1494285714284
+"that"	1766.578714285714
+"are"	1764.003
+"making"	1764.75425
+"the"	1765.5055
+"flow"	1766.25675
+"and"	1767.053
+"then"	1767.3870000000002
+"if"	1767.7210000000002
+"you"	1768.0550000000003
+"were"	1768.3890000000004
+"to"	1768.7230000000004
+"hover"	1769.0570000000005
+"over"	1769.3910000000005
+"one"	1769.7250000000006
+"up"	1767.053
+"on"	1767.554
+"you"	1768.055
+"get"	1768.556
+"the"	1769.057
+"same"	1769.558
+"radius"	1770.059
+"expanding"	1770.4985714285715
+"concept"	1770.938142857143
+"to"	1771.3777142857145
+"to"	1771.817285714286
+"a"	1772.2568571428576
+"lesser"	1772.6964285714291
+"degree"	1770.059
+"that"	1770.82825
+"kinda"	1771.5975
+"pushes"	1772.3667500000001
+"and"	1774.036
+"focuses"	1774.5992222222224
+"in"	1775.1624444444446
+"on"	1775.725666666667
+"one"	1776.2888888888892
+"%uh"	1776.8521111111115
+"once"	1777.4153333333338
+"the"	1777.978555555556
+"one"	1778.5417777777784
+"balloon"	1774.036
+"I"	1779.429
+"also"	1779.9024444444444
+"have"	1780.3758888888888
+"I"	1780.849333333333
+"like"	1781.3227777777774
+"this"	1781.7962222222218
+"one"	1782.2696666666661
+"this"	1782.7431111111105
+"the"	1783.2165555555548
+"save"	1779.429
+"my"	1780.4942500000002
+"library"	1781.5595000000003
+"by"	1782.6247500000004
+"us"	1783.069
+"Sarah"	1783.5
+"Groff"	1783.931
+"plum"	1784.362
+"borough"	1784.7930000000001
+"UX"	1785.2240000000002
+"the"	1785.6550000000002
+"designer"	1786.086
+"I"	1786.464
+"privates"	1786.8419999999999
+"for"	1787.2199999999998
+"her"	1787.5979999999997
+"name"	1787.9759999999997
+"and"	1788.3539999999996
+"San"	1788.7319999999995
+"Francisco"	1786.086
+"I"	1790.001
+"I"	1790.413111111111
+"those"	1790.825222222222
+"edges"	1791.237333333333
+"and"	1791.649444444444
+"as"	1792.061555555555
+"a"	1792.473666666666
+"says"	1792.885777777777
+"she's"	1793.297888888888
+"gonna"	1790.001
+"find"	1791.8555000000001
+"or"	1793.809
+"are"	1794.326625
+"making"	1794.8442499999999
+"no"	1795.3618749999998
+"dove"	1795.8794999999998
+"her"	1796.3971249999997
+"library"	1796.9147499999997
+"her"	1797.4323749999996
+"books"	1793.809
+"actually"	1795.1893333333333
+"contains"	1796.5696666666665
+"as"	1797.095
+"is"	1797.5347142857142
+"the"	1797.9744285714285
+"simple"	1798.4141428571427
+"concert"	1798.853857142857
+"again"	1799.293571428571
+"we're"	1799.7332857142853
+"just"	1797.095
+"using"	1798.634
+"the"	1801.073
+"same"	1801.6914285714286
+"idea"	1802.309857142857
+"as"	1802.9282857142855
+"multiple"	1803.546714285714
+"Center"	1804.1651428571424
+"points"	1804.783571428571
+"but"	1801.073
+"now"	1801.6914285714286
+"with"	1802.309857142857
+"a"	1802.9282857142855
+"lot"	1803.546714285714
+"more"	1804.1651428571424
+"from"	1804.783571428571
+"but"	1806.059
+"allows"	1806.8308333333334
+"for"	1807.6026666666667
+"starting"	1808.3745
+"to"	1809.1463333333331
+"quantify"	1809.9181666666664
+"these"	1806.059
+"different"	1807.21675
+"categories"	1808.3745000000001
+"and"	1809.5322500000002
+"in"	1810.069
+"an"	1810.4505
+"intuitive"	1810.8319999999999
+"way"	1811.2134999999998
+"you"	1811.5949999999998
+"know"	1811.9764999999998
+"the"	1812.3579999999997
+"larger"	1812.7394999999997
+"bubble"	1810.069
+"group"	1811.0863333333334
+"is"	1812.1036666666669
+"means"	1814.021
+"a"	1814.597857142857
+"larger"	1815.1747142857141
+"number"	1815.7515714285712
+"books"	1816.3284285714283
+"there"	1816.9052857142854
+"and"	1817.4821428571424
+"this"	1814.021
+"again"	1814.597857142857
+"is"	1815.1747142857141
+"part"	1815.7515714285712
+"of"	1816.3284285714283
+"a"	1816.9052857142854
+"larger"	1817.4821428571424
+"interaction"	1818.059
+"that"	1818.498
+"can"	1818.9370000000001
+"be"	1819.3760000000002
+"moved"	1819.8150000000003
+"around"	1820.2540000000004
+"him"	1820.6930000000004
+"and"	1818.059
+"modified"	1819.5955
+"come"	1822.032
+"and"	1822.5684999999999
+"explore"	1823.1049999999998
+"and"	1823.6414999999997
+"finally"	1824.1779999999997
+"a"	1824.7144999999996
+"discusses"	1825.539
+"a"	1826.201625
+"recent"	1826.8642499999999
+"a"	1827.5268749999998
+"kinda"	1828.1894999999997
+"dash"	1828.8521249999997
+"for"	1829.5147499999996
+"they"	1830.1773749999995
+"called"	1825.539
+"gravity"	1828.1895
+"where"	1830.084
+"and"	1830.4257777777777
+"you"	1830.7675555555554
+"to"	1831.109333333333
+"these"	1831.4511111111108
+"you"	1831.7928888888885
+"to"	1832.1346666666661
+"these"	1832.4764444444438
+"a.m."	1832.8182222222215
+"quite"	1834.006
+"nodes"	1834.6241666666667
+"represents"	1835.2423333333334
+"a"	1835.8605
+"a"	1836.4786666666666
+"topic"	1837.0968333333333
+"and"	1838.309
+"a"	1838.696375
+"the"	1839.08375
+"and"	1839.471125
+"the"	1839.8585
+"bubbles"	1840.245875
+"that"	1840.63325
+"start"	1841.020625
+"forming"	1838.309
+"around"	1839.3419999999999
+"it"	1840.3749999999998
+"are"	1842.299
+"a"	1842.9175
+"%uh"	1843.536
+"comments"	1844.1545
+"and"	1844.7730000000001
+"conversations"	1845.3915000000002
+"around"	1842.299
+"those"	1843.536
+"topics"	1844.7730000000001
+"and"	1846.001
+"the"	1846.3356666666666
+"the"	1846.6703333333332
+"more"	1847.0049999999999
+"the"	1847.3396666666665
+"same"	1847.6743333333332
+"part"	1848.0089999999998
+"is"	1848.3436666666664
+"that"	1848.678333333333
+"this"	1846.001
+"is"	1846.3356666666666
+"real"	1846.6703333333332
+"time"	1847.0049999999999
+"in"	1847.3396666666665
+"it"	1847.6743333333332
+"and"	1848.0089999999998
+"it"	1848.3436666666664
+"gets"	1848.678333333333
+"updated"	1849.013
+"while"	1849.1936666666666
+"you"	1849.3743333333332
+"watch"	1849.5549999999998
+"it"	1849.7356666666665
+"but"	1849.9163333333331
+"but"	1850.097
+"it's"	1850.6708571428571
+"the"	1851.2447142857143
+"same"	1851.8185714285714
+"affect"	1852.3924285714286
+"really"	1852.9662857142857
+"the"	1853.5401428571429
+"notes"	1850.097
+"themselves"	1850.6708571428571
+"are"	1851.2447142857143
+"part"	1851.8185714285714
+"of"	1852.3924285714286
+"a"	1852.9662857142857
+"force"	1853.5401428571429
+"layout"	1855.014
+"and"	1855.088
+"each"	1855.463125
+"had"	1855.83825
+"the"	1856.213375
+"and"	1856.5885
+"nodes"	1856.963625
+"in"	1857.3387500000001
+"a"	1857.7138750000001
+"particular"	1855.088
+"a"	1858.089
+"category"	1858.5951666666665
+"are"	1859.101333333333
+"being"	1859.6074999999996
+"drawn"	1860.1136666666662
+"organically"	1860.6198333333327
+"to"	1862.026
+"to"	1862.402875
+"the"	1862.77975
+"center"	1863.1566249999998
+"which"	1863.5334999999998
+"happens"	1863.9103749999997
+"to"	1864.2872499999996
+"be"	1864.6641249999996
+"there"	1862.026
+"the"	1865.041
+"right"	1865.5468333333333
+"topic"	1866.0526666666667
+"no"	1866.5585
+"and"	1867.0643333333335
+"so"	1867.5701666666669
+"you"	1868.076
+"know"	1868.5514444444445
+"whether"	1869.026888888889
+"a"	1869.5023333333336
+"little"	1869.977777777778
+"bit"	1870.4532222222226
+"of"	1870.9286666666671
+"a"	1871.4041111111117
+"work"	1871.8795555555562
+"they're"	1868.076
+"allowed"	1868.7891666666667
+"they're"	1869.5023333333334
+"allowed"	1870.2155
+"to"	1870.9286666666667
+"have"	1871.6418333333334
+"all"	1873.039
+"this"	1873.3846666666666
+"flexibility"	1873.7303333333332
+"from"	1874.409
+"buyer"	1874.9303750000001
+"just"	1875.4517500000002
+"to"	1875.9731250000002
+"find"	1876.4945000000002
+"these"	1877.0158750000003
+"the"	1877.5372500000003
+"civil"	1878.0586250000003
+"rule"	1874.409
+"sets"	1876.4945
+"so"	1878.058
+"hopefully"	1878.4871428571428
+"we've"	1878.9162857142856
+"seen"	1879.3454285714283
+"a"	1879.774571428571
+"little"	1880.2037142857139
+"bit"	1880.6328571428567
+"behind"	1878.058
+"the"	1879.0593333333334
+"magic"	1880.0606666666667
+"above"	1881.062
+"the"	1881.569125
+"force"	1882.07625
+"right"	1882.5833750000002
+"this"	1883.0905000000002
+"is"	1883.5976250000003
+"Frank"	1884.1047500000004
+"us"	1884.6118750000005
+"you"	1881.062
+"know"	1881.6415714285713
+"controlling"	1882.2211428571427
+"your"	1882.800714285714
+"right"	1883.3802857142855
+"and"	1883.959857142857
+"I'm"	1884.5394285714283
+"school"	1886.019
+"and"	1887.027
+"a"	1888.035
+"um"	1889.0430000000001
+"that"	1890.051
+"was"	1890.4442222222222
+"you"	1890.8374444444444
+"know"	1891.2306666666666
+"I"	1891.6238888888888
+"mean"	1892.017111111111
+"point"	1892.4103333333333
+"is"	1892.8035555555555
+"to"	1893.1967777777777
+"take"	1890.051
+"away"	1890.493375
+"some"	1890.93575
+"of"	1891.3781250000002
+"the"	1891.8205000000003
+"magic"	1892.2628750000003
+"behind"	1892.7052500000004
+"this"	1893.1476250000005
+"I"	1894.049
+"think"	1894.6057777777778
+"it's"	1895.1625555555556
+"important"	1895.7193333333335
+"that"	1896.2761111111113
+"on"	1896.832888888889
+"we"	1897.389666666667
+"get"	1897.9464444444448
+"to"	1898.5032222222226
+"see"	1894.049
+"the"	1895.0511999999999
+"the"	1896.0533999999998
+"how"	1897.0555999999997
+"of"	1898.0577999999996
+"of"	1899.159
+"summer"	1899.8025
+"these"	1900.446
+"you"	1901.0894999999998
+"know"	1901.7329999999997
+"visualizations"	1902.3764999999996
+"that"	1899.159
+"were"	1900.12425
+"inspired"	1901.0895
+"by"	1902.05475
+"and"	1903.002
+"and"	1903.508
+"try"	1904.0140000000001
+"to"	1904.5200000000002
+"the"	1905.0260000000003
+"breaking"	1905.5320000000004
+"down"	1906.0380000000005
+"to"	1906.5440000000006
+"little"	1903.002
+"components"	1903.6766666666667
+"that"	1904.3513333333335
+"we"	1905.0260000000003
+"can"	1905.700666666667
+"then"	1906.3753333333339
+"abuse"	1907.005
+"ourselves"	1907.4417142857144
+"so"	1907.8784285714287
+"look"	1908.315142857143
+"for"	1908.7518571428573
+"your"	1909.1885714285715
+"abuses"	1909.6252857142858
+"and"	1911.007
+"I'm"	1913.3403333333333
+"thanks"	1915.6736666666666
+"into"	1923.669
+"question"	1925.0690000000002
+"oh"	1926.4690000000003
+"yes"	1927.8690000000004
+"questions"	1929.2690000000005
+"been"	1953.003
+"yeah"	1956.001
+"right"	1960.799
+"yeah"	1961.3105714285714
+"now"	1961.8221428571428
+"I"	1962.3337142857142
+"think"	1962.8452857142856
+"I"	1963.356857142857
+"think"	1963.8684285714285
+"somebody's"	1960.799
+"arced"	1962.5895
+"again"	1964.038
+"starting"	1964.6121428571428
+"points"	1965.1862857142855
+"a"	1965.7604285714283
+"I"	1966.334571428571
+"love"	1966.9087142857138
+"where"	1967.4828571428566
+"the"	1968.399
+"yeah"	1968.9491666666665
+"that"	1969.4993333333332
+"you"	1970.0494999999999
+"concerning"	1970.5996666666665
+"coding"	1971.1498333333332
+"iron"	1971.007
+"more"	1971.7215714285715
+"you"	1972.4361428571428
+"can"	1973.1507142857142
+"start"	1973.8652857142856
+"applying"	1974.579857142857
+"more"	1975.2944285714284
+"simple"	1971.007
+"rules"	1973.508
+"to"	1976.072
+"these"	1976.4163333333333
+"it"	1976.7606666666668
+"to"	1977.1050000000002
+"to"	1977.4493333333337
+"make"	1977.7936666666671
+"them"	1978.1380000000006
+"more"	1978.482333333334
+"finesse"	1978.8266666666675
+"um"	1976.072
+"but"	1980.071
+"I"	1980.6284444444443
+"i've"	1981.1858888888887
+"seen"	1981.743333333333
+"examples"	1982.3007777777775
+"I've"	1982.858222222222
+"way"	1983.4156666666663
+"I"	1983.9731111111107
+"use"	1984.530555555555
+"on"	1980.071
+"my"	1981.3252499999999
+"ex-wife"	1982.5794999999998
+"beam"	1983.8337499999998
+"being"	1985.088
+"part"	1986.2546666666667
+"of"	1987.4213333333335
+"the"	1988.5880000000002
+"it"	1989.754666666667
+"yeah"	1990.9213333333337
+"and"	1993.014
+"and"	1993.4625555555554
+"so"	1993.9111111111108
+"is"	1994.3596666666663
+"i"	1994.8082222222217
+"mean"	1995.2567777777772
+"there's"	1995.7053333333326
+"yeah"	1996.153888888888
+"so"	1996.6024444444436
+"were"	1993.014
+"seen"	1994.02325
+"examples"	1995.0325
+"where"	1996.04175
+"well"	1997.051
+"in"	1997.4955555555555
+"the"	1997.940111111111
+"Obama"	1998.3846666666666
+"the"	1998.8292222222221
+"the"	1999.2737777777777
+"first"	1999.7183333333332
+"one"	2000.1628888888888
+"here"	2000.6074444444444
+"are"	1997.051
+"one-third"	2001.052
+"and"	2001.5968333333333
+"talk"	2002.1416666666667
+"about"	2002.6865
+"something"	2003.2313333333334
+"that"	2003.7761666666668
+"also"	2001.052
+"makes"	2002.1416666666667
+"it"	2003.2313333333334
+"to"	2004.789
+"a"	2005.2802222222222
+"to"	2005.7714444444443
+"think"	2006.2626666666665
+"get"	2006.7538888888887
+"to"	2007.2451111111109
+"it"	2007.736333333333
+"something"	2008.2275555555552
+"that"	2008.7187777777774
+"makes"	2004.789
+"it"	2005.89425
+"cool"	2006.9995000000001
+"as"	2008.1047500000002
+"a"	2009.021
+"that"	2009.5982857142856
+"there"	2010.1755714285712
+"are"	2010.7528571428568
+"you"	2011.3301428571424
+"there"	2011.907428571428
+"actually"	2012.4847142857136
+"doubling"	2009.021
+"code"	2010.03125
+"in"	2011.0415
+"there"	2012.05175
+"on"	2013.062
+"the"	2013.8634
+"color"	2014.6648
+"%uh"	2015.4662
+"the"	2016.2676000000001
+"when"	2018.032
+"we"	2018.5326666666665
+"get"	2019.0333333333333
+"to"	2019.534
+"it"	2020.034666666667
+"there"	2020.5353333333337
+"I"	2021.036
+"am"	2021.5403333333334
+"color"	2022.0446666666667
+"shows"	2022.549
+"the"	2023.0533333333333
+"amount"	2023.5576666666666
+"I"	2024.062
+"love"	2024.573125
+"cut"	2025.0842499999999
+"increase"	2025.5953749999999
+"right"	2026.1064999999999
+"says"	2026.6176249999999
+"but"	2027.1287499999999
+"that"	2027.6398749999998
+"is"	2024.062
+"kinda"	2024.7435
+"also"	2025.4250000000002
+"double"	2026.1065000000003
+"encoded"	2026.7880000000005
+"by"	2027.4695000000006
+"it"	2029.051
+"that"	2029.4919
+"the"	2029.9328
+"layer"	2030.3737
+"that"	2030.8146000000002
+"it's"	2031.2555000000002
+"in"	2031.6964000000003
+"so"	2032.1373000000003
+"I"	2032.5782000000004
+"i"	2033.0191000000004
+"really"	2029.051
+"like"	2031.2555
+"that"	2033.919
+"their"	2034.4462857142858
+"they're"	2034.9735714285714
+"adding"	2035.500857142857
+"that"	2036.0281428571427
+"nuance"	2036.5554285714284
+"I"	2037.082714285714
+"don't"	2033.919
+"talk"	2034.6572
+"about"	2035.3954
+"but"	2036.1336000000001
+"so"	2036.8718000000001
+"in"	2037.061
+"this"	2037.3632
+"I"	2037.6654
+"guess"	2037.9676000000002
+"though"	2038.2698000000003
+"the"	2038.5720000000003
+"Y"	2038.8742000000004
+"is"	2039.1764000000005
+"you"	2039.4786000000006
+"know"	2039.7808000000007
+"at"	2040.083
+"least"	2040.7228333333335
+"a"	2041.3626666666669
+"hoping"	2042.0025000000003
+"that"	2042.6423333333337
+"that"	2043.282166666667
+"that"	2044.669
+"separation"	2045.2625
+"by"	2045.856
+"keeping"	2046.4495
+"vans"	2047.043
+"layered"	2047.6364999999998
+"and"	2048.023
+"the"	2048.5878333333335
+"implementation"	2049.152666666667
+"others"	2049.7175
+"you"	2050.2823333333336
+"just"	2050.847166666667
+"add"	2048.023
+"another"	2049.7174999999997
+"I'll"	2051.619
+"custom"	2052.006125
+"force"	2052.39325
+"and"	2052.7803750000003
+"and"	2053.1675000000005
+"I"	2053.5546250000007
+"could"	2053.941750000001
+"allow"	2054.328875000001
+"for"	2051.619
+"time"	2052.6513333333332
+"but"	2053.6836666666663
+"the"	2055.589
+"nuances"	2056.022875
+"that"	2056.4567500000003
+"they"	2056.8906250000005
+"have"	2057.3245000000006
+"they"	2057.758375000001
+"have"	2058.192250000001
+"the"	2058.626125000001
+"they've"	2059.006
+"multiplied"	2059.6763333333333
+"by"	2060.346666666667
+"alpha"	2061.0170000000003
+"twice"	2061.6873333333338
+"for"	2062.3576666666672
+"that"	2059.006
+"particular"	2060.0114999999996
+"for"	2061.017
+"so"	2062.0225
+"the"	2063.028
+"affect"	2063.6418
+"the"	2064.2556
+"impact"	2064.8694
+"love"	2065.4832
+"above"	2066.349
+"the"	2066.876285714286
+"tearing"	2067.403571428572
+"is"	2067.930857142858
+"lest"	2068.4581428571437
+"then"	2068.9854285714296
+"the"	2069.5127142857154
+"impact"	2066.349
+"of"	2067.5793333333336
+"the"	2068.809666666667
+"separation"	2070.004
+"so"	2070.573875
+"you"	2071.14375
+"you"	2071.7136250000003
+"end"	2072.2835000000005
+"up"	2072.8533750000006
+"you"	2073.4232500000007
+"can"	2073.993125000001
+"blame"	2070.004
+"them"	2070.6552857142856
+"to"	2071.3065714285713
+"your"	2071.957857142857
+"own"	2072.6091428571426
+"discretion"	2073.2604285714283
+"how"	2073.911714285714
+"much"	2074.599
+"you"	2075.0017500000004
+"want"	2075.4045000000006
+"the"	2075.8072500000007
+"wonder"	2076.021
+"affect"	2076.419625
+"you"	2076.81825
+"know"	2077.2168749999996
+"the"	2077.6154999999994
+"other"	2078.0141249999992
+"if"	2078.412749999999
+"you"	2078.811374999999
+"are"	2076.021
+"both"	2076.6588
+"sick"	2077.2966
+"or"	2077.9344
+"whatever"	2078.5722
+"I"	2079.399
+"thought"	2079.742888888889
+"that"	2080.086777777778
+"was"	2080.430666666667
+"a"	2080.774555555556
+"nice"	2081.1184444444452
+"may"	2081.4623333333343
+"have"	2081.8062222222234
+"made"	2082.1501111111124
+"may"	2079.399
+"be"	2079.8411428571426
+"an"	2080.2832857142853
+"example"	2080.725428571428
+"where"	2081.1675714285707
+"this"	2081.6097142857134
+"is"	2082.051857142856
+"the"	2083.349
+"starting"	2085.099
+"to"	2086.849
+"occur"	2088.599
+"or"	2095.053
+"were"	2097.129
+"hmm"	2099.096
+"where"	2101.063
+"or"	2103.003
+"court"	2104.6893333333333
+"yes"	2106.3756666666663
+"yeah"	2108.062
+"I"	2108.396888888889
+"V"	2108.731777777778
+"cool"	2109.066666666667
+"from"	2109.401555555556
+"and"	2109.736444444445
+"im"	2110.071333333334
+"in"	2110.4062222222233
+"my"	2110.7411111111123
+"my"	2111.076
+"hair"	2111.5071428571428
+"ball"	2111.9382857142855
+"are"	2112.369428571428
+"those"	2112.800571428571
+"links"	2113.2317142857137
+"art"	2113.6628571428564
+"impacting"	2114.094
+"the"	2114.5295714285717
+"the"	2114.9651428571433
+"locations"	2115.400714285715
+"of"	2115.8362857142865
+"the"	2116.271857142858
+"nodes"	2116.70742857143
+"but"	2118.043
+"but"	2118.3831111111112
+"yeah"	2118.7232222222224
+"i"	2119.0633333333335
+"certainly"	2119.4034444444446
+"a"	2119.7435555555558
+"and"	2120.083666666667
+"an"	2120.423777777778
+"easy"	2120.763888888889
+"optimization"	2122.004
+"to"	2122.442
+"that"	2122.88
+"would"	2123.318
+"sit"	2123.7560000000003
+"to"	2124.1940000000004
+"be"	2124.6320000000005
+"able"	2122.004
+"to"	2122.3872499999998
+"make"	2122.7704999999996
+"him"	2123.1537499999995
+"the"	2123.5369999999994
+"order"	2123.920249999999
+"of"	2124.303499999999
+"those"	2124.686749999999
+"knows"	2125.007
+"more"	2125.2084
+"meaningful"	2125.4098
+"and"	2125.6112
+"thats"	2125.8125999999997
+"the"	2127.004
+"reordering"	2127.575857142857
+"was"	2128.147714285714
+"was"	2128.719571428571
+"an"	2129.291428571428
+"attempt"	2129.8632857142848
+"at"	2130.4351428571417
+"that"	2127.004
+"but"	2128.338333333333
+"utilizing"	2129.6726666666664
+"the"	2131.007
+"data"	2131.382625
+"the"	2131.7582500000003
+"the"	2132.1338750000004
+"date"	2132.5095000000006
+"inherent"	2132.8851250000007
+"in"	2133.260750000001
+"that"	2133.636375000001
+"and"	2134.075
+"that"	2134.4505
+"is"	2134.826
+"that"	2135.2015
+"would"	2135.577
+"be"	2135.9525000000003
+"much"	2136.3280000000004
+"more"	2136.7035000000005
+"powerful"	2134.075
+"where"	2134.826
+"to"	2135.577
+"to"	2136.3280000000004
+"a"	2138.015
+"start"	2139.022
+"looking"	2140.029
+"at"	2141.036
+"the"	2142.043
+"process"	2143.05
+"or"	2144.057
+"a"	2146.1059999999998
+"well"	2149.055
+"i"	2149.6342857142854
+"think"	2150.213571428571
+"thats"	2150.7928571428565
+"depend"	2151.372142857142
+"on"	2151.9514285714276
+"the"	2152.530714285713
+"technology"	2149.055
+"like"	2150.06875
+"we've"	2151.0825
+"seen"	2152.09625
+"um"	2154.001
+"this"	2154.4327142857146
+"same"	2154.864428571429
+"can"	2155.2961428571434
+"bog"	2155.727857142858
+"down"	2156.1595714285722
+"after"	2156.5912857142866
+"in"	2157.032
+"SVG"	2157.6615
+"after"	2158.291
+"a"	2158.9205
+"couple"	2159.55
+"hundred"	2160.1795
+"nodes"	2160.809
+"and"	2161.4385
+"it"	2157.032
+"did"	2157.6615
+"send"	2158.291
+"certainly"	2158.9205
+"seems"	2159.55
+"I'm"	2160.1795
+"not"	2160.809
+"an"	2161.4385
+"expert"	2162.068
+"but"	2162.446375
+"seems"	2162.8247499999998
+"to"	2163.2031249999995
+"be"	2163.5814999999993
+"depended"	2163.959874999999
+"on"	2164.338249999999
+"the"	2164.7166249999987
+"browser"	2162.068
+"you're"	2162.5725
+"looking"	2163.077
+"at"	2163.5815000000002
+"2i"	2164.0860000000002
+"mean"	2164.5905000000002
+"I"	2165.095
+"I'm"	2165.4334444444444
+"doing"	2165.771888888889
+"this"	2166.1103333333335
+"in"	2166.448777777778
+"Chrome"	2166.7872222222227
+"for"	2167.1256666666673
+"a"	2167.464111111112
+"reason"	2167.8025555555564
+"now"	2169.041
+"most"	2169.375777777778
+"it"	2169.7105555555554
+"is"	2170.045333333333
+"one"	2170.3801111111106
+"flies"	2170.7148888888883
+"well"	2171.049666666666
+"and"	2171.3844444444435
+"at"	2171.719222222221
+"least"	2169.041
+"earlier"	2172.054
+"iterations"	2172.488142857143
+"a"	2172.922285714286
+"Firefox"	2173.3564285714288
+"and"	2173.7905714285716
+"so"	2174.2247142857145
+"the"	2174.6588571428574
+"other"	2172.054
+"browsers"	2173.5735
+"um"	2175.093
+"I"	2175.816857142857
+"know"	2176.540714285714
+"there've"	2177.264571428571
+"been"	2177.988428571428
+"experiments"	2178.712285714285
+"and"	2179.436142857142
+"using"	2175.093
+"cameras"	2175.816857142857
+"and"	2176.540714285714
+"I"	2177.264571428571
+"think"	2177.988428571428
+"that"	2178.712285714285
+"the"	2179.436142857142
+"performance"	2181.006
+"can"	2181.26325
+"be"	2181.5205
+"in"	2181.77775
+"improved"	2182.089
+"after"	2182.46475
+"you"	2182.8405000000002
+"get"	2183.2162500000004
+"a"	2183.5920000000006
+"certain"	2183.9677500000007
+"head"	2184.343500000001
+"to"	2184.719250000001
+"a"	2182.089
+"certain"	2182.8405
+"threshold"	2183.5919999999996
+"um"	2184.3434999999995
+"but"	2186.049
+"I"	2186.432375
+"might"	2186.8157499999998
+"be"	2187.1991249999996
+"incorrect"	2187.5824999999995
+"about"	2187.9658749999994
+"that"	2188.3492499999993
+"%uh"	2188.732624999999
+"the"	2186.049
+"stock"	2186.8157499999998
+"has"	2187.5824999999995
+"a"	2188.3492499999993
+"air"	2190.016
+"example"	2190.521166666667
+"if"	2191.0263333333337
+"comparing"	2191.5315000000005
+"SPG"	2192.0366666666673
+"and"	2192.541833333334
+"and"	2193.047
+"canvas"	2193.5491666666667
+"imitations"	2194.0513333333333
+"not"	2194.5535
+"the"	2195.0556666666666
+"force"	2195.5578333333333
+"layout"	2193.047
+"but"	2193.6496
+"a"	2194.2522000000004
+"bunch"	2194.8548000000005
+"of"	2195.4574000000007
+"notes"	2196.006
+"moving"	2196.4394285714284
+"around"	2196.872857142857
+"in"	2197.3062857142854
+"there"	2197.739714285714
+"a"	2198.1731428571425
+"here's"	2198.606571428571
+"I"	2199.094
+"they"	2199.437888888889
+"they"	2199.781777777778
+"do"	2200.1256666666673
+"work"	2200.4695555555563
+"in"	2200.8134444444454
+"a"	2201.1573333333345
+"similar"	2201.5012222222235
+"spot"	2201.8451111111126
+"efficiency"	2199.094
+"at"	2200.6414999999997
+"at"	2203.089
+"certain"	2203.590166666667
+"numbers"	2204.0913333333338
+"but"	2204.5925000000007
+"that"	2205.0936666666676
+"certain"	2205.5948333333345
+"numbers"	2203.089
+"for"	2204.5924999999997
+"after"	2207.059
+"you"	2211.041
+"her"	2212.547

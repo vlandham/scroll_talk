@@ -1,0 +1,2750 @@
+1
+00:00:14,012 --> 00:00:17,014
+thank you lineup
+
+2
+00:00:17,014 --> 00:00:21,383
+easy Massa let's get down to something
+more difficult yeah
+
+3
+00:00:21,509 --> 00:00:24,593
+hi my name's Jim blame him um like she
+said
+
+4
+00:00:25,349 --> 00:00:30,354
+I my day job is had a biomedical
+research facility for doing that genomic
+
+5
+00:00:30,849 --> 00:00:31,820
+analysis on
+
+6
+00:00:31,082 --> 00:00:34,601
+worms and flies in other sciences stuff
+but
+
+7
+00:00:35,339 --> 00:00:38,620
+I'll for fun over I like to look at
+
+8
+00:00:38,062 --> 00:00:42,062
+data visualizations and an interactive
+once and today I'd like to
+
+9
+00:00:42,062 --> 00:00:46,119
+%ah talk about that the force layout
+Coloma more detail
+
+10
+00:00:47,019 --> 00:00:50,053
+and and how to I use it and
+
+11
+00:00:50,053 --> 00:00:54,102
+in a non traditional manner some so
+we're gonna be abusing the force they
+
+12
+00:00:54,579 --> 00:00:54,657
+are typically
+
+13
+00:00:55,359 --> 00:00:59,010
+here's a here's a you know we just saw a
+
+14
+00:00:59,001 --> 00:01:03,012
+example have your traditional course
+layout andy is this is
+
+15
+00:01:03,012 --> 00:01:06,019
+typically utilize for your social
+network or your
+
+16
+00:01:06,019 --> 00:01:09,094
+congress' voting on the same stuff you
+know network based stuff
+
+17
+00:01:09,094 --> 00:01:13,163
+um but we're going to abuse this force a
+little bit
+
+18
+00:01:14,009 --> 00:01:17,410
+and come up with some novel ways to
+apply it
+
+19
+00:01:17,041 --> 00:01:21,103
+a to other data visualization techniques
+to make your life a little bit easier
+
+20
+00:01:22,003 --> 00:01:27,102
+so for size 12 get everybody on a
+baseline of what
+
+21
+00:01:28,002 --> 00:01:31,711
+what exactly what we're talking about I
+mean force layout on
+
+22
+00:01:31,729 --> 00:01:35,780
+I think you know for most people work I
+would agree that I with the right amount
+
+23
+00:01:35,078 --> 00:01:36,093
+of notes
+
+24
+00:01:36,093 --> 00:01:39,172
+in Europe with the right amount above
+was in your layout
+
+25
+00:01:40,009 --> 00:01:43,700
+iron it's a pleasing way it's a pretty
+way to draw a graph
+
+26
+00:01:43,007 --> 00:01:47,030
+are it but it works underneath the
+covers is working as a physical
+
+27
+00:01:47,093 --> 00:01:49,121
+simulation so you to these notes
+
+28
+00:01:50,021 --> 00:01:54,430
+is kinda but a charged force are charged
+particle excuse me
+
+29
+00:01:54,619 --> 00:01:58,310
+and they have these charges work to
+
+30
+00:01:58,031 --> 00:02:01,060
+to move to reports or to attract them in
+different ways
+
+31
+00:02:01,006 --> 00:02:05,021
+and the links between these notes
+constrain that movement and the
+
+32
+00:02:05,075 --> 00:02:06,874
+simulation works as a giant
+
+33
+00:02:07,549 --> 00:02:12,120
+loop so %uh each iteration each cycle
+this loop a
+
+34
+00:02:12,012 --> 00:02:15,351
+the charges are a are im
+
+35
+00:02:15,459 --> 00:02:20,850
+impact the notes they move and visual
+display is updated and that looping just
+
+36
+00:02:20,085 --> 00:02:21,118
+occurs over and over again
+
+37
+00:02:22,018 --> 00:02:25,041
+until it settles into a stable
+configuration
+
+38
+00:02:25,041 --> 00:02:29,042
+I'll so that's that's the force layout
+
+39
+00:02:29,042 --> 00:02:32,133
+in a not so that's that's how it usually
+works I'm a big fan of
+
+40
+00:02:33,033 --> 00:02:37,332
+this concept that everything is a remix
+up which I first kinda last onto from
+
+41
+00:02:37,629 --> 00:02:38,680
+curry ferguson's
+
+42
+00:02:38,068 --> 00:02:41,657
+a wonderful videos which you haven't
+seen a
+
+43
+00:02:42,269 --> 00:02:45,720
+put in your headphones now I'm and so it
+wasn't on ignore me
+
+44
+00:02:45,072 --> 00:02:48,075
+up but his his main thesis is that
+
+45
+00:02:48,075 --> 00:02:51,156
+um in the art in the creative world a
+
+46
+00:02:52,056 --> 00:02:55,205
+new works are created by simple
+
+47
+00:02:55,709 --> 00:03:00,120
+modifications of existing work see you
+take you take some existing stuff you
+
+48
+00:03:00,012 --> 00:03:04,044
+copy you transform into you combine a at
+a great new pieces
+
+49
+00:03:04,044 --> 00:03:07,078
+and it his his videos are about
+
+50
+00:03:07,078 --> 00:03:11,147
+that occurring in the arts in music and
+and I'm
+
+51
+00:03:11,849 --> 00:03:15,000
+literature and the movies by the good
+
+52
+00:03:15,000 --> 00:03:18,061
+is also true and I think we've seen this
+in a number of presentations
+
+53
+00:03:18,061 --> 00:03:21,160
+a also true and the data visualization
+world so
+
+54
+00:03:21,709 --> 00:03:25,790
+for this stock would like to provide
+some remix will components
+
+55
+00:03:25,079 --> 00:03:28,136
+%uh little nuggets love love useful
+
+56
+00:03:29,036 --> 00:03:32,195
+you know trickery that that we could
+start thinking about
+
+57
+00:03:32,519 --> 00:03:35,524
+applying to I your own visualizations
+
+58
+00:03:36,019 --> 00:03:40,720
+so that means we're a look at some code
+and of West not a terrible mistake
+
+59
+00:03:40,072 --> 00:03:44,061
+I'm so let's start with the force level
+they start out with just
+
+60
+00:03:44,709 --> 00:03:49,060
+looking at just a note so its build-up
+this first probability up a simple no
+
+61
+00:03:49,006 --> 00:03:50,295
+layout indeed three
+
+62
+00:03:50,349 --> 00:03:53,385
+id3 is a powerful tool for this because
+a
+
+63
+00:03:53,709 --> 00:03:57,723
+I think we'll see the the succinct miss
+that you can write
+
+64
+00:03:57,849 --> 00:04:00,902
+and start using that the force laid out
+Emilie and
+
+65
+00:04:01,379 --> 00:04:04,640
+look the chances are you're five using
+the three in your other stuff so it's a
+
+66
+00:04:04,064 --> 00:04:04,443
+good
+
+67
+00:04:05,019 --> 00:04:08,094
+%uh that it has that and in the talk at
+that you could use
+
+68
+00:04:08,769 --> 00:04:12,788
+no so like everything in d3 the notes
+
+69
+00:04:12,959 --> 00:04:16,004
+are going to be represented by some data
+so here we have
+
+70
+00:04:16,409 --> 00:04:20,070
+are just are are basic data says an
+array have
+
+71
+00:04:20,007 --> 00:04:23,022
+objects and he's object has some
+attributes here we just have
+
+72
+00:04:23,022 --> 00:04:27,025
+the and the amount that review together
+force layout started
+
+73
+00:04:27,025 --> 00:04:30,049
+it's pretty easy to create a new
+instance a force layout
+
+74
+00:04:30,049 --> 00:04:33,648
+you pass and your data your notes um
+
+75
+00:04:34,089 --> 00:04:38,800
+as the notes parameter and then you
+start and then
+
+76
+00:04:38,008 --> 00:04:42,077
+um what talk about this year the second
+you but you also want to just listen to
+
+77
+00:04:43,049 --> 00:04:43,126
+the takeover
+
+78
+00:04:44,026 --> 00:04:47,435
+and that as we'll see allows you access
+to
+
+79
+00:04:47,669 --> 00:04:51,520
+the simulation each iteration each loop
+up that simulation
+
+80
+00:04:51,052 --> 00:04:55,121
+on an important thing to remember about
+
+81
+00:04:56,021 --> 00:04:59,036
+d3 and in general and and the
+
+82
+00:04:59,036 --> 00:05:02,155
+force led and in particular %uh is that
+
+83
+00:05:02,479 --> 00:05:05,572
+you not constrained by particular Rep
+visual representation right that's one
+
+84
+00:05:06,409 --> 00:05:07,520
+of the big powers on the
+
+85
+00:05:07,052 --> 00:05:09,149
+up the whole idea but that doesn't mean
+you have to do a little bit of extra
+
+86
+00:05:10,049 --> 00:05:11,708
+work to get things going
+
+87
+00:05:12,149 --> 00:05:15,193
+so a couple more pieces I've love of
+code
+
+88
+00:05:15,589 --> 00:05:19,664
+first you have to you have to decide
+what how you want to visualize your
+
+89
+00:05:20,339 --> 00:05:23,347
+a force layout so you have to visualize
+your
+
+90
+00:05:23,419 --> 00:05:27,450
+simulation so in these will just use
+some SVG circles
+
+91
+00:05:27,045 --> 00:05:31,014
+up but really your keep in mind that
+could be anything that will see a couple
+
+92
+00:05:31,419 --> 00:05:32,487
+examples of other stuff
+
+93
+00:05:33,099 --> 00:05:36,168
+and right now %uh so yet so you your
+binder data
+
+94
+00:05:36,789 --> 00:05:41,580
+up in this case the force nodes to to
+that visual representation
+
+95
+00:05:41,058 --> 00:05:44,112
+and right now we won't use any
+attributes so that that it would issue
+
+96
+00:05:45,012 --> 00:05:46,100
+some static const int for
+
+97
+00:05:47,000 --> 00:05:50,036
+the radius now inside
+
+98
+00:05:50,036 --> 00:05:53,595
+when the for sale starts you get I'm
+
+99
+00:05:53,919 --> 00:05:57,020
+your data attributes good injected with
+some
+
+100
+00:05:57,002 --> 00:06:01,006
+variables are some more attributes I if
+they weren't very present
+
+101
+00:06:01,006 --> 00:06:04,089
+and specifically will look at the X&Y
+axes view
+
+102
+00:06:04,089 --> 00:06:08,102
+that body it added to each element have
+your data rate
+
+103
+00:06:09,002 --> 00:06:12,451
+and these represent the current position
+have that
+
+104
+00:06:12,469 --> 00:06:15,514
+a the no did being represented by that
+um
+
+105
+00:06:15,919 --> 00:06:18,930
+visual at every iteration love the
+
+106
+00:06:19,029 --> 00:06:23,080
+layout so you can use that to position
+
+107
+00:06:23,008 --> 00:06:26,887
+your arm your notes and so this is the
+text function
+
+108
+00:06:26,959 --> 00:06:30,041
+this is a the simplest example the tech
+function this'll get called executed
+
+109
+00:06:30,779 --> 00:06:31,450
+every
+
+110
+00:06:31,045 --> 00:06:34,111
+iteration of the simulation and we can
+use the
+
+111
+00:06:35,011 --> 00:06:38,095
+X&Y from being provided by arse are
+forced layout
+
+112
+00:06:38,095 --> 00:06:41,103
+a update to move modify the positions of
+the
+
+113
+00:06:42,075 --> 00:06:45,087
+circles the that were using to represent
+
+114
+00:06:45,087 --> 00:06:49,186
+so with all that you get a you cover get
+a couple circles frames
+
+115
+00:06:49,969 --> 00:06:53,740
+I would you can you already see that
+this is a nice
+
+116
+00:06:53,074 --> 00:06:57,086
+a visual attractive a same
+
+117
+00:06:57,086 --> 00:07:00,137
+and it only took a few lines of code to
+do this so
+
+118
+00:07:01,037 --> 00:07:04,626
+what what's going on behind the scenes
+to help make this attractive are
+
+119
+00:07:04,959 --> 00:07:09,130
+are the forces that we've mentioned that
+are working on it to these notes
+
+120
+00:07:09,013 --> 00:07:12,802
+I like to talk about briefly a charged
+and gravity
+
+121
+00:07:12,919 --> 00:07:16,950
+charge your I get my guy up charge
+represents
+
+122
+00:07:17,229 --> 00:07:20,246
+um the the reporter attraction between
+
+123
+00:07:20,399 --> 00:07:23,860
+each node in every other node so um
+
+124
+00:07:23,086 --> 00:07:27,135
+a more negative values cause the nose to
+repulse from one another
+
+125
+00:07:27,909 --> 00:07:32,380
+and more and less negative and positive
+eyes causing to attract
+
+126
+00:07:32,038 --> 00:07:35,387
+a so you are gonna make cool stuff like
+that
+
+127
+00:07:35,729 --> 00:07:41,070
+um gravity on like this forever is not
+down to her thats
+
+128
+00:07:41,007 --> 00:07:44,146
+is moreover events described as a
+physical spring
+
+129
+00:07:44,209 --> 00:07:47,740
+spring-like same attached to the center
+%uh the
+
+130
+00:07:47,074 --> 00:07:50,131
+visualizations so a higher gravity I'm
+
+131
+00:07:51,031 --> 00:07:55,430
+constrains it to the center and if you
+let go of gravity you
+
+132
+00:07:55,709 --> 00:07:58,716
+everything flows out the space so I'll
+
+133
+00:07:59,409 --> 00:08:03,830
+just this this beginner introduction
+knowledge to
+
+134
+00:08:03,083 --> 00:08:06,982
+the layout you can start to abuse the
+force and our own
+
+135
+00:08:07,729 --> 00:08:11,773
+in our own way um and the first abuse
+can be
+
+136
+00:08:12,169 --> 00:08:15,830
+%uh the example that irene was talking
+about the
+
+137
+00:08:15,083 --> 00:08:20,107
+the public char and this was first are
+one the first so you know best ways
+
+138
+00:08:21,007 --> 00:08:25,086
+this was shown was a New York Times
+visualization that
+
+139
+00:08:25,149 --> 00:08:28,193
+was looking at the Obama a budget
+proposal
+
+140
+00:08:28,589 --> 00:08:33,250
+and some use in the you know term budget
+a bubble charge us to read mean
+
+141
+00:08:33,025 --> 00:08:38,244
+were using the the node size to
+represent some underlying data about you
+
+142
+00:08:38,469 --> 00:08:41,570
+so how would how we might we
+
+143
+00:08:41,057 --> 00:08:44,061
+be able to implement this type a
+visualization
+
+144
+00:08:44,097 --> 00:08:47,194
+using the knowledge that we have about
+of course layout
+
+145
+00:08:48,094 --> 00:08:51,191
+well the first date is easy weekend and
+city views in some static const int
+
+146
+00:08:52,091 --> 00:08:55,172
+for rads we can scale the size were
+published by
+
+147
+00:08:56,072 --> 00:08:59,130
+the data that is representing you know
+that we wanted to represent on
+
+148
+00:09:00,003 --> 00:09:04,031
+and that gets us halfway there I but
+unfortunately everything's overlapping
+
+149
+00:09:04,058 --> 00:09:05,106
+nothing looks good anymore
+
+150
+00:09:06,006 --> 00:09:09,043
+so what we do the the inside is that we
+can
+
+151
+00:09:09,043 --> 00:09:13,087
+passe function to our charge primary
+doesn't have to be constrained by ice
+
+152
+00:09:13,087 --> 00:09:14,132
+data casa neither
+
+153
+00:09:15,032 --> 00:09:19,048
+and so you can use so this this now
+functional get
+
+154
+00:09:19,048 --> 00:09:22,077
+executed for each node in your layout
+
+155
+00:09:22,077 --> 00:09:26,160
+I at the start up the force a a at that
+start
+
+156
+00:09:27,006 --> 00:09:31,052
+time and so we can use the date itself
+
+157
+00:09:32,006 --> 00:09:36,063
+to scale um are are charged are reported
+value
+
+158
+00:09:36,063 --> 00:09:40,101
+by this the amount that is being
+virtuous and with those two changes
+
+159
+00:09:41,001 --> 00:09:44,048
+we did this nice a
+
+160
+00:09:44,048 --> 00:09:47,055
+affects right each node is is pushing
+away a relative
+
+161
+00:09:48,018 --> 00:09:52,047
+to a its size and the sizes are then
+scaled by the day
+
+162
+00:09:52,047 --> 00:09:56,102
+you're looking for so it was very nice
+
+163
+00:09:57,002 --> 00:10:00,016
+um and this is my this is
+
+164
+00:10:00,016 --> 00:10:04,093
+the the summation of the whole talk
+
+165
+00:10:04,093 --> 00:10:07,118
+so study it %uh
+
+166
+00:10:08,018 --> 00:10:12,059
+I think Mike Bostock a said it very
+eloquently when he said the force lay
+
+167
+00:10:12,059 --> 00:10:13,115
+out there is an implicit way
+
+168
+00:10:14,015 --> 00:10:17,076
+to do position encoding I'm gonna remix
+that
+
+169
+00:10:17,076 --> 00:10:21,077
+quote slightly and say it's a lazy way
+to move notes around
+
+170
+00:10:21,086 --> 00:10:24,137
+but its it's a good kind of lazy so on
+
+171
+00:10:25,037 --> 00:10:28,045
+as we'll see in these these other
+examples where we
+
+172
+00:10:29,017 --> 00:10:33,023
+don't have to care about %uh each
+individual location of that
+
+173
+00:10:33,023 --> 00:10:36,106
+up the no 2 instead impose simple rules
+
+174
+00:10:37,006 --> 00:10:41,013
+in our simulation right and allow the
+notes to find
+
+175
+00:10:41,013 --> 00:10:44,059
+correct positions based on our simple
+rule set that were given a
+
+176
+00:10:44,059 --> 00:10:48,070
+yeah here we're just using that the
+charge the simple rule that charges
+
+177
+00:10:48,007 --> 00:10:49,061
+relative to size
+
+178
+00:10:50,024 --> 00:10:53,055
+and that's all it takes so
+
+179
+00:10:53,055 --> 00:10:57,126
+how ask away abuse this concept to apply
+I'm several forces
+
+180
+00:10:58,026 --> 00:11:01,100
+a yeah ask your nice yeah
+
+181
+00:11:02,000 --> 00:11:06,046
+I like the Darth Vader is the evil lists
+character and yet in the book your the
+
+182
+00:11:06,046 --> 00:11:06,145
+movie
+
+183
+00:11:07,045 --> 00:11:10,066
+a well the the original one here
+
+184
+00:11:10,066 --> 00:11:15,115
+up had this cool feature where but you
+could split apart notes based on some
+
+185
+00:11:16,015 --> 00:11:21,080
+categorical values so here the it's
+mandatory versus discretionary spending
+
+186
+00:11:21,008 --> 00:11:24,057
+which brings us to the idea I love up
+
+187
+00:11:25,029 --> 00:11:28,065
+imposing our our own are applying it
+yeah
+
+188
+00:11:28,065 --> 00:11:31,132
+a imposing our own custom forces onto
+the
+
+189
+00:11:32,032 --> 00:11:35,040
+the notes so I recreated on
+
+190
+00:11:36,012 --> 00:11:39,031
+part serve the the New York Times one
+
+191
+00:11:39,031 --> 00:11:43,033
+a visualization in this up demo for the
+for the
+
+192
+00:11:43,033 --> 00:11:46,078
+blog post about this is gates
+
+193
+00:11:46,078 --> 00:11:50,096
+spending so the Gates Foundation on so
+that time was cut off but
+
+194
+00:11:50,096 --> 00:11:54,162
+and their then the grant sizes that
+they've provided over the years
+
+195
+00:11:55,062 --> 00:11:58,139
+so and in this the CAG or the character
+Oracle
+
+196
+00:11:59,039 --> 00:12:02,048
+slaying we can do is over years and so
+you can see
+
+197
+00:12:03,029 --> 00:12:06,035
+you get this really nice organic a
+feeling
+
+198
+00:12:06,089 --> 00:12:09,115
+and they came back emerge back together
+so it's pretty
+
+199
+00:12:10,015 --> 00:12:14,040
+a and it's useful so how do we do that
+
+200
+00:12:14,004 --> 00:12:17,045
+well here's our our basic take function
+
+201
+00:12:17,081 --> 00:12:20,163
+the whole the whole general idea of
+customs forces
+
+202
+00:12:21,063 --> 00:12:25,069
+in this in this example is we can modify
+this slightly
+
+203
+00:12:25,069 --> 00:12:29,084
+to add enough first day you know a
+function at jacks with your notes
+
+204
+00:12:29,084 --> 00:12:29,175
+somehow
+
+205
+00:12:30,075 --> 00:12:34,087
+and modifies the in position slightly
+
+206
+00:12:34,087 --> 00:12:39,098
+and then use that %uh to then that
+modify position to them
+
+207
+00:12:39,098 --> 00:12:43,134
+position are nuts um so here's an
+example
+
+208
+00:12:44,034 --> 00:12:47,133
+I and we all go through all the code but
+a
+
+209
+00:12:48,033 --> 00:12:51,088
+in this we would have some some way to
+represent
+
+210
+00:12:51,088 --> 00:12:54,144
+the two centers that we want to have a
+rest let up I know it's
+
+211
+00:12:55,044 --> 00:12:59,045
+from left to right and out we
+
+212
+00:12:59,054 --> 00:13:02,107
+grab where you have a function called
+move toward center
+
+213
+00:13:03,007 --> 00:13:07,055
+you know Tagore centre a and this this
+is a function that returns a function
+
+214
+00:13:07,055 --> 00:13:08,056
+will see why
+
+215
+00:13:08,065 --> 00:13:12,194
+in a minute on but so we grabbed are the
+correct
+
+216
+00:13:12,779 --> 00:13:16,300
+the crank sensor for our particular
+nodes by member this is going to get
+
+217
+00:13:16,003 --> 00:13:17,055
+executed each
+
+218
+00:13:17,082 --> 00:13:20,085
+if reach node I'm and then
+
+219
+00:13:21,012 --> 00:13:24,035
+move move that node based on the centers
+
+220
+00:13:24,035 --> 00:13:27,098
+location so that almost works
+
+221
+00:13:27,098 --> 00:13:30,131
+here's our are nodes when we when we buy
+that
+
+222
+00:13:31,031 --> 00:13:34,047
+custom force up we're back to everything
+
+223
+00:13:34,047 --> 00:13:38,062
+its slamming on top of one another so
+what's going on with you
+
+224
+00:13:38,062 --> 00:13:41,141
+we've lost that a nice thing that I just
+that was the whole point in this talk
+
+225
+00:13:42,041 --> 00:13:45,079
+was that we did not care about stuff now
+it seems like we don't care about
+
+226
+00:13:45,079 --> 00:13:49,092
+everyone work position on Alyssa um
+
+227
+00:13:49,092 --> 00:13:53,093
+fortunately we have this this access to
+this
+
+228
+00:13:53,093 --> 00:13:56,116
+predator which is which is indicated as
+alpha
+
+229
+00:13:57,016 --> 00:14:01,038
+arm now we can think of it as a blending
+parameter I that can be used to combine
+
+230
+00:14:01,038 --> 00:14:04,085
+multiple forces are charges on these
+notes
+
+231
+00:14:04,085 --> 00:14:08,086
+and if we it's accessible from the on
+force
+
+232
+00:14:08,095 --> 00:14:12,124
+instance but you can also get to it from
+from the tech function at each iteration
+
+233
+00:14:13,024 --> 00:14:14,106
+inside of an event
+
+234
+00:14:15,006 --> 00:14:18,033
+that's faster and if we were to print
+those out
+
+235
+00:14:18,033 --> 00:14:21,034
+we can see that it starts around .1
+
+236
+00:14:21,043 --> 00:14:24,092
+and gives decker minute slightly every
+iteration
+
+237
+00:14:24,092 --> 00:14:27,158
+above the every loophole that that
+simulation and then what it means
+
+238
+00:14:28,058 --> 00:14:32,757
+um yet what when it gets too up-close
+2.05 it'll end
+
+239
+00:14:33,279 --> 00:14:36,710
+so the numbers are arbitrary but the
+idea is that this is
+
+240
+00:14:36,071 --> 00:14:40,104
+the actual a mechanism by by which the
+force layout is
+
+241
+00:14:41,004 --> 00:14:44,303
+is settling down and two I mean it's
+it's the
+
+242
+00:14:44,339 --> 00:14:47,790
+can be considered a form of simulated
+annealing if if you're into that kinda
+
+243
+00:14:47,079 --> 00:14:47,086
+thing
+
+244
+00:14:48,049 --> 00:14:51,068
+around but but this is what's causing
+the
+
+245
+00:14:51,068 --> 00:14:54,135
+the stabilization of the force layout
+and general
+
+246
+00:14:55,035 --> 00:14:59,082
+so we can use this parameter and here's
+the same code but
+
+247
+00:14:59,082 --> 00:15:02,166
+instead of a so here now we get to pass
+and a
+
+248
+00:15:03,066 --> 00:15:06,080
+the Alpha into our into our move toward
+
+249
+00:15:06,008 --> 00:15:10,055
+category centers and with that small
+tweaks this is why this is why it's a
+
+250
+00:15:11,027 --> 00:15:14,076
+function return to function is because
+so it allows us to pass and
+
+251
+00:15:14,076 --> 00:15:17,143
+variables I without creating a global
+variable we can pass and locally and
+
+252
+00:15:18,043 --> 00:15:18,102
+here
+
+253
+00:15:19,002 --> 00:15:22,071
+and had have access to on in our in our
+closer to here
+
+254
+00:15:22,071 --> 00:15:25,105
+um but with that small tweak veins
+
+255
+00:15:26,005 --> 00:15:29,016
+now work as you expect now wouldn't work
+and not
+
+256
+00:15:29,016 --> 00:15:32,016
+a here when we separate them out
+
+257
+00:15:32,016 --> 00:15:35,089
+love the it the alpha blending allows
+our
+
+258
+00:15:35,089 --> 00:15:38,160
+charges that are now relative to the the
+size of the notes
+
+259
+00:15:39,006 --> 00:15:42,034
+to be blended with our custom force and
+
+260
+00:15:42,088 --> 00:15:45,146
+a works with a lot of nose and works if
+you
+
+261
+00:15:46,046 --> 00:15:50,082
+dragging around though the stick to
+their centers but again we're not
+
+262
+00:15:50,082 --> 00:15:53,089
+were not worried really about where
+
+263
+00:15:53,089 --> 00:15:57,168
+you to these notes goes we just on time
+you guys club here you guys come up here
+
+264
+00:15:58,068 --> 00:16:02,093
+and they figure things out Scott nice
+Tom
+
+265
+00:16:02,093 --> 00:16:05,185
+so let's look at another iteration of
+this
+
+266
+00:16:06,085 --> 00:16:10,151
+i right now the to the reports in the
+charge
+
+267
+00:16:11,051 --> 00:16:14,074
+that's that's a associate with each
+other's noses nice
+
+268
+00:16:14,074 --> 00:16:17,233
+it keeps them the nodes away from one
+another but it
+
+269
+00:16:17,899 --> 00:16:21,540
+it's kind of an eventual process right
+so what if you wanted
+
+270
+00:16:21,054 --> 00:16:24,150
+that to be a more constrained more
+formal
+
+271
+00:16:25,005 --> 00:16:28,032
+looking a distinction on
+
+272
+00:16:28,077 --> 00:16:31,151
+where you we're gonna ever mandeville
+simple collision detection
+
+273
+00:16:32,051 --> 00:16:35,052
+in the same manner so this was dunno I
+like
+
+274
+00:16:35,052 --> 00:16:38,060
+remix in New York Times graphics a
+
+275
+00:16:38,006 --> 00:16:41,068
+and by remix you know where but I
+
+276
+00:16:42,022 --> 00:16:45,026
+a by this is done by another great piece
+
+277
+00:16:45,026 --> 00:16:49,079
+where that were visualizing a the words
+different words said
+
+278
+00:16:49,079 --> 00:16:52,176
+at the different national conventions
+during the elections
+
+279
+00:16:53,076 --> 00:16:56,123
+and I R I implemented again support to
+this
+
+280
+00:16:57,023 --> 00:17:01,061
+and another visualization that just
+looks at a word frequencies and
+
+281
+00:17:01,061 --> 00:17:04,380
+and some books but the the point if it
+is that now
+
+282
+00:17:04,929 --> 00:17:08,270
+from when we move these guys around at
+the there's
+
+283
+00:17:08,027 --> 00:17:12,926
+nice hard-line around each in their
+their clout in there and they're
+
+284
+00:17:13,169 --> 00:17:17,243
+um maintaining that a parameter around
+them
+
+285
+00:17:17,909 --> 00:17:21,260
+today implement this a is the same
+
+286
+00:17:21,026 --> 00:17:24,080
+same idea ennui we use another
+
+287
+00:17:24,008 --> 00:17:27,106
+I'll modification function we can call
+it collide
+
+288
+00:17:28,078 --> 00:17:31,123
+and I just look at well as look at
+pseudocode here on
+
+289
+00:17:32,023 --> 00:17:35,025
+because the it's not difficult was a
+long
+
+290
+00:17:35,025 --> 00:17:38,030
+so again this has been executed for each
+
+291
+00:17:38,003 --> 00:17:41,037
+node on at every cycle
+
+292
+00:17:41,064 --> 00:17:44,140
+%uh that's the that physical simulation
+the nose layout
+
+293
+00:17:45,004 --> 00:17:49,089
+so we just inside this we can loop
+through all the other notes
+
+294
+00:17:50,025 --> 00:17:55,050
+and then do a simple distance check if
+if they're too close based on
+
+295
+00:17:55,005 --> 00:17:58,077
+the the values %uh the data attributes
+that we already know
+
+296
+00:17:59,022 --> 00:18:03,051
+in in those in those nodes that we just
+move them back by half
+
+297
+00:18:03,051 --> 00:18:06,052
+I'll I so we get that I was that
+
+298
+00:18:06,052 --> 00:18:10,089
+slight modification we can get this nice
+look it works with other custom
+
+299
+00:18:10,089 --> 00:18:14,258
+a forces like them always like that and
+it works with
+
+300
+00:18:15,059 --> 00:18:18,070
+any number of nodes that you put into it
+
+301
+00:18:18,007 --> 00:18:22,616
+and this this is a a brute-force
+mechanism the that you can optimize but
+
+302
+00:18:22,679 --> 00:18:27,080
+just a starting point for this kind of a
+visualization
+
+303
+00:18:27,008 --> 00:18:31,008
+you can do core stuff like the the demo
+of putting an invisible node
+
+304
+00:18:31,008 --> 00:18:34,100
+underneath your me your mouse cursor and
+then every time all your other
+
+305
+00:18:35,000 --> 00:18:40,082
+little notes are afraid of it just fun
+to
+
+306
+00:18:40,082 --> 00:18:43,094
+okay oh yeah I want more and
+
+307
+00:18:43,094 --> 00:18:46,116
+there's nothing that mandates that you
+have to move them
+
+308
+00:18:47,016 --> 00:18:50,045
+back by half so if you start increasing
+that
+
+309
+00:18:50,045 --> 00:18:54,058
+that movement you can end up with this
+nice but useless popcorn
+
+310
+00:18:54,058 --> 00:18:57,061
+explosion star colliding with one
+another and
+
+311
+00:18:57,061 --> 00:19:00,149
+getting scared him right away just one
+
+312
+00:19:01,049 --> 00:19:05,065
+I'll okay so let's say I think this is
+Dragon Ball Z not really
+
+313
+00:19:05,065 --> 00:19:08,224
+a Star Wars buzzer as a force
+
+314
+00:19:08,809 --> 00:19:12,080
+a let's add some some links you know
+
+315
+00:19:12,008 --> 00:19:17,032
+finally um with links constrain the
+locations
+
+316
+00:19:17,032 --> 00:19:20,037
+that our notes can move around a
+
+317
+00:19:20,037 --> 00:19:24,062
+II here's Jersey example with the links
+now
+
+318
+00:19:24,062 --> 00:19:27,123
+and as you might expect the three links
+are also represented
+
+319
+00:19:28,023 --> 00:19:32,352
+and data so the minimum two things you
+need in your link data
+
+320
+00:19:32,559 --> 00:19:36,130
+our source and a target which represent
+the two
+
+321
+00:19:36,013 --> 00:19:39,022
+I know is that they're connecting with
+you can do this either via an index into
+
+322
+00:19:40,003 --> 00:19:41,007
+the nodes are a
+
+323
+00:19:41,007 --> 00:19:45,060
+or with the actual notes themselves and
+if you do in an index
+
+324
+00:19:45,006 --> 00:19:48,063
+when they're forced layoff starts
+they'll be translated into
+
+325
+00:19:49,017 --> 00:19:52,036
+the notes themselves which means you
+have access to
+
+326
+00:19:52,036 --> 00:19:55,051
+up both the source and target no data
+
+327
+00:19:55,051 --> 00:19:58,086
+on you need a visualize on some way view
+
+328
+00:19:58,086 --> 00:20:02,095
+if you so choose and so we can draw
+simple line in this example
+
+329
+00:20:02,095 --> 00:20:06,111
+and then like I said you have access to
+the source and destination
+
+330
+00:20:07,011 --> 00:20:11,089
+our source and target a data and you can
+use their X&Y coordinates
+
+331
+00:20:11,089 --> 00:20:14,151
+to position your lines start/stop
+
+332
+00:20:15,051 --> 00:20:18,095
+and so and %uh some the simplest the
+
+333
+00:20:18,095 --> 00:20:21,113
+example I could covers that
+
+334
+00:20:22,013 --> 00:20:26,085
+a forces also have their own are links
+also have their own parameters
+
+335
+00:20:26,085 --> 00:20:29,089
+I'd like to talk about just link
+distance and a
+
+336
+00:20:30,025 --> 00:20:34,029
+as you might guess like distance just
+specifies
+
+337
+00:20:34,029 --> 00:20:37,121
+the early distance the link the the link
+to the links
+
+338
+00:20:38,021 --> 00:20:41,021
+um a based on
+
+339
+00:20:41,021 --> 00:20:44,046
+some value so another insight
+
+340
+00:20:44,046 --> 00:20:47,079
+is you can make that link distance
+
+341
+00:20:47,079 --> 00:20:50,088
+driven by data sorry instead have been a
+constant
+
+342
+00:20:50,799 --> 00:20:53,840
+it can it can be a
+
+343
+00:20:53,084 --> 00:20:56,086
+it can represent some data value and
+this
+
+344
+00:20:56,086 --> 00:20:59,175
+in this case the link a data has some
+value
+
+345
+00:21:00,075 --> 00:21:04,087
+distance that you could use to to expand
+occurred tracked each like
+
+346
+00:21:04,087 --> 00:21:07,165
+at upper legs level and that's
+essentially all I've done in this
+
+347
+00:21:08,065 --> 00:21:09,073
+particular
+
+348
+00:21:09,073 --> 00:21:12,073
+visualization where I was looking that
+um
+
+349
+00:21:12,073 --> 00:21:16,642
+a communities in neighborhoods that have
+a sharp racial divide
+
+350
+00:21:17,299 --> 00:21:20,450
+so here this is Kansas City and each
+
+351
+00:21:20,045 --> 00:21:23,774
+each node is now represented by census
+tract
+
+352
+00:21:24,179 --> 00:21:27,380
+and like I said today you don't you're
+not constrained by
+
+353
+00:21:27,038 --> 00:21:32,065
+bubbles on sand underneath it and so
+each census tract is connected to its
+
+354
+00:21:32,065 --> 00:21:32,148
+neighbors
+
+355
+00:21:33,048 --> 00:21:37,067
+by links an invisible links and that
+this isn't hasn't started yet
+
+356
+00:21:37,067 --> 00:21:41,090
+but the link for those links is relative
+to the proportion
+
+357
+00:21:41,009 --> 00:21:44,048
+up a white and black populations between
+
+358
+00:21:45,029 --> 00:21:48,040
+that mean that neighbor and its neighbor
+you know that that
+
+359
+00:21:48,004 --> 00:21:51,413
+census tract as neighbor so iron
+
+360
+00:21:51,809 --> 00:21:55,140
+if there's a sharp a jump and
+
+361
+00:21:55,014 --> 00:21:58,049
+in white or black population so if you
+go from one
+
+362
+00:21:58,049 --> 00:22:02,110
+census tract is 20 percent white to its
+neighbor be in 20 percent
+
+363
+00:22:03,001 --> 00:22:06,087
+black then then that link will be longer
+
+364
+00:22:06,096 --> 00:22:09,185
+so we start this it it starts to break
+apart
+
+365
+00:22:10,085 --> 00:22:13,119
+at areas where there's this real high
+division
+
+366
+00:22:14,019 --> 00:22:17,067
+and I just I read I is sorry that
+
+367
+00:22:17,067 --> 00:22:20,098
+you understand kinda a
+
+368
+00:22:20,098 --> 00:22:23,146
+the medium emotionally intense a value
+
+369
+00:22:24,046 --> 00:22:28,079
+I want to just kinda look at a way to
+represent how these
+
+370
+00:22:28,079 --> 00:22:31,218
+um a racial boundaries affected the
+
+371
+00:22:31,929 --> 00:22:35,820
+the first that the spatial a very small
+areas in which they occur
+
+372
+00:22:35,082 --> 00:22:38,115
+so are there's that's a bit that's all
+but up
+
+373
+00:22:39,015 --> 00:22:44,021
+underline that we're just a link
+distances you know i trick on their
+
+374
+00:22:44,075 --> 00:22:48,141
+so we can start expanding these concepts
+
+375
+00:22:49,041 --> 00:22:52,095
+a and the first the first and I thought
+have when
+
+376
+00:22:52,095 --> 00:22:55,152
+um I'll kinda discovered the multiple
+centers
+
+377
+00:22:56,052 --> 00:23:00,127
+idea as what have you put it into a
+circle you know her like circles
+
+378
+00:23:01,027 --> 00:23:04,036
+so here's my interactive hair ball that
+I did
+
+379
+00:23:04,036 --> 00:23:07,057
+for a I my the
+
+380
+00:23:07,057 --> 00:23:10,096
+the people that I work with artwork for
+as towers they
+
+381
+00:23:10,096 --> 00:23:14,139
+wanna just got over IRT representation
+of collaboration you know what are the
+
+382
+00:23:15,039 --> 00:23:15,043
+main
+
+383
+00:23:15,079 --> 00:23:18,161
+science stances everybody climbers with
+one another sorry to these
+
+384
+00:23:19,061 --> 00:23:23,095
+these are these groups is a lab each
+node you circle it is a
+
+385
+00:23:23,095 --> 00:23:26,095
+individual in that lab and there's links
+between them
+
+386
+00:23:26,095 --> 00:23:29,099
+based on how many papers are on together
+on
+
+387
+00:23:30,035 --> 00:23:33,049
+so it's fun and it allows for
+exploration again
+
+388
+00:23:33,049 --> 00:23:36,054
+all I'm defining they are the a route
+the cert
+
+389
+00:23:36,054 --> 00:23:40,098
+the center's along a circle right on for
+each slab
+
+390
+00:23:40,098 --> 00:23:43,667
+%uh not to individuals which means we
+can do stuff like
+
+391
+00:23:44,549 --> 00:23:49,790
+reordering the um the circle center
+locations for makes everything move
+
+392
+00:23:49,079 --> 00:23:49,838
+around you know
+
+393
+00:23:50,549 --> 00:23:53,640
+kinda fun you can you can change and if
+you change the
+
+394
+00:23:53,064 --> 00:23:57,091
+a the to a radius that your
+
+395
+00:23:57,091 --> 00:24:01,095
+applying the circle to you can make
+pretty but useless you know obviously
+
+396
+00:24:01,095 --> 00:24:04,191
+artistic a spiral love spiro love
+collaboration
+
+397
+00:24:05,091 --> 00:24:09,230
+s but you get to find out who's who's
+the coolest kid in there
+
+398
+00:24:10,049 --> 00:24:14,950
+India the group there on
+
+399
+00:24:14,095 --> 00:24:18,149
+if if you want you know %uh a little bit
+a mass in turn affect how I feel
+
+400
+00:24:19,049 --> 00:24:22,056
+embarrassed for need in this country
+Myers after their previous stock but
+
+401
+00:24:23,019 --> 00:24:27,045
+da Mac right has a great introduction to
+this a math for pictures which i think
+
+402
+00:24:27,045 --> 00:24:27,090
+is a
+
+403
+00:24:27,009 --> 00:24:30,017
+is a wonderful Explorer introduction to
+using
+
+404
+00:24:30,098 --> 00:24:34,787
+up using this kind of math to generate
+circles and stuff
+
+405
+00:24:35,669 --> 00:24:40,130
+another example up from a website called
+Let's free congress
+
+406
+00:24:40,013 --> 00:24:43,058
+that was used is kinda vague extension a
+
+407
+00:24:43,058 --> 00:24:46,397
+above the idea that are they're looking
+at
+
+408
+00:24:46,919 --> 00:24:50,600
+the small number of people that
+contributed large amounts of money
+
+409
+00:24:50,006 --> 00:24:53,012
+to a to election funding
+
+410
+00:24:54,002 --> 00:24:57,981
+um but these the visual was kind of
+interesting I thought I have recreated
+
+411
+00:24:58,179 --> 00:24:59,200
+so
+
+412
+00:24:59,002 --> 00:25:02,071
+you start out with a bunch of nodes I
+kinda wanted
+
+413
+00:25:02,089 --> 00:25:06,127
+Kill Bill new music to be playing at
+this that's why the color scheme is such
+
+414
+00:25:07,027 --> 00:25:10,075
+um and as the sender node expands
+
+415
+00:25:10,075 --> 00:25:13,136
+the to the the nodes around it are kinda
+repulsed
+
+416
+00:25:14,036 --> 00:25:17,036
+a kinda in a very organic matter right
+
+417
+00:25:17,036 --> 00:25:21,040
+I i like it and then when you come back
+down and they are
+
+418
+00:25:21,004 --> 00:25:24,033
+jump on I'm but this is
+
+419
+00:25:24,069 --> 00:25:27,100
+is trivial now that we know um
+
+420
+00:25:28,000 --> 00:25:32,047
+the previous examples there's all
+building on so we can tell
+
+421
+00:25:32,047 --> 00:25:35,119
+this is a the collision detection is
+isn't in effect here
+
+422
+00:25:36,019 --> 00:25:39,044
+um but it's also just a modification
+
+423
+00:25:39,044 --> 00:25:42,059
+love the um the charge
+
+424
+00:25:42,059 --> 00:25:46,132
+right up for that center know it so you
+get get a value from your slider
+
+425
+00:25:47,032 --> 00:25:50,059
+and then modify your charge function to
+utilize that
+
+426
+00:25:50,059 --> 00:25:54,088
+value and on that's all you need to do
+to create this kind have
+
+427
+00:25:54,088 --> 00:25:59,094
+interesting visual where it was again
+not much work
+
+428
+00:25:59,094 --> 00:26:02,129
+the last I like to look into and death
+is a
+
+429
+00:26:03,029 --> 00:26:07,070
+is a ok I have a deviation for Moretz
+sterner stuff on earth
+
+430
+00:26:07,007 --> 00:26:12,010
+um it's called he's got a again have a
+buzzer cut bread experiments
+
+431
+00:26:13,000 --> 00:26:17,098
+and the idea is um you start out with a
+grade he represented by these
+
+432
+00:26:17,098 --> 00:26:20,667
+these dots are kinda hard to see um by
+the only
+
+433
+00:26:21,549 --> 00:26:26,530
+apply force layout diagram and this case
+is this random data but
+
+434
+00:26:26,053 --> 00:26:30,091
+the they have to offer they have to
+follow two rules one
+
+435
+00:26:30,091 --> 00:26:33,098
+they need to stay on on a grid spot
+
+436
+00:26:34,061 --> 00:26:38,126
+and two um no two nodes can stay on the
+same grid spot
+
+437
+00:26:39,026 --> 00:26:42,026
+so when you started up I
+
+438
+00:26:42,026 --> 00:26:46,095
+grades is kinda very interesting looking
+on patterns them
+
+439
+00:26:46,095 --> 00:26:49,324
+and a you can modify the
+
+440
+00:26:50,179 --> 00:26:54,480
+the are the shape up your grid
+underlined fears
+
+441
+00:26:54,048 --> 00:26:57,089
+here's more just rectangle bird and you
+can see the
+
+442
+00:26:57,089 --> 00:27:00,116
+they kinda move those you ask you know
+
+443
+00:27:01,016 --> 00:27:04,063
+there's little tweaking that goes on as
+it as it sits there
+
+444
+00:27:04,063 --> 00:27:07,104
+and the reason behind that is %uh
+there's actually two nodes
+
+445
+00:27:08,004 --> 00:27:12,070
+associated with each other up with these
+are these points the the
+
+446
+00:27:12,007 --> 00:27:15,089
+from the visual 1 and then this
+underline one that still getting
+
+447
+00:27:16,052 --> 00:27:19,114
+manipulated by the other forces in
+effect so you have these two
+
+448
+00:27:20,014 --> 00:27:23,016
+parameters a are these two roles and
+then
+
+449
+00:27:23,016 --> 00:27:26,111
+and then there's still the charge and
+constraints are being applied
+
+450
+00:27:27,011 --> 00:27:30,014
+to up to these notes
+
+451
+00:27:30,014 --> 00:27:34,021
+so %uh I was the first a nice thought
+when I saw this was
+
+452
+00:27:34,021 --> 00:27:37,107
+so it's you know subway maps and trans
+amass a I kind of wanted a
+
+453
+00:27:38,007 --> 00:27:41,023
+create that for density so here's
+
+454
+00:27:41,023 --> 00:27:44,032
+attend city subways works pretty good
+right
+
+455
+00:27:44,032 --> 00:27:48,101
+I a we don't have we don't have
+
+456
+00:27:49,001 --> 00:27:53,014
+I was further inspired tour and by that
+I mean
+
+457
+00:27:53,014 --> 00:27:56,020
+easy access to data I'll when fathom did
+this
+
+458
+00:27:56,074 --> 00:27:59,077
+this is very similar experiment with the
+the Boston
+
+459
+00:27:59,077 --> 00:28:03,098
+a subway systems here so fat and has a
+great post about
+
+460
+00:28:03,098 --> 00:28:06,104
+how much geography can we get rid of and
+in transit maps in self
+
+461
+00:28:07,058 --> 00:28:10,907
+you know it's a there's a just a thought
+process but I really liked
+
+462
+00:28:11,429 --> 00:28:14,580
+the visual display here so I thought I'd
+retry it
+
+463
+00:28:14,058 --> 00:28:17,267
+with the with this simple
+
+464
+00:28:17,789 --> 00:28:21,130
+more you know a simpler than it really
+define the algorithm that they they use
+
+465
+00:28:21,013 --> 00:28:21,922
+to it
+
+466
+00:28:22,039 --> 00:28:25,390
+to create that visual but now we know
+the
+
+467
+00:28:25,039 --> 00:28:29,698
+the algorithm here so we'll start start
+each node which is this
+
+468
+00:28:30,049 --> 00:28:33,100
+a subway station will start them at
+their geographic
+
+469
+00:28:33,559 --> 00:28:37,480
+you know physical location and then
+we'll let the simulation run
+
+470
+00:28:37,048 --> 00:28:40,113
+and see what happens and its interesting
+
+471
+00:28:41,013 --> 00:28:45,027
+%uh I think it's kind of artistic and
+and fun I don't know about the
+
+472
+00:28:45,027 --> 00:28:45,110
+practically
+
+473
+00:28:46,001 --> 00:28:49,014
+you know being able to read this item
+I'm not from Boston soda
+
+474
+00:28:49,023 --> 00:28:53,592
+doesn't matter to me but yeah
+
+475
+00:28:53,799 --> 00:28:56,880
+but it is a event is Elise the starting
+point is something to
+
+476
+00:28:56,088 --> 00:28:59,164
+to conjure up more ideas and I look
+forward to seeing some others
+
+477
+00:29:00,064 --> 00:29:03,102
+um I've got three more
+
+478
+00:29:04,002 --> 00:29:08,771
+quick examples above up these same
+prince was being applied and and
+
+479
+00:29:08,789 --> 00:29:12,864
+in the real world %uh the first one is a
+notre site but is Barack Obama the
+
+480
+00:29:13,539 --> 00:29:15,730
+president dot com from the
+
+481
+00:29:15,073 --> 00:29:18,108
+the Guardian right at these bow the the
+
+482
+00:29:19,008 --> 00:29:23,103
+balloons themselves are a are being
+controlled by force last so they have a
+
+483
+00:29:24,003 --> 00:29:27,008
+up you know buoyancy kinda concept that
+are making the flow
+
+484
+00:29:27,053 --> 00:29:30,059
+and then if you were to hover over one
+up on you get the same
+
+485
+00:29:30,059 --> 00:29:33,136
+radius expanding concept to to a lesser
+degree that kinda pushes
+
+486
+00:29:34,036 --> 00:29:39,105
+and focuses in on one %uh once the one
+balloon
+
+487
+00:29:39,429 --> 00:29:43,690
+I also have I like this one this the
+save my library by
+
+488
+00:29:43,069 --> 00:29:46,086
+us Sarah Groff plum borough UX the
+
+489
+00:29:46,086 --> 00:29:49,110
+designer I privates for her name and San
+Francisco
+
+490
+00:29:50,001 --> 00:29:53,710
+I I those edges and as a says she's
+gonna find
+
+491
+00:29:53,809 --> 00:29:57,950
+or are making no dove her library her
+books actually contains
+
+492
+00:29:57,095 --> 00:30:00,173
+as is the simple concert again we're
+just using
+
+493
+00:30:01,073 --> 00:30:05,402
+the same idea as multiple Center points
+but now with a lot more from
+
+494
+00:30:06,059 --> 00:30:10,690
+but allows for starting to quantify
+these different categories and
+
+495
+00:30:10,069 --> 00:30:13,121
+in an intuitive way you know the larger
+bubble group is
+
+496
+00:30:14,021 --> 00:30:18,059
+means a larger number books there and
+this again is part of a larger
+
+497
+00:30:18,059 --> 00:30:21,132
+interaction that can be moved around him
+and modified
+
+498
+00:30:22,032 --> 00:30:25,251
+come and explore and finally a
+
+499
+00:30:25,539 --> 00:30:30,840
+discusses a recent a kinda dash for they
+called gravity
+
+500
+00:30:30,084 --> 00:30:33,160
+where and you to these you to these a.m.
+
+501
+00:30:34,006 --> 00:30:37,715
+quite nodes represents a a topic
+
+502
+00:30:38,309 --> 00:30:41,408
+and a the and the bubbles that start
+forming around it
+
+503
+00:30:42,299 --> 00:30:46,010
+are a %uh comments and conversations
+around those topics
+
+504
+00:30:46,001 --> 00:30:49,013
+and the the more the same part is that
+this is real time in it and it gets
+
+505
+00:30:49,013 --> 00:30:50,097
+updated while you watch it but
+
+506
+00:30:50,097 --> 00:30:54,114
+but it's the same affect really the
+notes themselves are part of a force
+
+507
+00:30:55,014 --> 00:30:55,088
+layout
+
+508
+00:30:55,088 --> 00:30:58,089
+and each had the and nodes in a
+particular
+
+509
+00:30:58,089 --> 00:31:01,126
+a category are being drawn organically
+
+510
+00:31:02,026 --> 00:31:05,041
+to to the center which happens to be
+there
+
+511
+00:31:05,041 --> 00:31:08,076
+the right topic no and so
+
+512
+00:31:08,076 --> 00:31:12,355
+you know whether a little bit of a work
+they're allowed they're allowed to have
+
+513
+00:31:13,039 --> 00:31:14,076
+all this flexibility
+
+514
+00:31:14,409 --> 00:31:18,580
+from buyer just to find these the civil
+rule sets
+
+515
+00:31:18,058 --> 00:31:21,062
+so hopefully we've seen a little bit
+behind the magic
+
+516
+00:31:21,062 --> 00:31:25,119
+above the force right this is Frank us
+you know controlling your right and I'm
+
+517
+00:31:26,019 --> 00:31:30,051
+school and a um
+
+518
+00:31:30,051 --> 00:31:33,590
+that was you know I mean point is to
+take away some of the magic behind this
+
+519
+00:31:34,049 --> 00:31:39,060
+I think it's important that on we get to
+see the the how of
+
+520
+00:31:39,159 --> 00:31:43,020
+of summer these you know visualizations
+that were inspired by
+
+521
+00:31:43,002 --> 00:31:47,050
+and and try to the breaking down to
+little components that we can then
+
+522
+00:31:47,005 --> 00:31:50,062
+abuse ourselves so look for your abuses
+
+523
+00:31:51,007 --> 00:31:58,007
+and I'm thanks
+
+524
+00:32:03,669 --> 00:32:10,669
+into question oh yes questions
+
+525
+00:32:33,003 --> 00:32:36,010
+been
+
+526
+00:32:36,001 --> 00:32:40,700
+yeah
+
+527
+00:32:40,799 --> 00:32:44,380
+right yeah now I think I think
+somebody's arced
+
+528
+00:32:44,038 --> 00:32:48,057
+again starting points a I love where
+
+529
+00:32:48,399 --> 00:32:51,700
+the yeah that you concerning coding
+
+530
+00:32:51,007 --> 00:32:56,009
+iron more you can start applying more
+simple rules
+
+531
+00:32:56,072 --> 00:32:59,171
+to these it to to make them more finesse
+um
+
+532
+00:33:00,071 --> 00:33:05,088
+but I i've seen examples I've way I use
+on my ex-wife beam
+
+533
+00:33:05,088 --> 00:33:12,088
+being part of the it yeah
+
+534
+00:33:13,014 --> 00:33:17,051
+and and so is i mean there's yeah so
+were seen examples where
+
+535
+00:33:17,051 --> 00:33:21,052
+well in the Obama the the first one here
+are
+
+536
+00:33:21,052 --> 00:33:24,321
+one-third and talk about something that
+also makes it
+
+537
+00:33:24,789 --> 00:33:29,210
+to a to think get to it something that
+makes it cool as
+
+538
+00:33:29,021 --> 00:33:33,062
+a that there are you there actually
+doubling code in there
+
+539
+00:33:33,062 --> 00:33:37,069
+on the color %uh the
+
+540
+00:33:38,032 --> 00:33:41,036
+when we get to it there
+
+541
+00:33:41,036 --> 00:33:44,062
+I am color shows the amount
+
+542
+00:33:44,062 --> 00:33:48,151
+I love cut increase right says but that
+is kinda also double encoded by
+
+543
+00:33:49,051 --> 00:33:53,460
+it that the layer that it's in so I i
+really like
+
+544
+00:33:53,919 --> 00:33:57,610
+that their they're adding that nuance I
+don't talk about but so
+
+545
+00:33:57,061 --> 00:34:00,083
+in this I guess though the Y is you know
+
+546
+00:34:00,083 --> 00:34:03,922
+at least a hoping that that
+
+547
+00:34:04,669 --> 00:34:08,230
+that separation by keeping vans layered
+
+548
+00:34:08,023 --> 00:34:11,412
+and the implementation others you just
+add another
+
+549
+00:34:11,619 --> 00:34:14,716
+I'll custom force and and I could allow
+for time but
+
+550
+00:34:15,589 --> 00:34:19,060
+the nuances that they have they have the
+
+551
+00:34:19,006 --> 00:34:23,028
+they've multiplied by alpha twice for
+that particular for so
+
+552
+00:34:23,028 --> 00:34:26,097
+the affect the impact love
+
+553
+00:34:26,349 --> 00:34:30,040
+above the tearing is lest then the
+impact of the
+
+554
+00:34:30,004 --> 00:34:34,563
+separation so you you end up you can
+blame them to your own discretion how
+
+555
+00:34:34,599 --> 00:34:36,210
+much you want the
+
+556
+00:34:36,021 --> 00:34:39,210
+wonder affect you know the other if you
+are both sick or whatever
+
+557
+00:34:39,399 --> 00:34:42,494
+I thought that was a nice may have made
+may be an example where this is
+
+558
+00:34:43,349 --> 00:34:50,349
+the starting to occur
+
+559
+00:34:55,053 --> 00:34:56,652
+or
+
+560
+00:34:57,129 --> 00:35:03,030
+were hmm where
+
+561
+00:35:03,003 --> 00:35:08,062
+or court yes
+
+562
+00:35:08,062 --> 00:35:11,076
+yeah I V cool from and im in my
+
+563
+00:35:11,076 --> 00:35:14,094
+my hair ball are those links art
+
+564
+00:35:14,094 --> 00:35:17,143
+impacting the the locations of the nodes
+
+565
+00:35:18,043 --> 00:35:21,104
+but but yeah i certainly a and an easy
+
+566
+00:35:22,004 --> 00:35:25,070
+optimization to that would sit to be
+able to make him the order of those
+
+567
+00:35:25,007 --> 00:35:26,014
+knows more meaningful and thats
+
+568
+00:35:27,004 --> 00:35:31,007
+the reordering was was an attempt at
+that but utilizing
+
+569
+00:35:31,007 --> 00:35:34,012
+the data the the date inherent in that
+
+570
+00:35:34,075 --> 00:35:37,079
+and that is that would be much more
+powerful where to to
+
+571
+00:35:38,015 --> 00:35:44,057
+a start looking at the process
+
+572
+00:35:44,057 --> 00:35:48,155
+or a
+
+573
+00:35:49,055 --> 00:35:53,110
+well i think thats depend on the
+technology like we've seen
+
+574
+00:35:54,001 --> 00:35:57,023
+um this same can bog down after
+
+575
+00:35:57,032 --> 00:36:02,068
+in SVG after a couple hundred nodes and
+it did send certainly seems I'm not an
+
+576
+00:36:02,068 --> 00:36:05,095
+expert but seems to be depended on the
+browser you're looking at 2i mean
+
+577
+00:36:05,095 --> 00:36:08,141
+I I'm doing this in Chrome for a reason
+
+578
+00:36:09,041 --> 00:36:12,054
+now most it is one flies well and at
+least
+
+579
+00:36:12,054 --> 00:36:15,093
+earlier iterations a Firefox and so the
+other browsers
+
+580
+00:36:15,093 --> 00:36:20,160
+um I know there've been experiments and
+using cameras and I think that the
+
+581
+00:36:21,006 --> 00:36:22,035
+performance can be in
+
+582
+00:36:22,089 --> 00:36:25,095
+improved after you get a certain head to
+a certain threshold um
+
+583
+00:36:26,049 --> 00:36:29,116
+but I might be incorrect about that %uh
+the stock has a
+
+584
+00:36:30,016 --> 00:36:33,047
+air example if comparing SPG and
+
+585
+00:36:33,047 --> 00:36:36,060
+and canvas imitations not the force
+layout but a bunch of
+
+586
+00:36:36,006 --> 00:36:39,040
+notes moving around in there a here's
+
+587
+00:36:39,094 --> 00:36:42,189
+I they they do work in a similar spot
+efficiency at
+
+588
+00:36:43,089 --> 00:36:46,096
+at certain numbers but that certain
+numbers for
+
+589
+00:36:47,059 --> 00:36:50,141
+after
+
+590
+00:36:51,041 --> 00:36:54,053
+you her
+
