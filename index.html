@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<style>
+<link rel="stylesheet" href="css/prism.css" />
 
-@import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i);
+<style>
+  @import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i);
+pre[class*="language-"] {
+  background: #fff;
+}
 
 section {
   background: #fff;
   color: #000;
   padding: 2em;
-  font-family: "PT Serif", Baskerville, Georgia;
+  font-family: "Yanone Kaffeesatz", "PT Serif", Baskerville, Georgia;
 }
 
 #follow {
@@ -17,6 +21,31 @@ section {
 }
 
 .grey {
+  color: #777;
+}
+
+.center {
+  text-align: center;
+  font-size: 120%;
+}
+
+.title {
+  text-align:center;
+  font-size:500%;
+  /* line-height: 1.2; */
+}
+
+.caption {
+  position: absolute;
+  right: 2%;
+  bottom: 0%;
+  color: #777;
+}
+
+.rcaption {
+  position: absolute;
+  right: 2%;
+  bottom: 0%;
   color: #777;
 }
 
@@ -31,80 +60,66 @@ a:hover {
 }
 
 video {
-  width: 100%;
+  /* width: 100%; */
+  margin: 0 auto;
+  display: block;
 }
 
+
 </style>
+<div id="pagenumber" style="z-index:100;position:fixed;left:1%;bottom:7%;"></div>
 
 <section style="text-align:center;padding-top:5em;">
-  <p style="font-size:120%;"><b><a href="https://github.com/mbostock/stack">Stack</a></b> is a presentation library<br> with simple, scroll-based navigation.
-  <p class="grey">Scroll down to continue.
-</section>
-
-<section style="padding:5em 9em;">
-  <p>In addition to the mouse,
-    <br>you can scroll with the keyboard:
-    <br>use the <b>arrow keys</b>,
-    <br>the <b>space bar</b>,
-    <br>or <b>page up</b> and <b>page down</b>.
-  <p class="grey">Multiple key presses will skip multiple slides.
-</section>
-
-<section style="text-align:center;padding-top:5em;">
-  <p>You can even grab the scroll bar!
+<p style="font-size:120%;"><b>So You Think You Can Scroll</b></p>
+<p>Jim Vallandingham</p>
+<p>@vlandham</p>
+  <div id="arrow" style="opacity: 1;">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px" height="20px" viewBox="0 0 35 20" enable-background="new 0 0 35 20" xml:space="preserve">
+    <polyline fill="none" stroke="#231F20" stroke-width="6.6008" stroke-miterlimit="10" points="4,3.988 17.756,13.743 30.342,3.988 
+    "></polyline>
+    </svg>
+  </div>
 </section>
 
 <section>
   <video loop>
-    <source src="video/sewing_help.mp4" type="video/mp4" />
+    <source src="video/small_mults.mp4" type="video/mp4" />
   </video>
+    <p class="caption"><a href="https://github.com/vlandham/small_mults">github.com/vlandham/small_mults</a></p>
 </section>
 
-<section style="text-align:center;padding:.35em;font-size:1000%;">
-  5
+<section style="text-align:center;padding-top:0;">
+  <p class="title">2013</p>
 </section>
 
-<section style="text-align:center;padding:.35em;font-size:1000%;">
-  4
+<section  style="text-align:center;padding-top:1em;font-size:80%;">
+    <pre data-line="3,4"><code class="language-javascript">var mousemove = function() {
+  // 'this' is current DOM element
+  var xpos = d3.mouse(this)[0];
+  var date = xScale.invert(xpos);
+  var index = 0;
+
+  circle
+    .attr("cx", xScale(date))
+    .attr("cy", function(c) {
+      index = findIndex(c.values, date);
+      return yScale(c.values[index].n);
+  });
+  //...
+}
+    </code></pre>
 </section>
 
-<section style="text-align:center;padding:.35em;font-size:1000%;">
-  3
-</section>
 
-<section style="text-align:center;padding:.35em;font-size:1000%;">
-  2
-</section>
-
-<section style="text-align:center;padding:.35em;font-size:1000%;">
-  1
-</section>
-
-<!-- <section id="follow" style="padding-top:5em;background:url(sky.jpg);background-size:cover;"> -->
-<!--   <p style="text-align:center;color:#000;font-size:200%;line-height:1.35em;">INSPIRATIONAL IMAGE<br>ACCOMPANIED BY<br>INSIGHTFUL COMMENTARY -->
-<!--   <p id="follow-anchor" style="position:fixed;text-indent:-1.25em;">&larr; When this bar reaches the top,<br>the next slide will fade in. -->
-<!-- </section> -->
-
-<section style="text-align:center;padding-top:5em;">
-  <p>If you resize the window,
-    <br>slide content will scale up or down
-    <br>to fit automatically.
-</section>
 
 <section id="lorenz" style="text-align:center;padding-top:0;">
   <canvas></canvas>
-  <p style="position:absolute;z-index:1;padding-top:5em;left:0;width:100%;text-shadow:0 1px 0 #000;">Use <i>activate</i> and <i>deactivate</i> events
-    <br>to enable complex animations
-    <br>only when visible.
+  <p class="title">Thanks</p>
 </section>
 
-<section style="padding:5em 13em;">
-  <p>Stack is made by <a href="http://bost.ocks.org/mike/" rel="author">Mike Bostock</a>
-    <br>and is available on <a href="https://github.com/mbostock/stack">GitHub</a>
-    <br>under the <a href="https://github.com/mbostock/stack/blob/gh-pages/LICENSE">BSD license</a>.
-  <p class="grey">View source to get started.
-</section>
 
+
+<script src="js/prism.js"></script>
 <script src="js/d3.min.js"></script>
 <script src="js/stack.v1.min.js"></script>
 <script>
@@ -138,15 +153,24 @@ function stopVideo(i) {
   });
 }
 
+function setPageNumber(i) {
+ d3.select("#pagenumber").html(i + 1);
+}
+
 function activate(d, i) {
-  if (i === followIndex) mystack.on("scroll.follow", refollow);
-  if (i === lorenzIndex) startLorenz();
+  //if (i === followIndex) mystack.on("scroll.follow", refollow);
+  // if (i === lorenzIndex) startLorenz();
+  //if (i === interIndex) startInteractive();
+  //if (i === inverterIndex) startInverter();
   startVideo(i);
+  setPageNumber(i);
 }
 
 function deactivate(d, i) {
   if (i === followIndex) mystack.on("scroll.follow", null);
-  if (i === lorenzIndex) stopLorenz();
+  // if (i === lorenzIndex) stopLorenz();
+  //if (i === interIndex) stopInteractive();
+  //if (i === inverterIndex) stopInverter();
   stopVideo(i);
 }
 
