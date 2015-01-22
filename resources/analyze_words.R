@@ -16,7 +16,7 @@ p <- ggplot(filter(raw_data, is_um == 1), aes(x = (time / 60)))
 p <- p + geom_histogram(binwidth = 2, color = "white", fill = "#777777") + theme_upshot(base_size = 16) + labs(title = "Filler Counts Over Time")
 p
 ggsave("filler_histogram.png",p)
-ggsave("filler_histogram.svg",p)
+ggsave("filler_histogram.pdf",p)
 #p + facet_grid(word ~ .)
 
 
@@ -26,4 +26,4 @@ p <- ggplot(um_counts, aes(x = factor(word, levels = um_counts$word), y = count)
 p <- p + geom_bar(stat="identity", color = "white", fill = "#777777") + coord_flip() + labs(x = "") + theme_upshot(base_size = 16) + labs(title = "Filler Words Used")
 p
 ggsave("filler_word_counts.png",p)
-ggsave("filler_word_counts.svg",p)
+ggsave("filler_word_counts.pdf",p)
