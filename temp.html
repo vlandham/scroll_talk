@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/prism.css" />
+
+<style>
+  @import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i);
+pre[class*="language-"] {
+  background: #fff;
+}
+
+section {
+  background: #fff;
+  color: #000;
+  padding: 2em;
+  font-family: "Yanone Kaffeesatz", "PT Serif", Baskerville, Georgia;
+}
+
+#follow {
+  background: none;
+}
+
+.grey {
+  color: #777;
+}
+
+.center {
+  text-align: center;
+  font-size: 120%;
+}
+
+.title {
+  text-align:center;
+  font-size:500%;
+  /* line-height: 1.2; */
+}
+
+.caption {
+  position: absolute;
+  right: 2%;
+  bottom: 0%;
+  color: #777;
+}
+
+.rcaption {
+  position: absolute;
+  right: 2%;
+  bottom: 0%;
+  color: #777;
+}
+
+.line-highlight {
+  z-order: -10;
+  background: -webkit-linear-gradient(left, hsla(53, 100%, 50%,.3) 70%, hsla(24, 20%, 50%,0));
+  /* background-color: yellow; */
+}
+
+a:link,
+a:visited {
+  color: orange;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+video {
+  /* width: 100%; */
+  margin: 0 auto;
+  display: block;
+}
+
+#arrow {
+    position: relative;
+    width: 58px;
+    margin: 0 auto;
+  }
+
+
+#arrow svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: down 2s infinite;
+    -ms-animation: down 2s infinite;
+    -moz-animation: down 2s infinite;
+    animation: down 2s infinite;
+  }
+
+  @-webkit-keyframes down {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+
+  @-ms-keyframes down {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+
+  @-moz-keyframes down {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+
+  @keyframes down {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+
+
+</style>
+</head>
+<body>
+<div id="pagenumber" style="z-index:100;position:fixed;left:1%;bottom:7%;"></div>
+
+
+<section style="text-align:center;padding-top:5em;">
+<p style="font-size:220%;"><b>So You Think You Can Scroll</b></p>
+<p>Jim Vallandingham</p>
+<p>@vlandham</p>
+<br/><br/><br/>
+  <div id="arrow" style="opacity: 1;">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px" height="20px" viewBox="0 0 35 20" enable-background="new 0 0 35 20" xml:space="preserve">
+    <polyline fill="none" stroke="#231F20" stroke-width="6.6008" stroke-miterlimit="10" points="4,3.988 17.756,13.743 30.342,3.988 
+    "></polyline>
+    </svg>
+  </div>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Trigger Scrolling</p>
+</section>
+
+<section>
+  <video data-src="video/hottest.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.bloomberg.com/graphics/2014-hottest-year-on-record/">Hottest Year</a></p>
+</section>
+
+
+<section>
+  <video data-src="video/soccer.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/06/13/sports/worldcup/world-cup-balls.html">World Cup Balls</a></p>
+</section>
+
+
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Steps</p>
+</section>
+
+
+
+<section>
+  <video data-src="video/color.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://muyueh.com/greenhoney/">Color Meanings</a></p>
+</section>
+
+<section>
+  <video data-src="video/soccer_clubs.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/06/20/sports/worldcup/how-world-cup-players-are-connected.html">Clubs That Connect</a></p>
+</section>
+
+<section>
+  <video data-src="video/suv.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.bloomberg.com/graphics/2015-auto-sales/">Auto Sales</a></p>
+</section>
+
+<section>
+  <video data-src="video/islamic_states.mp4"  loop>
+  </video>
+    <p class="caption"><a href="http://www.washingtonpost.com/wp-srv/special/world/islamic-state-tracker/">Islamic State Tracker</a></p>
+</section>
+
+
+<section>
+  <video data-src="video/charts.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html?abt=0002&abg=1">Recession Charts</a></p>
+</section>
+
+
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Continuous Large</p>
+</section>
+
+<section>
+  <video  data-src="video/russia.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/newsgraphics/2013/10/13/russia/">Russia Left Behind</a></p>
+</section>
+
+
+<section>
+  <video data-src="video/marathon.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/10/28/sports/marathon-videos.html">Marathon Videos</a></p>
+</section>
+
+
+<section>
+  <video data-src="video/water.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.angelamorelli.com/water/">Water</a></p>
+</section>
+
+<section>
+  <video data-src="video/jeter.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/09/14/sports/baseball/jeter-swings.html">Jeter Swings</a></p>
+</section>
+
+
+<section>
+  <video data-src="video/dawn_wall.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2015/01/09/sports/the-dawn-wall-el-capitan.html?_r=0">Dawn Wall</a></p>
+</section>
+
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Continuous Media</p>
+</section>
+
+<section>
+  <video  data-src="video/daft.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://pitchfork.com/features/cover-story/reader/daft-punk/">Daft Punk</a></p>
+</section>
+
+<section>
+  <video data-src="video/shark.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/newsgraphics/2013/10/27/south-china-sea/">Shark &amp; Minnow</a></p>
+</section>
+
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Scroll Dimension</p>
+</section>
+
+
+
+<section>
+  <video data-src="video/moon.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">1px Moon</a></p>
+</section>
+
+<section>
+  <video data-src="video/sats.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://qz.com/296941/interactive-graphic-every-active-satellite-orbiting-earth/">Active Satellites</a></p>
+</section>
+
+<section>
+  <video data-src="video/water_scroll.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.angelamorelli.com/water/">Water</a></p>
+</section>
+
+
+
+<script src="js/prism.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/stack.v1.min.js"></script>
+<script>
+
+var mystack = stack()
+    .on("activate", activate)
+    .on("deactivate", deactivate);
+
+var section = d3.selectAll("section");
+
+
+function loadVideo(i) {
+  var video = section.filter(function(d,j) { return ((i + 1) == j); }).select("video");
+  video.each(function(d) {
+      var vid = d3.select(this);
+
+      if(vid.select('source').size() == 0) {
+        vid.append("source").attr("src", vid.attr("data-src")).attr("type", "video/mp4");
+      }
+  });
+}
+
+function unloadVideo(i) {
+  var video = section.filter(function(d,j) { return ((i - 1) == j); }).select("video");
+  video.each(function(d,j) {
+
+      console.log(d3.select(this).attr("data-src"));
+      delete(this);
+      d3.select(this).remove();
+
+  });
+}
+
+function startVideo(i) {
+  var video = section.filter(function(d,j) { return i == j; }).select("video");
+  video.each(function(d,j) {
+      this.play();
+  });
+}
+
+function stopVideo(i) {
+  var video = section.filter(function(d,j) { return i == j; }).select("video");
+  video.each(function(d,j) {
+      this.pause();
+  });
+}
+
+function setPageNumber(i) {
+ d3.select("#pagenumber").html(i + 1);
+}
+
+function activate(d, i) {
+  loadVideo(i);
+  startVideo(i);
+  setPageNumber(i);
+}
+
+function deactivate(d, i) {
+  stopVideo(i);
+  unloadVideo(i);
+}
+</script>
+</body>
+</html>
+
