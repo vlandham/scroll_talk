@@ -71,6 +71,48 @@ video {
   display: block;
 }
 
+#arrow {
+    position: relative;
+    width: 58px;
+    margin: 0 auto;
+  }
+
+
+#arrow svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: down 2s infinite;
+    -ms-animation: down 2s infinite;
+    -moz-animation: down 2s infinite;
+    animation: down 2s infinite;
+  }
+
+  @-webkit-keyframes down {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+
+  @-ms-keyframes down {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+
+  @-moz-keyframes down {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+
+  @keyframes down {
+    0% { top: 0; }
+    50% { top: 20px; }
+    100% { top: 0; }
+  }
+
+
 
 </style>
 <div id="pagenumber" style="z-index:100;position:fixed;left:1%;bottom:7%;"></div>
@@ -85,13 +127,6 @@ video {
     "></polyline>
     </svg>
   </div>
-</section>
-
-<section>
-  <video loop>
-    <source src="video/small_mults.mp4" type="video/mp4" />
-  </video>
-    <p class="caption"><a href="https://github.com/vlandham/small_mults">github.com/vlandham/small_mults</a></p>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
@@ -142,11 +177,11 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:3em;">
-<img src="img/scroll_history.png" style=""/>
+<img src="img/geos.png" style=""/>
 </section>
 
 <section style="text-align:center;padding-top:3em;">
-<img src="img/geos.png" style=""/>
+<img src="img/scroll_history.png" style=""/>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
@@ -173,12 +208,136 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:4em;">
-  <p class="title">Scrolling</p>
-  <p style="font-size:180%;">In Interactive Storytelling</p>
+  <p class="title">Scrollable Dimension</p>
+</section>
+
+<section>
+  <video src="video/moon.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">1px Moon</a></p>
+</section>
+
+<section>
+  <video src="video/sats.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://qz.com/296941/interactive-graphic-every-active-satellite-orbiting-earth/">Active Satellites</a></p>
+</section>
+
+<section>
+  <video src="video/water_scroll.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.angelamorelli.com/water/">Water</a></p>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
+  <p class="title">Scrolling Triggers</p>
+</section>
+
+<section>
+  <video src="video/hottest.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.bloomberg.com/graphics/2014-hottest-year-on-record/">Hottest Year</a></p>
+</section>
+
+<section>
+  <video src="video/soccer.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/06/13/sports/worldcup/world-cup-balls.html">World Cup Balls</a></p>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Scrolling Steps</p>
+</section>
+
+<section>
+  <video src="video/color.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://muyueh.com/greenhoney/">Color Meanings</a></p>
+</section>
+
+<section>
+  <video src="video/soccer_clubs.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/06/20/sports/worldcup/how-world-cup-players-are-connected.html">Clubs That Connect</a></p>
+</section>
+
+<section>
+  <video src="video/suv.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.bloomberg.com/graphics/2015-auto-sales/">Auto Sales</a></p>
+</section>
+
+<section>
+  <video src="video/islamic_states.mp4"  loop>
+  </video>
+    <p class="caption"><a href="http://www.washingtonpost.com/wp-srv/special/world/islamic-state-tracker/">Islamic State Tracker</a></p>
+</section>
+
+
+<section>
+  <video src="video/charts.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html?abt=0002&abg=1">Recession Charts</a></p>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Scrolling Continuous</p>
+</section>
+
+<section>
+  <video  src="video/russia.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/newsgraphics/2013/10/13/russia/">Russia Left Behind</a></p>
+</section>
+
+
+<section>
+  <video src="video/marathon.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/10/28/sports/marathon-videos.html">Marathon Videos</a></p>
+</section>
+
+
+<section>
+  <video src="video/water.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.angelamorelli.com/water/">Water</a></p>
+</section>
+
+<section>
+  <video src="video/jeter.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2014/09/14/sports/baseball/jeter-swings.html">Jeter Swings</a></p>
+</section>
+
+
+<section>
+  <video src="video/dawn_wall.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/interactive/2015/01/09/sports/the-dawn-wall-el-capitan.html?_r=0">Dawn Wall</a></p>
+</section>
+
+
+<section style="text-align:center;padding-top:4em;">
   <p class="title">Scrollytelling</p>
+  <p style="font-size:180%;">(Interactive Storytelling)</p>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p style="font-size:180%;">The Web as a Medium</p>
+  <p style="font-size:180%; color:#888;">Data Visualization as a Language</p>
+</section>
+
+<section>
+  <video  src="video/daft.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://pitchfork.com/features/cover-story/reader/daft-punk/">Daft Punk</a></p>
+</section>
+
+<section>
+  <video src="video/shark.mp4" loop>
+  </video>
+    <p class="caption"><a href="http://www.nytimes.com/newsgraphics/2013/10/27/south-china-sea/">Shark &amp; Minnow</a></p>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
