@@ -5,6 +5,8 @@ require("scales")
 require('grid')
 library(lubridate)
 
+colors <- ["#008080", "#399785", "#5AAF8C"]
+
 filename <- "words.tsv"
 
 source("upshot.R")

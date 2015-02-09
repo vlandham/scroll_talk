@@ -1,0 +1,23 @@
+name,type,mobile,show
+mile,dimension,same,true
+1px moon,dimension,same,true
+satellites,dimension,same,true
+hottest year,trigger,same,true
+worlds cup ball,trigger,same,true
+color meaning,steps,same,true
+clubs connect,steps,static,true
+suvs,steps,static,true
+islamic states,steps,static,true
+pop change maine,steps,static,false
+skate board,steps,static,true
+255 charts,steps,static,true
+mbta,continuous,static,false
+russia,continuous,static,true
+marathon videos,continuous,static,true
+eat water,continuous,static,true
+free congress,continuous,static,true
+jeter,continuous,same,true
+dawn wall,continuous,same,true
+silk road,continuous,same,false
+daft punk,scrollytelling,static,true
+shark and minnow,scrollytelling,static,true
