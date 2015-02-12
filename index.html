@@ -466,14 +466,13 @@ video {
 <img src="img/jeter.jpg" style=""/>
 </section>
 
-<section style="text-align:center;padding-top:4em;">
-  <p style="font-size:180%;">Swipe</p>
-  <p style="font-size:180%; color:#888;">The New Card?</p>
-</section>
-
-
 <section style="text-align:center;padding-top:1em;">
 <img src="img/dawn_wall.jpg" style=""/>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p style="font-size:180%;">Swipe</p>
+  <p style="font-size:180%; color:#888;">The Card Shark Returns?</p>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
@@ -485,7 +484,7 @@ video {
 </section>
 
 
-<section id="lorenz" style="text-align:center;padding-top:0;">
+<section id="thanks" style="text-align:center;padding-top:0;">
   <canvas></canvas>
   <p class="title">Thanks</p>
 </section>
@@ -504,9 +503,7 @@ var mystack = stack()
 var section = d3.selectAll("section"),
     follow = d3.select("#follow"),
     followAnchor = d3.select("#follow-anchor"),
-    lorenz = d3.select("#lorenz"),
     followIndex = section[0].indexOf(follow.node()),
-    lorenzIndex = section[0].indexOf(lorenz.node());
 
 function refollow() {
   followAnchor.style("top", (followIndex + (1 - mystack.scrollRatio()) / 2 - d3.event.offset) * 100 + "%");
