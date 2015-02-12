@@ -6,7 +6,7 @@ Fake = () ->
   width = 800
   height = 600
   data = []
-  margin = {top: 80, right: 20, bottom: 20, left: 160}
+  margin = {top: 80, right: 20, bottom: 60, left: 160}
   colors = {"normal scrolling":"#5AAF8C","special scrolling":"#399785", "swipe":"#008080"}
   x = d3.scale.linear()
     .rangeRound([0, width])
@@ -17,11 +17,13 @@ Fake = () ->
   xAxis = d3.svg.axis()
     .scale(x)
     .orient('bottom')
+    .outerTickSize(0)
+    .tickPadding(7)
 
   transformData = (rawData) ->
 
     max = d3.sum(rawData, (d) -> +d.count)
-    x.domain([0,max])
+    x.domain([0,35])
 
     # y.domain(rawData.map((d) -> d.type))
     y.domain([0,1])
@@ -52,11 +54,23 @@ Fake = () ->
 
       g.append("text")
         .attr("class", "title")
-        .text("Scrolling In MobileVis")
+        .text("MobileVis: Scroll vs Swipe")
         .style("font-family", "Yanone Kaffeesatz")
-        .style("font-size", "42px")
+        .style("font-size", "52px")
         .attr("dy", -1 * (margin.top / 3))
 
+      titles = g.selectAll(".title")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr('class', 'title')
+        .text((d,i) -> if i < 2 then "Scroll".toUpperCase() else "Swipe".toUpperCase())
+        .attr("y", (d,i) -> if i < 2 then y(0) else y(1))
+        .style("font-family", "Yanone Kaffeesatz")
+        .style("font-size", "30px")
+        .attr("text-anchor", "end")
+        .attr("dx", -10)
+        .attr("dy", y.rangeBand() / 2)
 
       boxes = g.selectAll(".box")
         .data(data)
@@ -72,6 +86,11 @@ Fake = () ->
         .attr("y", (d,i) -> if i < 2 then y(0) else y(1))
         .attr("width", (d) -> x(d.count))
 
+      g.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .attr({"font-size":"30px"})
+        .call(xAxis)
         
 
   chart.height = (_) ->
