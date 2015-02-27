@@ -59,6 +59,18 @@ section {
   /* background-color: yellow; */
 }
 
+circle.node {
+  cursor: pointer;
+  stroke: #000;
+  stroke-width: .5px;
+}
+line.link {
+  fill: none;
+  stroke: #444;
+  stroke-width: 4px;
+}
+
+
 a:link,
 a:visited {
   color: orange;
@@ -137,6 +149,11 @@ video {
   <p class="title">2013</p>
 </section>
 
+<section id='force' style="text-align:center;padding-top:4em;">
+  <svg id="forcevis"></svg>
+  <p style="font-size:180%;z-index:100;">Abusing The Force</p>
+</section>
+
 <section style="text-align:center;padding-top:4em;">
   <p class="title" style='color:#008080;'>280</p>
   <p style="font-size:180%;">Filler Words</p>
@@ -194,6 +211,11 @@ video {
 
 <section style="text-align:center;padding-top:1em;">
 <img src="img/scrollwheel.png" style="height:100%;"/>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="quote">"One of the most useful innovations in pointing devices"</p>
+  <p class="caption"><a href="http://www.amazon.com/About-Face-Essentials-Interaction-Design/dp/0470084111">Alan Cooper</a></p>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
@@ -519,6 +541,8 @@ var mystack = stack()
     .on("deactivate", deactivate);
 
 var section = d3.selectAll("section"),
+    force = d3.select("#force"),
+    forceIndex = section[0].indexOf(force.node()),
     follow = d3.select("#follow"),
     followAnchor = d3.select("#follow-anchor");
 
@@ -542,18 +566,120 @@ function setPageNumber(i) {
 }
 
 function activate(d, i) {
-  //if (i === followIndex) mystack.on("scroll.follow", refollow);
-  // if (i === lorenzIndex) startLorenz();
-  //if (i === interIndex) startInteractive();
-  //if (i === inverterIndex) startInverter();
+  if (i === forceIndex) startForce();
   startVideo(i);
   setPageNumber(i);
 }
 
 function deactivate(d, i) {
-  // if (i === lorenzIndex) stopLorenz();
-  //if (i === interIndex) stopInteractive();
-  //if (i === inverterIndex) stopInverter();
+  if (i === forceIndex) stopForce();
   stopVideo(i);
 }
+
+var forceInterval;
+
+function startForce() {
+  var width = 1280,
+  height = 720;
+
+  var nodes = [],
+      links = [],
+      node, 
+      link;
+
+  width = window.innerWidth;
+  height = window.innerHeight;
+
+  function charge(d) {
+    return -((Math.pow(d.size, 2.0) / 5)); //* (Math.random() * 4));
+  }
+
+  function distance(l) {
+    return (l.length * 120) * (Math.random() * 3);
+  }
+
+  function tick(e) {
+    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });   
+    link.attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+  };
+
+
+  var force = d3.layout.force()
+    .nodes(nodes)
+    .links(links)
+    .size([width, height])
+    .on("tick", tick)
+    .linkDistance(distance)
+    .charge(charge)
+    .gravity(0.0);
+
+  var vis = d3.select("#forcevis")
+    .style("position", "absolute")
+    .style("top", 0)
+    .style("left", 0)
+    .style("width", "100%")
+    .style("height", "100%");
+
+  vis.attr("width", width)
+    .attr("height", height);
+
+
+  function update() {
+    node = vis.selectAll(".node")
+      .data(nodes)
+      node.enter().append("image")
+      .attr("xlink:href", function(d) { return "./img/face_nodes/" + d.name + ".png"; })
+      .attr("class", "node")
+      .attr("x", function(d) { return -(d.size / 2); })
+      .attr("y", function(d) { return -(d.size / 2); })
+      .attr("width", function(d) { return d.size; })
+      .attr("height", function(d) { return d.size; })
+      .call(force.drag);
+
+    node.exit().remove();
+    link = vis.selectAll("line.link")
+      .data(links);
+
+    link.enter().insert("line", ".node")
+      .attr("class", "link")
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+    force
+      .start();
+  }
+
+  function load(error, data) {
+    data.nodes.forEach(function(d) { 
+        if(d.fixed) {
+          d.x = width / 2;
+          d.y = (height / 2) + (height / 4);
+        }
+        nodes.push(d); 
+        
+      });
+    data.links.forEach(function(l) { links.push(l);});
+    update();
+  } 
+
+  forceInterval = setInterval(function() {
+      force.stop().start();
+  }, 500);
+
+
+  d3.json("./img/face_nodes/face.json", load) 
+}
+
+function stopForce() {
+  forceInterval = clearInterval(forceInterval);
+  
+  var vis = d3.select("#forcevis")
+  d3.selectAll(vis.node().childNodes)
+    .remove()
+}
+
 </script>
