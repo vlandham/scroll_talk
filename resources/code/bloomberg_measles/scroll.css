@@ -1,0 +1,141 @@
+#infographic{
+  position: relative;
+  overflow: auto;
+}
+
+#sections{
+  width: 200px;
+  float: left;
+}
+
+#sections > div{
+    opacity: .3;
+} 
+
+#sections div.graph-scroll-active{
+    opacity: 1;
+}
+
+#chart-c{
+  width: 600px;
+  float: left;
+  margin-left: 15px;
+}
+
+#chart-c.graph-scroll-fixed{
+  position: fixed;
+  top: 0px;
+  margin-left: 215px;
+}
+#chart-c.graph-scroll-below{
+  position: absolute;
+  bottom: 0px;
+  margin-left: 215px;
+}
+
+#header-sharing.stuck{
+  bottom: 20px;
+  top: auto;
+}
+
+
+
+
+#infographic-mobile .mimg{
+  margin: 0px auto;
+  max-width: 700px;
+}
+
+#infographic-mobile img{
+  width: 100%;
+}
+
+#infographic-mobile .mtitle{
+  margin: 10px auto;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin-bottom: -15px;
+  margin-top: -5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#infographic-mobile .mtext{
+  margin: 10px auto;
+  padding: 10px;
+  padding-bottom: 45px;
+  font-size: 13px;
+}
+
+#infographic-mobile p{
+  color: black !important;
+}
+
+
+
+
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* FULL SIZE container at 1160px*/
+@media only screen and (min-width: 980px) and (max-width: 1160px) {
+  #infographic {
+    display: block;
+  }
+  #infographic-tablet {
+    display: none;
+  }
+  #infographic-mobile {
+    display: none;
+  }
+}
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* TABLET SIZE container at 980px*/
+@media only screen and (max-width: 979px)  {
+  #infographic {
+    display: block !important;
+  }
+  #infographic-tablet {
+    display: none !important;
+  }
+  #infographic-mobile {
+    display: none;
+  }
+
+  #inner-content{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .tophat__links {
+    margin-left: 10px;
+  }
+  #header-logo {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  #header-icon-twitter {
+    margin-right: 24px;
+  }
+}
+
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* MOBILE SIZE container at 680px*/
+@media only screen and (max-width: 767px)  {
+  #infographic {
+    display: none !important;
+  }
+  #infographic-tablet {
+    display: none !important;
+  }
+  #infographic-mobile {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 0px)  {
+  #header-icon-twitter {
+    margin-right: 5px !important;
+  }
+}
+

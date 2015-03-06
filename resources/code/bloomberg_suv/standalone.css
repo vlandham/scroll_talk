@@ -1,0 +1,514 @@
+/*
+TEMPLATE STYLES FOR STANDALONE
+don't change these. instead, override them in index.html
+*/
+body,html {
+  font-family: "TiemposTextWeb-Regular","Georgia";
+  font-size:14px;
+  margin: 0;
+  padding: 0;
+}
+a img, img {
+  border:0;
+  outline:0;
+}
+.clearboth {
+  clear: both;
+  height:0;
+}
+
+.container {
+  max-width:1410px;
+  margin:0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+#inner-content {
+  max-width:1160px;
+  margin:60px auto;
+  overflow: hidden;
+  position: relative;
+}
+#infographic {
+  padding:0 10px 0 10px;
+  min-height: 500px;
+  position: relative;
+  display: block;
+}
+
+ul, ol, dl, dt, dd {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.tophat {
+  height: 2.275rem;
+  padding: 0px 1em;
+  position: relative;
+  background-color: #1d252e;
+  border-bottom: 2px solid #444444;
+  color: rgb(38, 38, 38);
+  font-family: "TiemposTextWeb-Regular", Georgia, serif;
+}
+
+.tophat__links {
+  margin: 0px 10px 0 45px;
+}
+
+.tophat .tophat__links li {
+  position: relative;
+  float: left;
+}
+
+.tophat .tophat__links a {
+  font-size: 0.75rem;
+}
+
+.tophat .tophat__top-link {
+  color: rgb(119, 121, 126);
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1.875rem;
+  margin-right: 1.3em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  text-shadow: none;
+}
+
+.tophat .tophat__top-link:hover {
+  color: #FB5623
+}
+#header {
+  width:100%;
+  height:69px;
+  border-bottom: 1px solid #d0d0d0;
+  overflow: hidden;
+}
+
+#header-logo{
+  background: url(../img/logo.svg) no-repeat;
+  background-position: center 6px;
+  background-size: 180px;
+  float: left;
+  height: 42px;
+  position: relative;
+  text-decoration: none;
+  width: 180px;
+  margin-top: 10px;
+}
+#header-logo-mobile {
+  background: url(../img/logo.svg) no-repeat;
+  background-position: center 6px;
+  background-size: 180px;
+  height: 42px;
+  position: relative;
+  text-decoration: none;
+  width: 180px;
+  margin-top: 10px;
+  text-align: center;
+  display: none;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 9px;
+}
+#header-message a {
+  float: left;
+  font-family: "HaasTextBold",Arial,Helvetica;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 25px;
+  margin-left: 20px;
+  color:#000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+}
+#header-message a:hover {
+  color:#37169b;
+}
+
+#header-icon-fb {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor:pointer;
+}
+#header-rule {
+  height:1px;
+  width:100%;
+  border-top: 1px solid #eaeaea;
+}
+
+/* changes for full-width header */
+#full-header {
+  background-color: #fff;
+  width:100%;
+  height:60px;
+  border-bottom:1px solid #c1c1c1;
+
+}
+#header-logo {
+  margin-left: 60px;
+  float: left;
+}
+#header-icon-twitter {
+  float: right;
+  margin-right: 45px;
+  margin-top: 10px;
+  cursor:pointer;
+}
+/**/
+
+.article-title, .video-title, .cta-text {
+  font-family: "HaasDisplayBold","Helvetica";
+  font-size: 50px;
+  color:#262626;
+  max-width: 800px;
+  text-align: center;
+  margin:0 auto;
+  padding:0 10px 0 10px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.nav-header, .module-header, .quote {
+  font-family: "TiemposHeadlineWeb-Bold","Georgia";
+}
+.dek, .byline-name, .module-description {
+  font-family: "TiemposTextWeb-Regular","Georgia";
+  font-size: 20px;
+  color:#767676;
+  max-width: 830px;
+  text-align: center;
+  margin:0 auto 52px;
+  padding:0 10px 0 10px;
+  margin-top: 16px;
+  width: 80%;
+  margin-bottom: 0px;
+}
+.byline-by, .timestamp {
+  font-size: 12px;
+  margin:10px 0 10px 0;
+  color:#626262;
+  text-align: center;
+}
+
+.timestamp{
+  width: 455px;
+  margin: 10px auto 40px auto;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.twitter-byline {
+  float: left;
+  margin-left: 5px;
+  padding-top: 2px;
+  padding-right: 2px;
+  opacity: 0.5;
+}
+
+.article-section-header, .curiosity-index-tag, .video-timestamp {
+  font-family: "HaasText","Georgia";
+}
+#footer {
+  position: relative;
+  border-top:1px solid #ddd;
+  width:100%;
+  color:#999;
+  font-family: "HaasText","Georgia";
+  margin-top: 32px;
+  padding:10px 10px 0 10px;
+  font-size: 12px;
+}
+.source{
+  margin: 2px 20px 4px;
+  float: left;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+
+/* buttons */
+.graphic-button-container {
+  max-width:300px;
+  height: 40px;
+  margin: 20px auto 0px auto;
+  text-transform: capitalize;
+}
+.graphic-button {
+  float: left;
+  width: 100px;
+  height: 18px;
+  text-align: center;
+  padding: 10px 8px 10px 10px;
+  overflow: hidden;
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  margin-left: -1px;
+  padding: 10px;
+  font-family: "HaasText",Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #767676;
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  background-color: #ddd;
+  cursor: pointer;
+  -webkit-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  border-radius: 7px;
+}
+.graphic-button:hover {
+  background-color: #262626;
+  color:#fff;
+}
+.graphic-button-active {
+  background-color: #262626;
+  color:#fff;
+}
+/*.graphic-button-container div:first-child {
+  -webkit-border-top-left-radius: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  -moz-border-radius-topleft: 7px;
+  -moz-border-radius-bottomleft: 7px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.graphic-button-container div:nth-child(2) {
+  -webkit-border-top-right-radius: 7px;
+  -webkit-border-bottom-right-radius: 7px;
+  -moz-border-radius-topright: 7px;
+  -moz-border-radius-bottomright: 7px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}*/
+.graphic-button-container.disabled .graphic-button-active,
+.graphic-button-container.disabled .graphic-button:hover {
+  background-color: #ddd;
+  color: #767676;
+  cursor: initial;
+}
+
+/* tooltip */
+div.tooltip {
+  font-family:"Arial","Helvetica";
+  position: absolute;
+  top:-1000px;
+  width: 220px;
+  min-height:50px;
+  padding: 10px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, .98);
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 10px lightgray;
+  color:black;
+  pointer-events: none;
+}
+.tooltip:after, .tooltip:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+}
+.tooltip:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 12px;
+  margin-left: -12px;
+}
+.tooltip:before {
+  border-color: rgba(102, 102, 102, 0);
+  border-top-color: lightgray;
+  border-width: 13px;
+  margin-left: -13px;
+}
+.tooltip-hidden{
+  -webkit-transition: opacity .3s ease;
+  -moz-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{0})";
+  filter: ~"alpha(opacity=@{0})";
+}
+.bannerbox {
+  width: 100%;
+  height: 112px;
+  position: relative;
+  background-color: #eee;
+}
+.bannerbox .bannerad {
+  width: 728px;
+  height: 90px;
+  background-color: #fff;
+  margin: 0 auto;
+  top: 10px;
+  position: relative;
+}
+
+/*
+responsive
+*/
+
+#infographic-tablet {
+  display: none;
+}
+#infographic-mobile {
+  display: none;
+}
+#infographic-mobile p {
+  color: #767676;
+}
+img.infographic {
+  width: 100%;
+}
+
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* FULL SIZE container at 1160px*/
+@media only screen and (min-width: 1020px) {
+  #infographic {
+    display: block;
+  }
+  #infographic-tablet {
+    display: none;
+  }
+  #infographic-mobile {
+    display: none;
+  }
+}
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* TABLET SIZE container at 980px*/
+@media only screen and (max-width: 1019px)  {
+  #infographic {
+    display: none;
+  }
+  #infographic-tablet {
+    display: block;
+  }
+  #infographic-mobile {
+    display: none;
+  }
+  #inner-content{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .tophat__links {
+    margin-left: 10px;
+  }
+  #header-logo {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  #header-icon-twitter {
+    margin-right: 24px;
+  }
+  .dek, .byline-name, .module-description {
+    width: 90%;
+  }
+}
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* MOBILE SIZE container at 680px*/
+@media only screen and (max-width: 680px)  {
+  #header-message {
+    display: none;
+  }
+  #header-divider-right {
+    display: none;
+  }
+  #header-icon-twitter {
+    xdisplay: none;
+    margin-top: -40px;
+    padding-right: -10px
+  }
+  #header-icon-fb {
+    xdisplay: none;
+    margin-top: -40px;
+    margin-left: -40px;
+    padding-right: 55px;
+  }
+  #header-rule {
+    display: none;
+  }
+  #header-logo {
+    display: none;
+  }
+  #header-logo-mobile {
+    display: block;
+  }
+  #infographic {
+    display: none;
+  }
+  #infographic-tablet {
+    display: none;
+  }
+  #infographic-mobile {
+    display: block;
+  }
+  .right,.left {
+    xfloat: none;
+    xpadding: 0;
+    xmargin: 0;
+  }
+  .tophat__links {
+    margin-left: 5px;
+  }
+  .article-title, .video-title, .cta-text {
+    font-size: 34px;
+    line-height: 38px;
+  }
+  .dek, .byline-name, .module-description {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .bannerbox{
+    display: none;
+  }
+}
+
+
+/* MOBILE window less than 568px wide */
+@media only screen and (max-width: 568px)  {
+  #inner-content {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+}
+/* MOBILE window less than 360px wide */
+@media only screen and (max-width: 360px)  {
+  .tophat .tophat__links a {
+    font-size: 0.65rem;
+  }
+}

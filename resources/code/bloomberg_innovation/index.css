@@ -1,0 +1,828 @@
+#main-index {
+  position: relative;
+  margin: 0 auto;
+}
+
+#svg-intro{
+  margin-top: 0px;
+}
+
+#inner-content{
+  max-width: 100%;
+}
+.type.lrg {
+  font-size: 3rem;
+  line-height: 3.4rem;
+}
+.type.med {
+  font-size: 2.0rem;
+  line-height: 2.4rem;
+}
+.type.sml {
+  font-size: 1.4em;
+  line-height: 1.8rem;
+}
+.type.t900 {
+  font-family: "BWHaasText-75Bold";
+}
+.type.t700 {
+  font-family: "BWHaasText-65Medium";
+}
+.type.t500 {
+  font-family: "BWHaasText-55Roman";
+}
+.type.t300 {
+  font-family: "BWHaasHead-25XThin";
+}
+.type.charthead{
+  font-family: "BWHaasText-65Medium";
+  font-size: 1.6rem;
+  line-height: 2.0rem;
+  margin-top: 24px;
+  color: #333;
+  clear: both;
+}
+
+
+svg.chart{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/*circle,rect,line,polygon {
+  shape-rendering: crispEdges;
+}*/
+
+.rankbox{
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+.ranknum{
+  color: #888;
+  position: absolute;
+  text-align: left;
+  min-width: 22px;
+  font-family: "BWHaasText-65Medium";
+}
+
+.bizborder{
+  max-width: 850px;
+  margin: 30px auto 160px;
+  /*background: -webkit-linear-gradient(left,#FF433D,#FB8B1E);
+  background: linear-gradient(to right,#FF433D,#FB8B1E);*/
+  overflow: hidden;
+}
+.bizborder .dek{
+  margin: 30px 0px;
+  width: inherit;
+  max-width: inherit;
+}
+.dek.blanca{
+  padding: 20px 0px;
+  background-color: #fff;
+  font-size: 21px;
+  line-height: 33px;
+  margin-bottom: 200px;
+}
+.dek.bottomheavy{
+  margin-bottom: 360px;
+}
+
+#conclusion-text .type.dek.blanca p{
+  margin: 10px 0px 50px;
+}
+
+.pullquote{
+  display: inline;
+  padding: 5px;
+  /*font-size: 32px;
+  line-height: 38px;*/
+  font-family: "BWHaasText-75Bold";
+  /*-webkit-background-clip: text;*/
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #fff;
+  -o-text-fill-color: #fff;
+  -webkit-text-stroke: .2875rem transparent;
+  -o-text-stroke: .1875rem transparent;
+  color: #FA1E64;
+  letter-spacing: 0.05em;
+}
+.cool{
+  background: -webkit-linear-gradient(right,#6488FF,#1DCC92);
+  background: linear-gradient(to right,#6488FF,#1DCC92);
+}
+.warm{
+  background: -webkit-linear-gradient(left,#FF433D,#FB8B1E);
+  background: linear-gradient(to right,#FF433D,#FB8B1E);
+}
+.colorform{
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  float: left;
+  margin-right: 10px;
+}
+.colorform.orange{
+  background-color: #FB8B1E;
+}
+.colorform.purple{
+  background-color: #B547F1;
+}
+.colorform.darkblue{
+  background-color: #2800D7;
+}
+.colorform.red{
+  background-color: #FF433D;
+}
+.colorform.green{
+  background-color: #1DCC8F;
+}
+.colorform.blue{
+  background-color: #6488FF;
+}
+
+.colorform.triangle.orange{
+  background-color: transparent !important;
+}
+.colorform.triangle.purple{
+  background-color: transparent !important;
+}
+.colorform.triangle.darkblue{
+  background-color: transparent !important;
+}
+.colorform.triangle.red{
+  background-color: transparent !important;
+}
+.colorform.triangle.green{
+  background-color: transparent !important;
+}
+.colorform.triangle.blue{
+  background-color: transparent !important;
+}
+.colorform.triangle.orange:after{
+  background-color: #FB8B1E;
+}
+.colorform.triangle.purple:after{
+  background-color: #B547F1;
+}
+.colorform.triangle.darkblue:after{
+  background-color: #2800D7;
+}
+.colorform.triangle.red:after{
+  background-color: #FF433D;
+}
+.colorform.triangle.green:after{
+  background-color: #1DCC8F;
+}
+.colorform.triangle.blue:after{
+  background-color: #6488FF;
+}
+
+.colorform.bottom{
+  position: absolute;
+  bottom: 0px;
+  z-index: -1;
+}
+
+.colorform.triangle.bottom{
+  left: 40%;
+}
+.colorform.circle.bottom{
+  left: 30%;
+}
+.colorform.square.square{
+  left: 70%;
+}
+
+
+
+
+.colorform.circle{
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  -ms-border-radius: 80px;
+  -o-border-radius: 80px;
+  border-radius: 80px;
+}
+.colorform.triangle:after{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  -webkit-transform: translate(-10px, 20px) scaleX(0.5) rotate(45deg);
+  -moz-transform: translate(-10px, 20px) scaleX(0.5) rotate(45deg);
+  -o-transform: translate(-10px, 20px) scaleX(0.5) rotate(45deg);
+  -ms-transform: translate(-10px, 20px) scaleX(0.5) rotate(45deg);
+  transform: translate(-10px, 20px) scaleX(0.5) rotate(45deg);
+}
+
+.ylabel{
+  text-anchor: middle;
+  font-family: 'BWHaasText-55Roman', 'Helvetica';
+}
+.tiemposbold{
+  font-family: 'TiemposHeadlineWeb-Bold', 'Helvetica';
+  fill: #fff;
+  text-anchor: middle;
+}
+.tiempos{
+  font-family: 'TiemposHeadlineWeb-Bold', 'Helvetica';
+}
+.pline{
+  stroke: #333;
+  stroke-width: 2px;
+}
+.abstype{
+  position: absolute;
+  text-align: center;
+}
+
+
+#intro-panel {
+  position: relative;
+}
+.bignum{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -160px;
+  z-index: 1;
+  color: rgba(0,0,0,0.1);
+  font: 500 320px/0px 'TiemposHeadlineWeb-Bold', 'Helvetica';
+}
+
+#intro-shapes * {
+  shape-rendering: optimizeSpeed;
+}
+
+.sqs {
+
+}
+
+.lines {
+  stroke:#ddd;
+}
+.baselines {
+  stroke:#eee;
+  stroke-width:1px;
+}
+
+
+text {
+  font-family:'BWHaasText-55Roman';
+}
+
+.country-labels {
+  font-size: 12px;
+}
+
+.field-label-container {
+  position: relative;
+  max-width: 1143px;
+  margin: 0 auto;
+}
+.field-labels {
+  position: absolute;
+  font-family:'BWHaasText-75Bold';
+  cursor: pointer;
+  height:30px;
+  padding-top: 15px;
+  /*      
+  border: solid;
+  border-color: white;
+  border-width: 2px;
+  */
+  color: #777;
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  background-color: #F3F4EF;
+  text-align: center;
+}
+
+.field-labels:hover {
+  background-color:#ddd;
+  /*text-decoration: underline;*/
+}
+
+
+.field-labels.selected {
+  background-color:#ddd;
+  /*text-decoration: underline;*/
+}
+
+.type {
+  text-align: left;
+  max-width:1140px;
+  margin:0 auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+/*.type.lrg {
+  font-family:'BWHaasText-55Roman';
+}
+.type.med {
+  font-family:'BWHaasText-75Bold';
+  font-size: 23px;
+  line-height: 30px;
+}*/
+.section-color {
+  font-family:'BWHaasText-75Bold';
+}
+
+
+
+
+.factor_1_sqs {
+  fill:url(#gradient-fill-1);
+  /*stroke-width:3px;*/
+  /*fill:url(#dots-pattern);*/
+}
+.factor_1_labels {
+  /*text-transform: uppercase;*/
+  font-family:'BWHaasText-75Bold';
+  /*font-size: 32px;*/
+  font-size:16px;
+  fill:#333;
+}
+.factor_1_numbers {
+  /*text-transform: uppercase;*/
+  font-family:'BWHaasText-75Bold';
+  /*font-size: 32px;*/
+  font-size:16px;
+  fill:#fff;
+  /*stroke:#6488FF;*/
+  /*stroke-width:2px;*/
+}
+
+.factor_2_sqs {
+  fill:url(#gradient-fill-2);
+  /*stroke-width:3px;*/
+  /*fill:url(#dots-pattern);*/
+}
+.factor_2_labels {
+  /*text-transform: uppercase;*/
+  font-family:'BWHaasText-75Bold';
+  /*font-size: 32px;*/
+  font-size:16px;
+  fill:#333;
+}
+.factor_2_numbers {
+  /*text-transform: uppercase;*/
+  font-family:'BWHaasText-75Bold';
+  /*font-size: 32px;*/
+  font-size:16px;
+  fill:#fff;
+  /*stroke:#FB8B1E;*/
+  /*stroke-width:2px;*/
+}
+
+.factor_3_sqs {
+  fill:url(#gradient-fill-3);
+  /*stroke-width:3px;*/
+  /*fill:url(#dots-pattern);*/
+}
+.factor_3_labels {
+  /*text-transform: uppercase;*/
+  font-family:'BWHaasText-75Bold';
+  /*font-size: 32px;*/
+  font-size:16px;
+  fill:#333;
+}
+.factor_3_numbers {
+  /*text-transform: uppercase;*/
+  font-family:'BWHaasText-75Bold';
+  /*font-size: 32px;*/
+  font-size:16px;
+  fill:#fff;
+  /*stroke:#1DCC92;*/
+  /*stroke-width:2px;*/
+}
+
+.outline-hed {
+  color:#fff;
+  text-transform: uppercase;
+  font-family: "HaasDisplayBold","Helvetica";
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.factor-2-labels {
+  color:#333;
+  position: absolute;
+  font-family:'BWHaasText-55Roman';
+  font-size: 12px;
+}
+
+.factor-2-num-labels {
+  font-size: 16px;
+}
+
+.factor-6-line {
+  stroke-width:3px;
+}
+
+.top5 {
+  float:left;
+  width:150px;
+  font-family:'BWHaasText-65Medium';
+  font-size: 12px;
+  text-align: center;
+  border: 3px solid black;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  margin-top:6px;
+}
+.top5-title {
+  border-bottom: 3px solid black;
+  line-height: 24px;
+}
+.top5-item {
+  line-height: 20px;
+}
+
+.dek-graf {
+  float:left;
+  max-width:970px;
+}
+
+#graphic > div > section.panel.stacked.peter.focused > div > div.phead > div:nth-child(2) > div > div:nth-child(2) {
+  margin-top:5px;
+}
+
+#graphic > div > section.panel.stacked.peter.focused > div > div.phead > div:nth-child(2) > div > div:nth-child(6) {
+  margin-bottom:5px;
+}
+
+.eblocks{
+  clear: both;
+  display: block;
+  max-width: 1140px;
+  margin: 20px auto;
+}
+ul{list-style: none;}
+.eblocks .eblock{
+  position: relative;
+  top: -1600px;
+  display: table-cell;
+  width: 21%;
+  margin-right: 1%;
+  padding: 21px 3%;
+  background-color: #2800D7;
+  font: 500 14px/19px 'BWHaasText-55Roman', 'Helvetica';
+  border: 10px solid #fff;
+  color: #2800D7;
+}
+.eblocks .eblock:last-child{
+  margin-right: 0;
+}
+.eblocks .eblock p{
+  font: 500 120px/110px 'TiemposHeadlineWeb-Bold', 'Helvetica';
+  margin: 0px 0 12px;
+}
+.eblocks .eblock .cname{
+  font: 500 20px/24px 'BWHaasText-55Roman', 'Helvetica';
+}
+.eblocks .eblock p .superscript{
+  font: 500 60px/0px 'TiemposHeadlineWeb-Bold', 'Helvetica';
+  position: relative;
+  top: -44px;
+}
+
+.defined{
+  display: inline-block;
+  border-bottom: 1px solid #2800D7;
+  background-color: #fff;
+}
+.definer{
+  position: absolute;
+  z-index: -1;
+  margin-top: 14px;
+  font: 500 60px/60px 'TiemposHeadlineWeb-Bold', 'Helvetica';
+  color: #2800D7;
+}
+.definer:before{
+  content: "";
+  display: block;
+  background-color: #2800D7;
+  width: 1px;
+  height: 90px;
+  margin: 0 auto -10px;
+  -webkit-transform: rotate(28deg);
+  -moz-transform: rotate(28deg);
+  -o-transform: rotate(28deg);
+  -ms-transform: rotate(28deg);
+  transform: rotate(28deg);
+}
+
+.methhead{
+  font-family: "BWHaasText-75Bold";
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.methodology {
+  font-family:'BWHaasText-55Roman';
+  font-size: 14px;
+  text-align: left;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding:10px;
+  color:#333;
+  /*border: 5px solid #6488FF;*/
+}
+
+.methodology .subhead {
+  font-family:'BWHaasText-75Bold';
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#scroll-to-ranking {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  color:#6488FF;
+}
+
+#scroll-to-ranking:hover {
+  color:#000;
+}
+
+#ranking-mobile {
+  display: none;
+}
+
+#ranking-mobile img {
+  width:100%;
+}
+
+#mobile-manuf {
+  display:none;
+}
+
+#mobile-manuf img {
+  width:100%;
+}
+
+#ranking-intro-mobile {
+  display: none;
+}
+
+.patent-annotation {
+  font-family:'BWHaasText-55Roman';
+  color:#767676;
+  font-size: 14px;
+}
+
+.charthead-20-40 { position:absolute;left:20%;top:40%; }
+.charthead-20-30 { position:absolute;left:20%;top:30%; }
+.charthead-20-25 { position:absolute;left:20%;top:25%; }
+.charthead-20-27 { position:absolute;left:20%;top:27%; }
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* FULL SIZE container at 1160px*/
+@media only screen and (min-width: 980px) and (max-width: 1200px) {
+  .dek, .byline-name, .module-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .type.lrg {
+    font: 500 2.5rem/2.8rem Helvetica;
+  }
+  .type.charthead{
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    margin-top: 22px;
+  }
+  .dek.blanca{
+    padding: 20px 0px;
+    font-size: 19px;
+    line-height: 31px;
+  }
+
+}
+
+@media only screen and (max-width: 1350px)  {
+  .dek-graf {
+    max-width:750px;
+  }
+  .field-labels {
+    font-size: 12px;
+  }
+  .country-labels {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 1279px)  {
+  .dek-graf {
+    max-width:680px;
+  }
+  .rankbox {
+    display: none;
+  }
+  .patent-annotation {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 966px)  {
+  .dek-graf {
+    max-width:500px;
+  }
+  .charthead {
+    position: relative;
+  }
+
+}
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* TABLET SIZE container at 980px*/
+@media only screen and (max-width: 979px)  {
+  #infographic {
+    display: none;
+  }
+  #infographic-tablet {
+    display: block;
+  }
+  #infographic-mobile {
+    display: none;
+  }
+  #inner-content{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .tophat__links {
+    margin-left: 10px;
+  }
+  #header-logo {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  #header-icon-twitter {
+    margin-right: 56px;
+  }
+  .dek, .byline-name, .module-description {
+    font-size: 15px;
+    line-height: 23px;
+  }
+  .type.lrg {
+    font: 500 2.5rem/2.8rem Helvetica;
+  }
+  .type.charthead{
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    margin-top: 18px;
+  }
+  .dek.blanca{
+    padding: 20px 0px;
+    font-size: 17px;
+    line-height: 29px;
+  }
+  .colorform{
+    width: 50px;
+    height: 50px;
+  }
+  .colorform.triangle:after{
+    width: 70px;
+    height: 70px;
+  }
+  .eblocks{
+    margin: 20px auto;
+  }
+  .eblocks .eblock{
+    display: block;
+    width: 98%;
+    margin-right: 0px;
+    padding: 14px 1%;
+  }
+}
+
+/* Break points now match bloomberg.com/politics/ break points and illustrator start up document*/
+/* MOBILE SIZE container at 680px*/
+@media only screen and (max-width: 680px)  {
+  .dek, .byline-name, .module-description {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .type.lrg {
+    font: 500 2rem/2.4rem Helvetica;
+  }
+  .panelbox .panelstepper {
+    margin-right: -18px;
+  }
+  .type.charthead{
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin-top: 14px;
+  }
+  .dek.blanca{
+    padding: 20px 0px;
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .colorform{
+    width: 45px;
+    height: 45px;
+  }
+  .colorform.triangle:after{
+    width: 65px;
+    height: 65px;
+  }
+
+  .top5{
+    display: block;
+    float: none;
+    width: 100%;
+  }
+  .top5-item {
+    font-size: 12px;
+    line-height: 20px;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .top5-item:after {
+    content: ",";
+  }
+  .top5-item:last-child:after {
+    content: "";
+  }
+  .dek-graf {
+    float: none;
+  }
+
+  #ranking-mobile {
+    display: block;
+  }
+
+  #ranking-intro-mobile {
+    display: block;
+  }
+
+  #ranking-intro-desktop {
+    display: none;
+  }
+
+  #main-index {
+    display: none;
+  }
+
+  #mobile-manuf {
+    display: block;
+  }
+
+  #factor-2-container {
+    display: none;
+  }
+
+}
+
+/* MOBILE window less than 568px wide */
+@media only screen and (max-width: 568px)  {
+  #inner-content {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .article-title, .video-title, .cta-text {
+    font-size: 34px;
+    line-height: 38px;
+  }
+  .dek, .byline-name, .module-description {
+    font-size: 13px;
+    line-height: 19px;
+  }
+  .type.lrg {
+    font: 500 1.6rem/2rem Helvetica;
+  }
+  .panelbox .panelstepper {
+    margin-right: -24px;
+  }
+  .dek.blanca{
+    padding: 20px 0px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .colorform{
+    width: 40px;
+    height: 40px;
+  }
+  .colorform.triangle:after{
+    width: 60px;
+    height: 60px;
+  }
+  .definer{
+    font: 500 40px/40px 'TiemposHeadlineWeb-Bold', 'Helvetica';
+  }
+}
+/* MOBILE window less than 360px wide */
+@media only screen and (max-width: 360px)  {
+  .tophat .tophat__links a {
+    font-size: 0.65rem;
+  }
+}
