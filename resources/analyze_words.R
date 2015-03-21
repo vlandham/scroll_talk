@@ -14,8 +14,10 @@ source("upshot.R")
 raw_data <- read.table(filename, sep = "\t", header = FALSE)
 colnames(raw_data) <- c('word','time', 'is_um')
 
+raw_data %>% filter(is_um == TRUE) %>% group_by(word) %>% summarise(count = n(), mean = mean(time))
+
 p <- ggplot(filter(raw_data, is_um == 1), aes(x = (time / 60)))
-p <- p + geom_histogram(binwidth = 2, color = "white", fill = "#777777") + theme_upshot(base_size = 16) + labs(title = "Filler Counts Over Time")
+p <- p + geom_histogram(binwidth = 2, color = "white", fill = "#777777") #+ theme_upshot(base_size = 16) + labs(title = "Filler Counts Over Time")
 p
 ggsave("filler_histogram.png",p)
 ggsave("filler_histogram.pdf",p)
