@@ -264,7 +264,7 @@ video {
     <p class="caption"><a href="http://qz.com/296941/interactive-graphic-every-active-satellite-orbiting-earth/">Active Satellites</a></p>
 </section>
 
-<section>
+<section style="background-color:black;>
   <video preload='none' src="webm/moon.webm" loop>
   </video>
     <p class="caption"><a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">1px Moon</a></p>
@@ -683,6 +683,17 @@ dispatch.on("active", function(index) {
   <p class="subtitle">transition all the things</p>
 </section>
 
+<section id="transition" style="text-align:center;padding-top:4em;">
+  <svg style="padding-top:4em;"id="title2" height="200" width="1000" xmlns="http://www.w3.org/2000/svg" version="1.1" >
+    <defs>
+    <clipPath id="path2">
+    <text x="0" y="150" textLength="900" lengthAdjust="spacing" font-family="Raleway" font-weight="800" font-size="200px" >Transitions</text>
+    </clipPath>
+    </defs>
+    <image clip-path="url(#path2)" height="100%" width="100%" xlink:href="img/header2.jpg" />
+  </svg>
+</section>
+
 <section style="text-align:center;padding-top:4em;">
   <p class="subtitle" >Setup All Elements at the Start</p>
 </section>
@@ -812,6 +823,12 @@ activateFunctions[8] = showHistAll;
 <section style="text-align:center;padding-top:4em;">
   <p class="subtitle" >Everything is a Transition</p>
 </section>
+
+<section id="circle" style="text-align:center;">
+  <svg style="" id="circleSVG" height="200" width="1000" xmlns="http://www.w3.org/2000/svg" version="1.1" >
+  </svg>
+</section>
+
 
 <section  style="text-align:center;padding-top:0em;font-size:84%;">
     <pre data-line=""><code class="language-javascript">function showGrid() {
@@ -1034,6 +1051,22 @@ activateFunctions[8] = showHistAll;
   <p class="title">Scroll Tools</p>
 </section>
 
+<section style="text-align:center;padding-top:4em;">
+  <p class="subtitle">Libraries</p>
+  <a class='subtitle' href="http://janpaepke.github.io/ScrollMagic/">ScrollMagic</a><br/><br/>
+  <a class='subtitle' href="https://github.com/Prinzhorn/skrollr">Skrollr</a><br/><br/>
+  <a class='subtitle' href="http://www.idangero.us/swiper/">Swiper</a><br/><br/>
+</section>
+
+<section style="text-align:center;padding-top:1em;">
+<img src="img/pleens.png" class="toowide"/>
+    <p class="caption"><a href="http://www.pleens.com/">Pleens</a></p>
+</section>
+
+<section style="text-align:center;padding-top:1em;">
+<img src="img/odessy.png" class="toowide"/>
+    <p class="caption"><a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a></p>
+</section>
 
 
 <section style="text-align:center;padding-top:0;">
@@ -1056,6 +1089,10 @@ var mystack = stack()
 var section = d3.selectAll("section"),
     force = d3.select("#force"),
     forceIndex = section[0].indexOf(force.node()),
+    transition = d3.select("#transition"),
+    transitionIndex = section[0].indexOf(transition.node()),
+    circle = d3.select("#circle"),
+    circleIndex = section[0].indexOf(circle.node()),
     follow = d3.select("#follow"),
     followAnchor = d3.select("#follow-anchor");
 
@@ -1080,13 +1117,176 @@ function setPageNumber(i) {
 
 function activate(d, i) {
   if (i === forceIndex) startForce();
+  if (i === transitionIndex) startTransitions();
+  if (i === circleIndex) startClobber();
   startVideo(i);
   setPageNumber(i);
 }
 
 function deactivate(d, i) {
   if (i === forceIndex) stopForce();
+  if (i === transitionIndex) stopTransitions();
+  if (i === circleIndex) stopClobber();
   stopVideo(i);
+}
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var circleTimeout;
+
+function stopClobber() {
+
+  // circleInterval = clearInterval(circleInterval);
+  clearTimeout(circleTimeout);
+  console.log('stop circle');
+}
+
+function startClobber() {
+  function circle(id,timeout) {
+     var width = 1280,
+         height = 720;
+
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    var r = 70;
+    var toggle = false;
+
+    var vis = d3.select(id)
+      .style("position", "absolute")
+      .style("top", 0)
+      .style("left", 0)
+      .style("width", "100%")
+      .style("height", "100%");
+
+    vis.attr("width", width)
+      .attr("height", height);
+
+    var data = [1];
+
+    console.log('circle');
+
+    vis.selectAll(".circle").data(data)
+      .enter().append("circle")
+      .attr("fill", "#008080")
+      .attr("class", "circle")
+      .attr("r", r);
+
+
+    vis.selectAll(".circle")
+      .attr("cx", r + 20)
+      .attr("cy", (height / 2) - (r));
+
+    function animate(timeout) {
+      x = toggle ? (r + 20) : (width - (r + 20));
+      console.log(x);
+      vis.selectAll(".circle")
+        .transition()
+        .duration(900)
+        .attr("cx", x);
+
+      toggle = toggle ? false : true;
+      circleTimeout = setTimeout(animate, timeout, timeout);
+    }
+    animate(timeout);
+  }
+  circle("#circleSVG", 1100);
+}
+
+var transitionTimeout;
+var setupTrans = false;
+
+function stopTransitions() {
+  clearTimeout(transitionTimeout);
+}
+
+function startTransitions() {
+  function animateBig(id,clipId) {
+    var svg = d3.select(id);
+    var bw = 20;
+    var width = svg.attr("width");
+    var height = svg.attr("height");
+    var aspect = width / height;
+    if (!setupTrans) {
+      svg.attr("viewBox", "0 0 " + width + " " + height);
+      svg.attr("preserveAspectRatio", "xMidYMid");
+    }
+    var data = [];
+    var i =0;
+    var n = 20;
+    while(i < n) {
+      data.push({x:getRandomInt(0,width),y:getRandomInt(0,height), dir:Math.random() > 0.4});
+      i += 1;
+    }
+
+    svg.selectAll(".outline").data(data)
+      .enter().append("rect")
+      .attr("class", "outline")
+      .attr("width", bw)
+      .attr("height", bw)
+      .attr('x', function(d) {return d.x;})
+      .attr('y', function(d) {return d.y;})
+      .attr("fill", "none")
+      .attr("stroke", "black")
+      .attr("stroke-width", 2)
+      .attr("stroke-opacity", 0.7);
+
+    svg.select(clipId).selectAll("rect").data(data)
+      .enter().append("rect")
+      .attr("width", bw)
+      .attr("height", bw)
+      .attr('x', function(d) { return d.x; })
+      .attr('y', function(d) { return d.y; });
+
+    animate = function() {
+      console.log('animate');
+      data.forEach(function(d) {
+        if(d.dir) {
+          d.x = getRandomInt(bw, (width - (bw * 3)));
+          } else {
+          d.y = getRandomInt(bw, (height - bw));
+          }
+        d.dir = d.dir ? false : true;
+      });
+
+      svg.select(clipId).selectAll("rect").data(data)
+        .transition()
+        .duration(1000)
+        .delay(function(d,i) {return i * 20;})
+        .ease("exp-out")
+        .attr("x", function(d) {return d.x;})
+        .attr("y", function(d) {return d.y;});
+
+      svg.selectAll(".outline").data(data)
+        .transition()
+        .duration(1000)
+        .delay(function(d,i) {return i * 20;})
+        .ease("exp-out")
+        .attr("x", function(d) {return d.x;})
+        .attr("y", function(d) {return d.y;});
+
+      transitionTimeout = setTimeout(animate, 1100);
+    }
+    animate();
+
+    function resize() {
+      var p = svg.node().parentNode;
+      targetWidth = +d3.select(p).style("width").replace("px","");
+      svg.attr("width", targetWidth);
+      svg.attr("height", targetWidth / aspect);
+    }
+    if (!setupTrans) {
+      resize();
+    }
+  }
+  animateBig("#title2", "#path2");
+  setupTrans = true;
 }
 
 var forceInterval;
