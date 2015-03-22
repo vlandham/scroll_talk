@@ -683,6 +683,29 @@ dispatch.on("active", function(index) {
   <p style="font-size:180%;">Each Section Gets a Function</p>
 </section>
 
+<section  style="text-align:center;padding-top:0em;font-size:100%;">
+    <pre><code class="language-javascript">
+activateFunctions[0] = showTitle;
+activateFunctions[1] = showFillerTitle;
+activateFunctions[2] = showGrid;
+activateFunctions[3] = highlightGrid;
+activateFunctions[4] = showBar;
+activateFunctions[5] = showHistPart;
+activateFunctions[6] = showHistAll;
+activateFunctions[7] = showCough;
+activateFunctions[8] = showHistAll;
+    </code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:3em;font-size:100%;">
+  <pre><code class="language-javascript">function activate(index) {
+  activateFunctions[index]();
+}
+    </code></pre>
+</section>
+
+
+
 <section style="text-align:center;padding-top:4em;">
   <p style="font-size:180%;">Section Functions:</p>
   <p style="font-size:180%;">Show Themselves</p>
