@@ -139,7 +139,7 @@ video {
 <br/><br/><br/>
   <div id="arrow" style="opacity: 1;">
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px" height="20px" viewBox="0 0 35 20" enable-background="new 0 0 35 20" xml:space="preserve">
-    <polyline fill="none" stroke="#231F20" stroke-width="6.6008" stroke-miterlimit="10" points="4,3.988 17.756,13.743 30.342,3.988 
+    <polyline fill="none" stroke="#231F20" stroke-width="6.6008" stroke-miterlimit="10" points="4,3.988 17.756,13.743 30.342,3.988
     "></polyline>
     </svg>
   </div>
@@ -154,30 +154,6 @@ video {
   <p style="font-size:180%;z-index:100;">Abusing The Force</p>
 </section>
 
-<section style="text-align:center;padding-top:4em;">
-  <p class="title" style='color:#008080;'>180</p>
-  <p style="font-size:180%;">Filler Words</p>
-</section>
-
-<section style="text-align:center;padding-top:1em;">
-<img src="img/filler_words_counts_cool.png" style="width:70%"/>
-</section>
-
-<section style="text-align:center;padding-top:1em;">
-<img src="img/filler_histogram_cool_half_01.png" style="width:70%"/>
-</section>
-
-<section style="text-align:center;padding-top:1em;">
-<img src="img/filler_histogram_cool_half_02.png" style="width:70%"/>
-</section>
-
-<section style="text-align:center;padding-top:1em;">
-<img src="img/filler_histogram_cool_half_03.png" style="width:70%"/>
-</section>
-
-<section style="text-align:center;padding-top:1em;">
-<img src="img/filler_histogram_cool_half_04.png" style="width:70%"/>
-</section>
 
 <section style="text-align:center;padding-top:5em;">
 <p style="font-size:220%;"><b>So You Think You Can Scroll</b></p>
@@ -186,7 +162,7 @@ video {
 <br/><br/><br/>
   <div id="arrow" style="opacity: 1;">
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px" height="20px" viewBox="0 0 35 20" enable-background="new 0 0 35 20" xml:space="preserve">
-    <polyline fill="none" stroke="#231F20" stroke-width="6.6008" stroke-miterlimit="10" points="4,3.988 17.756,13.743 30.342,3.988 
+    <polyline fill="none" stroke="#231F20" stroke-width="6.6008" stroke-miterlimit="10" points="4,3.988 17.756,13.743 30.342,3.988
     "></polyline>
     </svg>
   </div>
@@ -233,9 +209,9 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:4em;">
-  <p style="font-size:180%;">Kinetic Scrolling</p>
   <p style="font-size:180%;">Parallax Scrolling</p>
   <p style="font-size:180%;">Infinite Scrolling</p>
+  <p style="font-size:180%;">Art Scrolling</p>
 </section>
 
 <section>
@@ -369,7 +345,6 @@ video {
     <p class="caption"><a href="http://www.nytimes.com/interactive/2015/01/09/sports/the-dawn-wall-el-capitan.html?_r=0">Dawn Wall</a></p>
 </section>
 
-
 <section style="text-align:center;padding-top:4em;">
   <p class="title">Scrollytelling</p>
   <p style="font-size:180%;">(Interactive Storytelling)</p>
@@ -378,6 +353,12 @@ video {
 <section style="text-align:center;padding-top:4em;">
   <p class="quote">"The Web is a Storytelling Medium"</p>
   <p class="caption"><a href="http://www.debaird.net/blendededunet/2010/04/the-web-is-a-storytelling-medium.html">Bran Ferren</a></p>
+</section>
+
+
+<section style="text-align:center;padding-top:1em;background-color:#FCFCFA;">
+<img src="img/snowfall.png" style="width:100%;"/>
+    <p class="caption"><a href="http://www.nytimes.com/projects/2012/snow-fall">Snow Fall</a></p>
 </section>
 
 <section>
@@ -397,21 +378,475 @@ video {
   <p style="font-size:180%;">Implementation Details</p>
 </section>
 
-<section  style="text-align:center;padding-top:1em;font-size:80%;">
-    <pre data-line="3,4"><code class="language-javascript">var mousemove = function() {
-  // 'this' is current DOM element
-  var xpos = d3.mouse(this)[0];
-  var date = xScale.invert(xpos);
-  var index = 0;
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Humerous Demo</p>
+</section>
 
-  circle
-    .attr("cx", xScale(date))
-    .attr("cy", function(c) {
-      index = findIndex(c.values, date);
-      return yScale(c.values[index].n);
-  });
-  //...
+<section style="text-align:center;padding-top:4em;">
+  <p style="font-size:180%;">Events</p>
+  <p style="font-size:180%;">&amp;</p>
+  <p style="font-size:180%;">Transitions</p>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Scroll Events</p>
+  <p style="font-size:180%;">Detecting The Scroll</p>
+</section>
+
+<section style="text-align:center;padding-top:0;background-color:#fff;">
+<img src="img/scroller_implementation.003.png" style="height:100%;"/>
+</section>
+
+<section style="text-align:center;padding-top:0;background-color:#fff;">
+<img src="img/scroller_implementation.004.png" style="height:100%;"/>
+</section>
+
+<section style="text-align:center;padding-top:0;background-color:#fff;">
+<img src="img/scroller_implementation.005.png" style="height:100%;"/>
+</section>
+
+<section style="text-align:center;padding-top:0;background-color:#fff;">
+<img src="img/scroller_implementation.006.png" style="height:100%;"/>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre data-line="4"><code class="language-javascript">sectionPositions = [];
+var startPos;
+sections.each(function(d,i) {
+  var top = this.getBoundingClientRect().top;
+  if(i === 0) {
+    startPos = top;
+  }
+
+  sectionPositions.push(top - startPos);
+});
+    </code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre data-line="9"><code class="language-javascript">sectionPositions = [];
+var startPos;
+sections.each(function(d,i) {
+  var top = this.getBoundingClientRect().top;
+  if(i === 0) {
+    startPos = top;
+  }
+
+  sectionPositions.push(top - startPos);
+});
+    </code></pre>
+</section>
+
+<section style="text-align:center;padding-top:0;background-color:#fff;">
+<img src="img/scroller_implementation.005.png" style="height:100%;"/>
+</section>
+
+<section style="text-align:center;padding-top:0;background-color:#fff;">
+<img src="img/scroller_implementation.007.png" style="height:100%;"/>
+</section>
+
+<section style="text-align:center;padding-top:0;background-color:#fff;">
+<img src="img/scroller_implementation.008.png" style="height:100%;"/>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre data-line="2"><code class="language-javascript">function position() {
+  var pos = window.pageYOffset - 10;
+  var sectionIndex = d3.bisect(sectionPositions, pos);
+  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+  if (currentIndex !== sectionIndex) {
+    dispatch.active(sectionIndex);
+    currentIndex = sectionIndex;
+  }
 }
+</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre data-line="3"><code class="language-javascript">function position() {
+  var pos = window.pageYOffset - 10;
+  var sectionIndex = d3.bisect(sectionPositions, pos);
+  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+  if (currentIndex !== sectionIndex) {
+    dispatch.active(sectionIndex);
+    currentIndex = sectionIndex;
+  }
+}
+</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre><code class="language-javascript">var tops = [0, 100, 200, 300];
+
+d3.bisect(tops, 0);
+//=> 1
+</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre><code class="language-javascript">var tops = [0, 100, 200, 300];
+
+d3.bisect(tops, 0);
+//=> 1
+
+d3.bisect(tops, 99);
+//=> 1
+</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre><code class="language-javascript">var tops = [0, 100, 200, 300];
+
+d3.bisect(tops, 0);
+//=> 1
+
+d3.bisect(tops, 99);
+//=> 1
+
+d3.bisect(tops, 100);
+//=> 2
+</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre><code class="language-javascript">var tops = [0, 100, 200, 300];
+
+d3.bisect(tops, 0);
+//=> 1
+
+d3.bisect(tops, 99);
+//=> 1
+
+d3.bisect(tops, 100);
+//=> 2
+
+d3.bisect(tops, -10);
+//=> 0
+</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre data-line="2"><code class="language-javascript">function position() {
+  var pos = window.pageYOffset - 10;
+  var sectionIndex = d3.bisect(sectionPositions, pos);
+  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+  if (currentIndex !== sectionIndex) {
+    dispatch.active(sectionIndex);
+    currentIndex = sectionIndex;
+  }
+}
+</code></pre>
+</section>
+
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre data-line="7"><code class="language-javascript">function position() {
+  var pos = window.pageYOffset - 10;
+  var sectionIndex = d3.bisect(sectionPositions, pos);
+  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+  if (currentIndex !== sectionIndex) {
+    dispatch.active(sectionIndex);
+    currentIndex = sectionIndex;
+  }
+}
+</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre><code class="language-javascript">// create dispatcher
+var dispatch = d3.dispatch("active");
+    </code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre><code class="language-javascript">// create dispatcher
+var dispatch = d3.dispatch("active");
+
+// send event
+dispatch.active(sectionIndex);
+    </code></pre>
+</section>
+
+
+<section  style="text-align:center;padding-top:2em;font-size:80%;">
+    <pre><code class="language-javascript">// create dispatcher
+var dispatch = d3.dispatch("active");
+
+// send event
+dispatch.active(sectionIndex);
+
+// listen for event
+dispatch.on("active", function(index) {
+  // ...
+});
+    </code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:0;font-size:80%;">
+    <pre data-line="7"><code class="language-javascript">function position() {
+  var pos = window.pageYOffset - 10;
+  var sectionIndex = d3.bisect(sectionPositions, pos);
+  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+  if (currentIndex !== sectionIndex) {
+    dispatch.active(sectionIndex);
+    currentIndex = sectionIndex;
+  }
+}
+</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:0;font-size:80%;">
+    <pre data-line=""><code class="language-javascript">function position() {
+  var pos = window.pageYOffset - 10;
+  var sectionIndex = d3.bisect(sectionPositions, pos);
+  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+  if (currentIndex !== sectionIndex) {
+    dispatch.active(sectionIndex);
+    currentIndex = sectionIndex;
+  }
+  // within section animations ...
+}
+</code></pre>
+</section>
+
+
+<section  style="text-align:center;padding-top:0;font-size:80%;">
+    <pre data-line="13,14"><code class="language-javascript">function position() {
+  var pos = window.pageYOffset - 10;
+  var sectionIndex = d3.bisect(sectionPositions, pos);
+  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+  if (currentIndex !== sectionIndex) {
+    dispatch.active(sectionIndex);
+    currentIndex = sectionIndex;
+  }
+
+  var prevIndex = Math.max(sectionIndex - 1, 0);
+  var prevTop = sectionPositions[prevIndex];
+  var progress = (pos - prevTop) /
+      (sectionPositions[sectionIndex] - prevTop);
+  dispatch.progress(currentIndex, progress);
+}</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:0;font-size:80%;">
+    <pre data-line=""><code class="language-javascript">function position() {
+  var pos = window.pageYOffset - 10;
+  var sectionIndex = d3.bisect(sectionPositions, pos);
+  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+  if (currentIndex !== sectionIndex) {
+    dispatch.active(sectionIndex);
+    currentIndex = sectionIndex;
+  }
+
+  var prevIndex = Math.max(sectionIndex - 1, 0);
+  var prevTop = sectionPositions[prevIndex];
+  var progress = (pos - prevTop) /
+      (sectionPositions[sectionIndex] - prevTop);
+  dispatch.progress(currentIndex, progress);
+}</code></pre>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Transitions</p>
+  <p style="font-size:180%;">transition all the things</p>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p style="font-size:180%;">Setup All Elements at the Start</p>
+</section>
+
+<section  style="text-align:center;padding-top:0em;font-size:100%;">
+    <pre><code class="language-javascript">function setupVis() {
+  g.append("text")
+    .attr("class", "sub-title openvis-title")
+    .attr("x", width / 2)
+    .attr("y", (height / 3) + (height / 5) )
+    .text("OpenVis Conf");
+
+  g.selectAll(".openvis-title")
+    .attr("opacity", 0);
+
+  // everything else ...
+}
+</code></pre>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p style="font-size:180%;">Each Section Gets a Function</p>
+</section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p style="font-size:180%;">Section Functions:</p>
+  <p style="font-size:180%;">Show Themselves</p>
+  <p style="font-size:180%;">Hide Their Neighbors</p>
+</section>
+
+<section  style="text-align:center;padding-top:0em;font-size:84%;">
+    <pre data-line=""><code class="language-javascript">function showGrid() {
+  g.selectAll(".count-title")
+    .transition()
+    .duration(0)
+    .attr("opacity", 0);
+
+  g.selectAll(".square")
+    .transition()
+    .duration(600)
+    .delay(function(d,i) {
+      return 5 * d.row;
+    })
+    .attr("opacity", 1.0)
+    .attr("fill", "#ddd");
+}</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:0em;font-size:84%;">
+    <pre data-line="5"><code class="language-javascript">function showGrid() {
+  g.selectAll(".count-title")
+    .transition()
+    .duration(0)
+    .attr("opacity", 0);
+
+  g.selectAll(".square")
+    .transition()
+    .duration(600)
+    .delay(function(d,i) {
+      return 5 * d.row;
+    })
+    .attr("opacity", 1.0)
+    .attr("fill", "#ddd");
+}</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:0em;font-size:84%;">
+    <pre data-line="14"><code class="language-javascript">function showGrid() {
+  g.selectAll(".count-title")
+    .transition()
+    .duration(0)
+    .attr("opacity", 0);
+
+  g.selectAll(".square")
+    .transition()
+    .duration(600)
+    .delay(function(d,i) {
+      return 5 * d.row;
+    })
+    .attr("opacity", 1.0)
+    .attr("fill", "#ddd");
+}</code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:0em;font-size:84%;">
+    <pre data-line="13"><code class="language-javascript">function showGrid() {
+  g.selectAll(".count-title")
+    .transition()
+    .duration(0)
+    .attr("opacity", 0);
+
+  g.selectAll(".square")
+    .transition()
+    .duration(600)
+    .delay(function(d,i) {
+      return 5 * d.row;
+    })
+    .attr("opacity", 1.0)
+    .attr("fill", "#ddd");
+}</code></pre>
+</section>
+
+
+<section style="text-align:center;padding-top:4em;">
+  <p style="font-size:180%;">Everything is a Transition</p>
+</section>
+
+<section  style="text-align:center;padding-top:0em;font-size:84%;">
+    <pre data-line=""><code class="language-javascript">function showGrid() {
+  g.selectAll(".count-title")
+    .transition()
+    .duration(0)
+    .attr("opacity", 0);
+
+  g.selectAll(".square")
+    .transition()
+    .duration(600)
+    .delay(function(d,i) {
+      return 5 * d.row;
+    })
+    .attr("opacity", 1.0)
+    .attr("fill", "#ddd");
+}</code></pre>
+  </section>
+
+<section  style="text-align:center;padding-top:0em;font-size:84%;">
+    <pre data-line="3,8"><code class="language-javascript">function showGrid() {
+  g.selectAll(".count-title")
+    .transition()
+    .duration(0)
+    .attr("opacity", 0);
+
+  g.selectAll(".square")
+    .transition()
+    .duration(600)
+    .delay(function(d,i) {
+      return 5 * d.row;
+    })
+    .attr("opacity", 1.0)
+    .attr("fill", "#ddd");
+}</code></pre>
+  </section>
+
+  <section  style="text-align:center;padding-top:0em;font-size:84%;">
+    <pre data-line="4"><code class="language-javascript">function showGrid() {
+  g.selectAll(".count-title")
+    .transition()
+    .duration(0)
+    .attr("opacity", 0);
+
+  g.selectAll(".square")
+    .transition()
+    .duration(600)
+    .delay(function(d,i) {
+      return 5 * d.row;
+    })
+    .attr("opacity", 1.0)
+    .attr("fill", "#ddd");
+}</code></pre>
+  </section>
+
+<section style="text-align:center;padding-top:4em;">
+  <p style="font-size:180%;">Named Transitions are Cool</p>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:100%;">
+    <pre data-line=""><code class="language-javascript">g.selectAll(".fill-square")
+  .transition("move-squares")
+  .duration(800)
+  .attr("x", function(d,i) {
+    return d.x;
+  })
+  .attr("y", function(d,i) {
+    return d.y;
+  });
+    </code></pre>
+</section>
+
+<section  style="text-align:center;padding-top:2em;font-size:100%;">
+    <pre data-line="2"><code class="language-javascript">g.selectAll(".fill-square")
+  .transition("move-squares")
+  .duration(800)
+  .attr("x", function(d,i) {
+    return d.x;
+  })
+  .attr("y", function(d,i) {
+    return d.y;
+  });
     </code></pre>
 </section>
 
@@ -426,12 +861,12 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:1em;background-color:#FCFCFA;">
-<img src="img/how_to_scroll.png" style=""/>
+<img src="img/how_to_scroll.png" style="height:100%;"/>
     <p class="caption"><a href="http://bost.ocks.org/mike/scroll/">How To Scroll</a></p>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
-<img src="img/mice_scroll.png" style=""/>
+<img src="img/mice_scroll.png" style="height:100%;"/>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
@@ -439,15 +874,15 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:1em;">
-<img src="img/nordstrom.png" style=""/>
+<img src="img/nordstrom.png" style="height:100%;"/>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
-<img src="img/nordstrom2.png" style=""/>
+<img src="img/nordstrom2.png" style="height:100%;"/>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
-<img src="img/nordstrom_scrolljack.png" style=""/>
+<img src="img/nordstrom_scrolljack.png" style="height:100%;"/>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
@@ -456,12 +891,12 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:1em;">
-<img src="img/moving_window.jpg" style=""/>
+<img src="img/moving_window.jpg" style="height:100%;"/>
     <p class="caption"><a href="http://kiledaldesign.no/en/is-up-really-up/">Jesper Kiledal - Is Up Really Up?</a></p>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
-<img src="img/moving_text.jpg" style=""/>
+<img src="img/moving_text.jpg" style="height:100%;"/>
     <p class="caption"><a href="http://kiledaldesign.no/en/is-up-really-up/">Jesper Kiledal - Is Up Really Up?</a></p>
 </section>
 
@@ -474,7 +909,7 @@ video {
   <p class="caption">Anonymous Data Visualizer</p>
 </section>
 
-<section>
+<section style="text-align:center;padding-top:0;">
   <video preload='none' src="webm/college_stepper.webm" loop>
   </video>
     <p class="caption"><a href="http://www.nytimes.com/interactive/2013/05/07/education/college-admissions-gap.html">College Gap</a></p>
@@ -496,15 +931,20 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:1em;">
-<img src="img/scroll_vs_step.png" style=""/>
+<img src="img/scroll_vs_step.png" style="height:100%;"/>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
-  <p style="font-size:180%;">Swipe</p>
+  <p class="title">Mobile</p>
+</section>
+
+
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Swipe</p>
   <p style="font-size:180%; color:#888;">The Card Shark Returns?</p>
 </section>
 
-<section style="text-align:center;padding-top:1em;">
+<section style="text-align:center;padding-top:0em;">
 <img src="img/examples_mobile.png" style=""/>
 </section>
 
@@ -525,8 +965,8 @@ video {
 <img src="img/mobilevis.png" style="width:100%;"/>
 </section>
 
-<section style="text-align:center;padding-top:1em;">
-<img src="img/mobilevis_counts.png" style=""/>
+<section style="text-align:center;padding-top:0em;">
+<img src="img/mobilevis_counts.png" style="height:100%;"/>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
@@ -536,8 +976,13 @@ video {
 
 
 <section id="thanks" style="text-align:center;padding-top:0;">
-  <canvas></canvas>
   <p class="title">Thanks</p>
+  <p style="font-size:180%;">vallandingham.me</p>
+</section>
+
+<section style="text-align:center;padding-top:0;">
+  <p class="title">Thanks</p>
+  <p style="font-size:180%;">@vlandham</p>
 </section>
 
 
@@ -595,7 +1040,7 @@ function startForce() {
 
   var nodes = [],
       links = [],
-      node, 
+      node,
       link;
 
   width = window.innerWidth;
@@ -610,7 +1055,7 @@ function startForce() {
   }
 
   function tick(e) {
-    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });   
+    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
     link.attr("x1", function(d) { return d.source.x; })
       .attr("y1", function(d) { return d.source.y; })
       .attr("x2", function(d) { return d.target.x; })
@@ -665,29 +1110,29 @@ function startForce() {
   }
 
   function load(error, data) {
-    data.nodes.forEach(function(d) { 
+    data.nodes.forEach(function(d) {
         if(d.fixed) {
           d.x = width / 2;
           d.y = (height / 2) + (height / 4);
         }
-        nodes.push(d); 
-        
+        nodes.push(d);
+
       });
     data.links.forEach(function(l) { links.push(l);});
     update();
-  } 
+  }
 
   forceInterval = setInterval(function() {
       force.stop().start();
   }, 500);
 
 
-  d3.json("./img/face_nodes/face.json", load) 
+  d3.json("./img/face_nodes/face.json", load)
 }
 
 function stopForce() {
   forceInterval = clearInterval(forceInterval);
-  
+
   var vis = d3.select("#forcevis")
   d3.selectAll(vis.node().childNodes)
     .remove()
