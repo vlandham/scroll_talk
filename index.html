@@ -827,6 +827,19 @@ activateFunctions[8] = showHistAll;
 <section id="circle" style="text-align:center;">
   <svg style="" id="circleSVG" height="200" width="1000" xmlns="http://www.w3.org/2000/svg" version="1.1" >
   </svg>
+    <p class="caption">Regular Transitions</p>
+</section>
+
+<section id="circle2" style="text-align:center;">
+  <svg style="" id="circle2SVG" height="200" width="1000" xmlns="http://www.w3.org/2000/svg" version="1.1" >
+  </svg>
+    <p class="caption">Interrupted Transitions - Good!</p>
+</section>
+
+<section id="circle3" style="text-align:center;">
+  <svg style="" id="circle3SVG" height="200" width="1000" xmlns="http://www.w3.org/2000/svg" version="1.1" >
+  </svg>
+    <p class="caption">Uninterrupted Transitions - Bad!</p>
 </section>
 
 
@@ -886,6 +899,12 @@ activateFunctions[8] = showHistAll;
 
 <section style="text-align:center;padding-top:4em;">
   <p class="subtitle">Named Transitions are Cool</p>
+</section>
+
+<section id="named" style="text-align:center;">
+  <svg style="" id="namedSVG" height="200" width="1000" xmlns="http://www.w3.org/2000/svg" version="1.1" >
+  </svg>
+    <p class="caption">Named Transitions - Cool!</p>
 </section>
 
 <section  style="text-align:center;padding-top:2em;font-size:100%;">
@@ -1093,6 +1112,12 @@ var section = d3.selectAll("section"),
     transitionIndex = section[0].indexOf(transition.node()),
     circle = d3.select("#circle"),
     circleIndex = section[0].indexOf(circle.node()),
+    circle2 = d3.select("#circle2"),
+    circle2Index = section[0].indexOf(circle2.node()),
+    circle3 = d3.select("#circle3"),
+    circle3Index = section[0].indexOf(circle3.node()),
+    named = d3.select("#named"),
+    namedIndex = section[0].indexOf(named.node()),
     follow = d3.select("#follow"),
     followAnchor = d3.select("#follow-anchor");
 
@@ -1118,7 +1143,10 @@ function setPageNumber(i) {
 function activate(d, i) {
   if (i === forceIndex) startForce();
   if (i === transitionIndex) startTransitions();
-  if (i === circleIndex) startClobber();
+  if (i === circleIndex) startClobber(1);
+  if (i === circle2Index) startClobber(2);
+  if (i === circle3Index) startClobber(3);
+  if (i === namedIndex) startClobber(0);
   startVideo(i);
   setPageNumber(i);
 }
@@ -1126,7 +1154,10 @@ function activate(d, i) {
 function deactivate(d, i) {
   if (i === forceIndex) stopForce();
   if (i === transitionIndex) stopTransitions();
-  if (i === circleIndex) stopClobber();
+  if (i === circleIndex) stopClobber(1);
+  if (i === circle2Index) stopClobber(2);
+  if (i === circle3Index) stopClobber(3);
+  if (i === namedIndex) stopClobber(0);
   stopVideo(i);
 }
 
@@ -1138,16 +1169,16 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var circleTimeout;
+var circleTimeouts = [];
 
-function stopClobber() {
+function stopClobber(index) {
 
   // circleInterval = clearInterval(circleInterval);
-  clearTimeout(circleTimeout);
+  clearTimeout(circleTimeouts[index]);
   console.log('stop circle');
 }
 
-function startClobber() {
+function startClobber(index) {
   function circle(id,timeout) {
      var width = 1280,
          height = 720;
@@ -1184,19 +1215,47 @@ function startClobber() {
       .attr("cy", (height / 2) - (r));
 
     function animate(timeout) {
-      x = toggle ? (r + 20) : (width - (r + 20));
+      var x = toggle ? (r + 20) : (width - (r + 20));
+      var color = toggle ? "#008080" : "#DE0016";
       console.log(x);
+      var duration = 1800;
+      if(index > 1) {
+        if(toggle) {
+          duration = 4000;
+        }
+      }
+
+      if(index < 3 || toggle) {
       vis.selectAll(".circle")
-        .transition()
-        .duration(900)
+        .transition("move")
+        .duration(duration)
         .attr("cx", x);
+      } else {
+        console.log('interrupt');
+        vis.selectAll(".circle")
+          .attr("cx", x);
+      }
+      if(index == 0) {
+      vis.selectAll(".circle")
+        .transition("color")
+        .duration(duration)
+        .attr("fill", color);
+      }
 
       toggle = toggle ? false : true;
-      circleTimeout = setTimeout(animate, timeout, timeout);
+      circleTimeouts[index]= setTimeout(animate, timeout, timeout);
     }
     animate(timeout);
   }
-  circle("#circleSVG", 1100);
+  if (index == 0) {
+    circle("#namedSVG", 2000);
+  } else if (index === 1) {
+    circle("#circleSVG", 2000);
+  } else if (index === 2) {
+    circle("#circle2SVG", 2000);
+  } else if (index === 3) {
+    circle("#circle3SVG", 2000);
+  }
 }
 
 var transitionTimeout;
