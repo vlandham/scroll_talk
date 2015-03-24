@@ -179,11 +179,19 @@ video {
   <p class="subtitle" style="z-index:100;">Abusing The Force</p>
 </section>
 
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">Officially The First Back</p>
+  <p class="subtitle" >A Technical Detail</p>
+</section>
+
+<section style="text-align:center;padding-top:3em;">
+<img src="img/f_santiago.jpg" class="tootall"/>
+</section>
 
 <section style="text-align:center;padding-top:5em;">
 <p style="font-size:220%;"><b>So You Think You Can Scroll</b></p>
-<p>Jim Vallandingham</p>
-<p>@vlandham</p>
+<p class="subtitle">Jim Vallandingham</p>
+<p class="grey">@vlandham</p>
 <br/><br/><br/>
   <div id="arrow" style="opacity: 1;">
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px" height="20px" viewBox="0 0 35 20" enable-background="new 0 0 35 20" xml:space="preserve">
@@ -207,7 +215,7 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:3em;">
-<img src="img/scroll_history.png" style=""/>
+<img src="img/scroll_history.png" class="toowide"/>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
@@ -221,6 +229,10 @@ video {
 
 <section style="text-align:center;padding-top:1em;">
 <img src="img/old_scrollwheel.png" style="height:100%;"/>
+</section>
+
+<section style="text-align:center;padding-top:1em;">
+<img src="img/uglymouse.jpg" style="height:100%;"/>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
@@ -265,7 +277,7 @@ video {
     <p class="caption"><a href="http://qz.com/296941/interactive-graphic-every-active-satellite-orbiting-earth/">Active Satellites</a></p>
 </section>
 
-<section style="background-color:black;>
+<section style="background-color:black;">
   <video preload='none' src="webm/moon.webm" loop>
   </video>
     <p class="caption"><a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">1px Moon</a></p>
@@ -282,7 +294,7 @@ video {
 </section>
 
 <section>
-  <video preload='none' src="webm/soccer.webm" loop>
+  <video preload='none' src="webm/soccer_cut.webm" loop>
   </video>
     <p class="caption"><a href="http://www.nytimes.com/interactive/2014/06/13/sports/worldcup/world-cup-balls.html">World Cup Balls</a></p>
 </section>
@@ -339,7 +351,7 @@ video {
 
 
 <section>
-  <video preload='none' src="webm/marathon.webm" loop>
+  <video preload='none' src="webm/marathon_cut.webm" loop>
   </video>
     <p class="lcaption"><a href="http://www.nytimes.com/interactive/2014/10/28/sports/marathon-videos.html">Marathon Videos</a></p>
 </section>
@@ -405,6 +417,7 @@ video {
 
 <section style="text-align:center;padding-top:4em;">
   <p class="title">Humerous Demo</p>
+  <p class="subtitle">Well, Hopefully Humerous</p>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
@@ -1212,6 +1225,29 @@ function startClobber(index) {
       .attr("class", "circle")
       .attr("r", r);
 
+    var tris = [1,2];
+
+    vis.selectAll(".triangle").data(tris)
+      .enter().append("path")
+      .attr("fill", "#000")
+      .attr("class", "triangle")
+      .attr("d", function(d,i) {
+        var path;
+        if(i === 0) {
+          path = "M " + (r + 15 ) + " " + ((height / 2) - (r - 15) );
+          path += "l 15 -15";
+          path += "l -15 -15";
+          path += "l -15 15Z";
+          } else {
+          path = "M " + (width - (r + 15)) + " " + ((height / 2) - (r - 15));
+          path += "l -15 -15";
+          path += "l 15 -15";
+          path += "l 15 15Z";
+          }
+        return path
+      })
+
+
 
     vis.selectAll(".circle")
       .attr("cx", r + 20)
@@ -1220,6 +1256,13 @@ function startClobber(index) {
     function animate(timeout) {
       var x = toggle ? (r + 20) : (width - (r + 20));
       var color = toggle ? "#008080" : "#DE0016";
+
+      vis.selectAll(".triangle")
+        .attr('opacity', function(d,i) {
+            var on = toggle ? 0 : 1
+            return (i == on) ? 1 : 0;
+        });
+
       console.log(x);
       var duration = 1800;
       if(index > 1) {
