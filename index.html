@@ -260,6 +260,11 @@ video {
   </video>
 </section>
 
+<section>
+  <video preload='none' src="webm/embroiden.webm">
+  </video>
+</section>
+
 <section style="text-align:center;padding-top:4em;">
   <p class="title">Scrolling</p>
   <p class="subtitle">In Visualization</p>
@@ -517,70 +522,70 @@ sections.each(function(d,i) {
 </code></pre>
 </section>
 
-<section  style="text-align:center;padding-top:2em;font-size:80%;">
-    <pre><code class="language-javascript">var tops = [0, 100, 200, 300];
+<!-- <section  style="text&#45;align:center;padding&#45;top:2em;font&#45;size:80%;"> -->
+<!--     <pre><code class="language&#45;javascript">var tops = [0, 100, 200, 300]; -->
+<!--  -->
+<!-- d3.bisect(tops, 0); -->
+<!-- //=> 1 -->
+<!-- </code></pre> -->
+<!-- </section> -->
+<!--  -->
+<!-- <section  style="text&#45;align:center;padding&#45;top:2em;font&#45;size:80%;"> -->
+<!--     <pre><code class="language&#45;javascript">var tops = [0, 100, 200, 300]; -->
+<!--  -->
+<!-- d3.bisect(tops, 0); -->
+<!-- //=> 1 -->
+<!--  -->
+<!-- d3.bisect(tops, 99); -->
+<!-- //=> 1 -->
+<!-- </code></pre> -->
+<!-- </section> -->
+<!--  -->
+<!-- <section  style="text&#45;align:center;padding&#45;top:2em;font&#45;size:80%;"> -->
+<!--     <pre><code class="language&#45;javascript">var tops = [0, 100, 200, 300]; -->
+<!--  -->
+<!-- d3.bisect(tops, 0); -->
+<!-- //=> 1 -->
+<!--  -->
+<!-- d3.bisect(tops, 99); -->
+<!-- //=> 1 -->
+<!--  -->
+<!-- d3.bisect(tops, 100); -->
+<!-- //=> 2 -->
+<!-- </code></pre> -->
+<!-- </section> -->
 
-d3.bisect(tops, 0);
-//=> 1
-</code></pre>
-</section>
-
-<section  style="text-align:center;padding-top:2em;font-size:80%;">
-    <pre><code class="language-javascript">var tops = [0, 100, 200, 300];
-
-d3.bisect(tops, 0);
-//=> 1
-
-d3.bisect(tops, 99);
-//=> 1
-</code></pre>
-</section>
-
-<section  style="text-align:center;padding-top:2em;font-size:80%;">
-    <pre><code class="language-javascript">var tops = [0, 100, 200, 300];
-
-d3.bisect(tops, 0);
-//=> 1
-
-d3.bisect(tops, 99);
-//=> 1
-
-d3.bisect(tops, 100);
-//=> 2
-</code></pre>
-</section>
-
-<section  style="text-align:center;padding-top:2em;font-size:80%;">
-    <pre><code class="language-javascript">var tops = [0, 100, 200, 300];
-
-d3.bisect(tops, 0);
-//=> 1
-
-d3.bisect(tops, 99);
-//=> 1
-
-d3.bisect(tops, 100);
-//=> 2
-
-d3.bisect(tops, -10);
-//=> 0
-</code></pre>
-</section>
-
-<section  style="text-align:center;padding-top:2em;font-size:80%;">
-    <pre data-line="2"><code class="language-javascript">function position() {
-  var pos = window.pageYOffset - 10;
-  var sectionIndex = d3.bisect(sectionPositions, pos);
-  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
-
-  if (currentIndex !== sectionIndex) {
-    dispatch.active(sectionIndex);
-    currentIndex = sectionIndex;
-  }
-}
-</code></pre>
-</section>
-
+<!-- <section  style="text&#45;align:center;padding&#45;top:2em;font&#45;size:80%;"> -->
+<!--     <pre><code class="language&#45;javascript">var tops = [0, 100, 200, 300]; -->
+<!--  -->
+<!-- d3.bisect(tops, 0); -->
+<!-- //=> 1 -->
+<!--  -->
+<!-- d3.bisect(tops, 99); -->
+<!-- //=> 1 -->
+<!--  -->
+<!-- d3.bisect(tops, 100); -->
+<!-- //=> 2 -->
+<!--  -->
+<!-- d3.bisect(tops, &#45;10); -->
+<!-- //=> 0 -->
+<!-- </code></pre> -->
+<!-- </section> -->
+<!--  -->
+<!-- <section  style="text&#45;align:center;padding&#45;top:2em;font&#45;size:80%;"> -->
+<!--     <pre data&#45;line="2"><code class="language&#45;javascript">function position() { -->
+<!--   var pos = window.pageYOffset &#45; 10; -->
+<!--   var sectionIndex = d3.bisect(sectionPositions, pos); -->
+<!--   sectionIndex = Math.min(sections.size() &#45; 1, sectionIndex); -->
+<!--  -->
+<!--   if (currentIndex !== sectionIndex) { -->
+<!--     dispatch.active(sectionIndex); -->
+<!--     currentIndex = sectionIndex; -->
+<!--   } -->
+<!-- } -->
+<!-- </code></pre> -->
+<!-- </section> -->
+<!--  -->
 
 <section  style="text-align:center;padding-top:2em;font-size:80%;">
     <pre data-line="7"><code class="language-javascript">function position() {
@@ -1500,7 +1505,7 @@ function startForce() {
     data.nodes.forEach(function(d) {
         if(d.fixed) {
           d.x = width / 2;
-          d.y = (height / 2) + (height / 4);
+          d.y = (height / 2);// + (height / 4);
         }
         nodes.push(d);
 
@@ -1509,9 +1514,9 @@ function startForce() {
     update();
   }
 
-  forceInterval = setInterval(function() {
-      force.stop().start();
-  }, 500);
+  // forceInterval = setInterval(function() {
+  //     force.stop().start();
+  // }, 200);
 
 
   d3.json("./img/face_nodes/face.json", load)
