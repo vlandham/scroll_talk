@@ -7,16 +7,16 @@ worlds cup ball,trigger,same,true
 color meaning,steps,same,true
 clubs connect,steps,static,true
 suvs,steps,static,true
-islamic states,steps,static,true
+islamic states,steps,static,false
 pop change maine,steps,static,false
 skate board,steps,static,true
-255 charts,steps,static,true
+255 charts,steps,static,false
 mbta,continuous,static,false
 russia,continuous,static,true
-marathon videos,continuous,static,true
+marathon videos,continuous,static,false
 eat water,continuous,static,true
 free congress,continuous,static,true
-jeter,continuous,same,true
+jeter,continuous,same,false
 dawn wall,continuous,same,true
 silk road,continuous,same,false
 daft punk,scrollytelling,static,true
