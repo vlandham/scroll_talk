@@ -211,6 +211,10 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:3em;">
+<img src="img/hypercard.gif" style=""/>
+</section>
+
+<section style="text-align:center;padding-top:3em;">
 <img src="img/geos.png" style=""/>
 </section>
 
@@ -658,59 +662,59 @@ dispatch.on("active", function(index) {
 </code></pre>
 </section>
 
-<section  style="text-align:center;padding-top:0;font-size:80%;">
-    <pre data-line=""><code class="language-javascript">function position() {
-  var pos = window.pageYOffset - 10;
-  var sectionIndex = d3.bisect(sectionPositions, pos);
-  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+<!-- <section  style="text&#45;align:center;padding&#45;top:0;font&#45;size:80%;"> -->
+<!--     <pre data&#45;line=""><code class="language&#45;javascript">function position() { -->
+<!--   var pos = window.pageYOffset &#45; 10; -->
+<!--   var sectionIndex = d3.bisect(sectionPositions, pos); -->
+<!--   sectionIndex = Math.min(sections.size() &#45; 1, sectionIndex); -->
+<!--  -->
+<!--   if (currentIndex !== sectionIndex) { -->
+<!--     dispatch.active(sectionIndex); -->
+<!--     currentIndex = sectionIndex; -->
+<!--   } -->
+<!--   // within section animations ... -->
+<!-- } -->
+<!-- </code></pre> -->
+<!-- </section> -->
+<!--  -->
 
-  if (currentIndex !== sectionIndex) {
-    dispatch.active(sectionIndex);
-    currentIndex = sectionIndex;
-  }
-  // within section animations ...
-}
-</code></pre>
-</section>
+<!-- <section  style="text&#45;align:center;padding&#45;top:0;font&#45;size:80%;"> -->
+<!--     <pre data&#45;line="13,14"><code class="language&#45;javascript">function position() { -->
+<!--   var pos = window.pageYOffset &#45; 10; -->
+<!--   var sectionIndex = d3.bisect(sectionPositions, pos); -->
+<!--   sectionIndex = Math.min(sections.size() &#45; 1, sectionIndex); -->
+<!--  -->
+<!--   if (currentIndex !== sectionIndex) { -->
+<!--     dispatch.active(sectionIndex); -->
+<!--     currentIndex = sectionIndex; -->
+<!--   } -->
+<!--  -->
+<!--   var prevIndex = Math.max(sectionIndex &#45; 1, 0); -->
+<!--   var prevTop = sectionPositions[prevIndex]; -->
+<!--   var progress = (pos &#45; prevTop) / -->
+<!--       (sectionPositions[sectionIndex] &#45; prevTop); -->
+<!--   dispatch.progress(currentIndex, progress); -->
+<!-- }</code></pre> -->
+<!-- </section> -->
 
-
-<section  style="text-align:center;padding-top:0;font-size:80%;">
-    <pre data-line="13,14"><code class="language-javascript">function position() {
-  var pos = window.pageYOffset - 10;
-  var sectionIndex = d3.bisect(sectionPositions, pos);
-  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
-
-  if (currentIndex !== sectionIndex) {
-    dispatch.active(sectionIndex);
-    currentIndex = sectionIndex;
-  }
-
-  var prevIndex = Math.max(sectionIndex - 1, 0);
-  var prevTop = sectionPositions[prevIndex];
-  var progress = (pos - prevTop) /
-      (sectionPositions[sectionIndex] - prevTop);
-  dispatch.progress(currentIndex, progress);
-}</code></pre>
-</section>
-
-<section  style="text-align:center;padding-top:0;font-size:80%;">
-    <pre data-line="15"><code class="language-javascript">function position() {
-  var pos = window.pageYOffset - 10;
-  var sectionIndex = d3.bisect(sectionPositions, pos);
-  sectionIndex = Math.min(sections.size() - 1, sectionIndex);
-
-  if (currentIndex !== sectionIndex) {
-    dispatch.active(sectionIndex);
-    currentIndex = sectionIndex;
-  }
-
-  var prevIndex = Math.max(sectionIndex - 1, 0);
-  var prevTop = sectionPositions[prevIndex];
-  var progress = (pos - prevTop) /
-      (sectionPositions[sectionIndex] - prevTop);
-  dispatch.progress(currentIndex, progress);
-}</code></pre>
-</section>
+<!-- <section  style="text&#45;align:center;padding&#45;top:0;font&#45;size:80%;"> -->
+<!--     <pre data&#45;line="15"><code class="language&#45;javascript">function position() { -->
+<!--   var pos = window.pageYOffset &#45; 10; -->
+<!--   var sectionIndex = d3.bisect(sectionPositions, pos); -->
+<!--   sectionIndex = Math.min(sections.size() &#45; 1, sectionIndex); -->
+<!--  -->
+<!--   if (currentIndex !== sectionIndex) { -->
+<!--     dispatch.active(sectionIndex); -->
+<!--     currentIndex = sectionIndex; -->
+<!--   } -->
+<!--  -->
+<!--   var prevIndex = Math.max(sectionIndex &#45; 1, 0); -->
+<!--   var prevTop = sectionPositions[prevIndex]; -->
+<!--   var progress = (pos &#45; prevTop) / -->
+<!--       (sectionPositions[sectionIndex] &#45; prevTop); -->
+<!--   dispatch.progress(currentIndex, progress); -->
+<!-- }</code></pre> -->
+<!-- </section> -->
 
 <section style="text-align:center;padding-top:4em;">
   <p class="title">Transitions</p>
@@ -783,7 +787,7 @@ activateFunctions[8] = showHistAll;
 </section>
 
 <section  style="text-align:center;padding-top:3em;font-size:100%;">
-  <pre><code class="language-javascript">function activate(index) {
+  <pre><code class="language-javascript">dispatch.on("active", function(index) {
   activateFunctions[index]();
 }
     </code></pre>
@@ -1023,6 +1027,11 @@ activateFunctions[8] = showHistAll;
 <img src="img/nordstrom_scrolljack.png" style="height:100%;"/>
 </section>
 
+<section style="text-align:center;padding-top:1em;">
+  <p class="quote">"This is terrible."</p>
+  <p class="caption">Jim on a Bad Day at Work</p>
+</section>
+
 <section style="text-align:center;padding-top:4em;">
   <p class="subtitle" >Scrolling Mental Model</p>
   <p class="subtitle grey" >Inconsistent Metaphor?</p>
@@ -1134,6 +1143,7 @@ activateFunctions[8] = showHistAll;
   <a class='subtitle' href="http://janpaepke.github.io/ScrollMagic/">ScrollMagic</a><br/><br/>
   <a class='subtitle' href="https://github.com/Prinzhorn/skrollr">Skrollr</a><br/><br/>
   <a class='subtitle' href="http://www.idangero.us/swiper/">Swiper</a><br/><br/>
+  <a class='subtitle' href="https://github.com/1wheel/graph-scroll">graph-scroll</a><br/><br/>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
@@ -1144,6 +1154,20 @@ activateFunctions[8] = showHistAll;
 <section style="text-align:center;padding-top:1em;">
 <img src="img/odessy.png" class="toowide"/>
     <p class="caption"><a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a></p>
+</section>
+
+<section style="text-align:center;padding-top:0;">
+  <p class="subtitle">Special Thanks To:</p>
+  <p class="subtitle" >Adam Pearce</p>
+  <p class="subtitle grey" >@adamrpearce</p>
+  <p class="subtitle" >Irene Ros</p>
+  <p class="subtitle grey" >@ireneros</p>
+</section>
+
+<section style="text-align:center;padding-top:0;">
+  <p class="title">Thanks</p>
+  <p class="subtitle" >vallandingham.me</p>
+  <p class="subtitle" >@vlandham</p>
 </section>
 
 
