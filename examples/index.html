@@ -1,0 +1,190 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Data Visualization Scrolling Examples</title>
+  <meta name="description" content="">
+  <meta name="author" content="Jim Vallandingham">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+
+  <script src="js/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="main" role="main">
+      <div class="row">
+        <h2>Scrollable Dimension</h2>
+        <p>These are examples of using scroll to show a dimension of the data. They aren't necessarily difficult to implement technically, but provide a way to take advantage of the dynamic nature of the web.</p>
+      </div>
+      <div class="row section">
+        <div class="col-md-6 video">
+          <video id="example_video_1" class="video-js vjs-default-skin"
+            controls preload="auto" width="425" height="360"
+            poster="../screen/mile.jpg">
+            <source src="../webm/mile.webm" type='video/webm' />
+            <source src="../video/mile.mp4" type='video/mp4' />
+            <!-- <source src="../ogg/mile.ogv" type='video/ogg' /> -->
+          </video>
+        </div>
+        <div class="col-md-4 desc">
+          <h3><a href="http://www.onemilescroll.com/">One Mile Scroll</a></h3>
+          <p>Source: <a href="http://www.onemilescroll.com/">Daniel Eatock</a>
+          <p>Scroll through an actual mile. Allows for collaborative additions of new heights of things.</p>
+        </div>
+      </div>
+
+      <div class="row section">
+        <div class="col-md-6 video">
+          <video class="video-js vjs-default-skin"
+            controls preload="auto" width="425" height="360"
+            poster="../screen/moon.jpg">
+            <source src="../webm/moon.webm" type='video/webm' />
+            <source src="../video/moon.mp4" type='video/mp4' />
+            <!-- <source src="../ogg/mile.ogv" type='video/ogg' /> -->
+          </video>
+        </div>
+        <div class="col-md-4 desc">
+          <h3><a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">One Pixel Moon</a></h3>
+          <p>Source: <a href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">Josh Worth</a>
+          <p>A visualization of the entire solar system, translating physical space to pixels using the measure that the moon is one pixel.</p>
+        </div>
+      </div>
+
+
+      <div class="row section">
+        <div class="col-md-6 video">
+          <video class="video-js vjs-default-skin"
+            controls preload="auto" width="425" height="360"
+            poster="../screen/sats.jpg">
+            <source src="../webm/sats.webm" type='video/webm' />
+            <source src="../video/sats.mp4" type='video/mp4' />
+            <!-- <source src="../ogg/mile.ogv" type='video/ogg' /> -->
+          </video>
+        </div>
+        <div class="col-md-4 desc">
+          <h3><a href="http://qz.com/296941/interactive-graphic-every-active-satellite-orbiting-earth/">Orbiting Satellites</a></h3>
+          <p>Source: <a href="http://qz.com/296941/interactive-graphic-every-active-satellite-orbiting-earth/">quartz</a>
+          <p>Scrolling down, we leave Earth and head towards the atmosphere to understand better just how many satellites are orbiting us from various positions in space.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>Scroll as a Trigger</h2>
+        <p>For these, the scroll just starts an animation or visualization. Here, the act of scrolling to a part of the page indicates the viewers readiness to ingest a new piece of content.</p>
+      </div>
+
+      <div class="row section">
+        <div class="col-md-6 video">
+          <video class="video-js vjs-default-skin"
+            controls preload="auto" width="425" height="360"
+            poster="../screen/hottest.jpg">
+            <source src="../webm/hottest.webm" type='video/webm' />
+            <source src="../video/hottest.mp4" type='video/mp4' />
+            <!-- <source src="../ogg/hottest.ogv" type='video/ogg' /> -->
+          </video>
+        </div>
+        <div class="col-md-4 desc">
+          <h3><a href="http://www.bloomberg.com/graphics/2014-hottest-year-on-record/">Hottest Year on Record</a></h3>
+          <p>Source: <a href="http://www.bloomberg.com/graphics/2014-hottest-year-on-record/">Bloomberg</a>
+          <p>An initial scroll indicates that the user is ready to experience this visualization, and starts an animation that layers on average temperatures over the years, culminating in this years record breaking statistics.</p>
+        </div>
+      </div>
+
+      <div class="row section">
+        <div class="col-md-6 video">
+          <video class="video-js vjs-default-skin"
+            controls preload="auto" width="425" height="360"
+            poster="../screen/soccer.jpg">
+            <source src="../webm/soccer.webm" type='video/webm' />
+            <source src="../video/soccer.mp4" type='video/mp4' />
+            <!-- <source src="../ogg/hottest.ogv" type='video/ogg' /> -->
+          </video>
+        </div>
+        <div class="col-md-4 desc">
+          <h3><a href="http://www.nytimes.com/interactive/2014/06/13/sports/worldcup/world-cup-balls.html">World Cup Balls</a></h3>
+          <p>Source: <a href="http://www.nytimes.com/interactive/2014/06/13/sports/worldcup/world-cup-balls.html">NY Times</a>
+          <p>The history of the soccer balls used in the World's Cup. Scrolling initiates image loading as well as the start of smooth, infographic style animations to show ball construction, and their changes over the years.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <h2>Scroll as Steps</h2>
+        <p>Scrolling can move the viewer through different steps or segments of a visualization. These examples replace the stepper with scrolling.</p>
+      </div>
+
+
+      <div class="row section">
+        <div class="col-md-6 video">
+          <video class="video-js vjs-default-skin"
+            controls preload="auto" width="425" height="360"
+            poster="../screen/color.jpg">
+            <source src="../webm/color.webm" type='video/webm' />
+            <source src="../video/color.mp4" type='video/mp4' />
+            <!-- <source src="../ogg/hottest.ogv" type='video/ogg' /> -->
+          </video>
+        </div>
+        <div class="col-md-4 desc">
+          <h3><a href="http://muyueh.com/greenhoney/">Color Meaning</a></h3>
+          <p>Source: <a href="http://muyueh.com/greenhoney/">Muyueh</a>
+          <p>Visualizing the relationships between colors and language, this interesting visualization steps us through how Chinese and English languages shape their respective speakers' interpretations of what colors are.</p>
+        </div>
+      </div>
+
+      <div class="row section">
+        <div class="col-md-6 video">
+          <video class="video-js vjs-default-skin"
+            controls preload="auto" width="425" height="360"
+            poster="../screen/soccer_clubs.jpg">
+            <source src="../webm/soccer_clubs.webm" type='video/webm' />
+            <source src="../video/soccer_clubs.mp4" type='video/mp4' />
+            <!-- <source src="../ogg/hottest.ogv" type='video/ogg' /> -->
+          </video>
+        </div>
+        <div class="col-md-4 desc">
+          <h3><a href="http://www.nytimes.com/interactive/2014/06/20/sports/worldcup/how-world-cup-players-are-connected.html">Clubs that Connect</a></h3>
+          <p>Source: <a href="http://www.nytimes.com/interactive/2014/06/20/sports/worldcup/how-world-cup-players-are-connected.html">NY Times</a>
+          <p>An elaborate exploration of the highly interconnected network of World Cup players and the clubs they are associated with. Each step provides more detail on subsets of the data. The final piece allows the user to explore to find the clubs and players they are most interested in.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div> <!--! end of #container -->
+
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+<script src="//vjs.zencdn.net/4.12/video.js"></script>
+
+
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+
+</body>
+</html>
