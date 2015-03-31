@@ -174,7 +174,7 @@ video {
   <p class="title">2013</p>
 </section>
 
-<section id='force' style="text-align:center;padding-top:4em;">
+<section id='force' style="text-align:center;padding-top:1em;">
   <svg id="forcevis"></svg>
   <p class="subtitle" style="z-index:100;">Abusing The Force</p>
 </section>
@@ -207,15 +207,15 @@ video {
 </section>
 
 <section style="text-align:center;padding-top:3em;">
-<img src="img/MacGUI_0.jpg" style=""/>
+<img src="img/MacGUI_0.jpg" class="tootall"/>
 </section>
 
 <section style="text-align:center;padding-top:3em;">
-<img src="img/hypercard.gif" style=""/>
+<img src="img/hypercard.gif" class="tootall"/>
 </section>
 
 <section style="text-align:center;padding-top:3em;">
-<img src="img/geos.png" style=""/>
+<img src="img/geos.png" class="tootall"/>
 </section>
 
 <section style="text-align:center;padding-top:3em;">
@@ -235,12 +235,12 @@ video {
 <img src="img/old_scrollwheel.png" style="height:100%;"/>
 </section>
 
-<section style="text-align:center;padding-top:1em;">
-<img src="img/uglymouse.jpg" style="height:100%;"/>
-</section>
+<!-- <section style="text&#45;align:center;padding&#45;top:1em;"> -->
+<!-- <img src="img/uglymouse.jpg" style="height:100%;"/> -->
+<!-- </section> -->
 
 <section style="text-align:center;padding-top:4em;">
-<img src="img/mouse.png" style=""/>
+<img src="img/mouse.png" class="tootall"/>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
@@ -1002,14 +1002,20 @@ activateFunctions[8] = showHistAll;
   <p class="subtitle grey" >Unless it is disrupted</p>
 </section>
 
-<section style="text-align:center;padding-top:1em;background-color:#FCFCFA;">
-<img src="img/how_to_scroll.png" style="height:100%;"/>
-    <p class="caption"><a href="http://bost.ocks.org/mike/scroll/">How To Scroll</a></p>
+<section style="text-align:center;padding-top:4em;">
+  <p class="title">How To Scroll</p>
+  <p class="subtitle grey">Mike Bostock</p>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
 <img src="img/mice_scroll.png" style="height:100%;"/>
 </section>
+
+<section style="text-align:center;padding-top:1em;background-color:#FCFCFA;">
+<img src="img/how_to_scroll.png" style="height:100%;"/>
+    <p class="caption"><a href="http://bost.ocks.org/mike/scroll/">How To Scroll</a></p>
+</section>
+
 
 <section style="text-align:center;padding-top:4em;">
   <p class="title">Scrolljacking</p>
@@ -1089,10 +1095,10 @@ activateFunctions[8] = showHistAll;
 <!-- </section> -->
 
 <section style="text-align:center;padding-top:4em;">
-  <p class="title">MobileScroll?</p>
+  <p class="title">Mobilescroll?</p>
 </section>
 
-<section style="text-align:center;padding-top:0em;">
+<section style="text-align:center;padding-top:2em;">
 <img src="img/examples_mobile.png" class="tootall"/>
 </section>
 
@@ -1135,7 +1141,7 @@ activateFunctions[8] = showHistAll;
 </section>
 
 <section style="text-align:center;padding-top:4em;">
-  <p class="title">Scroll Tools</p>
+  <p class="title">Scrolltools</p>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
@@ -1161,7 +1167,7 @@ activateFunctions[8] = showHistAll;
     <p class="caption"><a href="http://pageflow.io/en">PageFlow</a></p>
 </section>
 
-<section style="text-align:center;padding-top:0;">
+<section style="text-align:center;padding-top:0;font-size: 90%;">
   <p class="subtitle">Special Thanks To:</p>
   <p class="subtitle" >Adam Pearce</p>
   <p class="subtitle grey" >@adamrpearce</p>
@@ -1481,6 +1487,7 @@ function startForce() {
 
   width = window.innerWidth;
   height = window.innerHeight;
+  console.log(width);
 
   function charge(d) {
     return -((Math.pow(d.size, 2.0) / 5)); //* (Math.random() * 4));
@@ -1500,13 +1507,13 @@ function startForce() {
 
 
   var force = d3.layout.force()
+    .size([width, height])
     .nodes(nodes)
     .links(links)
-    .size([width, height])
     .on("tick", tick)
     .linkDistance(distance)
     .charge(charge)
-    .gravity(0.0);
+    .gravity(0.05);
 
   var vis = d3.select("#forcevis")
     .style("position", "absolute")
@@ -1548,9 +1555,12 @@ function startForce() {
   function load(error, data) {
     data.nodes.forEach(function(d) {
         if(d.fixed) {
-          d.x = width / 2;
-          d.y = (height / 2);// + (height / 4);
-        }
+          d.x = width / 6;
+          d.y = (height / 2) + (height / 5);// + (height / 4);
+          } else {
+          d.y = 0;
+          }
+
         nodes.push(d);
 
       });
