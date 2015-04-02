@@ -70,6 +70,13 @@ section {
   color: #777;
 }
 
+.pagenum {
+  z-index:100;
+  position:fixed;
+  left:1%;
+  bottom:5%;
+}
+
 .line-highlight {
   z-order: -10;
   background: -webkit-linear-gradient(left, hsla(53, 100%, 50%,.3) 70%, hsla(24, 20%, 50%,0));
@@ -156,7 +163,7 @@ video {
 
 
 </style>
-<div id="pagenumber" style="z-index:100;position:fixed;left:1%;bottom:7%;"></div>
+<div id="pagenumber" class="pagenum" style=""></div>
 
 <section style="text-align:center;padding-top:5em;">
 <p style="font-size:200%;">Jim Vallandingham</p>
@@ -168,6 +175,10 @@ video {
     "></polyline>
     </svg>
   </div>
+</section>
+
+<section style="text-align:center;padding-top:1em;">
+<img src="img/bob.png" class="tootall"/>
 </section>
 
 <section style="text-align:center;padding-top:4em;">
@@ -1007,9 +1018,9 @@ activateFunctions[8] = showHistAll;
   <p class="subtitle grey">Mike Bostock</p>
 </section>
 
-<section style="text-align:center;padding-top:1em;">
-<img src="img/mice_scroll.png" style="height:100%;"/>
-</section>
+<!-- <section style="text&#45;align:center;padding&#45;top:1em;"> -->
+<!-- <img src="img/mice_scroll.png" style="height:100%;"/> -->
+<!-- </section> -->
 
 <section style="text-align:center;padding-top:1em;background-color:#FCFCFA;">
 <img src="img/how_to_scroll.png" style="height:100%;"/>
@@ -1146,10 +1157,10 @@ activateFunctions[8] = showHistAll;
 
 <section style="text-align:center;padding-top:4em;">
   <p class="subtitle">Libraries</p>
+  <a class='subtitle' href="https://github.com/1wheel/graph-scroll">graph-scroll</a><br/><br/>
   <a class='subtitle' href="http://janpaepke.github.io/ScrollMagic/">ScrollMagic</a><br/><br/>
   <a class='subtitle' href="https://github.com/Prinzhorn/skrollr">Skrollr</a><br/><br/>
   <a class='subtitle' href="http://www.idangero.us/swiper/">Swiper</a><br/><br/>
-  <a class='subtitle' href="https://github.com/1wheel/graph-scroll">graph-scroll</a><br/><br/>
 </section>
 
 <section style="text-align:center;padding-top:1em;">
